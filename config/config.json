@@ -1,0 +1,42 @@
+{
+  "site": {
+    "title": "StaticFile CDN",
+    "base_url": "/",
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_width": "251",
+    "logo_height": "50",
+    "logo_text": "StaticFile CDN"
+  },
+
+  "settings": {
+    "pagination": 6,
+    "summary_length": 200,
+    "blog_folder": "posts"
+  },
+
+  "params": {
+    "tag_manager_id": "",
+    "contact_form_action": "#",
+    "footer_content": "Some content here.",
+    "copyright": "Copyright 2014-2021 Staticfile.org(https:Staticfile.org) Built upon love"
+  },
+
+  "nav_button": {
+    "enable": true,
+    "label": "ENGLISH",
+    "link": "/"
+  },
+
+  "metadata": {
+    "meta_author": "StaticFile",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "StaticFile CDN Website"
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "StaticFile-CDN",
+    "settings": {}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "main": [
+    {
+      "name": "主页",
+      "url": "/"
+    },
+    {
+      "name": "数据统计",
+      "url": "/datastatistics"
+    },
+    {
+      "name": "API",
+      "url": "/apis"
+    },
+    {
+      "name": "意见反馈",
+      "url": "/feedback"
+    },
+    {
+      "name": "简介",
+      "url": "/about"
+    }
+  ]
+}
