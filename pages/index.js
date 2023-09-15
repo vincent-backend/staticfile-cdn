@@ -165,7 +165,17 @@ const Home = ({ banner, section }) => {
             {markdownify(section.vue.description, "h5", "section_description")}
             <Tabs>
               <Tab name="HTTPS">
-              <ul role="list" className="list-image-none">
+                <ul role="list" className="list-image-none">
+                  <li className="list-item">
+                    https://cdn.staticfile.org/vue/3.3.4/vue.cis.js
+                  </li>
+                  <li className="list-item">
+                    https://cdn.staticfile.org/vue/3.3.4/vue.cis.min.js
+                  </li>
+                </ul>
+              </Tab>
+              <Tab name="HTTP">
+                <ul role="list" className="list-image-none">
                   <li className="list-item">
                     http://cdn.staticfile.org/vue/3.3.4/vue.cis.js
                   </li>
@@ -173,9 +183,6 @@ const Home = ({ banner, section }) => {
                     http://cdn.staticfile.org/vue/3.3.4/vue.cis.min.js
                   </li>
                 </ul>
-              </Tab>
-              <Tab name="HTTP">
-                dsfd
               </Tab>
             </Tabs>
           </div>
@@ -189,10 +196,24 @@ const Home = ({ banner, section }) => {
             {markdownify(section.angular.description, "h5", "section_description")}
             <Tabs>
               <Tab name="HTTPS">
-                dsfdsf
+                <ul role="list" className="list-image-none">
+                  <li className="list-item">
+                    https://cdn.staticfile.org/angular.js/1.8.3/angular-csp.js
+                  </li>
+                  <li className="list-item">
+                    https://cdn.staticfile.org/angular.js/1.8.3/angular-csp.min.js
+                  </li>
+                </ul>
               </Tab>
               <Tab name="HTTP">
-                dsfd
+                <ul role="list" className="list-image-none">
+                  <li className="list-item">
+                    http://cdn.staticfile.org/angular.js/1.8.3/angular-csp.js
+                  </li>
+                  <li className="list-item">
+                    http://cdn.staticfile.org/angular.js/1.8.3/angular-csp.min.js
+                  </li>
+                </ul>
               </Tab>
             </Tabs>
           </div>
@@ -206,10 +227,24 @@ const Home = ({ banner, section }) => {
             {markdownify(section.jquery.description, "h5", "section_description")}
             <Tabs>
               <Tab name="HTTPS">
-                dsfdsf
+                <ul role="list" className="list-image-none">
+                  <li className="list-item">
+                    https://cdn.staticfile.org/jquery/3.7.0/jquery.js
+                  </li>
+                  <li className="list-item">
+                    https://cdn.staticfile.org/jquery/3.7.0/jquery.min.js
+                  </li>
+                </ul>
               </Tab>
               <Tab name="HTTP">
-                dsfd
+                <ul role="list" className="list-image-none">
+                  <li className="list-item">
+                    http://cdn.staticfile.org/jquery/3.7.0/jquery.js
+                  </li>
+                  <li className="list-item">
+                    http://cdn.staticfile.org/jquery/3.7.0/jquery.min.js
+                  </li>
+                </ul>
               </Tab>
             </Tabs>
           </div>
