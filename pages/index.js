@@ -8,6 +8,8 @@ import Tabs from "@layouts/shortcodes/Tabs";
 import Tab from "@layouts/shortcodes/Tab";
 import Link from "next/link";
 
+import BannerHome from "@layouts/components/banner/BannerHome";
+
 import { useEffect, useRef } from "react";
 import { IoChevronForwardSharp } from "react-icons/io5";
 
@@ -93,9 +95,9 @@ const Home = ({ banner, section }) => {
               <div className="row relative pb-10">
                 <div className="sm:col-12 md:col-6">
                   <div className="banner-content col-12 pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20">
-                    {markdownify(banner.subtitle, "h3", "banner-title")}
-                    {markdownify(banner.content, "h5", "banner-text text-justify")}
-                    <div className="banner-link">
+                    {markdownify(banner.subtitle, "h3", "banner-title opacity-0")}
+                    {markdownify(banner.content, "h5", "banner-text text-justify opacity-0")}
+                    <div className="banner-link opacity-0">
                       <span>$ npm install –g sfile </span>
                       <span className="text-[#292d33]">//安装工具</span>
                       <span className="pl-3 text-primary"><Link href="/apis">使用说明<IoChevronForwardSharp className="inline-flex align-middle" /></Link></span>
@@ -103,15 +105,8 @@ const Home = ({ banner, section }) => {
                   </div>
 
                 </div>
-                <div className="sm:col-12 md:col-6">
-                  <ImageFallback
-                    className="banner-img opacity-0"
-                    src="/images/banner.png"
-                    width="600"
-                    height="250"
-                    priority={true}
-                    alt=""
-                  />
+                <div className="sm:col-12 md:col-6 banner-img opacity-0">
+                  <BannerHome />
                 </div>
               </div>
             </div>

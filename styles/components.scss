@@ -190,7 +190,11 @@
 
 .about-content {
   @apply text-gray-800 text-justify font-medium pt-4 leading-normal;
+  a {
+    @apply text-[#1cbc9c];
+  }
 }
+
 
 @keyframes shadowPulse {
   0% {

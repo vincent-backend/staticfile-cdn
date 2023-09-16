@@ -95,7 +95,7 @@ const About = ({ banner, content1, content2 }) => {
         <div className="container-xl">
           <div className="relative banner-bg justify-center items-center">
             <div className="absolute banner-content pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20 z-20">
-                {markdownify(banner.title, "h3", "banner-title text-dark")}
+                {markdownify(banner.title, "h3", "banner-title text-dark opacity-0")}
             </div>
             <div className="flex justify-center items-center overflow-hidden bg-[#1cbc9c]">
                 <ImageFallback
