@@ -10,6 +10,10 @@
   &-xl {
     @apply max-w-[1440px] mx-auto px-3;
   }
+
+  &-banner {
+    @apply mx-0 max-w-[1440px] lg:mx-auto lg:px-3;
+  }
 }
 
 // form style
@@ -109,7 +113,7 @@
 }
 
 .section_description {
-  @apply pb-5  text-zinc-800;
+  @apply pb-5 text-zinc-800 text-justify;
 }
 
 .bg-theme {

@@ -88,7 +88,7 @@ const Home = ({ banner, section }) => {
   return (
     <Base>
       <section className="section bg-[#1cbc9c] banner pt-0">
-        <div className="container-xl">
+        <div className="container-banner">
           <div className="relative banner-bg z-10">
             <div className="row overflow-hidden rounded-2xl">
               <div className="row relative pb-10">
@@ -154,7 +154,7 @@ const Home = ({ banner, section }) => {
       {/* Vue */}
       <section className="animate section">
         <div className="container-xl flex justify-center">
-          <div className="col-10">
+          <div className="col-12 pl-1 pr-1 md:col-10">
             {markdownify(section.vue.title, "h3", "section_title")}
             {markdownify(section.vue.description, "h5", "section_description")}
             <Tabs>
@@ -185,7 +185,7 @@ const Home = ({ banner, section }) => {
       {/* Angular JS */}
       <section className="animate section">
         <div className="container-xl flex justify-center">
-          <div className="col-10">
+          <div className="col-12 pl-1 pr-1 md:col-10">
             {markdownify(section.angular.title, "h3", "section_title")}
             {markdownify(section.angular.description, "h5", "section_description")}
             <Tabs>
@@ -216,7 +216,7 @@ const Home = ({ banner, section }) => {
       {/* JQuery */}
       <section className="animate section">
         <div className="container-xl flex justify-center">
-          <div className="col-10">
+          <div className="col-12 pl-1 pr-1 md:col-10">
             {markdownify(section.jquery.title, "h3", "section_title")}
             {markdownify(section.jquery.description, "h5", "section_description")}
             <Tabs>
