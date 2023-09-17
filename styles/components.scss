@@ -130,6 +130,10 @@
   }
 }
 
+.home-tab-ul {
+  @apply text-justify break-all;
+}
+
 .pagination {
   .swiper-pagination-bullet {
     @apply w-[15px] h-[15px];

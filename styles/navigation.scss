@@ -3,7 +3,7 @@
   @apply h-[80px];
 }
 .header {
-  @apply fixed left-0 w-full h-[80px] top-0 z-50 bg-white pt-3 pb-8 ;
+  @apply fixed left-0 w-full h-[80px] top-0 z-50 bg-white pt-3 pb-3 ;
 
   &-sticky {
     @apply py-[18px] shadow-[0_2px_8px_rgba(32,45,73,0.1)];
@@ -31,34 +31,14 @@
 }
 
 .nav-item {
-  @apply mx-3;
+  @apply text-center pt-3 lg:pt-0;
 }
 
 .nav-link {
-  @apply p-3 text-[1.2rem] font-medium text-dark transition hover:text-primary lg:py-4 xl:px-3;
+  @apply py-5 text-[1.5rem] font-medium text-white transition hover:text-primary lg:text-[1.2rem]  lg:text-dark lg:py-4 lg:px-3;
 
   &.active {
-    @apply text-[#1cbc9c];
-  }
-}
-
-.nav-dropdown {
-  @apply mr-0;
-}
-
-.nav-dropdown-list {
-  @apply z-10 rounded-lg bg-white px-2.5 w-[220px] lg:shadow-sm;
-}
-
-.nav-dropdown-item {
-  @apply mb-1;
-}
-
-.nav-dropdown-link {
-  @apply min-w-[150px] py-2.5 text-sm font-[400] text-dark transition lg:hover:text-primary whitespace-nowrap lg:hover:bg-[#ffece4] px-4 rounded-lg;
-  
-  &.active {
-    @apply lg:bg-[#ffece4] text-green-800;
+    @apply text-white lg:text-[#1cbc9c] bg-[#17ac8e] lg:bg-white;
   }
 }
 

@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import Base from "@layouts/Baseof";
-import ImageFallback from "@layouts/components/ImageFallback";
 import { getListPage } from "@lib/contentParser";
 import { gsap } from "@lib/gsap";
 import { markdownify } from "@lib/utils/textConverter";
@@ -93,7 +92,7 @@ const Home = ({ banner, section }) => {
           <div className="relative banner-bg z-10">
             <div className="row overflow-hidden rounded-2xl">
               <div className="row relative pb-10">
-                <div className="sm:col-12 md:col-6">
+                <div className="sm:col-12 md:col-6 z-10">
                   <div className="banner-content col-12 pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20">
                     {markdownify(banner.subtitle, "h3", "banner-title opacity-0")}
                     {markdownify(banner.content, "h5", "banner-text text-justify opacity-0")}
@@ -129,7 +128,7 @@ const Home = ({ banner, section }) => {
             {markdownify(section.react.description, "h5", "section_description")}
             <Tabs>
               <Tab name="HTTPS">
-                <ul role="list" className="list-image-none">
+                <ul role="list" className="home-tab-ul">
                   <li className="list-item">
                     https://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.js
                   </li>
@@ -139,7 +138,7 @@ const Home = ({ banner, section }) => {
                 </ul>
               </Tab>
               <Tab name="HTTP">
-              <ul role="list" className="list-image-none">
+              <ul role="list" className="home-tab-ul">
                   <li className="list-item">
                     http://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.js
                   </li>
@@ -160,7 +159,7 @@ const Home = ({ banner, section }) => {
             {markdownify(section.vue.description, "h5", "section_description")}
             <Tabs>
               <Tab name="HTTPS">
-                <ul role="list" className="list-image-none">
+                <ul role="list" className="home-tab-ul">
                   <li className="list-item">
                     https://cdn.staticfile.org/vue/3.3.4/vue.cis.js
                   </li>
@@ -170,7 +169,7 @@ const Home = ({ banner, section }) => {
                 </ul>
               </Tab>
               <Tab name="HTTP">
-                <ul role="list" className="list-image-none">
+                <ul role="list" className="home-tab-ul">
                   <li className="list-item">
                     http://cdn.staticfile.org/vue/3.3.4/vue.cis.js
                   </li>
@@ -191,7 +190,7 @@ const Home = ({ banner, section }) => {
             {markdownify(section.angular.description, "h5", "section_description")}
             <Tabs>
               <Tab name="HTTPS">
-                <ul role="list" className="list-image-none">
+                <ul role="list" className="home-tab-ul">
                   <li className="list-item">
                     https://cdn.staticfile.org/angular.js/1.8.3/angular-csp.js
                   </li>
@@ -201,7 +200,7 @@ const Home = ({ banner, section }) => {
                 </ul>
               </Tab>
               <Tab name="HTTP">
-                <ul role="list" className="list-image-none">
+                <ul role="list" className="home-tab-ul">
                   <li className="list-item">
                     http://cdn.staticfile.org/angular.js/1.8.3/angular-csp.js
                   </li>
@@ -222,7 +221,7 @@ const Home = ({ banner, section }) => {
             {markdownify(section.jquery.description, "h5", "section_description")}
             <Tabs>
               <Tab name="HTTPS">
-                <ul role="list" className="list-image-none">
+                <ul role="list" className="home-tab-ul">
                   <li className="list-item">
                     https://cdn.staticfile.org/jquery/3.7.0/jquery.js
                   </li>
@@ -232,7 +231,7 @@ const Home = ({ banner, section }) => {
                 </ul>
               </Tab>
               <Tab name="HTTP">
-                <ul role="list" className="list-image-none">
+                <ul role="list" className="home-tab-ul">
                   <li className="list-item">
                     http://cdn.staticfile.org/jquery/3.7.0/jquery.js
                   </li>

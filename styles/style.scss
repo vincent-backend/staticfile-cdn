@@ -10,14 +10,9 @@
   @import "components";
   @import "navigation";
   @import "buttons";
+  @import "banners";
 }
 
 @layer utilities {
   @import "utilities";
-}
-
-@layer swiper {
-  @import '../node_modules/swiper/swiper.scss';
-  @import 'swiper/scss/pagination';
-  @import './swiper.scss';
 }
