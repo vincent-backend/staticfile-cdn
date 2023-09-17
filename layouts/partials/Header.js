@@ -6,6 +6,9 @@ import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { GiHamburgerMenu } from 'react-icons/gi'
+import Image from "next/image";
+
+import {ReactComponent as aa} from '../../public/images/swap.svg';
 
 const Header = () => {
   // distructuring the main menu from menu object
@@ -64,10 +67,11 @@ const Header = () => {
           <div className="order-1 ml-auto mr-2 flex items-center">
             {config.nav_button.enable && (
               <Link
-                className="btn btn-primary mr-4 lg:flex md:mr-10"
+                className="btn btn-primary mr-4 flex md:mr-10"
                 href={config.nav_button.link}
               >
                 {config.nav_button.label}
+                <Image src="/images/swap.svg" alt="swap" width={20} height={16} className="ml-2" />
               </Link>
             )}
 

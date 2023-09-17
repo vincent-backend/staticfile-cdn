@@ -1,17 +1,31 @@
 import {
   IoLogoGithub,
   IoLogoTwitter,
-  IoLogoWhatsapp
+  IoLogoWhatsapp,
+  IoLogoPinterest
 } from "react-icons/io5";
 
 const Social = ({ source, className }) => {
   const {
+    pinterest,
     whatsapp,
     twitter,
     github
   } = source;
   return (
     <ul className={className}>
+      {pinterest && (
+        <li className="inline-block">
+          <a
+            aria-label="whatsapp"
+            href={pinterest}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
+            <IoLogoPinterest />
+          </a>
+        </li>
+      )}
       {whatsapp && (
         <li className="inline-block">
           <a
