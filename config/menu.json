@@ -1,12 +1,12 @@
 {
-  "main": [
+  "cn": [
     {
       "name": "主页",
       "url": "/"
     },
     {
       "name": "数据统计",
-      "url": "/datastatistics"
+      "url": "/statistics"
     },
     {
       "name": "API",
@@ -18,6 +18,28 @@
     },
     {
       "name": "简介",
+      "url": "/about"
+    }
+  ],
+  "en": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Statistics",
+      "url": "/statistics"
+    },
+    {
+      "name": "API",
+      "url": "/apis"
+    },
+    {
+      "name": "Feedback",
+      "url": "/feedback"
+    },
+    {
+      "name": "About",
       "url": "/about"
     }
   ]

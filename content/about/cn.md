@@ -1,4 +1,5 @@
 ---
+lang: cn
 banner:
   title: "公司简介"
   content: ""

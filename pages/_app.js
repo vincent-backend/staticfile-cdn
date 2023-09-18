@@ -1,5 +1,8 @@
 import config from "@config/config.json";
 import theme from "@config/theme.json";
+import { LanguageProvider } from "contexts/LanguageContext";
+
+import { AppPropsType } from "next/dist/shared/lib/utils";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
@@ -51,7 +54,10 @@ const App = ({ Component, pageProps }) => {
           content="width=device-width, initial-scale=1, maximum-scale=5"
         />
       </Head>
-      <Component {...pageProps} />
+      <LanguageProvider>
+        <Component {...pageProps} />
+      </LanguageProvider>
+      
     </>
   );
 };

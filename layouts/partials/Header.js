@@ -1,29 +1,40 @@
 import Logo from "@components/Logo";
 import config from "@config/config.json";
 import menu from "@config/menu.json";
+import useTranslation from "@hooks/useTranslation";
+
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useRef, useState } from "react";
+import React, { use, useEffect, useRef, useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { GiHamburgerMenu } from 'react-icons/gi'
 import Image from "next/image";
 
-import {ReactComponent as aa} from '../../public/images/swap.svg';
-
 const Header = () => {
   // distructuring the main menu from menu object
-  const { main } = menu;
+  const { en, cn } = menu;
 
   // states declaration
+  const { locale, setLocale } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
   const [sticky, setSticky] = useState(false);
   const headerRef = useRef(null);
   const [direction, setDirection] = useState(null);
+  const [main, setMain] = useState(locale === "cn" ? cn : en);
 
   const { asPath } = useRouter();
 
   // logo source
   const { logo } = config.site;
+
+  useEffect(() => {
+    if (locale === "cn") {
+      setMain(cn);
+    }
+    else {
+      setMain(en);
+    }
+  }, [locale]);
 
   return (
     <>
@@ -66,13 +77,13 @@ const Header = () => {
           </ul>
           <div className="order-1 ml-auto mr-2 flex items-center">
             {config.nav_button.enable && (
-              <Link
+              <button
                 className="btn btn-primary mr-4 flex md:mr-10"
-                href={config.nav_button.link}
+                onClick={()=>setLocale(`${locale == "en" ? "cn" : "en"}`)}
               >
-                {config.nav_button.label}
+                {locale === "en" ? config.nav_button.label_cn : config.nav_button.label_en}
                 <Image src="/images/swap.svg" alt="swap" width={20} height={16} className="ml-2" />
-              </Link>
+              </button>
             )}
 
             {/* navbar toggler */}

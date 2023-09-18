@@ -1,24 +1,30 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
-import Base from "@layouts/Baseof";
-import { getListPage } from "@lib/contentParser";
 import { gsap } from "@lib/gsap";
 import { markdownify } from "@lib/utils/textConverter";
+import { getDataFromContent } from "@lib/contentParser";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import useTranslation from "@hooks/useTranslation";
+import Base from "@layouts/Baseof";
 import Tabs from "@layouts/shortcodes/Tabs";
 import Tab from "@layouts/shortcodes/Tab";
-import Link from "next/link";
-
 import BannerHome from "@layouts/components/banner/BannerHome";
-
-import { useEffect, useRef } from "react";
 import { IoChevronForwardSharp } from "react-icons/io5";
 
-const Home = ({ banner, section }) => {
+const Home = ({ data }) => {
+
+  const { locale, setLocale } = useTranslation();
+
+  let dataOne = data.filter((dt) => dt.lang === locale)[0];
+  
+  const [frontmatter, setFrontmatter] = useState(dataOne);
+  
+  let { banner, section} = frontmatter;
 
   useEffect(() => {
+    //frontmatter
+    setFrontmatter(data.filter((dt) => dt.lang === locale)[0]);
+
     const ctx = gsap.context(() => {
-      const banner = document.querySelector(".banner");
-      const bannerBg = document.querySelector(".banner-bg");
-      const header = document.querySelector(".header");
       const tl = gsap.timeline();
 
       tl.fromTo(
@@ -58,48 +64,30 @@ const Home = ({ banner, section }) => {
           },
           "<"
         );
-
-      //parallax banner
-      const parallaxTl = gsap.timeline({
-        ease: "none",
-        scrollTrigger: {
-          trigger: banner,
-          start: () => `top ${header.clientHeight}`,
-          scrub: true,
-        },
-      });
-
-      const position = (banner.offsetHeight - bannerBg.offsetHeight) * 0.4;
-      parallaxTl
-        .fromTo(
-          bannerBg,
-          {
-            y: 0,
-          },
-          {
-            y: -position,
-          }
-        );
     });
 
     return () => ctx.revert();
-  }, []);
+  }, [locale, data]);
 
   return (
     <Base>
-      <section className="section bg-[#1cbc9c] banner pt-0">
+      <section className="section bg-[#1cbc9c]">
         <div className="container-banner">
           <div className="relative banner-bg z-10">
             <div className="row overflow-hidden rounded-2xl">
               <div className="row relative pb-10">
                 <div className="sm:col-12 md:col-6 z-10">
                   <div className="banner-content col-12 pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20">
-                    {markdownify(banner.subtitle, "h3", "banner-title opacity-0")}
+                    {markdownify(banner.title, "h3", "banner-title opacity-0")}
                     {markdownify(banner.content, "h5", "banner-text text-justify opacity-0")}
-                    <div className="banner-link opacity-0">
+                    <div className={`banner-link opacity-0 ${locale == "en" ? "w-[400px]" : "w-[350px]"}`}>
                       <span>$ npm install –g sfile </span>
-                      <span className="text-[#292d33]">//安装工具</span>
-                      <span className="pl-3 text-primary"><Link href="/apis">使用说明<IoChevronForwardSharp className="inline-flex align-middle" /></Link></span>
+                      <span className="text-[#292d33]">{`//`}{markdownify(banner.installation_tools, "h6", "opacity-1 text-[#292d33] font-medium inline")}</span>
+                      <span className="pl-3 text-primary">
+                        <Link href="/apis">{markdownify(banner.usage, "h6", "opacity-1 text-primary font-medium inline")}
+                          <IoChevronForwardSharp className="inline-flex align-middle" />
+                        </Link>
+                      </span>
                     </div>
                   </div>
 
@@ -252,14 +240,11 @@ export default Home;
 
 // for homepage data
 export const getStaticProps = async () => {
-  const homepage = await getListPage("content/_index.md");
-  const { frontmatter } = homepage;
-  const { banner, section} = frontmatter;
-
+  const data = await getDataFromContent("content/index");
+  
   return {
     props: {
-      banner: banner,
-      section: section
+      data
     },
   };
 };

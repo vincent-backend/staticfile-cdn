@@ -24,7 +24,8 @@
 
   "nav_button": {
     "enable": true,
-    "label": "ENGLISH",
+    "label_en": "ENGLISH",
+    "label_cn": "汉语",
     "link": "/"
   },
 

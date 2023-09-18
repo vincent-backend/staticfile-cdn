@@ -3,6 +3,14 @@
   @apply py-4 bg-slate-100;
 }
 
+.section_title {
+  @apply pt-10 text-zinc-900;
+}
+
+.section_description {
+  @apply pb-5 text-zinc-800 text-justify;
+}
+
 // container
 .container {
   @apply mx-auto max-w-[1380px] px-3;
@@ -105,16 +113,10 @@
 }
 
 .banner-link {
-  @apply mt-4 rounded-md bg-white text-[#1cbc9c] w-[350px] h-10 pt-2 pl-3;
+  @apply mt-4 rounded-md bg-white text-[#1cbc9c] h-12 pt-3 pl-3 items-center justify-center;
 }
 
-.section_title {
-  @apply pt-10 text-zinc-900;
-}
 
-.section_description {
-  @apply pb-5 text-zinc-800 text-justify;
-}
 
 .bg-theme {
   @apply relative bg-[50%] bg-contain h-full  -z-[1]  rounded-2xl;

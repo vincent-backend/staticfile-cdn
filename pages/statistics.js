@@ -5,9 +5,10 @@ import ImageFallback from "@layouts/components/ImageFallback";
 import { getDataFromContent } from "@lib/contentParser";
 import { gsap } from "@lib/gsap";
 import { markdownify } from "@lib/utils/textConverter";
+
 import { useEffect, useRef, useState } from "react";
 
-const Feedback = ({ data }) => {
+const Statistics = ({ data }) => {
 
   const { locale, setLocale } = useTranslation();
   const [frontmatter, setFrontmatter] = useState(data.filter((dt) => dt.lang === locale)[0]);
@@ -65,7 +66,7 @@ const Feedback = ({ data }) => {
 
   return (
     <Base>
-    <section className="section bg-[#1cbc9c]">
+      <section className="section bg-[#1cbc9c]">
         <div className="container-banner">
           <div className="relative banner-bg z-10">
             <div className="row overflow-hidden rounded-2xl">
@@ -75,7 +76,6 @@ const Feedback = ({ data }) => {
                     {markdownify(banner.title, "h3", "banner-title opacity-0")}
                     {markdownify(banner.content, "h5", "banner-text text-justify opacity-0")}
                   </div>
-
                 </div>
                 <div className="sm:col-12 md:col-6 banner-img opacity-0">
                   <BannerHome />
@@ -100,11 +100,12 @@ const Feedback = ({ data }) => {
   );
 };
 
-export default Feedback;
+export default Statistics;
 
 // for homepage data
 export const getStaticProps = async () => {
-  const data = await getDataFromContent("content/feedback");
+  const data = await getDataFromContent("content/statistics");
+
   return {
     props: {
       data
