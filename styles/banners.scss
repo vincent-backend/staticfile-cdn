@@ -1,0 +1,83 @@
+
+// index
+.index-left-top {
+  @apply absolute top-[87px] left-[114px] w-[135px] h-[113px];
+}
+
+.index-middle-tower {
+  @apply absolute top-[30px] left-[235px] w-[255px] h-[357px];
+  animation: ani-idmt 4s infinite;
+
+  .tower-base {
+    @apply absolute left-[0px] top-[190px] w-[311px] h-[206px] bg-[url('/images/banners/Home/4@2x.png')];
+  }
+
+  .tower-1 {
+    @apply absolute left-[38px] top-[146px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
+    animation: ani-idmt-1 4s infinite;
+  }
+
+  .tower-2 {
+    @apply absolute left-[38px] top-[73px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
+    animation: ani-idmt-2 4s infinite;
+  }
+
+  .tower-3 {
+    @apply absolute left-[38px] top-[0px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
+    animation: ani-idmt-3 4s infinite;
+  }
+}
+
+@keyframes ani-idmt {
+  0%, 33.33%, 66.67%, 100% {
+    transform: translateY(0rem);
+  }
+  16.67%, 50%, 83.33% {
+    transform: translateY(0.6rem);
+  }
+}
+
+@keyframes ani-idmt-3 {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  16% {
+    transform: scaleX(1);
+  }
+  21% {
+    transform: scaleX(0.97);
+  }
+  26% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes ani-idmt-2 {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  27% {
+    transform: scaleX(1);
+  }
+  32% {
+    transform: scaleX(0.97);
+  }
+  37% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes ani-idmt-1 {
+    0%, 100% {
+      transform: scaleX(1);
+    }
+    38% {
+      transform: scaleX(1);
+    }
+    43% {
+      transform: scaleX(0.97);
+    }
+    48% {
+      transform: scaleX(1);
+    }
+}
