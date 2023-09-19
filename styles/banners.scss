@@ -1,73 +1,153 @@
 
-// index
-.index-left-top {
-  @apply absolute top-[87px] left-[114px] w-[135px] h-[113px];
-}
+/// index
+.banner-home {
+  @apply relative w-[700px] h-[450px] bg-[url('/images/banners/Home/b16@2x.png')];
 
-.index-middle-tower {
-  @apply absolute top-[30px] left-[235px] w-[255px] h-[357px];
-  animation: ani-idmt 4s infinite;
+  // left-top
+  .left-top {
+    @apply absolute top-[87px] left-[114px] w-[135px] h-[113px];
+    animation: ani-ilt-0 4s infinite;
 
-  .tower-base {
-    @apply absolute left-[0px] top-[190px] w-[311px] h-[206px] bg-[url('/images/banners/Home/4@2x.png')];
-  }
+    .bottom {
+      @apply absolute left-[0px] top-[13px] w-[152px] h-[113px] bg-[url('/images/banners/Home/6@2x.png')];
+      animation: ani-ilt-1 4s infinite;
+    }
 
-  .tower-1 {
-    @apply absolute left-[38px] top-[146px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
-    animation: ani-idmt-1 4s infinite;
-  }
-
-  .tower-2 {
-    @apply absolute left-[38px] top-[73px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
-    animation: ani-idmt-2 4s infinite;
+    .top {
+      @apply absolute left-[56px] top-[13px] w-[37px] h-[42px] bg-[url('/images/banners/Home/5@2x.png')];
+      animation: ani-ilt-2 4s infinite;
+    }
   }
 
-  .tower-3 {
-    @apply absolute left-[38px] top-[0px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
-    animation: ani-idmt-3 4s infinite;
-  }
-}
+  @keyframes ani-ilt-0 {
+    0%, 46% {
+      transform: translateY(0rem);
+    }
+    58%, 63% {
+      transform: translateY(-0.3rem);
+    }
+    74%, 78% {
+      transform: translateY(0rem);
+    }
+    92% {
+      transform: translateY(-0.3rem);
+    }
 
-@keyframes ani-idmt {
-  0%, 33.33%, 66.67%, 100% {
-    transform: translateY(0rem);
   }
-  16.67%, 50%, 83.33% {
-    transform: translateY(0.6rem);
-  }
-}
 
-@keyframes ani-idmt-3 {
-  0%, 100% {
-    transform: scaleX(1);
+  @keyframes ani-ilt-1 {
+    0%, 16% {
+      opacity: 0;
+    }
+    32% {
+      opacity: 1;
+    }
   }
-  16% {
-    transform: scaleX(1);
-  }
-  21% {
-    transform: scaleX(0.97);
-  }
-  26% {
-    transform: scaleX(1);
-  }
-}
 
-@keyframes ani-idmt-2 {
-  0%, 100% {
-    transform: scaleX(1);
+  @keyframes ani-ilt-2 {
+    0%, 32% {
+      opacity: 0;
+      transform: translateY(-0.5rem);
+    }
+    46% {
+      opacity: 1;
+      transform: translateY(0rem);
+    }
   }
-  27% {
-    transform: scaleX(1);
-  }
-  32% {
-    transform: scaleX(0.97);
-  }
-  37% {
-    transform: scaleX(1);
-  }
-}
 
-@keyframes ani-idmt-1 {
+  // left-bottom
+  .left-bottom {
+    @apply absolute top-[221px] left-[37px] w-[185px] h-[162px];
+    animation: ani-ilb-0 4s infinite;
+
+    .top {
+      @apply absolute left-[0px] top-[0px] w-[185px] h-[108px] bg-[url('/images/banners/Home/9@2x.png')];
+      animation: ani-ilb-top 4s infinite;
+    }
+
+    .bottom {
+      @apply absolute left-[26px] top-[33px] w-[132px] h-[129px] bg-[url('/images/banners/Home/10@2x.png')];
+      animation: 4s infinite;
+    }
+  }
+
+  @keyframes ani-ilb-0 {
+    0%, 16% {
+      transform: translateY(0rem);
+    }
+    31% {
+      transform: translateY(-0.4rem);
+    }
+    44%, 47% {
+      transform: translateY(0rem);
+    }
+    59%, 62% {
+      transform: translateY(-0.4rem);
+    }
+    74%, 78% {
+      transform: translateY(0rem);
+    }
+    89%, 92% {
+      transform: translateY(-0.4rem);
+    }
+  }
+
+  @keyframes ani-ilb-top {
+    0%, 16% {
+      transform: scaleX(1);
+    }
+    31% {
+      transform: scaleX(.95);
+    }
+    44%, 47% {
+      transform: scaleX(1);
+    }
+    59%, 62% {
+      transform: scaleX(.95);
+    }
+    74%, 78% {
+      transform: scaleX(1);
+    }
+    89%, 92% {
+      transform: scaleX(.95);
+    }
+  }
+
+  // middle-tower
+  .middle-tower {
+    @apply absolute top-[30px] left-[235px] w-[255px] h-[357px];
+    animation: ani-idmt 4s infinite;
+
+    .tower-base {
+      @apply absolute left-[0px] top-[190px] w-[311px] h-[206px] bg-[url('/images/banners/Home/4@2x.png')];
+    }
+
+    .tower-1 {
+      @apply absolute left-[38px] top-[146px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
+      animation: ani-idmt-1 4s infinite;
+    }
+
+    .tower-2 {
+      @apply absolute left-[38px] top-[73px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
+      animation: ani-idmt-2 4s infinite;
+    }
+
+    .tower-3 {
+      @apply absolute left-[38px] top-[0px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
+      animation: ani-idmt-3 4s infinite;
+    }
+  }
+
+  @keyframes ani-idmt {
+    0%, 33.33%, 66.67%, 100% {
+      transform: translateY(0rem);
+    }
+    16.67%, 50%, 83.33% {
+      transform: translateY(0.6rem);
+    }
+  }
+
+  @keyframes ani-idmt-1 {
     0%, 100% {
       transform: scaleX(1);
     }
@@ -80,4 +160,93 @@
     48% {
       transform: scaleX(1);
     }
+  }
+
+  @keyframes ani-idmt-2 {
+    0%, 100% {
+      transform: scaleX(1);
+    }
+    27% {
+      transform: scaleX(1);
+    }
+    32% {
+      transform: scaleX(0.97);
+    }
+    37% {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes ani-idmt-3 {
+    0%, 100% {
+      transform: scaleX(1);
+    }
+    16% {
+      transform: scaleX(1);
+    }
+    21% {
+      transform: scaleX(0.97);
+    }
+    26% {
+      transform: scaleX(1);
+    }
+  }
+
+  // right-middle
+  .right-middle {
+    @apply absolute top-[179px] left-[487px] w-[185px] h-[142px];
+    animation: ani-irm-0 4s infinite;
+
+    .bottom {
+      @apply absolute left-[0px] top-[13px] w-[202px] h-[143px] bg-[url('/images/banners/Home/8@2x.png')];
+      animation: ani-irm-1 4s infinite;
+    }
+
+    .top {
+      @apply absolute left-[67px] top-[10px] w-[56px] h-[64px] bg-[url('/images/banners/Home/7@2x.png')];
+      animation: ani-irm-2 4s infinite;
+    }
+  }
+
+  @keyframes ani-irm-0 {
+    0%, 16% {
+      transform: translateY(0rem);
+    }
+    33% {
+      transform: translateY(-0.5rem);
+    }
+    44%, 48% {
+      transform: translateY(0rem);
+    }
+    58%, 63% {
+      transform: translateY(-0.5rem);
+    }
+    74%, 78% {
+      transform: translateY(0rem);
+    }
+    92% {
+      transform: translateY(-0.5rem);
+    }
+  }
+
+  @keyframes ani-irm-1 {
+    0% {
+      opacity: 0;
+    }
+    16%, 100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes ani-irm-2 {
+    0%, 7% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    16%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
 }
