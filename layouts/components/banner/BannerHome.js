@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const BannerHome = () => {
     return(
-        <div className="relative w-[700px] h-[450px] overflow-hidden bg-[url('/images/banners/Home/b16@2x.png')]">
+        <div className="relative w-[700px] h-[450px] bg-[url('/images/banners/Home/b16@2x.png')]">
             {/*Left Topr*/}
             <div className="absolute top-[87px] left-[114px] w-[135px] h-[113px]">
                 <div className="absolute left-[0px] top-[13px] w-[152px] h-[113px] bg-[url('/images/banners/Home/6@2x.png')]" />

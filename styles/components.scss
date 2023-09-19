@@ -4,11 +4,11 @@
 }
 
 .section_title {
-  @apply pt-10 text-zinc-900;
+  @apply pt-10 text-dark;
 }
 
 .section_description {
-  @apply pb-5 text-zinc-800 text-justify;
+  @apply pb-5 text-dark font-normal text-justify;
 }
 
 // container
@@ -22,6 +22,14 @@
   &-banner {
     @apply mx-0 max-w-[1440px] lg:mx-auto lg:px-3;
   }
+
+  &-main {
+    @apply relative bg-white rounded-xl ml-2 mr-2 border-8 border-white text-justify z-20 min-h-[200px] overflow-hidden;
+  }
+}
+
+.div-information {
+  @apply pt-4 pb-8 pl-4 pr-4;
 }
 
 // form style
@@ -116,8 +124,6 @@
   @apply mt-4 rounded-md bg-white text-primary h-12 pt-3 pl-3 items-center justify-center;
 }
 
-
-
 .bg-theme {
   @apply relative bg-[50%] bg-contain h-full  -z-[1]  rounded-2xl;
 
@@ -177,6 +183,10 @@
   }
 }
 
+.banner-img {
+  @apply col-12 lg:col-6 opacity-0 flex justify-center;
+}
+
 //footer
 .footer-copy-write {
   @apply underline text-primary;
@@ -191,7 +201,7 @@
 }
 
 .list-item {
-  @apply h5 hover:bg-[#e6f8f4] hover:text-primary pl-1 pr-1 mr-0 ml-0 md:pl-4 md:pr-4 text-justify;
+  @apply h5 hover:bg-[#e6f8f4] hover:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify;
 }
 
 .about-subtitle {
@@ -204,7 +214,6 @@
     @apply text-primary;
   }
 }
-
 
 @keyframes shadowPulse {
   0% {

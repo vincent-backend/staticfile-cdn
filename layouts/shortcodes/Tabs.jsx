@@ -41,7 +41,7 @@ function Tabs({ children }) {
         ))}
       </ul>
       <ul
-        className="mb-0 list-none rounded-b-md bg-white p-5"
+        className="mb-0 list-none rounded-b-md bg-white px-2 py-5"
         ref={tabItemsRef}
       >
         {children}

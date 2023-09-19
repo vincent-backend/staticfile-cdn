@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
         {/* copyright */}
         <div className=" py-6 text-center">
-          Copyright 2014-2021 <Link href="/dd" className="footer-copy-write">Staticfile.org</Link> Built upon love
+          © Copyright 2014-{new Date().getFullYear()} <Link href="https://www.staticfile.org" className="footer-copy-write">Staticfile.org</Link> Built upon love
         </div>
       </div>
     </footer>
