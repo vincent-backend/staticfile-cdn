@@ -35,7 +35,7 @@
   li {
     @apply inline-block text-2xl;
     a {
-      @apply block h-11 w-11 rounded-full border text-center hover:text-white hover:bg-[#1cbc9c] transition-all duration-300;
+      @apply block h-11 w-11 rounded-full border text-center hover:text-white hover:bg-primary transition-all duration-300;
 
       svg {
         @apply m-auto h-11;
@@ -113,7 +113,7 @@
 }
 
 .banner-link {
-  @apply mt-4 rounded-md bg-white text-[#1cbc9c] h-12 pt-3 pl-3 items-center justify-center;
+  @apply mt-4 rounded-md bg-white text-primary h-12 pt-3 pl-3 items-center justify-center;
 }
 
 
@@ -179,7 +179,7 @@
 
 //footer
 .footer-copy-write {
-  @apply underline text-[#1cbc9c];
+  @apply underline text-primary;
 
   &:hover  {
     @apply text-[#2cdcac];
@@ -191,17 +191,17 @@
 }
 
 .list-item {
-  @apply h5 hover:bg-[#e6f8f4] hover:text-[#1cbc9c] pl-1 pr-1 mr-0 ml-0 md:pl-4 md:pr-4 text-justify;
+  @apply h5 hover:bg-[#e6f8f4] hover:text-primary pl-1 pr-1 mr-0 ml-0 md:pl-4 md:pr-4 text-justify;
 }
 
 .about-subtitle {
-  @apply text-[#1cbc9c] font-medium pt-4;
+  @apply text-primary font-medium pt-4;
 }
 
 .about-content {
   @apply text-gray-800 text-justify font-medium pt-4 leading-normal;
   a {
-    @apply text-[#1cbc9c];
+    @apply text-primary;
   }
 }
 

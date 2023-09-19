@@ -56,7 +56,7 @@ const Header = () => {
               !showMenu && "hidden"
             }`}
           >
-            <div className="bg-[#1cbc9c] opacity-95 h-screen lg:flex lg:h-auto lg:ml-3 lg:bg-white">
+            <div className="bg-primary opacity-95 h-screen lg:flex lg:h-auto lg:ml-3 lg:bg-white">
               <div className="pb-20 lg:hidden" />
               {main.map((menu, i) => (
               <React.Fragment key={`menu-${i}`}>

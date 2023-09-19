@@ -52,7 +52,7 @@ const Apis = ({ data }) => {
 
   return (
     <Base>
-    <section className="section bg-[#1cbc9c]">
+    <section className="section bg-primary">
         <div className="container-banner">
           <div className="relative banner-bg z-10">
             <div className="row overflow-hidden rounded-2xl">
@@ -77,8 +77,8 @@ const Apis = ({ data }) => {
               <div className="col-12 md:col-10 overflow-visible">
                 <div className="relative bg-white rounded-xl ml-2 mr-2 pt-8 pb-8 pl-4 pr-4 text-justify z-20 min-h-[200px]">
                     <div className="pb-8">
-                      <div className="">{markdownify(api.title, "h3", "text-[#1cbc9c]")}</div>
-                      <div className="">{markdownify(api.content, "h4", "pt-4 text-[#1cbc9c] font-medium leading-normal")}</div>
+                      <div className="">{markdownify(api.title, "h3", "text-primary")}</div>
+                      <div className="">{markdownify(api.content, "h4", "pt-4 text-primary font-medium leading-normal")}</div>
                       <h3>Comming soon</h3>
                     </div>
                 </div>

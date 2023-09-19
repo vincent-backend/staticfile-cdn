@@ -66,7 +66,7 @@ const Statistics = ({ data }) => {
 
   return (
     <Base>
-      <section className="section bg-[#1cbc9c]">
+      <section className="section bg-primary">
         <div className="container-banner">
           <div className="relative banner-bg z-10">
             <div className="row overflow-hidden rounded-2xl">

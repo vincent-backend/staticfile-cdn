@@ -71,28 +71,28 @@ const Home = ({ data }) => {
 
   return (
     <Base>
-      <section className="section bg-[#1cbc9c]">
+      <section className="section bg-primary">
         <div className="container-banner">
           <div className="relative banner-bg z-10">
             <div className="row overflow-hidden rounded-2xl">
               <div className="row relative pb-10">
-                <div className="sm:col-12 md:col-6 z-10">
+                <div className="col-12 lg:col-6 z-10">
                   <div className="banner-content col-12 pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20">
                     {markdownify(banner.title, "h3", "banner-title opacity-0")}
                     {markdownify(banner.content, "h5", "banner-text text-justify opacity-0")}
                     <div className={`banner-link opacity-0 ${locale == "en" ? "w-[400px]" : "w-[350px]"}`}>
                       <span>$ npm install –g sfile </span>
                       <span className="text-[#292d33]">{`//`}{markdownify(banner.installation_tools, "h6", "opacity-1 text-[#292d33] font-medium inline")}</span>
-                      <span className="pl-3 text-primary">
-                        <Link href="/apis">{markdownify(banner.usage, "h6", "opacity-1 text-primary font-medium inline")}
-                          <IoChevronForwardSharp className="inline-flex align-middle" />
+                      <span className="pl-3 text-[#ff941a]">
+                        <Link href="/apis">{markdownify(banner.usage, "h6", "text-[#ff941a] font-medium inline")}
+                          <IoChevronForwardSharp className="inline-flex align-middle " />
                         </Link>
                       </span>
                     </div>
                   </div>
 
                 </div>
-                <div className="sm:col-12 md:col-6 banner-img opacity-0">
+                <div className="col-12 lg:col-6 banner-img opacity-0">
                   <BannerHome />
                 </div>
               </div>
@@ -102,7 +102,7 @@ const Home = ({ data }) => {
                 <svg width="34" height="34" fill="currentColor" className="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-blue-500" aria-hidden="true">
                   <path fillRule="evenodd" clipRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
                 </svg>
-                <input className="search-input" type="text" aria-label="Filter projects" placeholder="请输入开源车名称..." />
+                <input className="search-input" type="text" aria-label="Filter projects" placeholder={banner.search_bar_placeholder} />
               </div>
             </div>
           </div>
