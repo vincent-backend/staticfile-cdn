@@ -22,5 +22,4 @@ section:
   jquery:
     title: "JQUERY"
     description: "JavaScript library for DOM operations"
-
 ---

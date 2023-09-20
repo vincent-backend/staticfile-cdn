@@ -39,5 +39,10 @@
     "enable": true,
     "shortname": "StaticFile-CDN",
     "settings": {}
+  },
+
+  "footer": {
+    "title_cn": "分享给朋友",
+    "title_en": "Share with friends"
   }
 }

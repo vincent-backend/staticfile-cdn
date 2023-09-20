@@ -4,9 +4,23 @@ import social from "@config/social.json";
 import Logo from "@layouts/components/Logo";
 import Image from "next/image";
 import Link from "next/link";
+import useTranslation from "@hooks/useTranslation";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
-  const { copyright, footer_content } = config.params;
+  const { title_cn, title_en } = config.footer;
+  const { locale, setLocale } = useTranslation();
+ 
+  const [title, setTitle] = useState(locale === "cn" ? title_cn : title_en);
+
+  useEffect(() => {
+    if (locale === "cn") {
+      setTitle(title_cn);
+    } else {
+      setTitle(title_en);
+    }
+  }, [locale]);
+
   return (
     <footer className="bg-white">
       <div className="container">
@@ -26,7 +40,7 @@ const Footer = () => {
         <div className="animate mt-8 md:col-12 lg:col-12 lg:mt-0">
           <div className="flex items-center">
             <div className="flex grow h-[2px] bg-border" />
-            <h2 className="h3 text-center font-sans font-medium mx-4">分享给朋友</h2>
+            <h2 className="h3 text-center font-sans font-medium mx-4">{title}</h2>
             <div className="flex grow h-[2px] bg-border" />
           </div>
           <div className="mt-5">
