@@ -471,5 +471,29 @@
       }
     }
   }
+}
 
+// banner-api
+.banner-api {
+  @apply relative w-[800px] h-[500px] bg-primary overflow-hidden;
+
+  .right-base {
+    @apply absolute left-[516px] top-[94px] w-[206px] h-[139px] bg-[url('/images/banners/API/～3@2x.png')];
+  }
+
+  .right-pipe {
+    @apply absolute left-[355px] top-[151px] w-[224px] h-[137px] bg-[url('/images/banners/API/line_1@2x.png')];
+
+    .slide{
+      @apply absolute left-[198px] top-[1px] w-[25px] h-[25px] bg-[url('/images/banners/API/line_1_slide@2x.png')] opacity-70;
+    }
+  }
+
+  .central-bottom {
+    @apply absolute left-[239px] top-[162px] w-[371px] h-[215px] bg-[url('/images/banners/API/～2@2x.png')];
+  }
+
+  .central-top {
+    @apply absolute left-[358px] top-[114px] w-[120px] h-[120px] bg-[url('/images/banners/API/～1@2x.png')];
+  }
 }

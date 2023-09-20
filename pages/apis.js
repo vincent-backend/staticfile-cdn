@@ -1,10 +1,9 @@
 import useTranslation from "@hooks/useTranslation";
 import Base from "@layouts/Baseof";
-import ImageFallback from "@layouts/components/ImageFallback";
 import { getDataFromContent } from "@lib/contentParser";
 import { gsap } from "@lib/gsap";
 import { markdownify } from "@lib/utils/textConverter";
-import BannerHome from "@layouts/components/banner/BannerHome";
+import BannerAPI from "@layouts/components/banner/BannerAPI";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -53,11 +52,11 @@ const Apis = ({ data }) => {
 
   return (
     <Base>
-      <section className="section bg-primary">
+      <section className="section bg-primary mx-0">
         <div className="container-banner">
           <div className="relative banner-bg z-10">
             <div className="row overflow-hidden rounded-2xl">
-              <div className="row relative pb-10">
+              <div className="row relative pb-10 px-0 mx-0">
                 <div className="col-12 lg:col-6 z-10">
                   <div className="banner-content col-12 pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20">
                     {markdownify(banner.title, "h3", "banner-title opacity-0")}
@@ -69,7 +68,7 @@ const Apis = ({ data }) => {
                   </div>
                 </div>
                 <div className="banner-img">
-                  <BannerHome />
+                  <BannerAPI />
                 </div>
               </div>
             </div>

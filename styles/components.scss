@@ -20,7 +20,7 @@
   }
 
   &-banner {
-    @apply mx-0 max-w-[1440px] lg:mx-auto lg:px-3;
+    @apply mx-0 max-w-[1440px] lg:mx-auto px-0;
   }
 
   &-main {
@@ -184,7 +184,7 @@
 }
 
 .banner-img {
-  @apply col-12 lg:col-6 opacity-0 flex justify-center;
+  @apply col-12 lg:col-6 opacity-0 flex justify-center px-0 mx-0;
 }
 
 //footer
