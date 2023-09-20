@@ -344,13 +344,12 @@
       opacity: 1;
       scale: 1;
     }
-  }
-
-  
+  }  
 
   //display
   .display {
     @apply absolute left-[354px] top-[90px] w-[397px] h-[321px] bg-[url('/images/banners/Statistics/2.png')];
+    
     animation: ani-s-display 3.6s infinite;
 
     .display-inner {
@@ -374,6 +373,102 @@
     }
     20%, 100% {
       opacity: 1;
+    }
+  }
+
+  //diagram3
+  .diagram3 {
+    @apply absolute left-[289px] top-[196px] w-[38px] h-[56px];
+    clip-path: polygon(0 0, 100% 0, 100% 47px, 50% 100%, 0% 47px);
+
+    .inner {
+      @apply absolute left-[0px] top-[0px] w-[38px] h-[56px];
+      animation: inner 3.6s infinite;
+
+      .left {
+        @apply absolute left-[0px] top-[11px] w-[19px] h-[44px] bg-[url('/images/banners/Statistics/3.png')];
+      }
+
+      .right {
+        @apply absolute left-[19px] top-[11px] w-[19px] h-[44px] bg-[url('/images/banners/Statistics/4.png')];
+      }
+
+      .top {
+        @apply absolute left-[1px] top-[1px] w-[38px] h-[22px] bg-[url('/images/banners/Statistics/5.png')];
+      }
+
+      @keyframes inner {
+        0% {
+          transform: translateY(56px);
+        }
+        31.1%, 100% {
+          transform: translateY(0rem);
+        }
+      }
+    }
+  }
+
+  //diagram2
+  .diagram2 {
+    @apply absolute left-[259px] top-[153px] w-[38px] h-[82px];
+    clip-path: polygon(0 0, 100% 0, 100% 73px, 50% 100%, 0% 73px);
+
+    .inner {
+      @apply absolute left-[0px] top-[0px] w-[38px] h-[82px];
+      animation: inner 3.6s infinite;
+
+      .left {
+        @apply absolute left-[0px] top-[11px] w-[19px] h-[71px] bg-[url('/images/banners/Statistics/6.png')];
+      }
+
+      .right {
+        @apply absolute left-[19px] top-[11px] w-[19px] h-[71px] bg-[url('/images/banners/Statistics/7.png')];
+      }
+
+      .top {
+        @apply absolute left-[1px] top-[1px] w-[38px] h-[22px] bg-[url('/images/banners/Statistics/8.png')];
+      }
+
+      @keyframes inner {
+        0% {
+          transform: translateY(82px);
+        }
+        42.22%, 100% {
+          transform: translateY(0rem);
+        }
+      }
+    }
+  }
+
+  //diagram1
+  .diagram1 {
+    @apply absolute left-[226px] top-[109px] w-[38px] h-[109px];
+    clip-path: polygon(0 0, 100% 0, 100% 100px, 50% 100%, 0% 100px);
+
+    .inner {
+      @apply absolute left-[0px] top-[0px] w-[38px] h-[109px];
+      animation: inner 3.6s infinite;
+
+      .left {
+        @apply absolute left-[0px] top-[11px] w-[19px] h-[99px] bg-[url('/images/banners/Statistics/9.png')];
+      }
+
+      .right {
+        @apply absolute left-[19px] top-[11px] w-[19px] h-[99px] bg-[url('/images/banners/Statistics/10.png')];
+      }
+
+      .top {
+        @apply absolute left-[1px] top-[1px] w-[38px] h-[22px] bg-[url('/images/banners/Statistics/11.png')];
+      }
+
+      @keyframes inner {
+        0% {
+          transform: translateY(110px);
+        }
+        56.67%, 100% {
+          transform: translateY(0rem);
+        }
+      }
     }
   }
 
