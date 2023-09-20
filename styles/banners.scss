@@ -255,11 +255,100 @@
 .banner-statistics {
   @apply relative w-[800px] h-[500px] bg-primary;
 
+  //book
   .book {
     @apply absolute left-[123px] top-[250px] w-[311px] h-[206px] bg-[url('/images/banners/Statistics/18.png')];
+
+    .book-title {
+      @apply absolute left-[106px] top-[39px] w-[96px] h-[55px] bg-[url('/images/banners/Statistics/12.png')];
+      animation: ani-s-book-title 3.6s infinite;
+    }
+
+    .trangulate {
+      @apply absolute left-[103px] top-[81px] w-[48px] h-[29px] bg-[url('/images/banners/Statistics/16.png')];
+      animation: ani-s-trangulate 3.6s infinite;
+    }
+
+    .dot-green {
+      @apply absolute left-[96px] top-[69px] w-[34px] h-[20px] bg-[url('/images/banners/Statistics/13.png')];
+      animation: ani-s-dot-green 3.6s infinite;
+    }
+
+    .dot-yellow {
+      @apply absolute left-[136px] top-[92px] w-[33px] h-[20px] bg-[url('/images/banners/Statistics/14.png')];
+      animation: ani-s-dot-yellow 3.6s infinite;
+    }
+
+    .dot-blue {
+      @apply absolute left-[86px] top-[98px] w-[33px] h-[19px] bg-[url('/images/banners/Statistics/15.png')];
+      animation: ani-s-dot-blue 3.6s infinite;
+    }
   }
 
-  //div-display
+  @keyframes ani-s-book-title {
+    0% {
+      opacity: 0;
+      transform: translate(0rem, 0rem);
+    }
+
+    15% {
+      opacity: 1;
+    }
+
+    25%, 100% {
+      transform: translate(11px, 7px);
+    }
+  }
+
+  @keyframes ani-s-trangulate {
+    0%, 8.33% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes ani-s-dot-green {
+    0%, 8.33% {
+      opacity: 0;
+      scale: 0;
+    }
+
+    23.33%, 100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  @keyframes ani-s-dot-yellow {
+    0%, 17.77% {
+      opacity: 0;
+      scale: 0;
+    }
+
+    28.89%, 100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  @keyframes ani-s-dot-blue {
+    0%, 23.33% {
+      opacity: 0;
+      scale: 0;
+    }
+
+    34.44%, 100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  
+
+  //display
   .display {
     @apply absolute left-[354px] top-[90px] w-[397px] h-[321px] bg-[url('/images/banners/Statistics/2.png')];
     animation: ani-s-display 3.6s infinite;
@@ -283,7 +372,7 @@
     0% {
       opacity: 0;
     }
-    16.67%, 100% {
+    20%, 100% {
       opacity: 1;
     }
   }
