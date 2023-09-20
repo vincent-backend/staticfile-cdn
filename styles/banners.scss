@@ -250,3 +250,17 @@
   }
 
 }
+
+//banner-statistics
+.banner-statistics {
+  @apply relative w-[800px] h-[500px] bg-primary;
+
+  .div-book {
+    @apply absolute left-[123px] top-[250px] w-[311px] h-[206px] bg-[url('/images/banners/Statistics/18.png')];
+  }
+
+  .div-display {
+    @apply absolute left-[354px] top-[90px] w-[397px] h-[321px] bg-[url('/images/banners/Statistics/2.png')];
+  }
+
+}

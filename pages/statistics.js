@@ -1,7 +1,6 @@
 import useTranslation from "@hooks/useTranslation";
-import BannerHome from "@layouts/components/banner/BannerHome";
+import BannerStatistics from "@layouts/components/banner/BannerStatistics";
 import Base from "@layouts/Baseof";
-import ImageFallback from "@layouts/components/ImageFallback";
 import { getDataFromContent } from "@lib/contentParser";
 import { gsap } from "@lib/gsap";
 import { markdownify } from "@lib/utils/textConverter";
@@ -69,7 +68,7 @@ const Statistics = ({ data }) => {
                   </div>
                 </div>
                 <div className="banner-img">
-                  <BannerHome />
+                  <BannerStatistics />
                 </div>
               </div>
             </div>

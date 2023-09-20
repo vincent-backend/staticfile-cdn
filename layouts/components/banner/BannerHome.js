@@ -1,7 +1,7 @@
 const BannerHome = () => {
     return(
         <div className="banner-home">
-            {/*Left Topr*/}
+            {/*Left Top*/}
             <div className="left-top">
                 <div className="bottom" />
                 <div className="top" />
