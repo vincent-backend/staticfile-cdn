@@ -255,12 +255,37 @@
 .banner-statistics {
   @apply relative w-[800px] h-[500px] bg-primary;
 
-  .div-book {
+  .book {
     @apply absolute left-[123px] top-[250px] w-[311px] h-[206px] bg-[url('/images/banners/Statistics/18.png')];
   }
 
-  .div-display {
+  //div-display
+  .display {
     @apply absolute left-[354px] top-[90px] w-[397px] h-[321px] bg-[url('/images/banners/Statistics/2.png')];
+    animation: ani-s-display 3.6s infinite;
+
+    .display-inner {
+      @apply absolute left-[7px] top-[71px] w-[200px] h-[243px] bg-[url('/images/banners/Statistics/1.png')];
+      animation: ani-s-display-inner 3.6s infinite;
+    }
+  }
+
+  @keyframes ani-s-display {
+    0%, 33.33%, 66.67%, 100% {
+      transform: translateY(0);
+    }
+    16.67%, 50%, 83.33% {
+      transform: translateY(0.68rem);
+    }
+  }
+
+  @keyframes ani-s-display-inner {
+    0% {
+      opacity: 0;
+    }
+    16.67%, 100% {
+      opacity: 1;
+    }
   }
 
 }

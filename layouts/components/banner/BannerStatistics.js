@@ -1,8 +1,10 @@
 const BannerStatistics = () => {
     return(
         <div className="banner-statistics">
-            <div className="div-book" />
-            <div className="div-display" />
+            <div className="book" />
+            <div className="display">
+                <div className="display-inner" />
+            </div>
         </div>
     );
 }
