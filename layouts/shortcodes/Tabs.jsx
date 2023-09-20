@@ -10,7 +10,7 @@ function Tabs({ children }) {
     const items = [...tabItemsRef.current.children];
     const activeItem = items.find((item) => !item.classList.contains("hidden"));
     const activeTabLink = tabLinks.find((item) =>
-      item.classList.contains("active-tab")
+      item.classList.contains("active-tab"),
     );
     if (activeItem === items[index]) return;
     activeTabLink.classList.remove("active-tab", "z-10", "text-white");
@@ -33,7 +33,13 @@ function Tabs({ children }) {
         {children.map((item, index) => (
           <li
             key={index}
-            className={`${index !== 0 && "-ml-5"} shrink-0 w-[163px] h-[50] cursor-pointer px-8 py-3 font-semibold text-base indent-4 tracking-wide ${index === 0 && "text-white"} ${index > 0 && "text-dark"} ${index === 0 && "active-tab z-10"} ${index > 0 && "tab"}`}
+            className={`${
+              index !== 0 && "-ml-5"
+            } shrink-0 w-[163px] h-[50] cursor-pointer px-8 py-3 font-semibold text-base indent-4 tracking-wide ${
+              index === 0 && "text-white"
+            } ${index > 0 && "text-dark"} ${index === 0 && "active-tab z-10"} ${
+              index > 0 && "tab"
+            }`}
             onClick={(e) => handleChangTab(e, index)}
           >
             {item.props.name}

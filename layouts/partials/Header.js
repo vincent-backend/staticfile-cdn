@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { use, useEffect, useRef, useState } from "react";
 import { CgClose } from "react-icons/cg";
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
 
 const Header = () => {
@@ -30,8 +30,7 @@ const Header = () => {
   useEffect(() => {
     if (locale === "cn") {
       setMain(cn);
-    }
-    else {
+    } else {
       setMain(en);
     }
   }, [locale]);
@@ -59,30 +58,37 @@ const Header = () => {
             <div className="bg-primary opacity-95 h-screen lg:flex lg:h-auto lg:ml-3 lg:bg-white">
               <div className="pb-20 lg:hidden" />
               {main.map((menu, i) => (
-              <React.Fragment key={`menu-${i}`}>
-                <li className="nav-item">
-                  <Link
-                    href={menu.url}
-                    className={`nav-link block ${
-                      asPath === menu.url && "active"
-                    }`}
-                  >
-                    {menu.name}
-                  </Link>
-                </li>
-              </React.Fragment>
-             ))}
+                <React.Fragment key={`menu-${i}`}>
+                  <li className="nav-item">
+                    <Link
+                      href={menu.url}
+                      className={`nav-link block ${
+                        asPath === menu.url && "active"
+                      }`}
+                    >
+                      {menu.name}
+                    </Link>
+                  </li>
+                </React.Fragment>
+              ))}
             </div>
-            
           </ul>
           <div className="order-1 ml-auto mr-2 flex items-center">
             {config.nav_button.enable && (
               <button
                 className="btn btn-primary mr-4 flex md:mr-10"
-                onClick={()=>setLocale(`${locale == "en" ? "cn" : "en"}`)}
+                onClick={() => setLocale(`${locale == "en" ? "cn" : "en"}`)}
               >
-                {locale === "en" ? config.nav_button.label_cn : config.nav_button.label_en}
-                <Image src="/images/swap.svg" alt="swap" width={20} height={16} className="ml-2" />
+                {locale === "en"
+                  ? config.nav_button.label_cn
+                  : config.nav_button.label_en}
+                <Image
+                  src="/images/swap.svg"
+                  alt="swap"
+                  width={20}
+                  height={16}
+                  className="ml-2"
+                />
               </button>
             )}
 
@@ -94,7 +100,6 @@ const Header = () => {
               >
                 <CgClose />
               </button>
-              
             ) : (
               <button
                 className="text-dark lg:hidden"

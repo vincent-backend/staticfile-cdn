@@ -10,24 +10,40 @@ const Footer = () => {
   return (
     <footer className="bg-white">
       <div className="container">
-        <div className="row border-y border-border py-12">
+        <div className="row  py-12">
           <div className="animate md:col-12 lg:col-4">
             <Logo />
           </div>
           <div className="animate flex sm:items-center sm:justify-center md:col-12 lg:items-start lg:justify-start lg:col-8">
-            <Image alt="f" src="/images/Footer_mark.png" width={429} height={72} />
+            <Image
+              alt="f"
+              src="/images/Footer_mark.png"
+              width={429}
+              height={72}
+            />
           </div>
         </div>
         <div className="animate mt-8 md:col-12 lg:col-12 lg:mt-0">
-            <h2 className="h5 font-sans text-center">分享给朋友</h2>
-            <div className="mt-5">
-              {/* social icons */}
-              <Social source={social} className="flex justify-center social-icons mt-5" />
-            </div>
+          <div className="flex items-center">
+            <div className="flex grow h-[2px] bg-border" />
+            <h2 className="h3 text-center font-sans font-medium mx-4">分享给朋友</h2>
+            <div className="flex grow h-[2px] bg-border" />
           </div>
+          <div className="mt-5">
+            {/* social icons */}
+            <Social
+              source={social}
+              className="flex justify-center social-icons mt-5"
+            />
+          </div>
+        </div>
         {/* copyright */}
         <div className=" py-6 text-center">
-          © Copyright 2014-{new Date().getFullYear()} <Link href="https://www.staticfile.org" className="footer-copy-write">Staticfile.org</Link> Built upon love
+          © Copyright 2014-{new Date().getFullYear()}{" "}
+          <Link href="https://www.staticfile.org" className="footer-copy-write">
+            Staticfile.org
+          </Link>{" "}
+          Built upon love
         </div>
       </div>
     </footer>

@@ -11,7 +11,7 @@ const shortcodes = {
   Tab,
   Tabs,
   Notice,
-  Code
+  Code,
 };
 
 export default shortcodes;
