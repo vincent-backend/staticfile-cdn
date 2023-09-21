@@ -495,6 +495,7 @@
 
   .central-top {
     @apply absolute left-[358px] top-[114px] w-[120px] h-[120px] bg-[url('/images/banners/API/～1@2x.png')];
+    animation: ani1 3.6s infinite;
   }
 
   .left_pipe {
@@ -506,8 +507,11 @@
 
   .computer {
     @apply absolute left-[83px] top-[256px] w-[278px] h-[252px] bg-[url('/images/banners/API/～4@2x.png')];
+    animation: ani1 3.6s infinite;
+
     .display{
       @apply absolute left-[136px] top-[44px] w-[57px] h-[87px] bg-[url('/images/banners/API/～5@2x.png')] opacity-70;
+      animation: ani2 3.6s infinite;
     }
   }
 
@@ -516,6 +520,24 @@
 
     .inner {
       @apply absolute left-[0px] top-[0px] w-[793px] h-[485px] bg-[url('/images/banners/API/～6@2x.png')];
+    }
+  }
+
+  @keyframes ani1 {
+    0%, 33.33%, 66.67%, 100% {
+      transform: translateY(0px);
+    }
+    16.67%, 50%, 83.33% {
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes ani2 {
+    0%, 33.33%, 66.67%, 100% {
+      transform: scale(1); 
+    }
+    16.67%, 50%, 83.33% {
+      transform: scale(1.2); 
     }
   }
 }
