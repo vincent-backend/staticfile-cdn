@@ -67,7 +67,9 @@ const Header = () => {
                         asPath === menu.url && "active"
                       }`}
                     >
-                      <div className="pl-[80px] text-left grow md:pl-0 md:grow-0 md:text-center">{menu.name}</div>
+                      <div className="pl-[80px] text-left grow md:pl-0 md:grow-0 md:text-center">
+                        {menu.name}
+                      </div>
                       <div className="grow text-right pr-[70px] md:hidden">
                         <IoChevronForwardSharp className="inline-flex text-[2rem]" />
                       </div>

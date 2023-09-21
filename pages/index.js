@@ -82,10 +82,10 @@ const Home = ({ data }) => {
                     "h5",
                     "banner-text text-justify opacity-0",
                   )}
-                  <div
-                    className={`banner-link opacity-0 w-fit mt-5`}
-                  >
-                    <span className=" h5 text-primary font-medium inline tracking-normal">$ npm install –g sfile </span>
+                  <div className={`banner-link opacity-0 w-fit mt-5`}>
+                    <span className=" h5 text-primary font-medium inline tracking-normal">
+                      $ npm install –g sfile{" "}
+                    </span>
                     <span className="text-[#292d33]">
                       {`//`}
                       {markdownify(

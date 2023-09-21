@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 const Footer = () => {
   const { title_cn, title_en } = config.footer;
   const { locale, setLocale } = useTranslation();
- 
+
   const [title, setTitle] = useState(locale === "cn" ? title_cn : title_en);
 
   useEffect(() => {
@@ -40,7 +40,9 @@ const Footer = () => {
         <div className="animate mt-8 md:col-12 lg:col-12 lg:mt-0">
           <div className="flex items-center">
             <div className="flex grow h-[2px] bg-border" />
-            <h2 className="h3 text-center font-sans font-medium mx-4">{title}</h2>
+            <h2 className="h3 text-center font-sans font-medium mx-4">
+              {title}
+            </h2>
             <div className="flex grow h-[2px] bg-border" />
           </div>
           <div className="mt-5">

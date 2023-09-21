@@ -13,23 +13,23 @@ const BannerStatistics = () => {
       </div>
       <div className="diagram1">
         <div className="inner">
-            <div className="top" />
-            <div className="left" />
-            <div className="right" />            
+          <div className="top" />
+          <div className="left" />
+          <div className="right" />
         </div>
       </div>
       <div className="diagram2">
         <div className="inner">
-            <div className="top" />
-            <div className="left" />
-            <div className="right" />            
+          <div className="top" />
+          <div className="left" />
+          <div className="right" />
         </div>
       </div>
       <div className="diagram3">
         <div className="inner">
-            <div className="top" />
-            <div className="left" />
-            <div className="right" />            
+          <div className="top" />
+          <div className="left" />
+          <div className="right" />
         </div>
       </div>
     </div>
