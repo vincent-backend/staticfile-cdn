@@ -58,7 +58,7 @@ const About = ({ data }) => {
           <div className="relative banner-bg z-10 overflow-hidden">
             <div className="row relative pb-10">
               <div className="col-12 lg:col-6 z-10">
-                <div className="banner-content col-12 pt-10 px-5 md:px-10 md:pt-20">
+                <div className="banner-content">
                   {markdownify(banner.title, "h3", "banner-title opacity-0")}
                   {markdownify(
                     banner.content,

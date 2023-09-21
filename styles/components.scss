@@ -120,6 +120,10 @@
   @apply text-white font-medium pt-4;
 }
 
+.banner-content {
+  @apply  col-12 pt-10 px-2 sm:px-4 md:px-10 md:pt-20;
+}
+
 .banner-link {
   @apply mt-4 rounded-md bg-white text-primary h-auto py-3 pl-3 items-center justify-center;
 }
@@ -175,7 +179,7 @@
 }
 
 .list-item {
-  @apply h4 hover:bg-[#e6f8f4] hover:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify;
+  @apply h5 md:h4 hover:bg-[#e6f8f4] hover:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify;
 }
 
 .about-subtitle {

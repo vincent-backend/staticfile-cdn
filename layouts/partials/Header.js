@@ -73,7 +73,7 @@ const Header = () => {
               ))}
             </div>
           </ul>
-          <div className="order-1 ml-auto mr-2 flex items-center">
+          <div className="order-1 ml-auto mr-1 flex items-center">
             {config.nav_button.enable && (
               <button
                 className="btn btn-primary truncate inline-flex w-[30px] px-0 sm:px-2 sm:w-fit mr-1 md:mr-10 "
@@ -105,7 +105,7 @@ const Header = () => {
                 className="text-dark lg:hidden"
                 onClick={() => setShowMenu(!showMenu)}
               >
-                <GiHamburgerMenu className="h-8 w-8" />
+                <GiHamburgerMenu className="h-8 w-7" />
               </button>
             )}
             {/* /navbar toggler */}
