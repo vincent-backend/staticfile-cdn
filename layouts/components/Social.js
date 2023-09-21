@@ -1,8 +1,8 @@
 import {
   IoLogoGithub,
+  IoLogoPinterest,
   IoLogoTwitter,
   IoLogoWhatsapp,
-  IoLogoPinterest,
 } from "react-icons/io5";
 
 const Social = ({ source, className }) => {

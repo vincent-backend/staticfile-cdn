@@ -75,7 +75,7 @@ const Home = ({ data }) => {
           <div className="banner-bg">
             <div className="row pb-4 ">
               <div className="col-12 lg:col-6">
-                <div className="banner-content col-12 pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20">
+                <div className="banner-content col-12 pt-10 px-5 md:px-10 md:pt-20">
                   {markdownify(banner.title, "h3", "banner-title opacity-0")}
                   {markdownify(
                     banner.content,
@@ -83,27 +83,25 @@ const Home = ({ data }) => {
                     "banner-text text-justify opacity-0",
                   )}
                   <div
-                    className={`banner-link opacity-0 ${
-                      locale == "en" ? "w-[400px]" : "w-[350px]"
-                    }`}
+                    className={`banner-link opacity-0 w-fit`}
                   >
-                    <span>$ npm install –g sfile </span>
+                    <span className=" h5 text-primary font-medium inline">$ npm install –g sfile </span>
                     <span className="text-[#292d33]">
                       {`//`}
                       {markdownify(
                         banner.installation_tools,
-                        "h6",
+                        "h5",
                         "opacity-1 text-[#292d33] font-medium inline",
                       )}
                     </span>
-                    <span className="pl-3 text-[#ff941a]">
+                    <span className="pl-3 text-[#ff941a] break-keep">
                       <Link href="/apis">
                         {markdownify(
                           banner.usage,
-                          "h6",
+                          "h5",
                           "text-[#ff941a] font-medium inline",
                         )}
-                        <IoChevronForwardSharp className="inline-flex align-middle " />
+                        <IoChevronForwardSharp className="inline-flex -mt-1 h4" />
                       </Link>
                     </span>
                   </div>
@@ -142,13 +140,13 @@ const Home = ({ data }) => {
         </div>
       </section>
       {/* React */}
-      <section className="animate section">
+      <section className="animate section tracking-normal">
         <div className="container-xl flex justify-center">
           <div className="col-12 pl-1 pr-1 md:col-10">
-            {markdownify(section.react.title, "h3", "section_title")}
+            {markdownify(section.react.title, "h2", "section_title")}
             {markdownify(
               section.react.description,
-              "h5",
+              "h4",
               "section_description",
             )}
             <Tabs>
@@ -177,11 +175,11 @@ const Home = ({ data }) => {
         </div>
       </section>
       {/* Vue */}
-      <section className="animate section">
+      <section className="animate section tracking-normal">
         <div className="container-xl flex justify-center">
           <div className="col-12 pl-1 pr-1 md:col-10">
-            {markdownify(section.vue.title, "h3", "section_title")}
-            {markdownify(section.vue.description, "h5", "section_description")}
+            {markdownify(section.vue.title, "h2", "section_title")}
+            {markdownify(section.vue.description, "h4", "section_description")}
             <Tabs>
               <Tab name="HTTPS">
                 <ul role="list" className="home-tab-ul">
@@ -208,13 +206,13 @@ const Home = ({ data }) => {
         </div>
       </section>
       {/* Angular JS */}
-      <section className="animate section">
+      <section className="animate section tracking-normal">
         <div className="container-xl flex justify-center">
           <div className="col-12 pl-1 pr-1 md:col-10">
-            {markdownify(section.angular.title, "h3", "section_title")}
+            {markdownify(section.angular.title, "h2", "section_title")}
             {markdownify(
               section.angular.description,
-              "h5",
+              "h4",
               "section_description",
             )}
             <Tabs>
@@ -243,13 +241,13 @@ const Home = ({ data }) => {
         </div>
       </section>
       {/* JQuery */}
-      <section className="animate section">
+      <section className="animate section tracking-normal">
         <div className="container-xl flex justify-center">
           <div className="col-12 pl-1 pr-1 md:col-10">
-            {markdownify(section.jquery.title, "h3", "section_title")}
+            {markdownify(section.jquery.title, "h2", "section_title")}
             {markdownify(
               section.jquery.description,
-              "h5",
+              "h4",
               "section_description",
             )}
             <Tabs>

@@ -8,7 +8,7 @@
 }
 
 .section_description {
-  @apply pb-5 text-dark font-normal text-justify;
+  @apply pb-5 text-gray-700 font-normal text-justify;
 }
 
 // container
@@ -121,7 +121,7 @@
 }
 
 .banner-link {
-  @apply mt-4 rounded-md bg-white text-primary h-12 pt-3 pl-3 items-center justify-center;
+  @apply mt-4 rounded-md bg-white text-primary h-auto py-3 pl-3 items-center justify-center;
 }
 
 .bg-theme {
@@ -158,7 +158,7 @@
 
 //banner
 .banner-img {
-  @apply col-12 lg:col-6 opacity-0 flex justify-center px-0 mx-0 overflow-hidden;
+  @apply col-12 lg:col-6 opacity-0 flex justify-center px-0 mx-0;
 }
 
 //footer
@@ -175,7 +175,7 @@
 }
 
 .list-item {
-  @apply h5 hover:bg-[#e6f8f4] hover:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify;
+  @apply h4 hover:bg-[#e6f8f4] hover:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify;
 }
 
 .about-subtitle {
@@ -183,7 +183,7 @@
 }
 
 .about-content {
-  @apply text-gray-800 text-justify font-medium pt-4 leading-normal;
+  @apply text-gray-700 text-justify font-medium pt-4;
   a {
     @apply text-primary;
   }

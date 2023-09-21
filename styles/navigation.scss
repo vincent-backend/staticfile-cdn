@@ -35,7 +35,7 @@
 }
 
 .nav-link {
-  @apply py-5 text-[1.5rem] font-medium text-white transition lg:text-[1.2rem]  lg:text-dark lg:py-4 lg:px-3;
+  @apply py-5 text-[1.8rem] font-medium text-white transition lg:text-[1.3rem] lg:text-dark lg:py-4 lg:px-3;
 
   &.active {
     @apply text-white lg:text-primary bg-[#17ac8e] lg:bg-white;

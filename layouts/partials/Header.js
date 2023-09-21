@@ -76,7 +76,7 @@ const Header = () => {
           <div className="order-1 ml-auto mr-2 flex items-center">
             {config.nav_button.enable && (
               <button
-                className="btn btn-primary mr-4 flex md:mr-10"
+                className="btn btn-primary hidden sm:inline-flex w-fit mr-3  md:mr-10"
                 onClick={() => setLocale(`${locale == "en" ? "cn" : "en"}`)}
               >
                 {locale === "en"
@@ -87,7 +87,7 @@ const Header = () => {
                   alt="swap"
                   width={20}
                   height={16}
-                  className="ml-2"
+                  className="ml-1 inline"
                 />
               </button>
             )}

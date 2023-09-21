@@ -13,7 +13,7 @@ const About = ({ data }) => {
   const [frontmatter, setFrontmatter] = useState(
     data.filter((dt) => dt.lang === locale)[0],
   );
-  const { banner, content1, content2 } = frontmatter;
+  const { banner, content, content1, content2 } = frontmatter;
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -53,7 +53,7 @@ const About = ({ data }) => {
 
   return (
     <Base>
-      <section className="section bg-primary">
+      <section className="section bg-primary ">
         <div className="container-banner">
           <div className="relative banner-bg z-10 overflow-hidden">
             <div className="row relative pb-10">
@@ -78,14 +78,12 @@ const About = ({ data }) => {
         <div className="flex justify-center -mt-40">
           <div className="col-12 md:col-11 lg:col-10">
             <div className="container-main">
-              <div className="div-information">
-                {markdownify(content1.subtitle, "h3", "about-subtitle")}
-                {markdownify(content1.description, "h4", "about-content")}
-              </div>
-              <div className="div-information">
-                {markdownify(content2.subtitle, "h3", "about-subtitle")}
-                {markdownify(content2.description, "h4", "about-content")}
-              </div>
+              {content.map((c, i) => (
+                <div className="div-information" key={i}>
+                  {markdownify(c.subtitle, "h3", "about-subtitle")}
+                  {markdownify(c.description, "h4", "about-content")}
+                </div>
+              ))}
             </div>
           </div>
         </div>
