@@ -70,9 +70,9 @@ const Home = ({ data }) => {
 
   return (
     <Base>
-      <section className="section">
-        <div className="container-banner">
-          <div className="banner-bg bg-primary z-10 overflow-hidden">
+      <section className="section bg-primary">
+        <div className="container-banner z-10 overflow-hidden">
+          <div className="banner-bg">
             <div className="row pb-4 ">
               <div className="col-12 lg:col-6">
                 <div className="banner-content col-12 pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20">
@@ -114,9 +114,9 @@ const Home = ({ data }) => {
               </div>
             </div>
           </div>
-          <div className="row -mt-1">
+          <div className="row max-w-[1440px]">
             <div className="flex justify-center items-center z-20">
-              <div className="col-10 absolute">
+              <div className="col-10 absolute mt-4 lg:col-9 xl:col-8 2xl:col-7">
                 <svg
                   width="34"
                   height="34"
