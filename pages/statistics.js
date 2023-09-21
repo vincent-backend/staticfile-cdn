@@ -57,7 +57,7 @@ const Statistics = ({ data }) => {
           <div className="relative banner-bg overflow-hidden">
             <div className="row relative pb-10">
               <div className="col-12 lg:col-6 z-10">
-                <div className="banner-content col-12 pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20">
+                <div className="banner-content col-12 pt-10 px-5 md:px-10 md:pt-20">
                   {markdownify(banner.title, "h3", "banner-title opacity-0")}
                   {markdownify(
                     banner.content,
