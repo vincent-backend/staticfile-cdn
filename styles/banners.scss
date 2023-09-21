@@ -472,7 +472,7 @@
 
 // banner-api
 .banner-api {
-  @apply relative w-[800px] h-[500px] bg-primary;
+  @apply relative w-[800px] h-[500px] bg-primary overflow-hidden;
 
   .right-base {
     @apply absolute left-[516px] top-[94px] w-[206px] h-[139px] bg-[url('/images/banners/API/～3@2x.png')];

@@ -54,22 +54,20 @@ const Feedback = ({ data }) => {
     <Base>
       <section className="section bg-primary">
         <div className="container-banner">
-          <div className="relative banner-bg z-10">
-            <div className="row overflow-hidden rounded-2xl">
-              <div className="row relative pb-10">
-                <div className="col-12 lg:col-6 z-10">
-                  <div className="banner-content col-12 pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20">
-                    {markdownify(banner.title, "h3", "banner-title opacity-0")}
-                    {markdownify(
-                      banner.content,
-                      "h5",
-                      "banner-text text-justify opacity-0",
-                    )}
-                  </div>
+          <div className="relative banner-bg z-10 overflow-hidden">
+            <div className="row relative pb-10">
+              <div className="col-12 lg:col-6 z-10">
+                <div className="banner-content col-12 pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20">
+                  {markdownify(banner.title, "h3", "banner-title opacity-0")}
+                  {markdownify(
+                    banner.content,
+                    "h5",
+                    "banner-text text-justify opacity-0",
+                  )}
                 </div>
-                <div className="banner-img">
-                  <BannerHome />
-                </div>
+              </div>
+              <div className="banner-img">
+                <BannerHome />
               </div>
             </div>
           </div>

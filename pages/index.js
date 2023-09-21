@@ -70,53 +70,53 @@ const Home = ({ data }) => {
 
   return (
     <Base>
-      <section className="section bg-primary">
+      <section className="section">
         <div className="container-banner">
-          <div className="relative banner-bg z-10">
-            <div className="row overflow-hidden rounded-2xl">
-              <div className="row relative pb-10">
-                <div className="col-12 lg:col-6 z-10">
-                  <div className="banner-content col-12 pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20">
-                    {markdownify(banner.title, "h3", "banner-title opacity-0")}
-                    {markdownify(
-                      banner.content,
-                      "h5",
-                      "banner-text text-justify opacity-0",
-                    )}
-                    <div
-                      className={`banner-link opacity-0 ${
-                        locale == "en" ? "w-[400px]" : "w-[350px]"
-                      }`}
-                    >
-                      <span>$ npm install –g sfile </span>
-                      <span className="text-[#292d33]">
-                        {`//`}
+          <div className="banner-bg bg-primary z-10 overflow-hidden">
+            <div className="row pb-4 ">
+              <div className="col-12 lg:col-6">
+                <div className="banner-content col-12 pt-10 pb-10 pr-10 pl-10 md:pr-6 md:pl-20 md:pl-15 md:pt-20">
+                  {markdownify(banner.title, "h3", "banner-title opacity-0")}
+                  {markdownify(
+                    banner.content,
+                    "h5",
+                    "banner-text text-justify opacity-0",
+                  )}
+                  <div
+                    className={`banner-link opacity-0 ${
+                      locale == "en" ? "w-[400px]" : "w-[350px]"
+                    }`}
+                  >
+                    <span>$ npm install –g sfile </span>
+                    <span className="text-[#292d33]">
+                      {`//`}
+                      {markdownify(
+                        banner.installation_tools,
+                        "h6",
+                        "opacity-1 text-[#292d33] font-medium inline",
+                      )}
+                    </span>
+                    <span className="pl-3 text-[#ff941a]">
+                      <Link href="/apis">
                         {markdownify(
-                          banner.installation_tools,
+                          banner.usage,
                           "h6",
-                          "opacity-1 text-[#292d33] font-medium inline",
+                          "text-[#ff941a] font-medium inline",
                         )}
-                      </span>
-                      <span className="pl-3 text-[#ff941a]">
-                        <Link href="/apis">
-                          {markdownify(
-                            banner.usage,
-                            "h6",
-                            "text-[#ff941a] font-medium inline",
-                          )}
-                          <IoChevronForwardSharp className="inline-flex align-middle " />
-                        </Link>
-                      </span>
-                    </div>
+                        <IoChevronForwardSharp className="inline-flex align-middle " />
+                      </Link>
+                    </span>
                   </div>
                 </div>
-                <div className="banner-img">
-                  <BannerHome />
-                </div>
+              </div>
+              <div className="banner-img">
+                <BannerHome />
               </div>
             </div>
-            <div className="flex justify-center items-center">
-              <div className="justify-center col-10 absolute -bottom-9 overflow-visible">
+          </div>
+          <div className="row -mt-1">
+            <div className="flex justify-center items-center z-20">
+              <div className="col-10 absolute">
                 <svg
                   width="34"
                   height="34"
