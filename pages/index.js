@@ -171,6 +171,9 @@ const Home = ({ data }) => {
                 </ul>
               </Tab>
             </Tabs>
+            <div className="pt-3 h5 font-medium text-primary">
+              <a href={section.react.href}>{section.online_store}</a>
+            </div>
           </div>
         </div>
       </section>
@@ -202,6 +205,9 @@ const Home = ({ data }) => {
                 </ul>
               </Tab>
             </Tabs>
+            <div className="pt-3 h5 font-medium text-primary">
+              <a href={section.react.href}>{section.online_store}</a>
+            </div>
           </div>
         </div>
       </section>
@@ -237,6 +243,9 @@ const Home = ({ data }) => {
                 </ul>
               </Tab>
             </Tabs>
+            <div className="pt-3 h5 font-medium text-primary">
+              <a href={section.react.href}>{section.online_store}</a>
+            </div>
           </div>
         </div>
       </section>
@@ -272,6 +281,9 @@ const Home = ({ data }) => {
                 </ul>
               </Tab>
             </Tabs>
+            <div className="pt-3 h5 font-medium text-primary">
+              <a href={section.react.href}>{section.online_store}</a>
+            </div>
           </div>
         </div>
       </section>
