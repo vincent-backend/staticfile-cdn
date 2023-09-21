@@ -13,14 +13,18 @@
 
 // container
 .container {
-  @apply mx-auto max-w-[1380px] lg:px-3;
+  @apply mx-auto max-w-[1380px];
   
+  &-header {
+    @apply max-w-[1200px] mx-auto;
+  }
+
   &-xl {
-    @apply max-w-[1440px] mx-auto px-3;
+    @apply max-w-[1440px] mx-auto;
   }
 
   &-banner {
-    @apply mx-0 px-0 max-w-[1440px] lg:mx-auto ;
+    @apply max-w-[1200px] lg:mx-auto ;
   }
 
   &-main {

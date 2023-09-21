@@ -32,8 +32,8 @@ const Footer = () => {
             <Image
               alt="f"
               src="/images/Footer_mark.png"
-              width={429}
-              height={72}
+              width={285}
+              height={50}
             />
           </div>
         </div>

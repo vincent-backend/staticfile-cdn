@@ -10,8 +10,8 @@ const Logo = ({ src }) => {
     <Link href="/" className="navbar-brand block">
       {src || logo ? (
         <ImageFallback
-          width={logo_width.replace("px", "") * 2}
-          height={logo_height.replace("px", "") * 2}
+          width={logo_width.replace("px", "")}
+          height={logo_height.replace("px", "")}
           src={src ? src : logo}
           alt={title}
           priority

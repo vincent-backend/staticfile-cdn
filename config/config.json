@@ -4,8 +4,9 @@
     "base_url": "/",
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
-    "logo_width": "226",
-    "logo_height": "45",
+    "logo_width": "165",
+    "logo_height": "60",
+    "logo_mobile": "/images/logo-mobile.png",
     "logo_text": "StaticFile CDN"
   },
 
@@ -24,7 +25,7 @@
 
   "nav_button": {
     "enable": true,
-    "label_en": "ENGLISH",
+    "label_en": "English",
     "label_cn": "汉语",
     "link": "/"
   },
