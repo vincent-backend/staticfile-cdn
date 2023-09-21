@@ -496,4 +496,26 @@
   .central-top {
     @apply absolute left-[358px] top-[114px] w-[120px] h-[120px] bg-[url('/images/banners/API/～1@2x.png')];
   }
+
+  .left_pipe {
+    @apply absolute left-[155px] top-[265px] w-[224px] h-[137px] bg-[url('/images/banners/API/line_1@2x.png')];
+    .slide{
+      @apply absolute left-[198px] top-[1px] w-[25px] h-[25px] bg-[url('/images/banners/API/line_1_slide@2x.png')] opacity-70;
+    }
+  }
+
+  .computer {
+    @apply absolute left-[83px] top-[256px] w-[278px] h-[252px] bg-[url('/images/banners/API/～4@2x.png')];
+    .display{
+      @apply absolute left-[136px] top-[44px] w-[57px] h-[87px] bg-[url('/images/banners/API/～5@2x.png')] opacity-70;
+    }
+  }
+
+  .belt {
+    @apply absolute left-[425px] top-[261px] w-[375px] h-[239px];
+
+    .inner {
+      @apply absolute left-[0px] top-[0px] w-[793px] h-[485px] bg-[url('/images/banners/API/～6@2x.png')];
+    }
+  }
 }
