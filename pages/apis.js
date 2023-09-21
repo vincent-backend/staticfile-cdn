@@ -88,7 +88,7 @@ const Apis = ({ data }) => {
                     "pt-4 text-primary font-medium leading-normal",
                   )}
                 </div>
-                <h3>Comming soon</h3>
+                <h3 className="py-5">Comming soon</h3>
               </div>
             </div>
           </div>
