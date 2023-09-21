@@ -49,7 +49,7 @@ const About = ({ data }) => {
     });
 
     return () => ctx.revert();
-  }, [locale]);
+  }, [locale, data]);
 
   return (
     <Base>

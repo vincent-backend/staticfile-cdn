@@ -48,7 +48,7 @@ const Feedback = ({ data }) => {
     });
 
     return () => ctx.revert();
-  }, [locale]);
+  }, [locale, data]);
 
   return (
     <Base>
