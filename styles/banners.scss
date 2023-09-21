@@ -261,27 +261,27 @@
 
     .book-title {
       @apply absolute left-[106px] top-[39px] w-[96px] h-[55px] bg-[url('/images/banners/Statistics/12.png')];
-      animation: ani-s-book-title 3.6s infinite;
+      animation: ani-s-book-title 3.6s linear infinite;
     }
 
     .trangulate {
       @apply absolute left-[103px] top-[81px] w-[48px] h-[29px] bg-[url('/images/banners/Statistics/16.png')];
-      animation: ani-s-trangulate 3.6s infinite;
+      animation: ani-s-trangulate 3.6s linear infinite;
     }
 
     .dot-green {
       @apply absolute left-[96px] top-[69px] w-[34px] h-[20px] bg-[url('/images/banners/Statistics/13.png')];
-      animation: ani-s-dot-green 3.6s infinite;
+      animation: ani-s-dot-green 3.6s linear infinite;
     }
 
     .dot-yellow {
       @apply absolute left-[136px] top-[92px] w-[33px] h-[20px] bg-[url('/images/banners/Statistics/14.png')];
-      animation: ani-s-dot-yellow 3.6s infinite;
+      animation: ani-s-dot-yellow 3.6s linear infinite;
     }
 
     .dot-blue {
       @apply absolute left-[86px] top-[98px] w-[33px] h-[19px] bg-[url('/images/banners/Statistics/15.png')];
-      animation: ani-s-dot-blue 3.6s infinite;
+      animation: ani-s-dot-blue 3.6s linear infinite;
     }
   }
 
@@ -291,11 +291,8 @@
       transform: translate(0rem, 0rem);
     }
 
-    15% {
-      opacity: 1;
-    }
-
     25%, 100% {
+      opacity: 1;
       transform: translate(11px, 7px);
     }
   }
@@ -354,7 +351,7 @@
 
     .display-inner {
       @apply absolute left-[7px] top-[71px] w-[200px] h-[243px] bg-[url('/images/banners/Statistics/1.png')];
-      animation: ani-s-display-inner 3.6s infinite;
+      animation: ani-s-display-inner 3.6s linear infinite;
     }
   }
 
@@ -367,15 +364,6 @@
     }
   }
 
-  @keyframes ani-s-display-inner {
-    0% {
-      opacity: 0;
-    }
-    20%, 100% {
-      opacity: 1;
-    }
-  }
-
   //diagram3
   .diagram3 {
     @apply absolute left-[289px] top-[196px] w-[38px] h-[56px];
@@ -383,7 +371,7 @@
 
     .inner {
       @apply absolute left-[0px] top-[0px] w-[38px] h-[56px];
-      animation: inner 3.6s infinite;
+      animation: ani-d3 linear 3.6s infinite;
 
       .left {
         @apply absolute left-[0px] top-[11px] w-[19px] h-[44px] bg-[url('/images/banners/Statistics/3.png')];
@@ -396,15 +384,6 @@
       .top {
         @apply absolute left-[1px] top-[1px] w-[38px] h-[22px] bg-[url('/images/banners/Statistics/5.png')];
       }
-
-      @keyframes inner {
-        0% {
-          transform: translateY(56px);
-        }
-        31.1%, 100% {
-          transform: translateY(0rem);
-        }
-      }
     }
   }
 
@@ -415,7 +394,7 @@
 
     .inner {
       @apply absolute left-[0px] top-[0px] w-[38px] h-[82px];
-      animation: inner 3.6s infinite;
+      animation: ani-d2 3.6s linear infinite;
 
       .left {
         @apply absolute left-[0px] top-[11px] w-[19px] h-[71px] bg-[url('/images/banners/Statistics/6.png')];
@@ -428,15 +407,6 @@
       .top {
         @apply absolute left-[1px] top-[1px] w-[38px] h-[22px] bg-[url('/images/banners/Statistics/8.png')];
       }
-
-      @keyframes inner {
-        0% {
-          transform: translateY(82px);
-        }
-        42.22%, 100% {
-          transform: translateY(0rem);
-        }
-      }
     }
   }
 
@@ -447,7 +417,7 @@
 
     .inner {
       @apply absolute left-[0px] top-[0px] w-[38px] h-[109px];
-      animation: inner 3.6s infinite;
+      animation: ani-d1 3.6s linear infinite;
 
       .left {
         @apply absolute left-[0px] top-[11px] w-[19px] h-[99px] bg-[url('/images/banners/Statistics/9.png')];
@@ -460,22 +430,49 @@
       .top {
         @apply absolute left-[1px] top-[1px] w-[38px] h-[22px] bg-[url('/images/banners/Statistics/11.png')];
       }
+    }
+  }
 
-      @keyframes inner {
-        0% {
-          transform: translateY(110px);
-        }
-        56.67%, 100% {
-          transform: translateY(0rem);
-        }
-      }
+  @keyframes ani-d1 {
+    0% {
+      transform: translateY(107px);
+    }
+    56.67%, 100% {
+      transform: translateY(0rem);
+    }
+  }
+
+  @keyframes ani-d2 {
+    0% {
+      transform: translateY(80px);
+    }
+    42.22%, 100% {
+      transform: translateY(0rem);
+    }
+  }
+
+  @keyframes ani-d3 {
+    0% {
+      transform: translateY(54px);
+    }
+    28.89%, 100% {
+      transform: translateY(0rem);
+    }
+  }
+
+  @keyframes ani-s-display-inner {
+    0% {
+      opacity: 0;
+    }
+    25%, 100% {
+      opacity: 1;
     }
   }
 }
 
 // banner-api
 .banner-api {
-  @apply relative w-[800px] h-[500px] bg-primary overflow-hidden;
+  @apply relative w-[800px] h-[500px] bg-primary;
 
   .right-base {
     @apply absolute left-[516px] top-[94px] w-[206px] h-[139px] bg-[url('/images/banners/API/～3@2x.png')];
@@ -486,6 +483,7 @@
 
     .slide{
       @apply absolute left-[198px] top-[1px] w-[25px] h-[25px] bg-[url('/images/banners/API/line_1_slide@2x.png')] opacity-70;
+      animation: ani-right-slide 3.6s linear infinite;
     }
   }
 
@@ -502,6 +500,7 @@
     @apply absolute left-[155px] top-[265px] w-[224px] h-[137px] bg-[url('/images/banners/API/line_1@2x.png')];
     .slide{
       @apply absolute left-[198px] top-[1px] w-[25px] h-[25px] bg-[url('/images/banners/API/line_1_slide@2x.png')] opacity-70;
+      animation: ani-left-slide 3.6s linear infinite;
     }
   }
 
@@ -517,9 +516,20 @@
 
   .belt {
     @apply absolute left-[425px] top-[261px] w-[375px] h-[239px];
+    clip-path: polygon(100% 100%, 100% 0, 68px 0, 3px 40px, 3px 100%);
 
     .inner {
       @apply absolute left-[0px] top-[0px] w-[793px] h-[485px] bg-[url('/images/banners/API/～6@2x.png')];
+      animation: anibelt linear 3.6s infinite;
+    }
+
+    @keyframes anibelt {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-180px, -107px);
+      }
     }
   }
 
@@ -540,4 +550,37 @@
       transform: scale(1.2); 
     }
   }
+
+  @keyframes ani-right-slide {
+    0% {
+      opacity: 0;
+      transform: translate(0, 0);
+    }
+    0.01% {
+      opacity: 0.7;
+    }
+    36.67%, 100% {
+      transform: translate(-84px, 48px);
+    }
+  }
+
+  @keyframes ani-left-slide {
+    0% {
+      opacity: 0;
+      transform: translate(0, 0);
+    }
+    66.67% {
+      opacity: 0;
+      transform: translate(0, 0);
+    }
+    67% {
+      opacity: 0.7;
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-74px, 41px);
+    }
+  }
+
+  
 }
