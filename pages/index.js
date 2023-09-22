@@ -114,7 +114,7 @@ const Home = ({ data }) => {
           </div>
           <div className="row content-xl">
             <div className="flex justify-center items-center z-20">
-              <div className="col-10 absolute mt-4 lg:col-9 xl:col-8 2xl:col-7">
+              <div className="col-10 absolute mt-4 md:col-12 container-xl">
                 <svg
                   width="34"
                   height="34"
