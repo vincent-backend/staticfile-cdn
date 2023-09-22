@@ -74,8 +74,8 @@ const Statistics = ({ data }) => {
         </div>
       </section>
       <section className="section">
-        <div className="flex justify-center -mt-40">
-          <div className="col-12 md:col-11 lg:col-10">
+        <div className="flex justify-center -mt-40 container-xl">
+          <div className="col-12">
             <div className="container-main">
               <div className="div-information">
                 <h3>Comming soon</h3>
