@@ -82,19 +82,19 @@ const Home = ({ data }) => {
                     "h5",
                     "banner-text text-justify opacity-0",
                   )}
-                  <div className={`banner-link opacity-0 w-fit mt-5`}>
-                    <span className=" h5 text-primary font-medium inline tracking-normal">
+                  <div className={`banner-link`}>
+                    <span className="text-[1rem] text-primary font-medium inline tracking-normal">
                       $ npm install –g sfile{" "}
                     </span>
-                    <span className="text-[#292d33]">
+                    <span className="text-[#292d33] text-[1rem]">
                       {`//`}
                       {markdownify(
                         banner.installation_tools,
                         "h6",
-                        "opacity-1 text-[#292d33] font-medium inline",
+                        "opacity-1 text-[#292d33] text-[1rem] font-medium inline",
                       )}
                     </span>
-                    <span className="pl-3 text-[#ff941a] break-keep">
+                    <span className="pl-3 text-[#ff941a] text-[1rem] break-keep">
                       <Link href="/apis">
                         {markdownify(
                           banner.usage,
@@ -112,7 +112,7 @@ const Home = ({ data }) => {
               </div>
             </div>
           </div>
-          <div className="row max-w-[1440px]">
+          <div className="row content-xl">
             <div className="flex justify-center items-center z-20">
               <div className="col-10 absolute mt-4 lg:col-9 xl:col-8 2xl:col-7">
                 <svg
@@ -142,7 +142,7 @@ const Home = ({ data }) => {
       {/* React */}
       <section className="animate section tracking-normal">
         <div className="container-xl flex justify-center">
-          <div className="col-12 pl-1 pr-1 md:col-10">
+          <div className="col-12 px-1">
             {markdownify(section.react.title, "h3", "section_title")}
             {markdownify(
               section.react.description,
@@ -180,7 +180,7 @@ const Home = ({ data }) => {
       {/* Vue */}
       <section className="animate section tracking-normal">
         <div className="container-xl flex justify-center">
-          <div className="col-12 pl-1 pr-1 md:col-10">
+          <div className="col-12 px-1">
             {markdownify(section.vue.title, "h3", "section_title")}
             {markdownify(section.vue.description, "h5", "section_description")}
             <Tabs>
@@ -214,7 +214,7 @@ const Home = ({ data }) => {
       {/* Angular JS */}
       <section className="animate section tracking-normal">
         <div className="container-xl flex justify-center">
-          <div className="col-12 pl-1 pr-1 md:col-10">
+          <div className="col-12 px-1">
             {markdownify(section.angular.title, "h3", "section_title")}
             {markdownify(
               section.angular.description,
@@ -252,7 +252,7 @@ const Home = ({ data }) => {
       {/* JQuery */}
       <section className="animate section tracking-normal">
         <div className="container-xl flex justify-center">
-          <div className="col-12 pl-1 pr-1 md:col-10">
+          <div className="col-12 px-1">
             {markdownify(section.jquery.title, "h3", "section_title")}
             {markdownify(
               section.jquery.description,

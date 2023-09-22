@@ -66,7 +66,7 @@ module.exports = {
         h6: h6 + "rem",
       },
       fontFamily: {
-        primary: ["ui-sans-serif", "system-ui", "Segoe UI", "Arial", "sans-serif"],
+        primary: ["ui-serif", "sans-serif", "ui-sans-serif", "Segoe UI", "Arial", "system-ui"],
         secondary: [fontSecondary, fontSecondaryType],
 
       },

@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  @apply text-[15px] bg-white font-primary font-normal leading-relaxed tracking-wide text-text overscroll-y-none;
+  @apply text-[15px] bg-white font-normal antialiased leading-relaxed text-text overscroll-y-none;
 }
 
 h1,
