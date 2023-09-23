@@ -53,11 +53,11 @@ const Statistics = ({ data }) => {
   return (
     <Base>
       <section className="section bg-primary">
-        <div className="container-banner">
-          <div className="relative banner-bg overflow-hidden">
-            <div className="row relative pb-10">
-              <div className="col-12 lg:col-6 z-10">
-                <div className="banner-content">
+        <div className="container z-10 overflow-hidden">
+          <div className="banner-bg md:h-[300px]">
+            <div className="row">
+              <div className="col-12 md:col-6">
+                <div className="banner-content z-20">
                   {markdownify(banner.title, "h3", "banner-title opacity-0")}
                   {markdownify(
                     banner.content,
@@ -66,16 +66,18 @@ const Statistics = ({ data }) => {
                   )}
                 </div>
               </div>
-              <div className="banner-img">
-                <BannerStatistics />
+              <div className="banner-img flex col-12 md:col-6 opacity-0 justify-center items-center px-0 lg:right-0">
+                <div className="md:absolute md:mt-28">
+                  <BannerStatistics />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
       <section className="section">
-        <div className="flex justify-center -mt-40 container-xl">
-          <div className="col-12">
+        <div className="flex justify-center container px-0">
+          <div className="col-12 -mt-16 mb-3">
             <div className="container-main">
               <div className="div-information">
                 <h3>Comming soon</h3>

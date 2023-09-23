@@ -28,14 +28,14 @@ function Tabs({ children }) {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative mt-8">
       <ul className="mb-0 flex list-none items-center pl-0">
         {children.map((item, index) => (
           <li
             key={index}
             className={`${
               index !== 0 && "-ml-3"
-            } shrink-0 w-[117px] h-[36px] cursor-pointer flex items-center justify-center font-semibold text-[18px] pr-[6px] tracking-wide ${
+            } shrink-0 w-[120px] h-[36px] cursor-pointer flex items-center justify-center font-semibold text-[18px] pr-[6px] tracking-wide ${
               index === 0 && "text-white"
             } ${index > 0 && "text-dark"} ${index === 0 && "active-tab z-10"} ${
               index > 0 && "tab"

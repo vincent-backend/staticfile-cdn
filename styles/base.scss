@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  @apply text-[15px] bg-white font-normal antialiased leading-relaxed text-text overscroll-y-none;
+  @apply text-base bg-white font-primary font-normal antialiased leading-relaxed text-text overscroll-y-none;
 }
 
 h1,
@@ -27,7 +27,7 @@ h2,
 
 h3,
 .h3 {
-  @apply text-h3-sm md:text-h3;
+  @apply text-h3-sm md:text-h3 pb-2;
 }
 
 h4,

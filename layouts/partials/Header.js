@@ -45,14 +45,14 @@ const Header = () => {
         }`}
         ref={headerRef}
       >
-        <nav className="navbar md:container-header">
+        <nav className="navbar container">
           {/* logo */}
           <div className="order-0 py-0">
             <Logo src={logo} />
           </div>
           <ul
             id="nav-menu"
-            className={`navbar-nav order-2 justify-start ml-0 md:order-1 md:flex ${
+            className={`navbar-nav order-2 justify-start ml-0 pt-1 md:order-1 md:flex ${
               !showMenu && "hidden"
             }`}
           >

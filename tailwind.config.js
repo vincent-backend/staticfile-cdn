@@ -1,6 +1,6 @@
 const theme = require("./config/theme.json");
 
-let font_base = Number(theme.fonts.font_size.base.replace("px", ""));
+let font_base = 16;
 let font_scale = Number(theme.fonts.font_size.scale);
 let h6 = font_base / font_base;
 let h5 = h6 * font_scale;
@@ -8,19 +8,7 @@ let h4 = h5 * font_scale;
 let h3 = h4 * font_scale;
 let h2 = h3 * font_scale;
 let h1 = h2 * font_scale;
-let fontPrimary, fontPrimaryType, fontSecondary, fontSecondaryType;
-if (theme.fonts.font_family.primary) {
-  fontPrimary = theme.fonts.font_family.primary
-    .replace(/\+/g, " ")
-    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
-  fontPrimaryType = theme.fonts.font_family.primary_type;
-}
-if (theme.fonts.font_family.secondary) {
-  fontSecondary = theme.fonts.font_family.secondary
-    .replace(/\+/g, " ")
-    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
-  fontSecondaryType = theme.fonts.font_family.secondary_type;
-}
+
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -31,11 +19,11 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: "540px",
-      md: "768px",
-      lg: "992px",
-      xl: "1200px",
-      "2xl": "1536px",
+      sm: "480px",
+      md: "750px",
+      lg: "1080px",
+      xl: "1280px",
+      "2xl": "1440px",
     },
     container: {
       center: true,
@@ -64,11 +52,10 @@ module.exports = {
         h4: h4 + "rem",
         h5: h5 + "rem",
         h6: h6 + "rem",
+        "h7": "12px"
       },
       fontFamily: {
-        primary: ["ui-serif", "sans-serif", "ui-sans-serif", "Segoe UI", "Arial", "system-ui"],
-        secondary: [fontSecondary, fontSecondaryType],
-
+        primary: ['var(--font-pingfang)']
       },
     },
   },

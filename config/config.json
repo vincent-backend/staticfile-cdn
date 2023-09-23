@@ -44,6 +44,8 @@
 
   "footer": {
     "title_cn": "分享给朋友",
-    "title_en": "Share with friends"
+    "title_en": "Share with friends",
+    "support_cn": "CDN 加速由七牛云提供，技术社区掘金支持",
+    "support_en": "CDN acceleration is provided by Qiniu Cloud and supported by technical community Nuggets"
   }
 }

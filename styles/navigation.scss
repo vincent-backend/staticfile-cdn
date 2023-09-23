@@ -35,7 +35,7 @@
 }
 
 .nav-link {
-  @apply text-[2rem] font-medium font-primary text-white transition md:text-[0.85rem] md:text-dark h-[100px] md:h-auto;
+  @apply text-base font-medium font-primary text-white transition md:text-[0.85rem] md:text-dark h-[100px] md:h-auto;
 
   &.active {
     @apply text-white md:text-primary bg-[#17ac8e] md:bg-white font-[500];
