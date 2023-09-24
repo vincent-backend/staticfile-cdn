@@ -77,7 +77,7 @@ const Apis = ({ data }) => {
       </section>
       <section className="section">
         <div className="flex justify-center container px-0">
-          <div className="col-12 -mt-16 mb-3">
+          <div className="col-12 -mt-16 mb-12">
             <div className="container-main">
             <div className="div-api">
                 <div className="">
