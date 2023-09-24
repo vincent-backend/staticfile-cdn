@@ -45,7 +45,7 @@ const Header = () => {
         }`}
         ref={headerRef}
       >
-        <nav className="navbar container">
+        <nav className="navbar container-header">
           {/* logo */}
           <div className="order-0 py-0">
             <Logo src={logo} />
@@ -56,7 +56,7 @@ const Header = () => {
               !showMenu && "hidden"
             }`}
           >
-            <div className="bg-primary opacity-95 w-full h-screen md:flex md:h-auto md:bg-white md:space-x-10">
+            <div className="bg-primary opacity-95 w-full h-screen md:flex md:h-auto md:bg-white md:space-x-11">
               <div className="h-24 md:hidden" />
               {main.map((menu, i) => (
                 <React.Fragment key={`menu-${i}`}>

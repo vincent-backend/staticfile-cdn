@@ -79,7 +79,7 @@ const Apis = ({ data }) => {
         <div className="flex justify-center container px-0">
           <div className="col-12 -mt-16 mb-3">
             <div className="container-main">
-            <div className="div-information">
+            <div className="div-api">
                 <div className="">
                   {markdownify(api.title, "h3", "text-primary")}
                 </div>

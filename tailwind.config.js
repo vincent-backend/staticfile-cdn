@@ -1,6 +1,6 @@
 const theme = require("./config/theme.json");
 
-let font_base = 16;
+let font_base = 14;
 let font_scale = Number(theme.fonts.font_size.scale);
 let h6 = font_base / font_base;
 let h5 = h6 * font_scale;
@@ -22,7 +22,7 @@ module.exports = {
       sm: "480px",
       md: "750px",
       lg: "1080px",
-      xl: "1280px",
+      xl: "1260px",
       "2xl": "1440px",
     },
     container: {

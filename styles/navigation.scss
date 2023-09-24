@@ -35,10 +35,10 @@
 }
 
 .nav-link {
-  @apply text-base font-medium font-primary text-white transition md:text-[0.85rem] md:text-dark h-[100px] md:h-auto;
+  @apply text-h3 font-medium font-primary text-white transition md:text-base md:text-dark h-[100px] md:h-auto;
 
   &.active {
-    @apply text-white md:text-primary bg-[#17ac8e] md:bg-white font-[500];
+    @apply text-white font-bold md:text-primary bg-[#17ac8e] md:bg-white;
   }
 }
 

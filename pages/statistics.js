@@ -79,7 +79,7 @@ const Statistics = ({ data }) => {
         <div className="flex justify-center container px-0">
           <div className="col-12 -mt-16 mb-3">
             <div className="container-main">
-              <div className="div-information">
+              <div className="div-statisitcs">
                 <h3>Comming soon</h3>
               </div>
             </div>

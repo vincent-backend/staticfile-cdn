@@ -68,7 +68,7 @@ const About = ({ data }) => {
               </div>
               <div className="banner-img flex col-12 md:col-6 opacity-0 justify-center items-center px-0 lg:right-0">
                 <div className="md:absolute md:mt-6">
-                  <BannerAPI />
+                  
                 </div>
               </div>
             </div>
@@ -77,12 +77,12 @@ const About = ({ data }) => {
       </section>
       <section className="section">
         <div className="flex justify-center container px-0">
-          <div className="col-12 -mt-16 mb-3">
+          <div className="col-12 -mt-16 mb-12">
             <div className="container-main">
             {content.map((c, i) => (
-                <div className="div-information" key={i}>
-                  {markdownify(c.subtitle, "h3", "about-subtitle")}
-                  {markdownify(c.description, "h4", "about-content")}
+                <div className="div-about" key={i}>
+                  {markdownify(c.subtitle, "h5", "about-subtitle")}
+                  {markdownify(c.description, "h6", "about-content")}
                 </div>
               ))}
             </div>

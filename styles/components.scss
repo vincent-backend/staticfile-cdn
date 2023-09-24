@@ -1,4 +1,5 @@
 /// global
+
 // section style
 .section {
   @apply bg-slate-100 font-primary;
@@ -9,20 +10,19 @@
 }
 
 .section_description {
-  @apply pb-5 text-black font-bold text-justify;
+  @apply pt-2 text-base font-bold text-justify;
 }
 
 // container
 .container {
-  @apply mx-auto max-w-[1200px] px-0;
+  @apply mx-auto max-w-[1240px] px-3 md:px-5;
 
-  &-main {
-    @apply relative bg-white rounded-xl ml-1 mr-1 border-8 border-white text-justify z-20 min-h-[200px] overflow-hidden;
+  &-header {
+    @apply mx-auto max-w-[1240px] px-0 md:px-5;
   }
-}
-
-.div-information {
-  @apply pt-4 pb-8 pl-4 pr-4;
+  &-main {
+    @apply relative max-w-[1240px] bg-white rounded-xl mx-3 md:mx-5 border-8 border-white text-justify z-20 min-h-[200px] overflow-hidden;
+  }
 }
 
 // form style
@@ -92,11 +92,11 @@
 
 //banner
 .banner-content {
-  @apply  col-12 pt-20 pl-7 pr-10 px-4 xl:px-0 md:pt-[90px];
+  @apply pr-2;
 }
 
 .banner-title {
-  @apply text-white text-[2.1rem] tracking-wide;
+  @apply text-white text-[2.3rem] tracking-wider;
 }
 
 .banner-text {
@@ -104,7 +104,7 @@
 }
 
 .banner-link {
-  @apply opacity-0 mt-9 rounded-md bg-white text-primary w-fit h-auto py-2 pl-3 items-center justify-center;
+  @apply opacity-0 mt-9 rounded-md bg-white text-[1.1rem] font-bold text-primary w-fit h-auto py-3 pl-3 items-center justify-center;
 }
 
 .bg-theme {
@@ -168,16 +168,33 @@
 }
 
 .list-item {
-  @apply font-primary hover:bg-[#e6f8f4] hover:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify;
+  @apply font-primary text-gray-700 hover:bg-[#e6f8f4] hover:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify;
 }
 
-/// about
+/// statistics
+.div-statistics {
+  @apply pt-12 pb-8 pl-4 pr-4;
+}
+
+/// api
+.div-api {
+  @apply pt-12 pb-8 pl-4 pr-4;
+}
+
+/// feedback
+
+
+/// about 
+.div-about {
+  @apply px-7 md:px-24 py-10;
+}
+
 .about-subtitle {
-  @apply text-primary font-medium pt-4;
+  @apply text-primary font-bold;
 }
 
 .about-content {
-  @apply text-gray-700 text-justify font-medium pt-4;
+  @apply text-dark text-[14px] text-justify font-bold break-words pt-4 leading-7;
   a {
     @apply text-primary;
   }

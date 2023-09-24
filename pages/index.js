@@ -76,7 +76,7 @@ const Home = ({ data }) => {
           <div className="banner-bg lg:h-[450px]">
             <div className="row">
               <div className="col-12 lg:col-6">
-                <div className="banner-content z-20">
+                <div className="pt-20 md:pt-[108px]">
                   {markdownify(banner.title, "h3", "banner-title opacity-0")}
                   {markdownify(
                     banner.content,
@@ -84,25 +84,25 @@ const Home = ({ data }) => {
                     "banner-text text-justify opacity-0",
                   )}
                   <div className={`banner-link`}>
-                    <span className="text-[1rem] text-primary font-medium inline tracking-normal">
+                    <span className="text-primary inline tracking-normal">
                       $ npm install –g sfile
                     </span>
-                    <span className="text-[#292d33] text-[1rem] ml-1">
+                    <span className="text-[#292d33] ml-1">
                       {`//`}
                       {markdownify(
                         banner.installation_tools,
                         "h6",
-                        "opacity-1 text-[#292d33] text-[1rem] font-medium inline",
+                        "opacity-1 text-[#292d33] inline",
                       )}
                     </span>
-                    <span className="pl-3 text-[#ff941a] text-[1rem] break-keep">
+                    <span className="pl-3 text-[#ff941a] break-keep">
                       <Link href="/apis">
                         {markdownify(
                           banner.usage,
                           "h6",
-                          "text-[#ff941a] font-medium inline",
+                          "text-[#ff941a] inline-flex",
                         )}
-                        <IoChevronForwardSharp className="inline-flex -mt-1 h4" />
+                        <IoChevronForwardSharp className="inline-flex h4" />
                       </Link>
                     </span>
                   </div>
@@ -131,13 +131,13 @@ const Home = ({ data }) => {
         </div>
       </section>
       {/* React */}
-      <section className="animate section pt-14">
+      <section className="animate section pt-16">
         <div className="container flex justify-center">
           <div className="col-12 px-1">
             {markdownify(section.react.title, "h3", "section_title")}
             {markdownify(
               section.react.description,
-              "text-base",
+              "h6",
               "section_description",
             )}
             <Tabs>
