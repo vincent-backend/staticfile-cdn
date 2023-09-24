@@ -57,7 +57,7 @@ const About = ({ data }) => {
           <div className="banner-bg md:h-[300px]">
             <div className="row">
               <div className="col-12 md:col-6">
-                <div className="banner-content z-20">
+                <div className="pt-20">
                   {markdownify(banner.title, "h3", "banner-title text-dark opacity-0")}
                   {markdownify(
                     banner.content,
