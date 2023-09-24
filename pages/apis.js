@@ -57,7 +57,7 @@ const Apis = ({ data }) => {
           <div className="banner-bg md:h-[300px]">
             <div className="row">
               <div className="col-12 md:col-6">
-                <div className="banner-content z-20">
+                <div className="pt-20">
                   {markdownify(banner.title, "h3", "banner-title opacity-0")}
                   {markdownify(
                     banner.content,
@@ -67,7 +67,7 @@ const Apis = ({ data }) => {
                 </div>
               </div>
               <div className="banner-img flex col-12 md:col-6 opacity-0 justify-center items-center px-0 lg:right-0">
-                <div className="md:absolute md:mt-6">
+                <div className="md:absolute md:mt-24">
                   <BannerAPI />
                 </div>
               </div>

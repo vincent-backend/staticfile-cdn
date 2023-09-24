@@ -173,7 +173,7 @@ const Home = ({ data }) => {
         <div className="container flex justify-center">
           <div className="col-12 px-1">
             {markdownify(section.vue.title, "h3", "section_title")}
-            {markdownify(section.vue.description, "text-base", "section_description")}
+            {markdownify(section.vue.description, "h6", "section_description")}
             <Tabs>
               <Tab name="HTTPS">
                 <ul role="list" className="home-tab-ul">
@@ -209,7 +209,7 @@ const Home = ({ data }) => {
             {markdownify(section.angular.title, "h3", "section_title")}
             {markdownify(
               section.angular.description,
-              "text-base",
+              "h6",
               "section_description",
             )}
             <Tabs>
@@ -247,7 +247,7 @@ const Home = ({ data }) => {
             {markdownify(section.jquery.title, "h3", "section_title")}
             {markdownify(
               section.jquery.description,
-              "text-base",
+              "h6",
               "section_description",
             )}
             <Tabs>
