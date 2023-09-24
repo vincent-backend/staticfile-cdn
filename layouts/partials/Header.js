@@ -79,7 +79,7 @@ const Header = () => {
               ))}
             </div>
           </ul>
-          <div className="order-1 ml-auto flex items-center">
+          <div className="order-1 ml-auto mr-5 flex items-center">
             {config.nav_button.enable && (
               <button
                 className="btn btn-primary flex items-center w-fit px-3 h-auto md:h-[34px] mr-1 sm:mr-14 md:mr-1"
@@ -91,9 +91,9 @@ const Header = () => {
                 <Image
                   src="/images/swap.svg"
                   alt="swap"
-                  width={20}
-                  height={16}
-                  className="ml-1 inline"
+                  width="0"
+                  height="0"
+                  className="ml-1 inline w-[20px] h-auto"
                 />
               </button>
             )}
@@ -108,10 +108,10 @@ const Header = () => {
               </button>
             ) : (
               <button
-                className="text-dark md:hidden"
+                className="h-8 w-8 text-3xl font-bold text-dark md:hidden"
                 onClick={() => setShowMenu(!showMenu)}
               >
-                <GiHamburgerMenu className="h-8 w-7" />
+                <GiHamburgerMenu className="h-8 w-8" />
               </button>
             )}
             {/* /navbar toggler */}

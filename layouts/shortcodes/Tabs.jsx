@@ -13,10 +13,10 @@ function Tabs({ children }) {
       item.classList.contains("active-tab"),
     );
     if (activeItem === items[index]) return;
-    activeTabLink.classList.remove("active-tab", "z-10", "text-white");
-    activeTabLink.classList.add("tab", "text-dark");
+    activeTabLink.classList.remove("active-tab", "z-20", "text-white");
+    activeTabLink.classList.add("tab", "text-dark", "z-10");
     event.currentTarget.classList.remove("tab", "text-dark");
-    event.currentTarget.classList.add("active-tab", "z-10", "text-white");
+    event.currentTarget.classList.add("active-tab", "z-20", "text-white");
     activeItem.classList.add("hidden");
     items[index].classList.remove("hidden");
   };
@@ -28,7 +28,7 @@ function Tabs({ children }) {
   }, []);
 
   return (
-    <div className="relative mt-8">
+    <div className="relative">
       <ul className="mb-0 flex list-none items-center pl-0">
         {children.map((item, index) => (
           <li

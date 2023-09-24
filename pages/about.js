@@ -58,7 +58,11 @@ const About = ({ data }) => {
             <div className="row">
               <div className="col-12 md:col-6">
                 <div className="pt-20">
-                  {markdownify(banner.title, "h3", "banner-title text-dark opacity-0")}
+                  {markdownify(
+                    banner.title,
+                    "h3",
+                    "banner-title text-dark opacity-0",
+                  )}
                   {markdownify(
                     banner.content,
                     "h5",
@@ -67,9 +71,7 @@ const About = ({ data }) => {
                 </div>
               </div>
               <div className="banner-img flex col-12 md:col-6 opacity-0 justify-center items-center px-0 lg:right-0">
-                <div className="md:absolute md:mt-6">
-                  
-                </div>
+                <div className="md:absolute md:mt-6"></div>
               </div>
             </div>
           </div>
@@ -79,7 +81,7 @@ const About = ({ data }) => {
         <div className="flex justify-center container px-0">
           <div className="col-12 -mt-16 mb-12">
             <div className="container-main">
-            {content.map((c, i) => (
+              {content.map((c, i) => (
                 <div className="div-about" key={i}>
                   {markdownify(c.subtitle, "h5", "about-subtitle")}
                   {markdownify(c.description, "h6", "about-content")}

@@ -52,7 +52,7 @@ const Apis = ({ data }) => {
 
   return (
     <Base>
-    <section className="section bg-primary">
+      <section className="section bg-primary">
         <div className="container z-10 overflow-hidden">
           <div className="banner-bg md:h-[300px]">
             <div className="row">
@@ -75,13 +75,41 @@ const Apis = ({ data }) => {
           </div>
         </div>
       </section>
+      {/* API */}
       <section className="section">
         <div className="flex justify-center container px-0">
-          <div className="col-12 -mt-16 mb-12">
+          <div className="col-12 -mt-16 mb-5">
             <div className="container-main">
-            <div className="div-api">
+              <div className="relative">
+                <div className="absolute w-fill h-4 left-0 top-0 bg-[url('/images/banners/Home/b16@2x.png')]">
+
+                </div>
+              </div>
+              <div className="div-api">
                 <div className="">
                   {markdownify(api.title, "h3", "text-primary")}
+                </div>
+                <div className="">
+                  {markdownify(
+                    api.content,
+                    "h4",
+                    "pt-4 text-primary font-medium leading-normal",
+                  )}
+                </div>
+                <h3 className="py-5">Comming soon</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* FAQ  */}
+      <section className="section">
+        <div className="flex justify-center container px-0">
+          <div className="col-12 mb-12">
+            <div className="container-main">
+              <div className="div-api">
+                <div className="">
+                  {markdownify(faq.title, "h3", "text-primary")}
                 </div>
                 <div className="">
                   {markdownify(

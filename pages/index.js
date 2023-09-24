@@ -3,7 +3,7 @@ import { markdownify } from "@lib/utils/textConverter";
 import { getDataFromContent } from "@lib/contentParser";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Dropdown from "@layouts/components/dropdown/Dropdown";
 import useTranslation from "@hooks/useTranslation";
 import Base from "@layouts/Baseof";
 import Tabs from "@layouts/shortcodes/Tabs";
@@ -140,28 +140,37 @@ const Home = ({ data }) => {
               "h6",
               "section_description",
             )}
-            <Tabs>
-              <Tab name="HTTPS">
-                <ul role="list" className="home-tab-ul">
-                  <li className="list-item">
-                    https://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.js
-                  </li>
-                  <li className="list-item">
-                    https://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.min.js
-                  </li>
-                </ul>
-              </Tab>
-              <Tab name="HTTP">
-                <ul role="list" className="home-tab-ul">
-                  <li className="list-item">
-                    http://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.js
-                  </li>
-                  <li className="list-item">
-                    http://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.min.js
-                  </li>
-                </ul>
-              </Tab>
-            </Tabs>
+
+            <div className="flex flex-col relative mt-8">
+              <div>
+                <Tabs>
+                  <Tab name="HTTPS">
+                    <ul role="list" className="home-tab-ul">
+                      <li className="list-item">
+                        https://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.js
+                      </li>
+                      <li className="list-item">
+                        https://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.min.js
+                      </li>
+                    </ul>
+                  </Tab>
+                  <Tab name="HTTP">
+                    <ul role="list" className="home-tab-ul">
+                      <li className="list-item">
+                        http://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.js
+                      </li>
+                      <li className="list-item">
+                        http://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.min.js
+                      </li>
+                    </ul>
+                  </Tab>
+                </Tabs>
+              </div>
+              <div className="absolute top-0 right-0">
+                <Dropdown />
+              </div>
+            </div>
+
             <div className="online-store">
               <a href={section.react.href}>{section.online_store}</a>
             </div>
@@ -174,28 +183,36 @@ const Home = ({ data }) => {
           <div className="col-12 px-1">
             {markdownify(section.vue.title, "h3", "section_title")}
             {markdownify(section.vue.description, "h6", "section_description")}
-            <Tabs>
-              <Tab name="HTTPS">
-                <ul role="list" className="home-tab-ul">
-                  <li className="list-item">
-                    https://cdn.staticfile.org/vue/3.3.4/vue.cis.js
-                  </li>
-                  <li className="list-item">
-                    https://cdn.staticfile.org/vue/3.3.4/vue.cis.min.js
-                  </li>
-                </ul>
-              </Tab>
-              <Tab name="HTTP">
-                <ul role="list" className="home-tab-ul">
-                  <li className="list-item">
-                    http://cdn.staticfile.org/vue/3.3.4/vue.cis.js
-                  </li>
-                  <li className="list-item">
-                    http://cdn.staticfile.org/vue/3.3.4/vue.cis.min.js
-                  </li>
-                </ul>
-              </Tab>
-            </Tabs>
+
+            <div className="flex flex-col relative mt-8">
+              <div>
+                <Tabs>
+                  <Tab name="HTTPS">
+                    <ul role="list" className="home-tab-ul">
+                      <li className="list-item">
+                        https://cdn.staticfile.org/vue/3.3.4/vue.cis.js
+                      </li>
+                      <li className="list-item">
+                        https://cdn.staticfile.org/vue/3.3.4/vue.cis.min.js
+                      </li>
+                    </ul>
+                  </Tab>
+                  <Tab name="HTTP">
+                    <ul role="list" className="home-tab-ul">
+                      <li className="list-item">
+                        http://cdn.staticfile.org/vue/3.3.4/vue.cis.js
+                      </li>
+                      <li className="list-item">
+                        http://cdn.staticfile.org/vue/3.3.4/vue.cis.min.js
+                      </li>
+                    </ul>
+                  </Tab>
+                </Tabs>
+              </div>
+              <div className="absolute top-0 right-0">
+                <Dropdown />
+              </div>
+            </div>
             <div className="online-store">
               <a href={section.react.href}>{section.online_store}</a>
             </div>
@@ -212,28 +229,36 @@ const Home = ({ data }) => {
               "h6",
               "section_description",
             )}
-            <Tabs>
-              <Tab name="HTTPS">
-                <ul role="list" className="home-tab-ul">
-                  <li className="list-item">
-                    https://cdn.staticfile.org/angular.js/1.8.3/angular-csp.js
-                  </li>
-                  <li className="list-item">
-                    https://cdn.staticfile.org/angular.js/1.8.3/angular-csp.min.js
-                  </li>
-                </ul>
-              </Tab>
-              <Tab name="HTTP">
-                <ul role="list" className="home-tab-ul">
-                  <li className="list-item">
-                    http://cdn.staticfile.org/angular.js/1.8.3/angular-csp.js
-                  </li>
-                  <li className="list-item">
-                    http://cdn.staticfile.org/angular.js/1.8.3/angular-csp.min.js
-                  </li>
-                </ul>
-              </Tab>
-            </Tabs>
+
+            <div className="flex flex-col relative mt-8">
+              <div>
+                <Tabs>
+                  <Tab name="HTTPS">
+                    <ul role="list" className="home-tab-ul">
+                      <li className="list-item">
+                        https://cdn.staticfile.org/angular.js/1.8.3/angular-csp.js
+                      </li>
+                      <li className="list-item">
+                        https://cdn.staticfile.org/angular.js/1.8.3/angular-csp.min.js
+                      </li>
+                    </ul>
+                  </Tab>
+                  <Tab name="HTTP">
+                    <ul role="list" className="home-tab-ul">
+                      <li className="list-item">
+                        http://cdn.staticfile.org/angular.js/1.8.3/angular-csp.js
+                      </li>
+                      <li className="list-item">
+                        http://cdn.staticfile.org/angular.js/1.8.3/angular-csp.min.js
+                      </li>
+                    </ul>
+                  </Tab>
+                </Tabs>
+              </div>
+              <div className="absolute top-0 right-0">
+                <Dropdown />
+              </div>
+            </div>
             <div className="online-store">
               <a href={section.react.href}>{section.online_store}</a>
             </div>
@@ -250,28 +275,36 @@ const Home = ({ data }) => {
               "h6",
               "section_description",
             )}
-            <Tabs>
-              <Tab name="HTTPS">
-                <ul role="list" className="home-tab-ul">
-                  <li className="list-item">
-                    https://cdn.staticfile.org/jquery/3.7.0/jquery.js
-                  </li>
-                  <li className="list-item">
-                    https://cdn.staticfile.org/jquery/3.7.0/jquery.min.js
-                  </li>
-                </ul>
-              </Tab>
-              <Tab name="HTTP">
-                <ul role="list" className="home-tab-ul">
-                  <li className="list-item">
-                    http://cdn.staticfile.org/jquery/3.7.0/jquery.js
-                  </li>
-                  <li className="list-item">
-                    http://cdn.staticfile.org/jquery/3.7.0/jquery.min.js
-                  </li>
-                </ul>
-              </Tab>
-            </Tabs>
+
+            <div className="flex flex-col relative mt-8">
+              <div>
+                <Tabs>
+                  <Tab name="HTTPS">
+                    <ul role="list" className="home-tab-ul">
+                      <li className="list-item">
+                        https://cdn.staticfile.org/jquery/3.7.0/jquery.js
+                      </li>
+                      <li className="list-item">
+                        https://cdn.staticfile.org/jquery/3.7.0/jquery.min.js
+                      </li>
+                    </ul>
+                  </Tab>
+                  <Tab name="HTTP">
+                    <ul role="list" className="home-tab-ul">
+                      <li className="list-item">
+                        http://cdn.staticfile.org/jquery/3.7.0/jquery.js
+                      </li>
+                      <li className="list-item">
+                        http://cdn.staticfile.org/jquery/3.7.0/jquery.min.js
+                      </li>
+                    </ul>
+                  </Tab>
+                </Tabs>
+              </div>
+              <div className="absolute top-0 right-0">
+                <Dropdown />
+              </div>
+            </div>
             <div className="online-store">
               <a href={section.react.href}>{section.online_store}</a>
             </div>

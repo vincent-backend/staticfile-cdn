@@ -37,8 +37,9 @@ const Footer = () => {
                 <Image
                   alt="f"
                   src="/images/footer/thumb1.png"
-                  width={102}
-                  height={33}
+                  width={132}
+                  height={46}
+                  className="w-[102px] h-auto"
                 />
                 <Image
                   alt="f"
@@ -54,7 +55,9 @@ const Footer = () => {
                 />
               </div>
 
-              <p className="text-center font-primary font-bold pt-5">{support}</p>
+              <p className="text-center font-primary font-bold pt-5">
+                {support}
+              </p>
             </div>
           </div>
         </div>

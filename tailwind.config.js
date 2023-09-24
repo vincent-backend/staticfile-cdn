@@ -51,8 +51,7 @@ module.exports = {
         "h3-sm": h3 * 0.8 + "rem",
         h4: h4 + "rem",
         h5: h5 + "rem",
-        h6: h6 + "rem",
-        "h7": "12px"
+        h6: "16px",
       },
       fontFamily: {
         primary: ['var(--font-pingfang)']
