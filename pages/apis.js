@@ -4,6 +4,7 @@ import { getDataFromContent } from "@lib/contentParser";
 import { gsap } from "@lib/gsap";
 import { markdownify } from "@lib/utils/textConverter";
 import BannerAPI from "@layouts/components/banner/BannerAPI";
+import Image from "next/image";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -80,15 +81,42 @@ const Apis = ({ data }) => {
         <div className="flex justify-center container px-0">
           <div className="col-12 -mt-16 mb-5">
             <div className="container-main">
-              <div className="relative">
-                <div className="absolute w-fill h-4 left-0 top-0 bg-[url('/images/banners/Home/b16@2x.png')]">
-
-                </div>
+              <div className="api-background flex-row">
+                <Image className="image_6"
+                src="/images/api/image_6.png"
+                alt="image_6"
+                width={24}
+                height={68}
+                />
+                <Image className="image_7"
+                  alt="image_7"
+                  src="/images/api/image_7.png"
+                  width={25}
+                  height={15}
+                 />
+                 <Image className="label_2"
+                 alt="label_2"
+                 src="/images/api/label_2.png"
+                 width={44}
+                 height={39}
+                 />
+                 <Image className="image_8"
+                 alt="image_8"
+                 src="/images/api/image_8.png"
+                 width={64}
+                 height={91}
+                 />
+                 <div className="image-wrapper_4 flex-col">
+                  <Image className="image_9"
+                  alt="image_9"
+                  src="/images/api/image_9.png"
+                  width={42}
+                  height={67}
+                  />
+                 </div>
+                 <span className="text_16">{api.title}</span>
               </div>
               <div className="div-api">
-                <div className="">
-                  {markdownify(api.title, "h3", "text-primary")}
-                </div>
                 <div className="">
                   {markdownify(
                     api.content,
