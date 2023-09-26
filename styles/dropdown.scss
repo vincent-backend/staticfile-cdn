@@ -1,5 +1,5 @@
 .dropbtn {
-    @apply bg-white text-primary font-bold text-left px-3 w-40 h-9 rounded-md text-base border-0 cursor-pointer;
+    @apply bg-white text-primary font-bold text-left px-3 w-20 sm:w-40 h-9 rounded-md text-base border-0 cursor-pointer;
 }
   
 .dropdown {
@@ -7,7 +7,7 @@
 }
 
 .dropdown-content {
-    @apply hidden absolute w-40 rounded-md bg-white shadow-md z-10 cursor-pointer mt-[1px];
+    @apply hidden absolute w-20 sm:w-40 rounded-md bg-white shadow-md z-10 cursor-pointer mt-[1px];
 
     li {
         @apply block py-2 px-3 no-underline;
