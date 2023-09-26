@@ -82,49 +82,50 @@ const Apis = ({ data }) => {
           <div className="col-12 -mt-16 mb-5">
             <div className="container-main">
               <div className="api-background flex-row">
-                <Image className="image_6"
-                src="/images/api/image_6.png"
-                alt="image_6"
-                width={24}
-                height={68}
-                />
-                <Image className="image_7"
-                  alt="image_7"
-                  src="/images/api/image_7.png"
-                  width={25}
-                  height={15}
-                 />
-                 <Image className="label_2"
-                 alt="label_2"
-                 src="/images/api/label_2.png"
-                 width={44}
-                 height={39}
-                 />
-                 <Image className="image_8"
-                 alt="image_8"
-                 src="/images/api/image_8.png"
-                 width={64}
-                 height={91}
-                 />
-                 <div className="image-wrapper_4 flex-col">
-                  <Image className="image_9"
-                  alt="image_9"
-                  src="/images/api/image_9.png"
-                  width={42}
-                  height={67}
+                <div className="api-mark ">
+                  <Image
+                    className="image_6"
+                    src="/images/api/image_6.png"
+                    alt="image_6"
+                    width={24}
+                    height={68}
                   />
-                 </div>
-                 <span className="text_16">{api.title}</span>
-              </div>
-              <div className="div-api">
-                <div className="">
-                  {markdownify(
-                    api.content,
-                    "h4",
-                    "pt-4 text-primary font-medium leading-normal",
-                  )}
+                  <Image
+                    className="image_7"
+                    alt="image_7"
+                    src="/images/api/image_7.png"
+                    width={25}
+                    height={15}
+                  />
+                  <Image
+                    className="label_2"
+                    alt="label_2"
+                    src="/images/api/label_2.png"
+                    width={44}
+                    height={39}
+                  />
+                  <Image
+                    className="image_8"
+                    alt="image_8"
+                    src="/images/api/image_8.png"
+                    width={64}
+                    height={91}
+                  />
+                  <div className="image-wrapper_4 flex-col">
+                    <Image
+                      className="image_9"
+                      alt="image_9"
+                      src="/images/api/image_9.png"
+                      width={42}
+                      height={67}
+                    />
+                  </div>
                 </div>
-                <h3 className="py-5">Comming soon</h3>
+                <span className="api-title">{api.title}</span>
+              </div>
+              <span className="api-description">{api.content}</span>
+              <div className="api-content">
+                sdfdsf
               </div>
             </div>
           </div>
