@@ -30,4 +30,15 @@ api:
 
 faq:
   title: FAQ
-  content: ""
+  description: ""
+  content: [
+    {
+      title: "How often is the data obtained through the API updated?",
+      description: "Most of all open source libraries accelerated by Staticfile&nbsp;CDN&nbsp; are synchronized from the cdnjs warehouse. We generally synchronize once a day, which means that the information provided in the API is updated every time we synchronize."
+    },
+    {
+      title: "Why is there no search interface?",
+      description: "<p>As of now, there are less than &nbsp;4000&nbsp;all open source libraries. The overall amount of searchable data is very small, and basically the name of the open source library is searched, so the amount of data is even less. Through the above The provided&nbsp;API&nbsp;after obtaining the information of all open source libraries, it is not difficult to implement an instant search yourself. Moreover, the information that can be searched is basically in English, and you can implement the search function yourself through &nbsp;lunr.js&nbsp;or regular expressions. </p>
+      <p>Furthermore, since our update frequency is generally one day, the acquired data can be cached locally for a longer period of time, thereby not being affected by network conditions and&nbsp;Staticfile&nbsp;CDN&nbsp;API&nbsp;servers, maximizing speed Local search speed. </p>"
+    }
+  ]

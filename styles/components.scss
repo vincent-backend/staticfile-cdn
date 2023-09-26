@@ -319,7 +319,7 @@
   }
 
   .faq-content {
-    @apply mt-[-16px] md:mt-[46px] px-2 md:px-[96px] ;
+    @apply  relative mt-[-16px] md:mt-[46px] px-2 md:px-[96px] ;
 
     .content-inner {
       @apply pb-12 md:pb-[40px] text-justify break-all;
