@@ -2,7 +2,7 @@
 lang: en
 banner:
   title: "Company Profile"
-  content: ""
+  content: "  "
 
 content: [
   {

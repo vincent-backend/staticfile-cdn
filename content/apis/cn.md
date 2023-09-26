@@ -30,4 +30,15 @@ api:
 
 faq:
   title: "FAQ"
-  content: ""
+  description: "  "
+  content: [
+    {
+      title: "通过 API 获取到的数据的更新频率？",
+      description: "Staticfile&nbsp;CDN&nbsp;所加速的所有开源库绝大部分同步自&nbsp;cdnjs&nbsp;仓库，我们一般是每天都同步一次，也就是每次同步的时候才会更新&nbsp;API&nbsp;中提供的信息。"
+    },
+    {
+      title: "为什么没有搜索接口？",
+      description: "<p>截止到目前，所有开源库也就不到&nbsp;4000&nbsp;个，整体可搜索的数据量很少，而且基本上都是搜索开源库的名称，所以数据量就更少了，通过上面提供的&nbsp;API&nbsp;获取到所有开源库的信息之后自己实现一个即时搜索也不难。况且能够搜索的信息基本上都是英文的，可以通过&nbsp;lunr.js&nbsp;或者正则表达式自己实现搜索功能。</p>
+      <p>再者，由于我们的更新频率一般是一天，所以可以将获取到数据缓存在本地较长的时间，从而不受网络状况和&nbsp;Staticfile&nbsp;CDN&nbsp;API&nbsp;服务器的影响，最大程度加快本地搜索速度。</p>"
+    }
+  ]

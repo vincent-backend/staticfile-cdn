@@ -178,6 +178,8 @@
 
 /// api
 .div-api {
+  @apply flex justify-center container px-0;
+
   .api-background {
     @apply relative bg-[url('/images/api/0.png')] w-full h-[100px] overflow-hidden;
     background-size: 100% 100%;
@@ -238,25 +240,25 @@
   }
   
   .api-description {
-    @apply absolute px-4 top-[60px] md:px-[96px] md:top-[80px] break-words text-primary text-h5 font-bold font-primary text-justify;
+    @apply absolute px-4 top-[60px] md:px-[96px] md:top-[80px] break-words text-primary text-h5 md:text-h6 font-bold font-primary text-justify;
   }
   
   .api-content {
-    @apply mt-[72px] md:mt-[54px] px-4 md:px-[96px] ;
+    @apply mt-[72px] md:mt-[46px] px-2 md:px-[96px] ;
 
     .content-inner {
-      @apply pb-8 md:pb-[60px] text-justify break-all;
+      @apply pb-8 md:pb-[40px] text-justify break-all;
       
       .title {
-        @apply font-bold text-h4 text-black;
+        @apply font-bold text-h4 md:text-[20px] text-black;
       }
 
       .url {
-        @apply text-orange-500 bg-orange-100 px-3 py-2 mt-6 rounded-md h5 w-fit;
+        @apply text-orange-500 bg-orange-100 px-3 py-2 mt-6 rounded-md text-h5 w-fit md:py-1 md:text-base;
       }
 
       .description {
-        @apply text-gray-700 h5 pt-3 leading-8;
+        @apply text-gray-700 h5 pt-3 leading-8 md:text-base;
       }
 
       .description-highlight {
@@ -267,8 +269,74 @@
 }
 
 
-.faq-background {
+.div-faq {
+  @apply flex justify-center container px-0;
+
+  .faq-background {
+    @apply relative bg-[url('/images/api/0.png')] w-full h-[100px] overflow-hidden;
+    background-size: 100% 100%;
   
+    .faq-mark {
+      @apply absolute right-28 top-0 md:left-0;
+      .img1 {
+        @apply w-[81px] h-[59px] bg-[url('/images/api/section_1.png')] mt-[17px] ml-[26px];
+        
+        .image-wrapper_2 {
+          @apply relative w-[80px] h-[45px] bg-[url('/images/api/image-wrapper_2.png')] ml-[1px];
+
+          .image_2 {
+            @apply absolute left-[17px] top-[28px] w-[63px] h-[30px];
+          }
+
+          .image_3 {
+            @apply absolute left-0 top-[35px] w-[17px] h-[23px];
+          }
+        }
+      }
+
+      .img2 {
+        @apply absolute w-[33px] h-[24px] left-0 top-[66px] bg-[url('/images/api/section_2.png')];
+
+        .image-wrapper_3 {
+          @apply w-[33px] h-[18px] -mt-[6px] bg-[url('/images/api/image-wrapper_3.png')];
+
+          .image_4 {
+            @apply w-[33px] h-[18px];
+          }
+        }
+      }
+
+      .image_5 {
+        @apply absolute left-[97px] top-[-21px] w-[84px] h-[62px];
+      }
+
+    }
+  }
+
+  .faq-title {
+    @apply absolute px-4 top-3 md:px-[96px] md:top-7 break-words text-primary text-h3 font-bold
+     font-primary text-left whitespace-nowrap;
+  }
+
+  .faq-content {
+    @apply mt-[-16px] md:mt-[46px] px-2 md:px-[96px] ;
+
+    .content-inner {
+      @apply pb-12 md:pb-[40px] text-justify break-all;
+      
+      .title {
+        @apply font-bold text-h4 md:text-[20px] text-black;
+      }
+
+      .description {
+        @apply text-gray-700 text-h5 pt-3 leading-8 md:text-base;
+      }
+
+      .description-highlight {
+        @apply text-rose-500;
+      }
+    }
+  }
 }
 
 /// feedback
