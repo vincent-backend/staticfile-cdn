@@ -78,7 +78,7 @@ const Apis = ({ data }) => {
       </section>
       {/* API */}
       <section className="section">
-        <div className="flex justify-center container px-0">
+        <div className="div-api flex justify-center container px-0">
           <div className="col-12 -mt-16 mb-5">
             <div className="container-main">
               <div className="api-background flex-row">
@@ -123,9 +123,20 @@ const Apis = ({ data }) => {
                 </div>
                 <span className="api-title">{api.title}</span>
               </div>
-              <span className="api-description">{api.content}</span>
+              <span className="api-description">{api.description}</span>
               <div className="api-content">
-                sdfdsf
+              {api.content.map((c, i) => (
+                <div className="content-inner" key={i}>
+                  <div className="title">{c.title}</div>
+                  <div className="url"><span>{c.url}</span></div>
+                  {markdownify(
+                      c.description,
+                      "h5",
+                      "description"
+                    )}
+                </div>
+                ))
+              }
               </div>
             </div>
           </div>
@@ -137,16 +148,7 @@ const Apis = ({ data }) => {
           <div className="col-12 mb-12">
             <div className="container-main">
               <div className="div-api">
-                <div className="">
-                  {markdownify(faq.title, "h3", "text-primary")}
-                </div>
-                <div className="">
-                  {markdownify(
-                    api.content,
-                    "h4",
-                    "pt-4 text-primary font-medium leading-normal",
-                  )}
-                </div>
+
                 <h3 className="py-5">Comming soon</h3>
               </div>
             </div>
