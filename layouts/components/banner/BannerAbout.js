@@ -1,10 +1,5 @@
 const BannerAbout = () => {
-    return (
-      <div className="min-h-[300px]">
-        
-      </div>
-    );
-  };
-  
-  export default BannerAbout;
-  
+  return <div className="w-[1920px] h-[450px]"></div>;
+};
+
+export default BannerAbout;

@@ -32,11 +32,11 @@
 
 // social icon style
 .social-icons {
-  @apply space-x-4 ;
+  @apply space-x-10 ;
   li {
     @apply inline-block text-xl ;
     a {
-      @apply block h-8 w-8 rounded-full border text-center bg-[#e2e3e9] text-white hover:text-white hover:bg-primary transition-all duration-300;
+      @apply block h-8 w-8 rounded-full border-none text-center bg-[#e2e3e9] text-white hover:text-white hover:bg-primary transition-all duration-300;
 
       svg {
         @apply m-auto h-8;
@@ -96,15 +96,15 @@
 }
 
 .banner-title {
-  @apply text-white text-[2.3rem] tracking-wider;
+  @apply text-white font-bold text-[2.3rem] tracking-wider;
 }
 
 .banner-text {
-  @apply text-white text-[0.95rem] font-medium leading-6 pt-7 md:pt-6;
+  @apply text-white text-[0.95rem] font-medium leading-6 pt-4 md:pt-6;
 }
 
 .banner-link {
-  @apply opacity-0 mt-9 rounded-md bg-white text-[1.1rem] font-bold text-primary w-fit h-auto py-3 pl-3 items-center justify-center;
+  @apply opacity-0 mt-9 rounded-md bg-white text-[1.2rem] font-normal text-primary w-fit h-auto py-2.5 px-5 items-center justify-center;
 }
 
 .bg-theme {
@@ -150,7 +150,7 @@
 
 /// index
 .online-store {
-  @apply pt-3 text-[14px] font-extrabold text-[#08c39d];
+  @apply pt-3 text-[30px] md:text-[16px] font-extrabold text-[#08c39d];
 }
 
 // tab
@@ -164,7 +164,7 @@
 
 
 .search-input {
-  @apply text-gray-950 placeholder-gray-600 block bg-[#f3f4fa] w-full h-[66px] border-4 border-white rounded-[12px] pl-9 pr-3 shadow-sm focus:outline-none focus:border-white focus:ring-white focus:ring-0 text-[16px];
+  @apply text-gray-950 placeholder-gray-600 block bg-[#f3f4fa] w-full h-[66px] border-4 border-white rounded-[12px] px-16 shadow-sm focus:outline-none focus:border-white focus:ring-white focus:ring-0 text-[16px];
 }
 
 .list-item {

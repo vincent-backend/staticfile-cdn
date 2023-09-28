@@ -1,7 +1,7 @@
 import { gsap } from "@lib/gsap";
 import { markdownify } from "@lib/utils/textConverter";
 import { getDataFromContent } from "@lib/contentParser";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Dropdown from "@layouts/components/dropdown/Dropdown";
 import useTranslation from "@hooks/useTranslation";
@@ -10,6 +10,7 @@ import Tabs from "@layouts/shortcodes/Tabs";
 import Tab from "@layouts/shortcodes/Tab";
 import BannerHome from "@layouts/components/banner/BannerHome";
 import { IoChevronForwardSharp } from "react-icons/io5";
+import toast from "@layouts/components/Toast";
 
 const Home = ({ data }) => {
   const { locale, setLocale } = useTranslation();
@@ -19,6 +20,11 @@ const Home = ({ data }) => {
   const [frontmatter, setFrontmatter] = useState(dataOne);
 
   let { banner, section } = frontmatter;
+
+  const notify = useCallback((type, message) => {
+    console.log("Clicked");
+    toast({ type, message });
+  }, []);
 
   useEffect(() => {
     //frontmatter
@@ -76,7 +82,7 @@ const Home = ({ data }) => {
           <div className="banner-bg md:min-h-[450px]">
             <div className="row">
               <div className="relative col-12 md:col-6 z-10 pb-10">
-                <div className="pt-20 md:pt-[108px]">
+                <div className="pt-14 md:pt-[108px]">
                   {markdownify(banner.title, "h3", "banner-title opacity-0")}
                   {markdownify(
                     banner.content,
@@ -84,11 +90,11 @@ const Home = ({ data }) => {
                     "banner-text text-justify opacity-0",
                   )}
                   <div className={`banner-link`}>
-                    <span className="text-primary inline tracking-normal">
+                    <span className="text-primary font-normal inline tracking-normal">
                       $ npm install –g sfile
                     </span>
                     <span className="text-[#292d33] ml-1">
-                      {`//`}
+                      {`// `}
                       {markdownify(
                         banner.installation_tools,
                         "h6",
@@ -115,23 +121,22 @@ const Home = ({ data }) => {
               </div>
             </div>
           </div>
-          
         </div>
       </section>
       <section className="section">
-      <div className="row content-xl h-[66px]">
-            <div className="flex justify-center items-center -mt-[66px]">
-              <div className="absolute container">
-                <div className="bg-[url('/images/home/icon-search.png')] w-[19px] h-[19px] absolute ml-3 mt-6" />
-                <input
-                  className="search-input"
-                  type="text"
-                  aria-label="Search open source libraires."
-                  placeholder={banner.search_bar_placeholder}
-                />
-              </div>
+        <div className="row content-xl h-[66px]">
+          <div className="flex justify-center items-center -mt-[66px]">
+            <div className="absolute container">
+              <div className="bg-[url('/images/home/icon-search.png')] w-[19px] h-[19px] absolute ml-8 mt-[24px]" />
+              <input
+                className="search-input"
+                type="text"
+                aria-label="Search open source libraires."
+                placeholder={banner.search_bar_placeholder}
+              />
             </div>
           </div>
+        </div>
       </section>
       {/* React */}
       <section className="animate section">

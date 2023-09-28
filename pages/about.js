@@ -25,26 +25,7 @@ const About = ({ data }) => {
         ".banner-title",
         { y: 20, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.5, delay: 0.5 },
-      )
-        .fromTo(
-          ".banner-text",
-          { y: 20, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.5 },
-          ">-0.4",
-        )
-        .fromTo(
-          ".banner-img",
-          {
-            y: 20,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-          },
-          ">-.5",
-        );
+      );
     });
 
     return () => ctx.revert();
@@ -53,35 +34,14 @@ const About = ({ data }) => {
   return (
     <Base>
       <section className="section">
-        <div className="container z-10 overflow-hidden">
-          <div className="banner-bg md:h-[300px]">
-            <div className="row">
-              <div className="col-12 md:col-6 z-10">
-                <div className="pt-20">
-                  {markdownify(
-                    banner.title,
-                    "h3",
-                    "banner-title text-dark opacity-0",
-                  )}
-                  {markdownify(
-                    banner.content,
-                    "h5",
-                    "banner-text text-justify opacity-0",
-                  )}
-                </div>
-              </div>
-              <div className="banner-img flex col-12 md:col-6 opacity-0 justify-center items-center px-0 lg:right-0 z-0">
-                <div className="md:absolute md:mt-6">
-                  <BannerAbout />
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="banner-bg overflow-hidden absolute w-screen h-[450px]">
+          <BannerAbout />
         </div>
-      </section>
-      <section className="section">
-        <div className="flex justify-center container px-0">
-          <div className="col-12 -mt-16 mb-12">
+        <div className="flex flex-col justify-center container px-0 z-10">
+          <div className="col-12 mt-12 mb-12">
+            <div className="banner-title text-[#070c13] mx-5 mb-12">
+              {banner.title}
+            </div>
             <div className="container-main">
               {content.map((c, i) => (
                 <div className="div-about" key={i}>

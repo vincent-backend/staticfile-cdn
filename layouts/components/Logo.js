@@ -4,11 +4,12 @@ import Link from "next/link";
 
 const Logo = ({ src }) => {
   // destructuring items from config object
-  const { logo, logo_width, logo_height, logo_text, title } = config.site;
+  const { logo, width, height, logo_width, logo_height, logo_text, title } =
+    config.site;
 
   return (
     <Link href="/" className="navbar-brand block">
-      {src || logo ? (
+      <div className="flex flex-row items-center h-[60px]">
         <ImageFallback
           width={logo_width.replace("px", "")}
           height={logo_height.replace("px", "")}
@@ -20,11 +21,10 @@ const Logo = ({ src }) => {
             width: logo_width.replace("px", "") + "px",
           }}
         />
-      ) : logo_text ? (
-        logo_text
-      ) : (
-        title
-      )}
+        <span className="font-primary font-bold text-[18px] text-black inline ml-3">
+          {title}
+        </span>
+      </div>
     </Link>
   );
 };

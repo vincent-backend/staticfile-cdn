@@ -47,7 +47,7 @@ const Header = () => {
       >
         <nav className="navbar container-header">
           {/* logo */}
-          <div className="order-0 py-0">
+          <div className="order-0 py-0 ml-7 md:ml-4">
             <Logo src={logo} />
           </div>
           <ul
@@ -82,7 +82,7 @@ const Header = () => {
           <div className="order-1 ml-auto mr-5 flex items-center">
             {config.nav_button.enable && (
               <button
-                className="btn btn-primary flex items-center w-fit px-3 h-auto md:h-[34px] mr-1 sm:mr-14 md:mr-1"
+                className="btn btn-primary flex items-center w-fit px-3 h-auto md:h-[34px] mr-8 sm:mr-14 md:mr-1"
                 onClick={() => setLocale(`${locale == "en" ? "cn" : "en"}`)}
               >
                 {locale === "en"

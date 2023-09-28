@@ -1,11 +1,13 @@
 {
   "site": {
-    "title": "StaticFile CDN",
+    "title": "Staticfile CDN",
     "base_url": "/",
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
-    "logo_width": "165",
-    "logo_height": "60",
+    "logo_width": "32",
+    "logo_height": "32",
+    "width": "165",
+    "height": "60",
     "logo_mobile": "/images/logo-mobile.png",
     "logo_text": "StaticFile CDN"
   },

@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
           <div className="animate flex items-center justify-center md:items-start md:justify-start md:col-8">
             <div className="flex-col justify-center">
-              <div className="flex flex-row items-center justify-center">
+              <div className="flex flex-row items-center justify-center space-x-6">
                 <Image
                   alt="f"
                   src="/images/footer/thumb1.png"
