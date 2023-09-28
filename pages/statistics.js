@@ -4,7 +4,7 @@ import Base from "@layouts/Baseof";
 import { getDataFromContent } from "@lib/contentParser";
 import { gsap } from "@lib/gsap";
 import { markdownify } from "@lib/utils/textConverter";
-
+import SCaption from "@layouts/components/statistics/SCaption";
 import { useEffect, useRef, useState } from "react";
 
 const Statistics = ({ data }) => {
@@ -82,36 +82,15 @@ const Statistics = ({ data }) => {
               <div className="div-statistics">
                 {/* 全局数据 */}
                 <div className="inner">
-                  <div className="flex flex-row items-end">
-                    <div className="flex flex-col">
-                    <div className="caption flex flex-row">全局数据</div>
-                    <div className="flex flex-row bg-primary h-1 mt-2"></div>
-                    </div>
-                    <div className="flex grow bg-slate-200 h-[1px]">
-                    </div>
-                  </div>
+                  <SCaption caption="全局数据" />
                 </div>
                 {/* 网络数据 */}
                 <div className="inner">
-                  <div className="flex flex-row items-end">
-                    <div className="flex flex-col">
-                    <div className="caption flex flex-row">网络数据</div>
-                    <div className="flex flex-row bg-primary h-1 mt-2"></div>
-                    </div>
-                    <div className="flex grow bg-slate-200 h-[1px]">
-                    </div>
-                  </div>
+                  <SCaption caption="网络数据" />
                 </div>
                 {/* 项目统计 */}
                 <div className="inner">
-                  <div className="flex flex-row items-end">
-                    <div className="flex flex-col">
-                    <div className="caption flex flex-row">项目统计</div>
-                    <div className="flex flex-row bg-primary h-1 mt-2"></div>
-                    </div>
-                    <div className="flex grow bg-slate-200 h-[1px]">
-                    </div>
-                  </div>
+                  <SCaption caption="项目统计" />
                 </div>
               </div>
             </div>
