@@ -73,9 +73,9 @@ const Home = ({ data }) => {
     <Base>
       <section className="section bg-primary">
         <div className="container z-10 overflow-hidden">
-          <div className="banner-bg lg:h-[450px]">
+          <div className="banner-bg md:min-h-[450px]">
             <div className="row">
-              <div className="col-12 md:col-6 z-10">
+              <div className="relative col-12 md:col-6 z-10 pb-10">
                 <div className="pt-20 md:pt-[108px]">
                   {markdownify(banner.title, "h3", "banner-title opacity-0")}
                   {markdownify(
@@ -95,7 +95,7 @@ const Home = ({ data }) => {
                         "opacity-1 text-[#292d33] inline",
                       )}
                     </span>
-                    <span className="pl-3 text-[#ff941a] break-keep">
+                    <span className="pl-2 text-[#ff941a] break-keep">
                       <Link href="/apis">
                         {markdownify(
                           banner.usage,
