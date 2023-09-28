@@ -67,7 +67,7 @@ const Statistics = ({ data }) => {
                 </div>
               </div>
               <div className="banner-img flex col-12 md:col-6 opacity-0 justify-center items-center px-0 lg:right-0 z-0">
-                <div className="md:absolute md:mt-44">
+                <div className="md:absolute md:mt-36">
                   <BannerStatistics />
                 </div>
               </div>

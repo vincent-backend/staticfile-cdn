@@ -1,18 +1,12 @@
-import { IoChevronDownSharp } from "react-icons/io5";
+import { IoCaretDown } from "react-icons/io5";
 
 const Dropdown = () => {
   return (
     <div className="dropdown">
-      <button className="dropbtn flex items-center justify-between">
-        <span className="text-left">18.2.0</span>
-        <span className="text-right">
-            <IoChevronDownSharp />
-        </span>
-      </button>
-      <ul className="dropdown-content">
-        <li>18.2.0</li>
-        <li>18.2.0</li>
-      </ul>
+      <select className="dropbtn">
+        <option value="18.2.0" className="h-10">18.2.0</option>
+        <option value="18.2.1" className="h-10">18.2.1</option>
+      </select>
     </div>
   );
 };

@@ -6,7 +6,7 @@
   // left-top
   .left-top {
     @apply absolute top-[87px] left-[112px] w-[135px] h-[113px];
-    animation: ani-ilt-0 4s infinite;
+    animation: ani-ilt-0 4s ease-out infinite;
 
     .bottom {
       @apply absolute left-[0px] top-[13px] w-[152px] h-[113px] bg-[url('/images/banners/Home/6@2x.png')];
@@ -20,19 +20,12 @@
   }
 
   @keyframes ani-ilt-0 {
-    0%, 46% {
+    0%, 50%, 83.33% {
       transform: translateY(0rem);
     }
-    58%, 63% {
-      transform: translateY(-0.3rem);
+    66.67%, 100% {
+      transform: translateY(0.5rem);
     }
-    74%, 78% {
-      transform: translateY(0rem);
-    }
-    92% {
-      transform: translateY(-0.3rem);
-    }
-
   }
 
   @keyframes ani-ilt-1 {
@@ -57,12 +50,12 @@
 
   // left-bottom
   .left-bottom {
-    @apply absolute top-[221px] left-[37px] w-[185px] h-[162px];
-    animation: ani-ilb-0 4s infinite;
+    @apply absolute top-[221px] left-[52px] w-[185px] h-[162px];
+    animation: ani-ilb-0 4s ease-out infinite;
 
     .top {
       @apply absolute left-[0px] top-[0px] w-[185px] h-[108px] bg-[url('/images/banners/Home/9@2x.png')];
-      animation: ani-ilb-top 4s infinite;
+      animation: ani-ilb-top 4s linear infinite;
     }
 
     .bottom {
@@ -72,51 +65,27 @@
   }
 
   @keyframes ani-ilb-0 {
-    0%, 16% {
+    0%, 33.33%, 66.67%, 100% {
       transform: translateY(0rem);
     }
-    31% {
-      transform: translateY(-0.4rem);
-    }
-    44%, 47% {
-      transform: translateY(0rem);
-    }
-    59%, 62% {
-      transform: translateY(-0.4rem);
-    }
-    74%, 78% {
-      transform: translateY(0rem);
-    }
-    89%, 92% {
+    16.67%, 50%, 83.33% {
       transform: translateY(-0.4rem);
     }
   }
 
   @keyframes ani-ilb-top {
-    0%, 16% {
+    0%, 33.33%, 66.67%, 100% {
       transform: scaleX(1);
     }
-    31% {
-      transform: scaleX(1.1);
-    }
-    44%, 47% {
-      transform: scaleX(1);
-    }
-    59%, 62% {
-      transform: scaleX(1.1);
-    }
-    74%, 78% {
-      transform: scaleX(1);
-    }
-    89%, 92% {
-      transform: scaleX(1.1);
+    16.67%, 50%, 83.33% {
+      transform: scaleX(1.08);
     }
   }
 
   // middle-tower
   .middle-tower {
     @apply absolute top-[30px] left-[235px] w-[255px] h-[357px];
-    animation: ani-idmt 4s infinite;
+    animation: ani-idmt 4s ease-out infinite;
 
     .tower-base {
       @apply absolute left-[0px] top-[190px] w-[311px] h-[206px] bg-[url('/images/banners/Home/4@2x.png')];
@@ -124,17 +93,17 @@
 
     .tower-1 {
       @apply absolute left-[38px] top-[146px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
-      animation: ani-idmt-1 4s infinite;
+      animation: ani-idmt-1 4s ease-out infinite;
     }
 
     .tower-2 {
       @apply absolute left-[38px] top-[73px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
-      animation: ani-idmt-2 4s infinite;
+      animation: ani-idmt-2 4s ease-out infinite;
     }
 
     .tower-3 {
       @apply absolute left-[38px] top-[0px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
-      animation: ani-idmt-3 4s infinite;
+      animation: ani-idmt-3 4s ease-out infinite;
     }
   }
 
@@ -143,7 +112,7 @@
       transform: translateY(0rem);
     }
     16.67%, 50%, 83.33% {
-      transform: translateY(0.6rem);
+      transform: translateY(0.7rem);
     }
   }
 
@@ -195,7 +164,7 @@
   // right-middle
   .right-middle {
     @apply absolute top-[175px] left-[479px] w-[185px] h-[142px];
-    animation: ani-irm-0 4s infinite;
+    animation: ani-irm-0 4s ease-out infinite;
 
     .bottom {
       @apply absolute left-[0px] top-[13px] w-[202px] h-[143px] bg-[url('/images/banners/Home/8@2x.png')];
@@ -209,23 +178,11 @@
   }
 
   @keyframes ani-irm-0 {
-    0%, 16% {
+    0%, 16.67%, 50%, 83.33% {
       transform: translateY(0rem);
     }
-    33% {
-      transform: translateY(-0.5rem);
-    }
-    44%, 48% {
-      transform: translateY(0rem);
-    }
-    58%, 63% {
-      transform: translateY(-0.5rem);
-    }
-    74%, 78% {
-      transform: translateY(0rem);
-    }
-    92% {
-      transform: translateY(-0.5rem);
+    33.33%, 66.67%, 100% {
+      transform: translateY(0.5rem);
     }
   }
 
@@ -347,7 +304,7 @@
   .display {
     @apply absolute left-[354px] top-[90px] w-[397px] h-[321px] bg-[url('/images/banners/Statistics/2.png')];
     
-    animation: ani-s-display 3.6s infinite;
+    animation: ani-s-display 3.6s ease-out infinite;
 
     .display-inner {
       @apply absolute left-[7px] top-[71px] w-[200px] h-[243px] bg-[url('/images/banners/Statistics/1.png')];
@@ -493,7 +450,7 @@
 
   .central-top {
     @apply absolute left-[358px] top-[114px] w-[120px] h-[120px] bg-[url('/images/banners/API/～1@2x.png')];
-    animation: ani1 3.6s infinite;
+    animation: ani1 3.6s ease-out infinite;
   }
 
   .left_pipe {
@@ -506,7 +463,7 @@
 
   .computer {
     @apply absolute left-[83px] top-[256px] w-[278px] h-[252px] bg-[url('/images/banners/API/～4@2x.png')];
-    animation: ani1 3.6s infinite;
+    animation: ani1 3.6s ease-out infinite;
 
     .display{
       @apply absolute left-[136px] top-[44px] w-[57px] h-[87px] bg-[url('/images/banners/API/～5@2x.png')] opacity-70;
