@@ -75,7 +75,7 @@ const Home = ({ data }) => {
         <div className="container z-10 overflow-hidden">
           <div className="banner-bg lg:h-[450px]">
             <div className="row">
-              <div className="col-12 lg:col-6">
+              <div className="col-12 md:col-6 z-10">
                 <div className="pt-20 md:pt-[108px]">
                   {markdownify(banner.title, "h3", "banner-title opacity-0")}
                   {markdownify(
@@ -108,8 +108,8 @@ const Home = ({ data }) => {
                   </div>
                 </div>
               </div>
-              <div className="banner-img flex col-12 lg:col-6 opacity-0 justify-center items-center px-0 lg:right-0 overflow-hidden">
-                <div className="relative flex">
+              <div className="banner-img flex col-12 md:col-6 opacity-0 justify-center items-center px-0 lg:right-0 z-0">
+                <div className="md:absolute md:top-0">
                   <BannerHome />
                 </div>
               </div>
