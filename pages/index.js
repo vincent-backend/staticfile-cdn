@@ -72,7 +72,7 @@ const Home = ({ data }) => {
   return (
     <Base>
       <section className="section bg-primary">
-        <div className="container z-10 overflow-hidden">
+        <div className="container overflow-hidden">
           <div className="banner-bg md:min-h-[450px]">
             <div className="row">
               <div className="relative col-12 md:col-6 z-10 pb-10">
@@ -115,9 +115,13 @@ const Home = ({ data }) => {
               </div>
             </div>
           </div>
-          <div className="row content-xl">
-            <div className="flex justify-center items-center z-20">
-              <div className="col-10 absolute md:col-12 container">
+          
+        </div>
+      </section>
+      <section className="section">
+      <div className="row content-xl h-[66px]">
+            <div className="flex justify-center items-center -mt-[66px]">
+              <div className="absolute container">
                 <div className="bg-[url('/images/home/icon-search.png')] w-[19px] h-[19px] absolute ml-3 mt-6" />
                 <input
                   className="search-input"
@@ -128,10 +132,9 @@ const Home = ({ data }) => {
               </div>
             </div>
           </div>
-        </div>
       </section>
       {/* React */}
-      <section className="animate section pt-16">
+      <section className="animate section">
         <div className="container flex justify-center">
           <div className="col-12 px-1">
             {markdownify(section.react.title, "h3", "section_title")}

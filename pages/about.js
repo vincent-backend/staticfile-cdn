@@ -3,7 +3,7 @@ import { markdownify } from "@lib/utils/textConverter";
 import { getDataFromContent } from "@lib/contentParser";
 import useTranslation from "@hooks/useTranslation";
 import Base from "@layouts/Baseof";
-import BannerAPI from "@layouts/components/banner/BannerAPI";
+import BannerAbout from "@layouts/components/banner/BannerAbout";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -71,7 +71,9 @@ const About = ({ data }) => {
                 </div>
               </div>
               <div className="banner-img flex col-12 md:col-6 opacity-0 justify-center items-center px-0 lg:right-0 z-0">
-                <div className="md:absolute md:mt-6"></div>
+                <div className="md:absolute md:mt-6">
+                  <BannerAbout />
+                </div>
               </div>
             </div>
           </div>
