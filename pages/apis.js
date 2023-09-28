@@ -123,17 +123,19 @@ const Apis = ({ data }) => {
                 </div>
                 <span className="api-title">{api.title}</span>
               </div>
-              <span className="api-description">{api.description}</span>
-              <div className="api-content">
-                {api.content.map((c, i) => (
-                  <div className="content-inner" key={i}>
-                    <div className="title">{c.title}</div>
-                    <div className="url">
-                      <span>{c.url}</span>
+              <div className="flex flex-col relative -mt-10 md:-mt-6">
+                <span className="api-description">{api.description}</span>
+                <div className="api-content">
+                  {api.content.map((c, i) => (
+                    <div className="content-inner" key={i}>
+                      <div className="title">{c.title}</div>
+                      <div className="url">
+                        <span>{c.url}</span>
+                      </div>
+                      {markdownify(c.description, "h5", "description")}
                     </div>
-                    {markdownify(c.description, "h5", "description")}
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>

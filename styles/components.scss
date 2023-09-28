@@ -189,8 +189,8 @@
   @apply flex justify-center container px-0;
 
   .api-background {
-    @apply relative bg-[url('/images/api/0.png')] w-full h-[100px] overflow-hidden;
-    background-size: 100% 100%;
+    @apply relative bg-[url('/images/api/0.png')] w-full min-h-[100px] overflow-hidden bg-no-repeat;
+    background-size: 100% 100px;
   
     .api-mark {
       @apply absolute right-6 top-0 md:left-0;
@@ -248,11 +248,11 @@
   }
   
   .api-description {
-    @apply absolute px-4 top-[60px] md:px-[96px] md:top-[80px] break-words text-primary text-h5 md:text-h6 font-bold font-primary text-justify;
+    @apply px-4 top-[60px] md:px-[96px] md:top-[80px] break-words text-primary text-h5 md:text-h6 font-bold font-primary text-justify;
   }
   
   .api-content {
-    @apply mt-[72px] md:mt-[46px] px-2 md:px-[96px] ;
+    @apply mt-8 md:mt-[42px] px-2 md:px-[96px] ;
 
     .content-inner {
       @apply pb-8 md:pb-[40px] text-justify break-all;
