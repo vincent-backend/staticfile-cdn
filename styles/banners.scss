@@ -93,17 +93,17 @@
 
     .tower-1 {
       @apply absolute left-[38px] top-[146px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
-      animation: ani-idmt-1 4s ease-out infinite;
+      animation: ani-idmt-1 4s infinite;
     }
 
     .tower-2 {
       @apply absolute left-[38px] top-[73px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
-      animation: ani-idmt-2 4s ease-out infinite;
+      animation: ani-idmt-2 4s infinite;
     }
 
     .tower-3 {
       @apply absolute left-[38px] top-[0px] w-[187px] h-[174px] bg-[url('/images/banners/Home/1@2x.png')];
-      animation: ani-idmt-3 4s ease-out infinite;
+      animation: ani-idmt-3 4s infinite;
     }
   }
 

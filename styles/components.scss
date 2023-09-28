@@ -173,7 +173,15 @@
 
 /// statistics
 .div-statistics {
-  @apply pt-12 pb-8 pl-4 pr-4;
+  @apply pt-5 px-3 md:pt-3 md:px-7;
+
+  .inner {
+    @apply mb-12;
+
+    .caption {
+      @apply text-h4 md:text-h3 text-primary font-bold;
+    }
+  }
 }
 
 /// api

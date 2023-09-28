@@ -47,7 +47,7 @@ module.exports = {
         "h1-sm": h1 * 0.8 + "rem",
         h2: h2 + "rem",
         "h2-sm": h2 * 0.8 + "rem",
-        h3: h3 + "rem",
+        h3: "26px",
         "h3-sm": h3 * 0.8 + "rem",
         h4: h4 + "rem",
         h5: h5 + "rem",

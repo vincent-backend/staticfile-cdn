@@ -52,12 +52,12 @@ const Header = () => {
           </div>
           <ul
             id="nav-menu"
-            className={`navbar-nav order-2 justify-start ml-0 pt-1 md:order-1 md:flex ${
+            className={`navbar-nav order-2 justify-start ml-0 md:order-1 md:flex ${
               !showMenu && "hidden"
             }`}
           >
             <div className="bg-primary opacity-95 w-full h-screen md:flex md:h-auto md:bg-white md:space-x-11">
-              <div className="h-24 md:hidden" />
+              <div className="h-10 md:hidden" />
               {main.map((menu, i) => (
                 <React.Fragment key={`menu-${i}`}>
                   <li className="nav-item">

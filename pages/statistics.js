@@ -79,8 +79,40 @@ const Statistics = ({ data }) => {
         <div className="flex justify-center container px-0">
           <div className="col-12 -mt-16 mb-12">
             <div className="container-main">
-              <div className="div-statisitcs">
-                <h3>Comming soon</h3>
+              <div className="div-statistics">
+                {/* 全局数据 */}
+                <div className="inner">
+                  <div className="flex flex-row items-end">
+                    <div className="flex flex-col">
+                    <div className="caption flex flex-row">全局数据</div>
+                    <div className="flex flex-row bg-primary h-1 mt-2"></div>
+                    </div>
+                    <div className="flex grow bg-slate-200 h-[1px]">
+                    </div>
+                  </div>
+                </div>
+                {/* 网络数据 */}
+                <div className="inner">
+                  <div className="flex flex-row items-end">
+                    <div className="flex flex-col">
+                    <div className="caption flex flex-row">网络数据</div>
+                    <div className="flex flex-row bg-primary h-1 mt-2"></div>
+                    </div>
+                    <div className="flex grow bg-slate-200 h-[1px]">
+                    </div>
+                  </div>
+                </div>
+                {/* 项目统计 */}
+                <div className="inner">
+                  <div className="flex flex-row items-end">
+                    <div className="flex flex-col">
+                    <div className="caption flex flex-row">项目统计</div>
+                    <div className="flex flex-row bg-primary h-1 mt-2"></div>
+                    </div>
+                    <div className="flex grow bg-slate-200 h-[1px]">
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
