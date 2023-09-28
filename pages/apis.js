@@ -125,18 +125,15 @@ const Apis = ({ data }) => {
               </div>
               <span className="api-description">{api.description}</span>
               <div className="api-content">
-              {api.content.map((c, i) => (
-                <div className="content-inner" key={i}>
-                  <div className="title">{c.title}</div>
-                  <div className="url"><span>{c.url}</span></div>
-                  {markdownify(
-                      c.description,
-                      "h5",
-                      "description"
-                    )}
-                </div>
-                ))
-              }
+                {api.content.map((c, i) => (
+                  <div className="content-inner" key={i}>
+                    <div className="title">{c.title}</div>
+                    <div className="url">
+                      <span>{c.url}</span>
+                    </div>
+                    {markdownify(c.description, "h5", "description")}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -151,13 +148,15 @@ const Apis = ({ data }) => {
                 <div className="faq-mark">
                   <div className="img1 flex-col">
                     <div className="image-wrapper_2 flex-col">
-                      <Image className="image_2"
+                      <Image
+                        className="image_2"
                         alt="image_2"
                         src="/images/api/image_2.png"
                         width={63}
                         height={30}
                       />
-                      <Image className="image_3"
+                      <Image
+                        className="image_3"
                         alt="image_3"
                         src="/images/api/image_3.png"
                         width={17}
@@ -167,7 +166,8 @@ const Apis = ({ data }) => {
                   </div>
                   <div className="img2 flex-col">
                     <div className="image-wrapper_3 flex-col">
-                      <Image className="image_4"
+                      <Image
+                        className="image_4"
                         alt="image_4"
                         src="/images/api/image_4.png"
                         width={33}
@@ -175,7 +175,8 @@ const Apis = ({ data }) => {
                       />
                     </div>
                   </div>
-                  <Image className="image_5"
+                  <Image
+                    className="image_5"
                     alt="image_5"
                     src="/images/api/image_5.png"
                     width={84}
@@ -185,17 +186,12 @@ const Apis = ({ data }) => {
                 <span className="faq-title">{faq.title}</span>
               </div>
               <div className="faq-content z-10">
-              {faq.content.map((c, i) => (
-                <div className="content-inner" key={i}>
-                  <div className="title">{c.title}</div>
-                  {markdownify(
-                      c.description,
-                      "h5",
-                      "description"
-                    )}
-                </div>
-                ))
-              }
+                {faq.content.map((c, i) => (
+                  <div className="content-inner" key={i}>
+                    <div className="title">{c.title}</div>
+                    {markdownify(c.description, "h5", "description")}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

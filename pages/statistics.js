@@ -83,14 +83,41 @@ const Statistics = ({ data }) => {
                 {/* 全局数据 */}
                 <div className="inner">
                   <SCaption caption="全局数据" />
+                  <div className="flex flex-col">
+                    <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0 md:mx-3">
+                      <div className="col-12 md:col-6 bg-slate-400 min-h-[100px] mt-6">
+                        div #1
+                      </div>
+                      <div className="col-12 md:col-6 bg-slate-400 min-h-[100px] mt-6">
+                        div #2
+                      </div>
+                    </div>
+                    <div className="flex bg-slate-200 min-h-[100px] mt-6">
+                      div #3
+                    </div>
+                  </div>
                 </div>
                 {/* 网络数据 */}
                 <div className="inner">
                   <SCaption caption="网络数据" />
+                  <div className="flex flex-col">
+                    <div className="flex bg-slate-200 min-h-[100px] mt-6">
+                      chart
+                    </div>
+                    <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0 md:mx-3">
+                      <div className="col-12 md:col-6 bg-slate-400 min-h-[100px] mt-6">
+                        platform rank
+                      </div>
+                      <div className="col-12 md:col-6 bg-slate-400 min-h-[100px] mt-6">
+                        webbrowser rank
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 {/* 项目统计 */}
                 <div className="inner">
                   <SCaption caption="项目统计" />
+                  <div className="bg-slate-400 min-h-[100px] mt-6"></div>
                 </div>
               </div>
             </div>
