@@ -39,6 +39,7 @@ const Home = ({ data }) => {
       })
       .catch(error => {
         console.log(error);
+        notify("error", "Clipboard is not avaliable in this web browser.");
       });	
     }
   };
