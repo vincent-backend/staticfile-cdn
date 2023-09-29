@@ -31,11 +31,15 @@ const Home = ({ data }) => {
 
   const copyToClipboard = (text) => {
     if (typeof navigator !== 'undefined') {
-      navigator.permissions.query({name: "clipboard-write"}).then(result => {
+      navigator.permissions.query({name: "clipboard-write"})
+      .then(result => {
         if (result.state == "granted" || result.state == "prompt") {
           navigator.clipboard.writeText(text);
           notify("success", "This url has been copied.");
         }
+      })
+      .catch(error => {
+        console.log(error);
       });	
     }
   };
