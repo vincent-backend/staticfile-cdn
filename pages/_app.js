@@ -5,7 +5,11 @@ import { LanguageProvider } from "contexts/LanguageContext";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
+
 import "styles/style.scss";
+import "react-toastify/dist/ReactToastify.css";
+
+import { ToastContainer } from "react-toastify";
 
 import localFont from "next/font/local";
 
@@ -50,6 +54,16 @@ const App = ({ Component, pageProps }) => {
       </Head>
       <LanguageProvider>
         <Component {...pageProps} />
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          draggable={false}
+          pauseOnVisibilityChange
+          closeOnClick
+          pauseOnHover
+        />
       </LanguageProvider>
     </main>
   );

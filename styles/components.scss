@@ -6,11 +6,11 @@
 }
 
 .section_title {
-  @apply pt-10 text-dark;
+  @apply pt-10 text-dark text-h3 font-bold;
 }
 
 .section_description {
-  @apply pt-2 text-base font-bold text-justify;
+  @apply pt-2 text-h5 md:text-base font-bold text-justify break-keep;
 }
 
 // container
@@ -100,7 +100,7 @@
 }
 
 .banner-text {
-  @apply text-white text-[0.95rem] font-medium leading-6 pt-4 md:pt-6;
+  @apply text-white text-h5 md:text-[0.95rem] font-medium leading-6 pt-4 md:pt-6;
 }
 
 .banner-link {
@@ -150,7 +150,7 @@
 
 /// index
 .online-store {
-  @apply pt-3 text-[30px] md:text-[16px] font-extrabold text-[#08c39d];
+  @apply pt-3 text-h4 md:text-[16px] font-extrabold text-[#08c39d];
 }
 
 // tab
@@ -168,7 +168,7 @@
 }
 
 .list-item {
-  @apply font-primary text-gray-700 hover:bg-[#e6f8f4] hover:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify;
+  @apply font-primary text-h5 md:text-base text-gray-700 hover:bg-[#e6f8f4] hover:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify;
 }
 
 /// statistics

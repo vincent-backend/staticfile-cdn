@@ -12,6 +12,8 @@ import BannerHome from "@layouts/components/banner/BannerHome";
 import { IoChevronForwardSharp } from "react-icons/io5";
 import toast from "@layouts/components/Toast";
 
+import {data as UrlData} from "../.mock/IndexUrls";
+
 const Home = ({ data }) => {
   const { locale, setLocale } = useTranslation();
 
@@ -25,6 +27,26 @@ const Home = ({ data }) => {
     console.log("Clicked");
     toast({ type, message });
   }, []);
+
+
+  const copyToClipboard = (text) => {
+    if (typeof navigator !== 'undefined') {
+      navigator.permissions.query({name: "clipboard-write"}).then(result => {
+        if (result.state == "granted" || result.state == "prompt") {
+          navigator.clipboard.writeText(text);
+          notify("success", "This url has been copied.");
+        }
+      });	
+    }
+  };
+
+  const renderListItem = (urls, i) => {
+    return (
+      <li className="list-item" key={i} onClick={() => copyToClipboard(urls)}>
+        {urls}
+      </li>
+    );
+  }
 
   useEffect(() => {
     //frontmatter
@@ -142,34 +164,28 @@ const Home = ({ data }) => {
       <section className="animate section">
         <div className="container flex justify-center">
           <div className="col-12 px-1">
-            {markdownify(section.react.title, "h3", "section_title")}
-            {markdownify(
-              section.react.description,
-              "h6",
-              "section_description",
-            )}
+            <div className="section_title">
+              {section.react.title}
+            </div>
+            <div className="section_description">
+              {section.react.description}
+            </div>
 
             <div className="flex flex-col relative mt-8">
               <div>
                 <Tabs>
                   <Tab name="HTTPS">
                     <ul role="list" className="home-tab-ul">
-                      <li className="list-item">
-                        https://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.js
-                      </li>
-                      <li className="list-item">
-                        https://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.min.js
-                      </li>
+                      {
+                        UrlData.react.https.map((url, index) => (renderListItem(url, index)))
+                      }
                     </ul>
                   </Tab>
                   <Tab name="HTTP">
                     <ul role="list" className="home-tab-ul">
-                      <li className="list-item">
-                        http://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.js
-                      </li>
-                      <li className="list-item">
-                        http://cdn.staticfile.org/react/18.2.0/cjs/react-jsx-dev-runtime.development.min.js
-                      </li>
+                      {
+                        UrlData.react.http.map((url, index) => (renderListItem(url, index)))
+                      }
                     </ul>
                   </Tab>
                 </Tabs>
@@ -197,22 +213,16 @@ const Home = ({ data }) => {
                 <Tabs>
                   <Tab name="HTTPS">
                     <ul role="list" className="home-tab-ul">
-                      <li className="list-item">
-                        https://cdn.staticfile.org/vue/3.3.4/vue.cis.js
-                      </li>
-                      <li className="list-item">
-                        https://cdn.staticfile.org/vue/3.3.4/vue.cis.min.js
-                      </li>
+                      {
+                        UrlData.vue.https.map((url, index) => (renderListItem(url, index)))
+                      }
                     </ul>
                   </Tab>
                   <Tab name="HTTP">
                     <ul role="list" className="home-tab-ul">
-                      <li className="list-item">
-                        http://cdn.staticfile.org/vue/3.3.4/vue.cis.js
-                      </li>
-                      <li className="list-item">
-                        http://cdn.staticfile.org/vue/3.3.4/vue.cis.min.js
-                      </li>
+                      {
+                        UrlData.vue.http.map((url, index) => (renderListItem(url, index)))
+                      }
                     </ul>
                   </Tab>
                 </Tabs>
@@ -243,22 +253,16 @@ const Home = ({ data }) => {
                 <Tabs>
                   <Tab name="HTTPS">
                     <ul role="list" className="home-tab-ul">
-                      <li className="list-item">
-                        https://cdn.staticfile.org/angular.js/1.8.3/angular-csp.js
-                      </li>
-                      <li className="list-item">
-                        https://cdn.staticfile.org/angular.js/1.8.3/angular-csp.min.js
-                      </li>
+                      {
+                        UrlData.angular.https.map((url, index) => (renderListItem(url, index)))
+                      }
                     </ul>
                   </Tab>
                   <Tab name="HTTP">
                     <ul role="list" className="home-tab-ul">
-                      <li className="list-item">
-                        http://cdn.staticfile.org/angular.js/1.8.3/angular-csp.js
-                      </li>
-                      <li className="list-item">
-                        http://cdn.staticfile.org/angular.js/1.8.3/angular-csp.min.js
-                      </li>
+                      {
+                        UrlData.angular.http.map((url, index) => (renderListItem(url, index)))
+                      }
                     </ul>
                   </Tab>
                 </Tabs>
@@ -289,22 +293,16 @@ const Home = ({ data }) => {
                 <Tabs>
                   <Tab name="HTTPS">
                     <ul role="list" className="home-tab-ul">
-                      <li className="list-item">
-                        https://cdn.staticfile.org/jquery/3.7.0/jquery.js
-                      </li>
-                      <li className="list-item">
-                        https://cdn.staticfile.org/jquery/3.7.0/jquery.min.js
-                      </li>
+                      {
+                        UrlData.jquery.https.map((url, index) => (renderListItem(url, index)))
+                      }
                     </ul>
                   </Tab>
                   <Tab name="HTTP">
                     <ul role="list" className="home-tab-ul">
-                      <li className="list-item">
-                        http://cdn.staticfile.org/jquery/3.7.0/jquery.js
-                      </li>
-                      <li className="list-item">
-                        http://cdn.staticfile.org/jquery/3.7.0/jquery.min.js
-                      </li>
+                      {
+                        UrlData.jquery.http.map((url, index) => (renderListItem(url, index)))
+                      }
                     </ul>
                   </Tab>
                 </Tabs>
