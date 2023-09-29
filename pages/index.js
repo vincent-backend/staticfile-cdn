@@ -24,7 +24,6 @@ const Home = ({ data }) => {
   let { banner, section } = frontmatter;
 
   const notify = useCallback((type, message) => {
-    console.log("Clicked");
     toast({ type, message });
   }, []);
 
