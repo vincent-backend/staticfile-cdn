@@ -1,7 +1,7 @@
 import { gsap } from "@lib/gsap";
 import { markdownify } from "@lib/utils/textConverter";
 import { getDataFromContent } from "@lib/contentParser";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Dropdown from "@layouts/components/dropdown/Dropdown";
 import useTranslation from "@hooks/useTranslation";
@@ -10,7 +10,8 @@ import Tabs from "@layouts/shortcodes/Tabs";
 import Tab from "@layouts/shortcodes/Tab";
 import BannerHome from "@layouts/components/banner/BannerHome";
 import { IoChevronForwardSharp } from "react-icons/io5";
-import toast from "@layouts/components/Toast";
+
+import copyToClipboard from "@hooks/useClipboard";
 
 import {data as UrlData} from "../.mock/IndexUrls";
 
@@ -23,32 +24,6 @@ const Home = ({ data }) => {
 
   let { banner, section } = frontmatter;
 
-  const notify = useCallback((type, message) => {
-    toast({ type, message });
-  }, []);
-
-
-  const copyToClipboard = (text) => {
-    if (typeof navigator !== 'undefined') {
-      navigator.permissions.query({name: "clipboard-write"})
-      .then(result => {
-        if (result.state == "granted" || result.state == "prompt") {
-          navigator.clipboard.writeText(text);
-          notify("success", "The url has been copied.");
-        }
-      })
-      .catch(error => {
-        if(window.ffclipboard) {
-          ffclipboard.setText(text);
-        }
-        else {
-          console.log(error);
-          notify("error", "Clipboard is not avaliable in this web browser.");
-        }
-        
-      });	
-    }
-  };
 
   const renderListItem = (urls, i) => {
     return (

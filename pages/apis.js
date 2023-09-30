@@ -6,6 +6,8 @@ import { markdownify } from "@lib/utils/textConverter";
 import BannerAPI from "@layouts/components/banner/BannerAPI";
 import Image from "next/image";
 
+import copyToClipboard from "@hooks/useClipboard";
+
 import { useEffect, useRef, useState } from "react";
 
 const Apis = ({ data }) => {
@@ -129,7 +131,7 @@ const Apis = ({ data }) => {
                   {api.content.map((c, i) => (
                     <div className="content-inner" key={i}>
                       <div className="title">{c.title}</div>
-                      <div className="url">
+                      <div className="url" onClick={() => copyToClipboard(c.url)}>
                         <span>{c.url}</span>
                       </div>
                       {markdownify(c.description, "h5", "description")}
