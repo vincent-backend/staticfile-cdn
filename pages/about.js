@@ -34,7 +34,7 @@ const About = ({ data }) => {
   return (
     <Base>
       <section className="section">
-        <div className="banner-bg overflow-hidden absolute w-screen h-[450px]">
+        <div className="banner-bg absolute w-full h-[450px] overflow-hidden">
           <div className="relative flex left-[-350px] sm:left-[-300px] md:left-[-100px] lg:left-0">
             <BannerAbout />
           </div>

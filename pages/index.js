@@ -131,7 +131,7 @@ const Home = ({ data }) => {
         </div>
       </section>
       <section className="section">
-        <div className="row content-xl h-[66px]">
+        <div className="row container h-[66px]">
           <div className="flex justify-center items-center -mt-[66px]">
             <div className="absolute container">
               <div className="bg-[url('/images/home/icon-search.png')] w-[19px] h-[19px] absolute ml-8 mt-[24px]" />
