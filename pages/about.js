@@ -35,11 +35,13 @@ const About = ({ data }) => {
     <Base>
       <section className="section">
         <div className="banner-bg overflow-hidden absolute w-screen h-[450px]">
-          <BannerAbout />
+          <div className="relative flex left-[-350px] sm:left-[-300px] md:left-[-100px] lg:left-0">
+            <BannerAbout />
+          </div>
         </div>
         <div className="flex flex-col justify-center container px-0 z-10">
           <div className="col-12 mt-12 mb-12">
-            <div className="banner-title text-[#070c13] mx-5 mb-12">
+            <div className="banner-title text-[#070c13] mx-5 mb-12 opacity-0">
               {banner.title}
             </div>
             <div className="container-main">

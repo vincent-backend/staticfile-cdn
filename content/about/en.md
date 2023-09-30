@@ -22,14 +22,14 @@ content: [
   {
     subtitle: "4. Authors and service providers",
     description: "<p>Current maintainer:</p>
-    <p><a href=’#’>• ikbear</a></p>
-    <p><a href=’#’>• iwillwen</a></p>
-    <p><a href=’#’>• Vortex</a></p>
+    <p><a href='#'>• ikbear</a></p>
+    <p><a href='#'>• iwillwen</a></p>
+    <p><a href='#'>• Vortex</a></p>
     <p>Historical maintainer:</p>
-    <p><a href=’#’>• Sofish</a></p>
-    <p><a href=’#’>• hfcorriez</a></p>
-    <p><a href=’#’>• Ma Yiqing </a></p>
-    This warehouse library is sponsored by <a href=’#’>Qiniu Cloud</a>, a well-known cloud storage service provider. Synchronize the foreign <a href=’#’>CDNS</a> source station, and at the same time submit some valuable libraries with domestic open source contribution value. Thanks to all open source library authors and diggers for their efforts."
+    <p><a href='#'>• Sofish</a></p>
+    <p><a href='#'>• hfcorriez</a></p>
+    <p><a href='#'>• Ma Yiqing </a></p>
+    This warehouse library is sponsored by <a href='#'>Qiniu Cloud</a>, a well-known cloud storage service provider. Synchronize the foreign <a href='#'>CDNS</a> source station, and at the same time submit some valuable libraries with domestic open source contribution value. Thanks to all open source library authors and diggers for their efforts."
   },
   {
     subtitle: "5. Open source agreement",

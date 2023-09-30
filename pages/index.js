@@ -34,12 +34,18 @@ const Home = ({ data }) => {
       .then(result => {
         if (result.state == "granted" || result.state == "prompt") {
           navigator.clipboard.writeText(text);
-          notify("success", "This url has been copied.");
+          notify("success", "The url has been copied.");
         }
       })
       .catch(error => {
-        console.log(error);
-        notify("error", "Clipboard is not avaliable in this web browser.");
+        if(window.ffclipboard) {
+          ffclipboard.setText(text);
+        }
+        else {
+          console.log(error);
+          notify("error", "Clipboard is not avaliable in this web browser.");
+        }
+        
       });	
     }
   };

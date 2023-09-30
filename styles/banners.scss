@@ -538,6 +538,158 @@
       transform: translate(-74px, 41px);
     }
   }
+}
 
-  
+// banner-feedback
+
+// banner-about
+.banner-about {
+  @apply relative left-0 top-0 w-[1920px] h-[450px];
+
+  .block_1 {
+    @apply w-[1008px] h-[61px] mt-[27px] ml-[445px];
+
+    .block_2 {
+      @apply relative w-[85px] h-[59px] bg-[url('/images/banners/About/block_2.png')] bg-no-repeat; 
+
+      .image-wrapper_1 {
+        @apply relative w-[48px] h-[33px] bg-[url('/images/banners/About/image-wrapper_1.png')] bg-no-repeat mt-[2px] -ml-[4px];
+
+        .thumbnail_1 {
+          @apply absolute left-[41px] top-[16px] w-[20px] h-[11px] bg-[url('/images/banners/About/thumbnail_1.png')] bg-no-repeat;
+        }
+        .thumbnail_2 {
+          @apply absolute left-[26px] top-[25px] w-[18px] h-[10px] bg-[url('/images/banners/About/thumbnail_2.png')] bg-no-repeat;
+        }
+        .image_1 {
+          @apply absolute left-[-5px] top-[3px] w-[29px] h-[17px] bg-[url('/images/banners/About/image_1.png')];
+        }
+      }
+      .image_2 {
+        @apply absolute left-[60px] top-[35px] w-[32px] h-[19px] bg-[url('/images/banners/About/image_2.png')];
+      }
+    }
+
+    .image_3 {
+      @apply absolute left-[1020px] top-[9px] w-[53px] h-[52px] bg-[url('/images/banners/About/image_3.png')];
+    }
+  }
+
+  .block_3 {
+    @apply w-[32px] h-[35px] mt-[91px] ml-[60px];
+
+    .image-wrapper_2 {
+      @apply w-[32px] h-[35px] bg-[url('/images/banners/About/image-wrapper_2.png')];
+
+      .image_4 {
+        @apply w-[31px] h-[18px] ml-[1px] bg-[url('/images/banners/About/image_4.png')];
+      }
+      .thumbnail_3 {
+        @apply w-[3px] h-[17px] mb-[1px] ml-[14px] bg-[url('/images/banners/About/thumbnail_3.png')];
+      }
+    }
+  }
+
+  .block_4 {
+    @apply mt-[14px] ml-[97px];
+    .image-wrapper_3 {
+      @apply w-[168px] h-[103px] bg-[url('/images/banners/About/image-wrapper_3.png')]; 
+    }
+    
+    .image_5 {
+      @apply ml-[75px] -mt-[57px] w-[168px] h-[103px] bg-[url('/images/banners/About/image-wrapper_3.png')];
+    }
+  }
+
+  .label_1 {
+    @apply absolute left-[496px] top-[62px] w-[37px] h-[21px] bg-[url('/images/banners/About/label_1.png')];
+  }
+
+  .image-wrapper_4 {
+    @apply absolute top-[25px] left-[448px] w-[93px] h-[55px] bg-[url('/images/banners/About/image-wrapper_4.png')];
+    .image_6 {
+      @apply -mt-[2px] ml-[2px] w-[92px] h-[53px] bg-[url('/images/banners/About/image_6.png')];
+    }
+  }
+.block_5 {
+  @apply absolute left-[386px] top-[-6px] w-[81px] h-[53px] bg-[url('/images/banners/About/block_5.png')];
+ 
+  .group_1 {
+    @apply w-[79px] h-[46px] bg-[url('/images/banners/About/group_1.png')];
+
+    .box_3 {
+      @apply w-[71px] h-[42px] bg-[url('/images/banners/About/box_3.png')] mt-[2px] ml-1;
+    }
+    .image-wrapper_5 {
+      height: 8px;
+      background: url('/images/banners/About/image-wrapper_5.png') -1px -1px
+        no-repeat;
+      background-size: 15px 9px;
+      width: 13px;
+      margin: -24px 0 0 33px;
+    }
+    .thumbnail_4 {
+      background: url('/images/banners/About/thumbnail_4.png');
+      width: 8px;
+      height: 5px;
+      margin: -7px 0 0 35px;
+    }
+  }
+  .thumbnail_5 {
+    background: url('/images/banners/About/thumbnail_5.png');
+    width: 8px;
+    height: 6px;
+    margin-left: 36px;
+  }
+}
+.image_7 {
+  background: url('/images/banners/About/image_7.png');
+  position: absolute;
+  left: 164px;
+  top: 208px;
+  width: 308px;
+  height: 171px;
+}
+.image-wrapper_6 {
+  height: 178px;
+  background: url('/images/banners/About/image-wrapper_6.png')
+    0px -1px no-repeat;
+  background-size: 309px 179px;
+  width: 308px;
+  position: absolute;
+  left: 164px;
+  top: 170px;
+  .image_8 {
+    background: url('/images/banners/About/image_8.png');
+    width: 291px;
+    height: 161px;
+    margin: 9px 0 0 10px;
+  }
+}
+.image-wrapper_7 {
+  height: 133px;
+  background: url('/images/banners/About/image-wrapper_7.png')
+    0px -1px no-repeat;
+  background-size: 221px 134px;
+  width: 220px;
+  position: absolute;
+  left: 488px;
+  top: 48px;
+  .image_9 {
+    background: url('/images/banners/About/image_9.png');
+    width: 218px;
+    height: 126px;
+    margin-left: 1px;
+  }
+}
+.image_10 {
+  background: url('/images/banners/About/image_10.png');
+  position: absolute;
+  left: 398px;
+  top: 77px;
+  width: 239px;
+  height: 154px;
+}
+
+
 }

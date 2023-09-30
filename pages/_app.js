@@ -3,8 +3,10 @@ import theme from "@config/theme.json";
 import { LanguageProvider } from "contexts/LanguageContext";
 
 import Head from "next/head";
+import NextNProgress from "nextjs-progressbar";
 import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
+
 
 import "styles/style.scss";
 import "react-toastify/dist/ReactToastify.css";
@@ -53,6 +55,7 @@ const App = ({ Component, pageProps }) => {
         />
       </Head>
       <LanguageProvider>
+        <NextNProgress color="#1cbc9c" options={{ showSpinner: false }} />
         <Component {...pageProps} />
         <ToastContainer
           position="top-right"

@@ -360,7 +360,7 @@
 }
 
 .about-content {
-  @apply text-dark text-[14px] text-justify font-bold break-words pt-4 leading-7;
+  @apply text-dark text-h5 md:text-[14px] text-justify md:font-bold break-words pt-4 leading-7;
   a {
     @apply text-primary;
   }
