@@ -89,7 +89,7 @@ const Home = ({ data }) => {
           <div className="banner-bg md:min-h-[450px]">
             <div className="row">
               <div className="relative col-12 md:col-6 z-10 pb-10">
-                <div className="pt-14 md:pt-[108px]">
+                <div className="pt-14 md:pt-[98px]">
                   {markdownify(banner.title, "h3", "banner-title opacity-0")}
                   {markdownify(
                     banner.content,
