@@ -91,8 +91,8 @@ const Statistics = ({ data }) => {
                 <div className="inner">
                   <SCaption caption={section.global_data} />
                   <div className="flex flex-col">
-                    <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0 md:mx-3">
-                      <div className="col-12 md:col-6 mt-6">
+                    <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0">
+                      <div className="flex-col w-full mt-6">
                         <div className="font-bold text-h5 text-black pb-3">
                           {section.request}
                         </div>
@@ -101,7 +101,7 @@ const Statistics = ({ data }) => {
                           section={section}
                         />
                       </div>
-                      <div className="col-12 md:col-6 mt-6">
+                      <div className="flex-col w-full mt-6">
                         <div className="font-bold text-h5 text-black pb-3">
                           {section.bandwidth}
                         </div>
