@@ -121,11 +121,11 @@ export const GlobalDashboard = ({ gType, section }) => {
               />
               {/*Caption && Total*/}
               <div className="flex flex-col lg:grow lg:flex-row ml-2 items-start lg:items-center justify-between">
-                <span className="flex text-base font-bold">
+                <div className="flex lg:w-1/3 text-base font-bold">
                   {d.site == SiteNames.Ali && section.ali}
                   {d.site == SiteNames.Tencent && section.tencent}
                   {d.site == SiteNames.Huawei && section.huawei}
-                </span>
+                </div>
                 <div className="flex grow">
                   <div className="text-left w-full pl-0 lg:pl-[20%] pr-2 text-base tracking-tighter">
                     {d.total.toLocaleString("en-US").replaceAll(",", " ")}
