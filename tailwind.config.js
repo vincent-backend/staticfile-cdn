@@ -34,6 +34,7 @@ module.exports = {
         text: theme.colors.default.text_color.default,
         light: theme.colors.default.text_color.light,
         dark: theme.colors.default.text_color.dark,
+        danger: theme.colors.default.text_color.danger,
         primary: theme.colors.default.theme_color.primary,
         body: theme.colors.default.theme_color.body,
         border: theme.colors.default.theme_color.border,

@@ -131,7 +131,10 @@ const Apis = ({ data }) => {
                   {api.content.map((c, i) => (
                     <div className="content-inner" key={i}>
                       <div className="title">{c.title}</div>
-                      <div className="url" onClick={() => copyToClipboard(c.url)}>
+                      <div
+                        className="url"
+                        onClick={() => copyToClipboard(c.url)}
+                      >
                         <span>{c.url}</span>
                       </div>
                       {markdownify(c.description, "h5", "description")}

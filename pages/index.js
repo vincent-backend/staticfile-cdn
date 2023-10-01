@@ -13,7 +13,7 @@ import { IoChevronForwardSharp } from "react-icons/io5";
 
 import copyToClipboard from "@hooks/useClipboard";
 
-import {data as UrlData} from "../.mock/IndexUrls";
+import { data as UrlData } from "../.mock/IndexUrls";
 
 const Home = ({ data }) => {
   const { locale, setLocale } = useTranslation();
@@ -24,14 +24,13 @@ const Home = ({ data }) => {
 
   let { banner, section } = frontmatter;
 
-
   const renderListItem = (urls, i) => {
     return (
       <li className="list-item" key={i} onClick={() => copyToClipboard(urls)}>
         {urls}
       </li>
     );
-  }
+  };
 
   useEffect(() => {
     //frontmatter
@@ -146,12 +145,10 @@ const Home = ({ data }) => {
         </div>
       </section>
       {/* React */}
-      <section className="animate section">
+      <section className="section">
         <div className="container flex justify-center">
           <div className="col-12 px-1">
-            <div className="section_title">
-              {section.react.title}
-            </div>
+            <div className="section_title">{section.react.title}</div>
             <div className="section_description">
               {section.react.description}
             </div>
@@ -161,16 +158,16 @@ const Home = ({ data }) => {
                 <Tabs>
                   <Tab name="HTTPS">
                     <ul role="list" className="home-tab-ul">
-                      {
-                        UrlData.react.https.map((url, index) => (renderListItem(url, index)))
-                      }
+                      {UrlData.react.https.map((url, index) =>
+                        renderListItem(url, index),
+                      )}
                     </ul>
                   </Tab>
                   <Tab name="HTTP">
                     <ul role="list" className="home-tab-ul">
-                      {
-                        UrlData.react.http.map((url, index) => (renderListItem(url, index)))
-                      }
+                      {UrlData.react.http.map((url, index) =>
+                        renderListItem(url, index),
+                      )}
                     </ul>
                   </Tab>
                 </Tabs>
@@ -198,16 +195,16 @@ const Home = ({ data }) => {
                 <Tabs>
                   <Tab name="HTTPS">
                     <ul role="list" className="home-tab-ul">
-                      {
-                        UrlData.vue.https.map((url, index) => (renderListItem(url, index)))
-                      }
+                      {UrlData.vue.https.map((url, index) =>
+                        renderListItem(url, index),
+                      )}
                     </ul>
                   </Tab>
                   <Tab name="HTTP">
                     <ul role="list" className="home-tab-ul">
-                      {
-                        UrlData.vue.http.map((url, index) => (renderListItem(url, index)))
-                      }
+                      {UrlData.vue.http.map((url, index) =>
+                        renderListItem(url, index),
+                      )}
                     </ul>
                   </Tab>
                 </Tabs>
@@ -238,16 +235,16 @@ const Home = ({ data }) => {
                 <Tabs>
                   <Tab name="HTTPS">
                     <ul role="list" className="home-tab-ul">
-                      {
-                        UrlData.angular.https.map((url, index) => (renderListItem(url, index)))
-                      }
+                      {UrlData.angular.https.map((url, index) =>
+                        renderListItem(url, index),
+                      )}
                     </ul>
                   </Tab>
                   <Tab name="HTTP">
                     <ul role="list" className="home-tab-ul">
-                      {
-                        UrlData.angular.http.map((url, index) => (renderListItem(url, index)))
-                      }
+                      {UrlData.angular.http.map((url, index) =>
+                        renderListItem(url, index),
+                      )}
                     </ul>
                   </Tab>
                 </Tabs>
@@ -278,16 +275,16 @@ const Home = ({ data }) => {
                 <Tabs>
                   <Tab name="HTTPS">
                     <ul role="list" className="home-tab-ul">
-                      {
-                        UrlData.jquery.https.map((url, index) => (renderListItem(url, index)))
-                      }
+                      {UrlData.jquery.https.map((url, index) =>
+                        renderListItem(url, index),
+                      )}
                     </ul>
                   </Tab>
                   <Tab name="HTTP">
                     <ul role="list" className="home-tab-ul">
-                      {
-                        UrlData.jquery.http.map((url, index) => (renderListItem(url, index)))
-                      }
+                      {UrlData.jquery.http.map((url, index) =>
+                        renderListItem(url, index),
+                      )}
                     </ul>
                   </Tab>
                 </Tabs>

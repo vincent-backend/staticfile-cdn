@@ -7,6 +7,10 @@ import { markdownify } from "@lib/utils/textConverter";
 import SCaption from "@layouts/components/statistics/SCaption";
 import { useEffect, useRef, useState } from "react";
 
+import { DataTypes } from "constant/Types";
+
+import { GlobalDashboard1, GlobalDashboard2 } from "@layouts/components/statistics/GlobalDashboard";
+
 const Statistics = ({ data }) => {
   const { locale, setLocale } = useTranslation();
   const [frontmatter, setFrontmatter] = useState(
@@ -82,18 +86,26 @@ const Statistics = ({ data }) => {
               <div className="div-statistics">
                 {/* 全局数据 */}
                 <div className="inner">
-                  <SCaption caption="全局数据" />
+                  <SCaption caption={section.global_data} />
                   <div className="flex flex-col">
                     <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0 md:mx-3">
-                      <div className="col-12 md:col-6 bg-slate-400 min-h-[100px] mt-6">
-                        div #1
+                      <div className="col-12 md:col-6 mt-6">
+                        <div className="font-bold text-h5 text-black pb-3">
+                          {section.request}
+                        </div>
+                        <GlobalDashboard1 gType={DataTypes.REQUEST} section={section} />
                       </div>
-                      <div className="col-12 md:col-6 bg-slate-400 min-h-[100px] mt-6">
-                        div #2
+                      <div className="col-12 md:col-6 mt-6">
+                        <div className="font-bold text-h5 text-black pb-3">
+                          {section.bandwidth}
+                        </div>
+                        <GlobalDashboard1 gType={DataTypes.BANDWIDTH} section={section} />
                       </div>
                     </div>
                     <div className="flex bg-slate-200 min-h-[100px] mt-6">
-                      div #3
+                      <div className="font-bold text-h5 text-black pb-3">
+                        {section.cache_hit_rate}
+                      </div>
                     </div>
                   </div>
                 </div>

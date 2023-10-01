@@ -14,7 +14,6 @@
     "@headlessui/react": "^1.7.17",
     "clsx": "^2.0.0",
     "disqus-react": "^1.1.5",
-    "feather-icons-react": "^0.6.2",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.11.4",

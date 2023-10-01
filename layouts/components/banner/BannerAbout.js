@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const BannerAbout = () => {
   return (
     <div className="banner-about">
@@ -21,8 +19,7 @@ const BannerAbout = () => {
         </div>
       </div>
       <div className="block_4">
-        <div className="image-wrapper_3">
-        </div>
+        <div className="image-wrapper_3"></div>
         <div className="image_5" />
       </div>
       <div className="label_1" />
@@ -36,14 +33,14 @@ const BannerAbout = () => {
           <div className="thumbnail_4" />
         </div>
       </div>
-      <div className="image_7"/>
+      <div className="image_7" />
       <div className="image-wrapper_6">
         <div className="image_8" />
       </div>
       <div className="image-wrapper_7 flex-col">
-        <div className="image_9"/>
+        <div className="image_9" />
       </div>
-      <div className="image_10"/>
+      <div className="image_10" />
     </div>
   );
 };
