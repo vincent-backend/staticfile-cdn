@@ -127,7 +127,7 @@ export const GlobalDashboard = ({ gType, section }) => {
                   {d.site == SiteNames.Huawei && section.huawei}
                 </span>
                 <div className="flex grow">
-                  <div className="text-left w-full lg:text-center pr-2 text-base tracking-tighter">
+                  <div className="text-left w-full pl-0 lg:pl-[20%] pr-2 text-base tracking-tighter">
                     {d.total.toLocaleString("en-US").replaceAll(",", " ")}
                   </div>
                 </div>
@@ -166,8 +166,6 @@ export const GlobalDashboard = ({ gType, section }) => {
 
 export const CacheHitRate = ({ section }) => {
   const { cache_hit_rate } = staticData.global_data;
-
-  console.log(cache_hit_rate);
 
   return (
     <div className="flex flex-col md:flex-row h-[270px] md:h-24 justify-between space-x-0 space-y-3 md:space-x-6 md:space-y-0">
