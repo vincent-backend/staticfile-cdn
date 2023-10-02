@@ -135,13 +135,13 @@ export const GlobalDashboard = ({ gType, section }) => {
             </div>
             <div className="flex w-[42%] items-center">
               <div className="w-1/2 justify-center mr-2">
-                <div className="h-[5px] rounded-sm max-w-[110px] mx-auto bg-body">
+                <div className="h-[5px] rounded-[2.5px] max-w-[110px] mx-auto bg-body">
                   <div
                     className={clsx(
-                      `flex h-[5px] rounded-sm w-[0%] ${gType}-prog-${d.site}`,
+                      `flex h-[5px] rounded-[2.5px] w-[0%] ${gType}-prog-${d.site}`,
                       d.site == SiteNames.Ali && "bg-[#ff941a]",
-                      d.site == SiteNames.Huawei && "bg-danger",
-                      d.site == SiteNames.Tencent && "bg-[#8d04c8]",
+                      d.site == SiteNames.Huawei && "bg-[#8d04c8]",
+                      d.site == SiteNames.Tencent && "bg-danger",
                     )}
                   />
                 </div>
