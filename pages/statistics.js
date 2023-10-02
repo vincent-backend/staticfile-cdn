@@ -9,6 +9,8 @@ import { useEffect, useRef, useState } from "react";
 
 import { DataTypes } from "constant/Types";
 
+import ChartArea from "@layouts/components/statistics/ChartArea";
+
 import {
   CacheHitRate,
   GlobalDashboard,
@@ -121,10 +123,13 @@ const Statistics = ({ data }) => {
                 </div>
                 {/* 网络数据 */}
                 <div className="inner">
-                  <SCaption caption="网络数据" />
+                  <SCaption caption={section.network_data} />
                   <div className="flex flex-col">
-                    <div className="flex bg-slate-200 min-h-[100px] mt-6">
-                      chart
+                    <div className="flex-col min-h-[100px] mt-6">
+                      <div className="flex font-bold text-h5 text-black pb-3">
+                        {section.requests_over_time}
+                      </div>
+                      <ChartArea />
                     </div>
                     <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0 md:mx-3">
                       <div className="col-12 md:col-6 bg-slate-400 min-h-[100px] mt-6">

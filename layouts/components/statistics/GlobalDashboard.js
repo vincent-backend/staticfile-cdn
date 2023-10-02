@@ -8,12 +8,14 @@ import { DataTypes, SiteNames } from "constant/Types";
 
 import { gsap } from "@lib/gsap";
 
+import Image from "next/image";
+
 const style_icon_huawei =
-  "w-[22px] h-[17px] bg-[url('/images/statistics/huawei.png')]";
+  "w-[26px] h-[26px] bg-[url('/images/statistics/data_ic_huawei.svg')]";
 const style_icon_ali =
-  "w-[24px] h-[14px] bg-[url('/images/statistics/ali.png')]";
+  "w-[26px] h-[26px] bg-[url('/images/statistics/data_ic_ali.svg')]";
 const style_icon_tencent =
-  "w-[27px] h-[21px] bg-[url('/images/statistics/tencent.png')]";
+  "w-[26px] h-[26px] bg-[url('/images/statistics/data_ic_tencent.svg')]";
 
 export const GlobalDashboard = ({ gType, section }) => {
   const { global_data } = staticData;
@@ -24,9 +26,9 @@ export const GlobalDashboard = ({ gType, section }) => {
   const dataArray = data.data.sort((a, b) => (a.total > b.total ? -1 : 1));
 
   const style_topIcon = clsx({
-    "w-[36px] h-[26px] bg-[url('/images/statistics/request.png')]":
+    "w-[36px] h-[36px] bg-[url('/images/statistics/data_ic_request.svg')]":
       gType === DataTypes.REQUEST,
-    "w-[31px] h-[30px] bg-[url('/images/statistics/bandwidth.png')]":
+    "w-[36px] h-[36px] bg-[url('/images/statistics/data_ic_bandwidth.svg')]":
       gType === DataTypes.BANDWIDTH,
   });
 
@@ -135,10 +137,10 @@ export const GlobalDashboard = ({ gType, section }) => {
             </div>
             <div className="flex w-[42%] items-center">
               <div className="w-1/2 justify-center mr-2">
-                <div className="h-[5px] rounded-[2.5px] max-w-[110px] mx-auto bg-body">
+                <div className="h-[5px] rounded-[3px] max-w-[110px] mx-auto bg-body">
                   <div
                     className={clsx(
-                      `flex h-[5px] rounded-[2.5px] w-[0%] ${gType}-prog-${d.site}`,
+                      `flex h-[5px] rounded-[3px] w-[0%] ${gType}-prog-${d.site}`,
                       d.site == SiteNames.Ali && "bg-[#ff941a]",
                       d.site == SiteNames.Huawei && "bg-[#8d04c8]",
                       d.site == SiteNames.Tencent && "bg-danger",

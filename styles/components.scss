@@ -156,11 +156,11 @@
 
 // tab
 .active-tab {
-  @apply bg-[url('/images/home/tab-active.png')];
+  @apply bg-[url('/images/home/tab_bg_sel.svg')];
 }
 
 .tab {
-  @apply bg-[url('/images/home/tab.png')];
+  @apply bg-[url('/images/home/tab_bg_nor.svg')];
 }
 
 

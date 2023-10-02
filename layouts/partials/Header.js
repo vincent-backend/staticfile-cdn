@@ -89,11 +89,11 @@ const Header = () => {
                   ? config.nav_button.label_cn
                   : config.nav_button.label_en}
                 <Image
-                  src="/images/swap.svg"
+                  src="/images/home/nav_btn_ic_toggle.svg"
                   alt="swap"
-                  width="0"
-                  height="0"
-                  className="ml-1 inline w-[20px] h-auto"
+                  width="18"
+                  height="18"
+                  className="ml-1 inline w-[18px] h-[18px]"
                 />
               </button>
             )}

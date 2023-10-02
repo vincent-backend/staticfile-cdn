@@ -14,3 +14,5 @@ section:
   monthly_increase: "Monthly increase"
   monthly_decrease: "Monthly decrease"
   cache_hit_rate: "Cache hit rate"
+  network_data: "Network Data"
+  requests_over_time: "Requests over time"

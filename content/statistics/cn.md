@@ -14,4 +14,6 @@ section:
   monthly_increase: "每月上降"
   monthly_decrease: "每月下降"
   cache_hit_rate: "缓存命中率"
+  network_data: "网络数据"
+  requests_over_time: "随着时间的推移请求"
 

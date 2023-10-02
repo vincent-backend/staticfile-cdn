@@ -2,12 +2,10 @@
   "site": {
     "title": "Staticfile CDN",
     "base_url": "/",
-    "favicon": "/images/logo.png",
+    "favicon": "/images/favicon.ico",
     "logo": "/images/logo.png",
-    "logo_width": "32",
-    "logo_height": "32",
-    "width": "165",
-    "height": "60",
+    "width": "166",
+    "height": "38",
     "logo_mobile": "/images/logo-mobile.png",
     "logo_text": "StaticFile CDN"
   },
