@@ -129,7 +129,7 @@ const Statistics = ({ data }) => {
                       <div className="flex font-bold text-h5 text-black pb-3">
                         {section.requests_over_time}
                       </div>
-                      <ChartArea />
+                      <ChartArea section={section} />
                     </div>
                     <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0 md:mx-3">
                       <div className="col-12 md:col-6 bg-slate-400 min-h-[100px] mt-6">
