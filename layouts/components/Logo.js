@@ -4,8 +4,7 @@ import Link from "next/link";
 
 const Logo = ({ src }) => {
   // destructuring items from config object
-  const { logo, width, height, logo_text, title } =
-    config.site;
+  const { logo, width, height, logo_text, title } = config.site;
 
   return (
     <Link href="/" className="navbar-brand block">

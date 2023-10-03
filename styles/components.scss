@@ -182,6 +182,10 @@
     .caption {
       @apply text-h4 md:text-h3 text-primary font-bold;
     }
+
+    .sub-caption {
+      @apply flex font-bold text-h5 text-black pb-3;
+    }
   }
 }
 

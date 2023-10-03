@@ -15,6 +15,8 @@ import {
   CacheHitRate,
   GlobalDashboard,
 } from "@layouts/components/statistics/GlobalDashboard";
+import TopPlatform from "@layouts/components/statistics/TopPlatforms";
+import PopularBrowsers from "@layouts/components/statistics/PopularBrowsers";
 
 const Statistics = ({ data }) => {
   const { locale, setLocale } = useTranslation();
@@ -125,18 +127,30 @@ const Statistics = ({ data }) => {
                 <div className="inner">
                   <SCaption caption={section.network_data} />
                   <div className="flex flex-col">
-                    <div className="flex-col min-h-[100px] mt-6">
-                      <div className="flex font-bold text-h5 text-black pb-3">
+                    <div className="flex-col mt-6">
+                      <div className="sub-caption">
                         {section.requests_over_time}
                       </div>
                       <ChartArea section={section} />
                     </div>
                     <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0 md:mx-3">
-                      <div className="col-12 md:col-6 bg-slate-400 min-h-[100px] mt-6">
-                        platform rank
+                      <div className="col-12 md:col-6 mt-6">
+                        <div className="sub-caption flex-row items-center mb-2">
+                          <div className="flex">{section.top_platform}</div>
+                          <div className="flex ml-4 border-[1px] border-border text-base font-normal text-dark">
+                            {section.group_platform_version}
+                          </div>
+                        </div>
+                        <TopPlatform />
                       </div>
-                      <div className="col-12 md:col-6 bg-slate-400 min-h-[100px] mt-6">
-                        webbrowser rank
+                      <div className="col-12 md:col-6 min-h-[100px] mt-6">
+                        <div className="sub-caption flex-row items-center mb-2">
+                          <div className="flex">{section.popular_browsers}</div>
+                          <div className="flex ml-4 border-[1px] border-border text-base font-normal text-dark">
+                            {section.group_browser_version}
+                          </div>
+                        </div>
+                        <PopularBrowsers />
                       </div>
                     </div>
                   </div>
