@@ -13,7 +13,8 @@
         "default": "#666",
         "dark": "#222",
         "light": "#ceced0",
-        "danger": "#ff0014"
+        "danger": "#ff0014",
+        "gray": "#626174"
       }
     }
   },

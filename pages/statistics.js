@@ -15,7 +15,7 @@ import {
   CacheHitRate,
   GlobalDashboard,
 } from "@layouts/components/statistics/GlobalDashboard";
-import TopPlatform from "@layouts/components/statistics/TopPlatforms";
+import TopPlatforms from "@layouts/components/statistics/TopPlatforms";
 import PopularBrowsers from "@layouts/components/statistics/PopularBrowsers";
 
 const Statistics = ({ data }) => {
@@ -141,7 +141,7 @@ const Statistics = ({ data }) => {
                             {section.group_platform_version}
                           </div>
                         </div>
-                        <TopPlatform />
+                        <TopPlatforms section={section} />
                       </div>
                       <div className="col-12 md:col-6 min-h-[100px] mt-6">
                         <div className="sub-caption flex-row items-center mb-2">
@@ -150,7 +150,7 @@ const Statistics = ({ data }) => {
                             {section.group_browser_version}
                           </div>
                         </div>
-                        <PopularBrowsers />
+                        <PopularBrowsers section={section} />
                       </div>
                     </div>
                   </div>

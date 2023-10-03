@@ -21,9 +21,10 @@ section:
   popular_browsers: "Popular Browsers"
   group_browser_version: "Browser version"
   more_platform_data: "Select the platform below to view more data"
+  more_browser_data: "Select the browser below to view more data"
   name: "Name"
   market_share: "Market share"
-  change: "改变"
+  change: "Change"
   record: "Records"
   Display: "Display"
-  
+
