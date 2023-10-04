@@ -7,6 +7,9 @@ import TableRow from "./TableRow";
 const TopPlatforms = ({section}) => {
 
     const [data, setData] = useState(staticData.platform_rank);
+    const [total, setTotal] = useState(data.length);
+
+    console.log(total);
 
     return (
     <div className="border-[2px] border-border flex-col">
