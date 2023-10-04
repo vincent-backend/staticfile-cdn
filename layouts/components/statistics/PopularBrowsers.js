@@ -9,7 +9,7 @@ const PopularBrowsers = ({section}) => {
     const [data, setData] = useState(staticData.platform_rank);
 
     return (
-        <div className="h-40 border-[2px] border-border flex-col">
+        <div className="border-[2px] border-border flex-col">
             <div className="flex flex-row h-[40px] ml-[12px] items-center">
                 <Image alt="instructons_mark" src="/images/statistics/data_ic_Instructions.svg" width={16} height={16} />
                 <span className="text-h6 md:text-base text-text_gray ml-[6px]">{section.more_browser_data}</span>

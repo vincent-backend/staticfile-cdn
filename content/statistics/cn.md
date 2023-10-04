@@ -26,7 +26,7 @@ section:
   market_share: "市场份额"
   change: "改变"
   record: "记录"
-  Display: "展示"
+  display: "展示"
   
 
 

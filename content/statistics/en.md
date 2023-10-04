@@ -26,5 +26,5 @@ section:
   market_share: "Market share"
   change: "Change"
   record: "Records"
-  Display: "Display"
+  display: "Display"
 

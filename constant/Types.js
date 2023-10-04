@@ -8,3 +8,5 @@ export const SiteNames = {
     Ali: "ali",
     Huawei: "huawei"
 }
+
+export const RecordCounts = [5, 10, 25, 50];
