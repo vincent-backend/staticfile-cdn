@@ -26,5 +26,18 @@ export const staticData = {
             {"site": "ali", "rate": 99.49},
             {"site": "huawei", "rate": 98.93}
         ]
-    }
+    },
+    "platform_rank": [
+        {"name":"安卓", "market_share": 41.76, "change": 0.8, "img": "/images/statistics/logos/data_platform_logo_android.png"},
+        {"name":"IOS", "market_share": 25.4, "change": -0.7, "img": "/images/statistics/logos/data_platform_logo_ios.png"},
+        {"name":"Windows", "market_share": 22.74, "change": -0.5, "img": "/images/statistics/logos/data_platform_logo_windows.png"},
+        {"name":"macOS", "market_share": 5.29, "change": 1.5, "img": "/images/statistics/logos/data_platform_logo_macos.png"},
+        {"name":"Linux", "market_share": 2.55, "change": -9.3, "img": "/images/statistics/logos/data_platform_logo_linux.png"},
+        {"name":"Other", "market_share": 1.07, "change": 9.2, "img": "/images/statistics/logos/data_platform_logo_other.png"},
+        {"name":"Chrome OS", "market_share": 0.95, "change": 8, "img": "/images/statistics/logos/data_platform_logo_chrome.png"},
+        {"name":"Tizen", "market_share": 0.16, "change": -5.9, "img": "/images/statistics/logos/data_platform_logo_tizen.png"},
+        {"name":"Play Station 4", "market_share": 0.04, "change": -20, "img": "/images/statistics/logos/data_platform_logo_play.png"},
+        {"name":"webOS", "market_share": 0.03, "change": 0, "img": "/images/statistics/logos/data_platform_logo_web.png"},
+    ]
+
 }

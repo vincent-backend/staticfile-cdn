@@ -135,7 +135,7 @@ const Statistics = ({ data }) => {
                     </div>
                     <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0 md:mx-3">
                       <div className="col-12 md:col-6 mt-6">
-                        <div className="sub-caption flex-row items-center mb-2">
+                        <div className="sub-caption flex-row items-center">
                           <div className="flex">{section.top_platform}</div>
                           <div className="flex ml-4 border-[1px] border-border text-base font-normal text-dark">
                             {section.group_platform_version}
@@ -144,7 +144,7 @@ const Statistics = ({ data }) => {
                         <TopPlatforms section={section} />
                       </div>
                       <div className="col-12 md:col-6 min-h-[100px] mt-6">
-                        <div className="sub-caption flex-row items-center mb-2">
+                        <div className="sub-caption flex-row items-center">
                           <div className="flex">{section.popular_browsers}</div>
                           <div className="flex ml-4 border-[1px] border-border text-base font-normal text-dark">
                             {section.group_browser_version}
