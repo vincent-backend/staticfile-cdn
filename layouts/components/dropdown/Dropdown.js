@@ -1,12 +1,12 @@
-import { IoCaretDown } from "react-icons/io5";
 
-const Dropdown = () => {
+const Dropdown = ({ version_list }) => {
+
+  console.log(version_list);
+
   return (
     <div className="dropdown">
       <select className="dropbtn">
-        <option value="18.2.0" className="h-10">
-          18.2.0
-        </option>
+        <option>10</option>
       </select>
     </div>
   );

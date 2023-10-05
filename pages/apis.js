@@ -6,7 +6,7 @@ import { markdownify } from "@lib/utils/textConverter";
 import BannerAPI from "@layouts/components/banner/BannerAPI";
 import Image from "next/image";
 
-import copyToClipboard from "@hooks/useClipboard";
+import CopyToClipboard from "@hooks/useClipboard";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -133,7 +133,7 @@ const Apis = ({ data }) => {
                       <div className="title">{c.title}</div>
                       <div
                         className="url"
-                        onClick={() => copyToClipboard(c.url)}
+                        onClick={() => CopyToClipboard(c.url)}
                       >
                         <span>{c.url}</span>
                       </div>

@@ -1,17 +1,15 @@
-import toast from "@layouts/components/Toast";
+import { notify } from "./useNotify";
 
-    
-export function notify (type, message) {
-    toast({ type, message });
-}
+const CopyToClipboard = (text, locale) => {
 
-const copyToClipboard = (text) => {
+    const msg = locale === "cn" ? "复制成功!" : "Successfully copied!"
+
     if (typeof navigator !== 'undefined') {
         navigator.permissions.query({name: "clipboard-write"})
         .then(result => {
         if (result.state == "granted" || result.state == "prompt") {
             navigator.clipboard.writeText(text);
-            notify("success", "The url has been copied.");
+            notify("success", msg);
         }
         })
         .catch (async (error) => {
@@ -29,7 +27,7 @@ const copyToClipboard = (text) => {
                 });
             
                 document.body.removeChild(input);
-                notify("success", "The url has been copied.");
+                notify("success", msg);
               } 
               catch (err) {
                 console.log(error);
@@ -42,4 +40,4 @@ const copyToClipboard = (text) => {
     }
 };
 
-export default copyToClipboard;
+export default CopyToClipboard;

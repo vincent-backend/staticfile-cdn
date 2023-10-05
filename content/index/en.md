@@ -6,6 +6,7 @@ banner:
   installation_tools: "Installation tools"
   usage: "Usage"
   search_bar_placeholder: "Please enter the name of the open source library..."
+  copied_to_clipboard: "复制成功"
 
 section:
   online_store: "Online Store"

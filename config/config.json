@@ -12,14 +12,12 @@
 
   "settings": {
     "pagination": 6,
-    "summary_length": 200,
-    "blog_folder": "posts"
+    "summary_length": 200
   },
 
   "params": {
     "tag_manager_id": "",
     "contact_form_action": "#",
-    "footer_content": "Some content here.",
     "copyright": "Copyright 2014-2021 Staticfile.org(https:Staticfile.org) Built upon love"
   },
 
@@ -32,7 +30,7 @@
 
   "metadata": {
     "meta_author": "StaticFile",
-    "meta_image": "/images/og-image.png",
+    "meta_image": "/images/logo.png",
     "meta_description": "StaticFile CDN Website"
   },
 

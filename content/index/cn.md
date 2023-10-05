@@ -6,6 +6,7 @@ banner:
   installation_tools: "安装工具"
   usage: "使用说明"
   search_bar_placeholder: "请输入开源车名称..."
+  copied_to_clipboard: "复制成功"
 
 section:
   online_store: "网站"

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Chart from "chart.js/auto";
 
-import ToggleButton from "@components/buttons/ToggleButton";
+import ToggleButton from "@layouts/components/buttons/ToggleButton";
 import { SiteNames } from "constant/Types";
 
 const ChartArea = ({ section }) => {

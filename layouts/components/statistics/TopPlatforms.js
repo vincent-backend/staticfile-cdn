@@ -9,10 +9,10 @@ import { RecordCounts } from "constant/Types";
 const TopPlatforms = ({section}) => {
 
     const [total, setTotal] = useState(staticData.platform_rank.length);
-    const [sIndex, setSIndex] = useState(0);
+    const [current, setCurrent] = useState(0);
     const [rCount, setRCount] = useState(10);
-    const [fId, setFId] = useState(sIndex * rCount);
-    const [lId, setLId] = useState(Math.min((sIndex + 1) * rCount, total));
+    const [fId, setFId] = useState(current * rCount);
+    const [lId, setLId] = useState(Math.min((current + 1) * rCount, total));
     const [data, setData] = useState(staticData.platform_rank.slice(fId, lId));
     
 
@@ -21,10 +21,10 @@ const TopPlatforms = ({section}) => {
     }
 
     useEffect(()=>{
-        setFId(sIndex * rCount);
-        setLId(Math.min((sIndex + 1) * rCount), total);
+        setFId(current * rCount);
+        setLId(Math.min((current + 1) * rCount), total);
         setData(staticData.platform_rank.slice(fId, lId));
-    }, [sIndex, rCount, fId, lId, total]);
+    }, [current, rCount, fId, lId, total]);
 
     return (
     <div className="border-[2px] border-border flex-col">

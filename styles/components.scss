@@ -6,11 +6,11 @@
 }
 
 .section_title {
-  @apply pt-10 text-dark text-h3 font-bold;
+  @apply text-dark text-h3 font-bold;
 }
 
 .section_description {
-  @apply pt-2 text-h5 md:text-base font-bold text-justify break-keep;
+  @apply mt-[10px] text-h5 md:text-base font-bold text-justify break-keep;
 }
 
 // container
@@ -169,7 +169,11 @@
 }
 
 .list-item {
-  @apply font-primary text-h5 md:text-base text-gray-700 hover:bg-[#e6f8f4] hover:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify cursor-pointer;
+  @apply font-primary text-h5 md:text-base text-gray-700 hover:bg-[#e6f8f4] hover:text-primary active:bg-[#e6f8f4] active:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify cursor-pointer;
+}
+
+.search-list-item {
+  @apply h-[36px] break-keep overflow-x-hidden items-center px-8 md:px-16 hover:bg-[#e6f8f4] hover:text-primary active:bg-[#e6f8f4] active:text-primary cursor-pointer;
 }
 
 /// statistics
