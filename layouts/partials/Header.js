@@ -38,7 +38,6 @@ const Header = () => {
 
   return (
     <>
-      <div className="header-height-fix"></div>
       <header
         className={`header ${sticky && "header-sticky"} ${
           direction === 1 && "unpinned"
@@ -66,6 +65,7 @@ const Header = () => {
                       className={`nav-link flex align-middle items-center justify-center ${
                         asPath === menu.url && "active"
                       }`}
+                      onClick={ () => setShowMenu(false)}
                     >
                       <div className="pl-[80px] text-left grow md:pl-0 md:grow-0 md:text-center">
                         {menu.name}
@@ -82,7 +82,7 @@ const Header = () => {
           <div className="order-1 ml-auto mr-5 flex items-center">
             {config.nav_button.enable && (
               <button
-                className="btn btn-primary flex items-center w-fit px-3 h-auto md:h-[34px] mr-8 sm:mr-14 md:mr-1"
+                className="btn btn-primary flex items-center w-fit px-3 h-auto md:h-[34px] mr-4 sm:mr-14 md:mr-1"
                 onClick={() => setLocale(`${locale == "en" ? "cn" : "en"}`)}
               >
                 {locale === "en"
@@ -118,6 +118,7 @@ const Header = () => {
           </div>
         </nav>
       </header>
+      <div className="header-height-fix"></div>
     </>
   );
 };

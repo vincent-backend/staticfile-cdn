@@ -29,6 +29,7 @@ const Home = ({ data, lib_react, lib_default }) => {
   /// Library list
   const [isLibsShow, setLibsShow] = useState(false);
   const [libList, setLibList] = useState(null);
+  const listRef = useRef(null);
 
   /// Primary Lib data
   const [libData, setLibData] = useState(lib_react);
@@ -99,14 +100,15 @@ const Home = ({ data, lib_react, lib_default }) => {
 
   const handleLibItemClick = async (lib) => {
     setLibsShow(false);
+    setDefaultMode(false);
+
     const ld = await getLibraryData(lib);
 
     if (ld != null) {
-      setLibData(ld);
-      setDefaultMode(false);
+      setLibData(ld);  
       /// set state
-      setFileList(libData.files);
-      setVersion(libData.version);
+      setFileList(ld.files);
+      setVersion(ld.version);
     } else {
       setLibData(lib_react);
       setDefaultMode(true);
@@ -189,6 +191,21 @@ const Home = ({ data, lib_react, lib_default }) => {
       animateFunc();
       setInit(false);
     }
+
+    // mouse down
+    const handleClickOutside = (event) => {
+      if (listRef.current && !listRef.current.contains(event.target)) {
+        setLibsShow(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+
+
   }, [locale, data, isInit]);
 
   return (
@@ -254,7 +271,7 @@ const Home = ({ data, lib_react, lib_default }) => {
               />
             </div>
             {isLibsShow && (
-              <div className="absolute container top-[33px] z-30">
+              <div className="absolute container top-[33px] z-30" ref={listRef}>
                 <div className="h-full bg-white border border-border rounded-sm text-h6 max-h-[300px] overflow-y-scroll ">
                   <ul>
                     {libList.map((l, i) => (

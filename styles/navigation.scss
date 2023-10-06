@@ -1,9 +1,9 @@
 
 .header-height-fix {
-  @apply h-[60px];
+  @apply h-[59px];
 }
 .header {
-  @apply fixed left-0 w-full h-[60px] top-0 z-50 bg-white;
+  @apply fixed left-0 w-full h-[62px] z-50 bg-white pt-[2px] -top-[2px];
 
   &-sticky {
     @apply py-[18px] shadow-[0_2px_8px_rgba(32,45,73,0.1)];

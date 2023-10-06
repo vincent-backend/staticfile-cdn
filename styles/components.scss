@@ -32,19 +32,18 @@
 }
 
 // social icon style
-.social-icons {
-  @apply space-x-10 ;
-  li {
-    @apply inline-block text-xl ;
-    a {
-      @apply block h-8 w-8 rounded-full border-none text-center bg-[#e2e3e9] text-white hover:text-white hover:bg-primary transition-all duration-300;
+.social-icon {
+  @apply flex;
+  a {
+    @apply block h-[30px] w-[30px] transition-all duration-300;
 
-      svg {
-        @apply m-auto h-8;
-      }
+    svg {
+      @apply m-auto h-8;
     }
   }
 }
+
+
 
 // notice
 .notice {
@@ -141,11 +140,32 @@
 }
 
 //footer
-.footer-copy-write {
-  @apply underline text-primary;
+.footer-description {
+  @apply break-words text-[#626174] whitespace-nowrap text-base;
+}
+
+.text-copyright {
+  @apply break-words text-[#626174] whitespace-nowrap text-base;
+}
+
+.footer-link {
+  @apply text-primary;
 
   &:hover  {
     @apply text-[#2cdcac];
+  }
+}
+
+.qrcode-hover {
+  animation: ani 0.2s forwards;
+  
+  @keyframes ani {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 }
 
