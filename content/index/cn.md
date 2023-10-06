@@ -10,23 +10,4 @@ banner:
 
 section:
   homepage: "网站"
-  react:
-    title: "REACT"
-    description: "React is a Javascript library for building user interfaces."
-    href: "#"
-
-  vue:
-    title: "VUE"
-    description: "Simple, Fast & Composable MVVM for building interactive interfaces"
-    href: "#"
-
-  angular:
-    title: "ANGULAR.JS"
-    description: "AngularJS is an MVC framework for building web applications. The core features include HTML enhanced with custom component and data-binding capabilites, dependency injection and strong focus on simplicity, testability, maintainablility and boiler-plate reduction."
-    href: "#"
-
-  jquery:
-    title: "JQUERY"
-    description: "JavaScript library for DOM operations"
-    href: "#"
 ---

@@ -3,7 +3,6 @@ import { markdownify } from "@lib/utils/textConverter";
 import { getDataFromContent } from "@lib/contentParser";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Dropdown from "@layouts/components/dropdown/Dropdown";
 import useTranslation from "@hooks/useTranslation";
 import Base from "@layouts/Baseof";
 import Tabs from "@layouts/shortcodes/Tabs";
@@ -50,7 +49,8 @@ const Home = ({ data, lib_react, lib_default }) => {
     defaultLibArray.map((lib) => lib.version),
   );
   const [defaultFileLists, setDefaultFileLists] = useState(
-    defaultLibArray.map((lib) => lib.files));
+    defaultLibArray.map((lib) => lib.files),
+  );
 
   let { banner, section } = frontmatter;
 
@@ -115,7 +115,6 @@ const Home = ({ data, lib_react, lib_default }) => {
   };
 
   const handleVersionChange = async (libname, version, target = "primary") => {
-
     if (target === "primary") {
       setVersion(version);
       const res = await getFileList(libname, version);
@@ -126,7 +125,7 @@ const Home = ({ data, lib_react, lib_default }) => {
       const vs = [...defaultVersions];
       vs[target] = version;
       setDefaultVersions(vs);
-      
+
       const res = await getFileList(libname, version);
       if (res != null) {
         const fs = [...defaultFileLists];
@@ -190,7 +189,6 @@ const Home = ({ data, lib_react, lib_default }) => {
       animateFunc();
       setInit(false);
     }
-
   }, [locale, data, isInit]);
 
   return (
@@ -281,7 +279,28 @@ const Home = ({ data, lib_react, lib_default }) => {
             <div className="col-12 px-1">
               <div className="section_title">{libData.name.toUpperCase()}</div>
               <div className="section_description">{libData.description}</div>
-              <div className="flex flex-col relative mt-[30px]">
+              <div className="flex flex-col relative mt-[10px] sm:mt-[30px]">
+                <div className="flex justify-end mb-[10px] sm:hidden">
+                  <div className="dropdown">
+                    <select
+                      className="dropbtn"
+                      value={currentVersion}
+                      onChange={(e) =>
+                        handleVersionChange(
+                          libData.name,
+                          e.target.value,
+                          "primary",
+                        )
+                      }
+                    >
+                      {libData.versions.map((version) => (
+                        <option key={version} value={version}>
+                          {version}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
                 <div>
                   <Tabs>
                     <Tab name="HTTPS">
@@ -300,13 +319,17 @@ const Home = ({ data, lib_react, lib_default }) => {
                     </Tab>
                   </Tabs>
                 </div>
-                <div className="absolute top-0 right-0">
+                <div className="absolute top-0 right-0 hidden sm:block">
                   <div className="dropdown">
                     <select
                       className="dropbtn"
-                      value={ currentVersion }
+                      value={currentVersion}
                       onChange={(e) =>
-                        handleVersionChange(libData.name, e.target.value, "primary")
+                        handleVersionChange(
+                          libData.name,
+                          e.target.value,
+                          "primary",
+                        )
                       }
                     >
                       {libData.versions.map((version) => (
@@ -326,18 +349,33 @@ const Home = ({ data, lib_react, lib_default }) => {
         )}
 
         {/* If default show */}
-        {isDefaultMode && 
+        {isDefaultMode &&
           defaultLibArray.map((lib, index) => (
             <div
               className="container flex justify-center pb-[50px]"
               key={lib.name}
             >
               <div className="col-12 px-1">
-                <div className="section_title">
-                  {lib.name.toUpperCase()}
-                </div>
+                <div className="section_title">{lib.name.toUpperCase()}</div>
                 <div className="section_description">{lib.description}</div>
-                <div className="flex flex-col relative mt-[30px]">
+                <div className="flex flex-col relative mt-[10px] sm:mt-[30px]">
+                  <div className="flex justify-end mb-[10px] sm:hidden">
+                    <div className="dropdown">
+                      <select
+                        className="dropbtn"
+                        value={defaultVersions[index]}
+                        onChange={(e) =>
+                          handleVersionChange(lib.name, e.target.value, index)
+                        }
+                      >
+                        {lib.versions.map((version) => (
+                          <option key={version} value={version}>
+                            {version}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
                   <div>
                     <Tabs>
                       <Tab name="HTTPS">
@@ -356,17 +394,13 @@ const Home = ({ data, lib_react, lib_default }) => {
                       </Tab>
                     </Tabs>
                   </div>
-                  <div className="absolute top-0 right-0">
+                  <div className="absolute top-0 right-0 hidden sm:block">
                     <div className="dropdown">
                       <select
                         className="dropbtn"
-                        value={ defaultVersions[index] }
+                        value={defaultVersions[index]}
                         onChange={(e) =>
-                          handleVersionChange(
-                            lib.name,
-                            e.target.value,
-                            index,
-                          )
+                          handleVersionChange(lib.name, e.target.value, index)
                         }
                       >
                         {lib.versions.map((version) => (

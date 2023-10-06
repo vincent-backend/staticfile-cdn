@@ -45,7 +45,7 @@ const App = ({ Component, pageProps }) => {
   }, []);
 
   return (
-    <main className={`${primaryFont.variable} font-sans`}>
+    <main className={`${primaryFont.variable}`}>
       <Head>
         {/* responsive meta */}
         <meta

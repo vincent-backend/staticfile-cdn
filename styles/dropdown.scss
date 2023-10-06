@@ -1,5 +1,5 @@
 .dropbtn {
-    @apply bg-white text-primary font-bold text-left px-3 py-1 w-32 sm:w-40 h-10 rounded-md text-base border-none border-white cursor-pointer ring-0;
+    @apply bg-white text-primary font-bold flex text-left px-3 py-1 sm:min-w-[150px] md:min-w-[250px] h-10 rounded-md text-base border-none border-white cursor-pointer ring-0;
     
     &:focus {
         @apply ring-0;
