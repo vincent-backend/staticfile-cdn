@@ -194,8 +194,8 @@ const Home = ({ data, lib_react, lib_default }) => {
   return (
     <Base>
       <section className="section">
-        <div className="row bg-primary">
-          <div className="container overflow-hidden">
+        <div className="flex bg-primary overflow-hidden">
+          <div className="container">
             <div className="banner-bg md:min-h-[450px]">
               <div className="row">
                 <div className="relative col-12 md:col-6 z-10 pb-10">
