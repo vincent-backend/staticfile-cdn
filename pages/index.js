@@ -76,6 +76,8 @@ const Home = ({ data, lib_react, lib_default }) => {
       setLibList(null);
       setLibsShow(false);
       setLibData(lib_react);
+      setFileList(lib_react.files);
+      setVersion(lib_react.version);
       setDefaultMode(true);
     } else {
       console.log("search text changed.");
@@ -93,7 +95,6 @@ const Home = ({ data, lib_react, lib_default }) => {
         console.log(error);
         setLibsShow(false);
         notify("error", "Server Connection failed.");
-        //setLibData(defaultLibdata);
       }
     }
   };
