@@ -7,6 +7,7 @@ import { markdownify } from "@lib/utils/textConverter";
 import SCaption from "@layouts/components/statistics/SCaption";
 import { useEffect, useRef, useState } from "react";
 
+import { staticData } from ".mock/statisticsData";
 import { DataTypes } from "constant/Types";
 
 import ChartArea from "@layouts/components/statistics/ChartArea";
@@ -15,8 +16,7 @@ import {
   CacheHitRate,
   GlobalDashboard,
 } from "@layouts/components/statistics/GlobalDashboard";
-import TopPlatforms from "@layouts/components/statistics/TopPlatforms";
-import PopularBrowsers from "@layouts/components/statistics/PopularBrowsers";
+import RankTable from "@layouts/components/statistics/RankTable";
 
 const Statistics = ({ data }) => {
   const { locale, setLocale } = useTranslation();
@@ -141,7 +141,7 @@ const Statistics = ({ data }) => {
                             {section.group_platform_version}
                           </div>
                         </div>
-                        <TopPlatforms section={section} />
+                        <RankTable section={section} fetch_data={staticData.platform_rank}/>
                       </div>
                       <div className="col-12 md:col-6 min-h-[100px] mt-6">
                         <div className="sub-caption flex-row items-center">
@@ -150,7 +150,7 @@ const Statistics = ({ data }) => {
                             {section.group_browser_version}
                           </div>
                         </div>
-                        <PopularBrowsers section={section} />
+                        <RankTable section={section} fetch_data={staticData.popular_browsers}/>
                       </div>
                     </div>
                   </div>

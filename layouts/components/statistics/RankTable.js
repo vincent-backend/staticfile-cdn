@@ -1,28 +1,44 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-import { staticData } from ".mock/statisticsData";
 import TableRow from "./TableRow";
 
 import { RecordCounts } from "constant/Types";
 
-const TopPlatforms = ({ section }) => {
-  const [total, setTotal] = useState(staticData.platform_rank.length);
-  const [current, setCurrent] = useState(0);
-  const [rCount, setRCount] = useState(10);
-  const [fId, setFId] = useState(current * rCount);
-  const [lId, setLId] = useState(Math.min((current + 1) * rCount, total));
-  const [data, setData] = useState(staticData.platform_rank.slice(fId, lId));
+import { PaginationNextButton, PaginationPrevButton } from "../buttons/PaginationButton";
+
+const TopPlatforms = ({ section, fetch_data }) => {
+  const [total, setTotal] = useState(fetch_data.length);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [countPerPage, setCountPerPage] = useState(10);
+  const [pageCount, setPageCount] = useState(Math.ceil(total / countPerPage));
+  const [fId, setFId] = useState(currentPage * countPerPage);
+  const [lId, setLId] = useState(Math.min((currentPage + 1) * countPerPage, total));
+  const [data, setData] = useState(fetch_data.slice(fId, lId));
 
   const handleRecordSelect = (e) => {
-    setRCount(e.target.value);
+    setCurrentPage(0);
+    setCountPerPage(e.target.value);
+    setPageCount(Math.ceil(total / e.target.value));
   };
 
+  const handlePrevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  }
+
+  const handleNextPage = () => {
+    if (currentPage < pageCount-1 && pageCount > 1) {
+      setCurrentPage(currentPage + 1);
+    }
+  }
+
   useEffect(() => {
-    setFId(current * rCount);
-    setLId(Math.min((current + 1) * rCount), total);
-    setData(staticData.platform_rank.slice(fId, lId));
-  }, [current, rCount, fId, lId, total]);
+    setFId(currentPage * countPerPage);
+    setLId(Math.min((currentPage + 1) * countPerPage), total);
+    setData(fetch_data.slice(fId, lId));
+  }, [currentPage, countPerPage, fId, lId, total, fetch_data]);
 
   return (
     <div className="border-[2px] border-border flex-col">
@@ -71,7 +87,7 @@ const TopPlatforms = ({ section }) => {
           <span>{section.display}: </span>
           <select
             className="border-none active:border-none"
-            defaultValue={rCount}
+            defaultValue={countPerPage}
             onChange={handleRecordSelect}
           >
             {RecordCounts.map((r) => (
@@ -81,7 +97,10 @@ const TopPlatforms = ({ section }) => {
             ))}
           </select>
         </div>
-        <div className="flex w-[60px] h-[48px] justify-between"></div>
+        <div className="flex w-[60px] h-[48px] justify-end space-x-[8px] items-center">
+          <PaginationPrevButton isEnabled={ currentPage > 0 } callback={()=>handlePrevPage} />
+          <PaginationNextButton isEnabled={ currentPage < pageCount-1 && pageCount > 1} callback={()=>handleNextPage} />
+        </div>
       </div>
     </div>
   );

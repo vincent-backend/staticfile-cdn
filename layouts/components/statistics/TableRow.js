@@ -26,7 +26,7 @@ const TableRow = ({ row }) => {
           {row.name}
         </span>
       </td>
-      <td className="text-right pr-2">{row.market_share}%</td>
+      <td className="text-right pr-2">{row.market_share.toFixed(2)}%</td>
       <td
         className={clsx(
           "text-base md:text-6 text-right pr-2 md:pr-4",
@@ -35,7 +35,7 @@ const TableRow = ({ row }) => {
         )}
       >
         {row.change > 0 && `+`}
-        {row.change}%
+        {row.change.toFixed(1)}%
       </td>
     </tr>
   );
