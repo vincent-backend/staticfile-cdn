@@ -9,7 +9,7 @@ banner:
   copied_to_clipboard: "复制成功"
 
 section:
-  online_store: "网站"
+  homepage: "网站"
   react:
     title: "REACT"
     description: "React is a Javascript library for building user interfaces."

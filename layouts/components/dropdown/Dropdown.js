@@ -1,6 +1,4 @@
-
 const Dropdown = ({ version_list }) => {
-
   console.log(version_list);
 
   return (

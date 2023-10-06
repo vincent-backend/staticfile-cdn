@@ -1,12 +1,7 @@
 import clsx from "clsx";
 
-const PaginatonButton = ({type, count, current}) => {
+const PaginatonButton = ({ type, count, current }) => {
+  //const style_
 
-    //const style_
-
-    return (
-        <button>
-
-        </button>
-    );
-}
+  return <button></button>;
+};

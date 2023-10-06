@@ -17,13 +17,14 @@ import { notify } from "@hooks/useNotify";
 
 import { getFileList, getLibraryData, getLibraryList } from "@lib/data-load";
 
-const Home = ({ data, lib_react, lib_vue, lib_angular, lib_jquery }) => {
+const Home = ({ data, lib_react, lib_default }) => {
   const { locale, setLocale } = useTranslation();
 
+  // static data
   let dataOne = data.filter((dt) => dt.lang === locale)[0];
-
   const [frontmatter, setFrontmatter] = useState(dataOne);
 
+  // for init animation
   const [isInit, setInit] = useState(true);
 
   /// Library list
@@ -33,17 +34,28 @@ const Home = ({ data, lib_react, lib_vue, lib_angular, lib_jquery }) => {
   /// Primary Lib data
   const [libData, setLibData] = useState(lib_react);
   if (libData == undefined) {
-    notify("error", "Server Connection Timed out.");
+    notify("error", "Server Connection failed.");
   }
-  const [isDefaultLibs, setDefaultLibs] = useState(true);
+
   const [fileList, setFileList] = useState(libData.files);
-  const [currentVersion, setVersion] = useState(libData.latest_version);
-  const versionRef = useRef(null);
+  const [currentVersion, setVersion] = useState(libData.version);
+
+  /// Default Lib data
+  // Vue, Angular.js, JQuery
+  const [isDefaultMode, setDefaultMode] = useState(true);
+  const [defaultLibArray, setDefaultLibArray] = useState(
+    Object.values(lib_default),
+  );
+  const [defaultVersions, setDefaultVersions] = useState(
+    defaultLibArray.map((lib) => lib.version),
+  );
+  const [defaultFileLists, setDefaultFileLists] = useState(
+    defaultLibArray.map((lib) => lib.files));
 
   let { banner, section } = frontmatter;
 
-  const renderListItem = (http, name, version, filename, i) => {
-    const urls = http + "://cdn.staticfile.org/" + name + "/" + version + "/" + filename;
+  const renderListItem = (http, filename, i) => {
+    const urls = http + "://cdn.staticfile.org/" + filename;
     return (
       <li
         className="list-item"
@@ -63,7 +75,7 @@ const Home = ({ data, lib_react, lib_vue, lib_angular, lib_jquery }) => {
       setLibList(null);
       setLibsShow(false);
       setLibData(lib_react);
-      setDefaultLibs(true);
+      setDefaultMode(true);
     } else {
       console.log("search text changed.");
       try {
@@ -79,43 +91,50 @@ const Home = ({ data, lib_react, lib_vue, lib_angular, lib_jquery }) => {
       } catch (error) {
         console.log(error);
         setLibsShow(false);
-        notify("error", "Server Connection Timed out.");
+        notify("error", "Server Connection failed.");
         //setLibData(defaultLibdata);
       }
     }
   };
 
   const handleLibItemClick = async (lib) => {
+    setLibsShow(false);
     const ld = await getLibraryData(lib);
-
-    console.log("current lib data");
-    console.log(ld);
 
     if (ld != null) {
       setLibData(ld);
-      setDefaultLibs(false);
+      setDefaultMode(false);
       /// set state
       setFileList(libData.files);
-      setVersion(libData.latest_version);
+      setVersion(libData.version);
     } else {
       setLibData(lib_react);
-      setDefaultLibs(true);
-      notify("error", "Server Connection Timed out.");
+      setDefaultMode(true);
+      notify("error", "Server connection failed.");
     }
-
-    setLibsShow(false);
   };
 
-  const handleVersionChange = async (libname, version) => {
-    setVersion(version);
+  const handleVersionChange = async (libname, version, target = "primary") => {
 
-    const res = await getFileList(libname, version);
-
-    if (res != null) {
-      setFileList(res.files);
+    if (target === "primary") {
+      setVersion(version);
+      const res = await getFileList(libname, version);
+      if (res != null) {
+        setFileList(res.files);
+      }
+    } else {
+      const vs = [...defaultVersions];
+      vs[target] = version;
+      setDefaultVersions(vs);
+      
+      const res = await getFileList(libname, version);
+      if (res != null) {
+        const fs = [...defaultFileLists];
+        fs[target] = res.files;
+        setDefaultFileLists(fs);
+      }
     }
-  }
-
+  };
 
   const animateFunc = () => {
     const ctx = gsap.context(() => {
@@ -172,11 +191,7 @@ const Home = ({ data, lib_react, lib_vue, lib_angular, lib_jquery }) => {
       setInit(false);
     }
 
-    /// set state
-    setFileList(libData.files);
-    setVersion(libData.latest_version);
-
-  }, [locale, data, libData]);
+  }, [locale, data, isInit]);
 
   return (
     <Base>
@@ -260,7 +275,7 @@ const Home = ({ data, lib_react, lib_vue, lib_angular, lib_jquery }) => {
           </div>
         </div>
 
-        {/* Default Lib data */}
+        {/* Primary Lib data */}
         {libData != null && (
           <div className="container flex justify-center pb-[50px]">
             <div className="col-12 px-1">
@@ -272,14 +287,14 @@ const Home = ({ data, lib_react, lib_vue, lib_angular, lib_jquery }) => {
                     <Tab name="HTTPS">
                       <ul role="list" className="home-tab-ul">
                         {fileList.map((file, index) =>
-                          renderListItem("https", libData.name, currentVersion, file, index),
+                          renderListItem("https", file, index),
                         )}
                       </ul>
                     </Tab>
                     <Tab name="HTTP">
                       <ul role="list" className="home-tab-ul">
                         {fileList.map((file, index) =>
-                          renderListItem("http", libData.name, currentVersion, file, index),
+                          renderListItem("http", file, index),
                         )}
                       </ul>
                     </Tab>
@@ -287,7 +302,13 @@ const Home = ({ data, lib_react, lib_vue, lib_angular, lib_jquery }) => {
                 </div>
                 <div className="absolute top-0 right-0">
                   <div className="dropdown">
-                    <select className="dropbtn" value={currentVersion} onChange={(e) => handleVersionChange(libData.name, e.target.value)}>
+                    <select
+                      className="dropbtn"
+                      value={ currentVersion }
+                      onChange={(e) =>
+                        handleVersionChange(libData.name, e.target.value, "primary")
+                      }
+                    >
                       {libData.versions.map((version) => (
                         <option key={version} value={version}>
                           {version}
@@ -298,48 +319,71 @@ const Home = ({ data, lib_react, lib_vue, lib_angular, lib_jquery }) => {
                 </div>
               </div>
               <div className="online-store">
-                <a href={section.react.href}>{section.online_store}</a>
+                <a href={libData.homepage}>{section.homepage}</a>
               </div>
             </div>
           </div>
         )}
 
         {/* If default show */}
-        {isDefaultLibs && (
-          // vue
-          <div className="container flex justify-center pb-[50px]">
-            <div className="col-12 px-1">
-              <div className="section_title">{section.react.title}</div>
-              <div className="section_description">
-                {section.react.description}
-              </div>
-              {/* Tab */}
-              <div className="flex flex-col relative mt-[30px]">
-                <div>
-                  <Tabs>
-                    <Tab name="HTTPS">
-                      <ul role="list" className="home-tab-ul">
-
-                      </ul>
-                    </Tab>
-                    <Tab name="HTTP">
-                      <ul role="list" className="home-tab-ul">
-
-                      </ul>
-                    </Tab>
-                  </Tabs>
+        {isDefaultMode && 
+          defaultLibArray.map((lib, index) => (
+            <div
+              className="container flex justify-center pb-[50px]"
+              key={lib.name}
+            >
+              <div className="col-12 px-1">
+                <div className="section_title">
+                  {lib.name.toUpperCase()}
                 </div>
-                <div className="absolute top-0 right-0">
-                  <Dropdown />
+                <div className="section_description">{lib.description}</div>
+                <div className="flex flex-col relative mt-[30px]">
+                  <div>
+                    <Tabs>
+                      <Tab name="HTTPS">
+                        <ul role="list" className="home-tab-ul">
+                          {defaultFileLists[index].map((file, index) =>
+                            renderListItem("https", file, index),
+                          )}
+                        </ul>
+                      </Tab>
+                      <Tab name="HTTP">
+                        <ul role="list" className="home-tab-ul">
+                          {defaultFileLists[index].map((file, index) =>
+                            renderListItem("http", file, index),
+                          )}
+                        </ul>
+                      </Tab>
+                    </Tabs>
+                  </div>
+                  <div className="absolute top-0 right-0">
+                    <div className="dropdown">
+                      <select
+                        className="dropbtn"
+                        value={ defaultVersions[index] }
+                        onChange={(e) =>
+                          handleVersionChange(
+                            lib.name,
+                            e.target.value,
+                            index,
+                          )
+                        }
+                      >
+                        {lib.versions.map((version) => (
+                          <option key={version} value={version}>
+                            {version}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              {/*Online Store*/}
-              <div className="online-store">
-                <a href={section.react.href}>{section.online_store}</a>
+                <div className="online-store">
+                  <a href={lib.homepage}>{section.homepage}</a>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          ))}
       </section>
     </Base>
   );
@@ -352,17 +396,15 @@ export const getStaticProps = async () => {
   const data = await getDataFromContent("content/index");
 
   const libdata_react = await getLibraryData("react");
-  const libdata_vue = await getLibraryData("vue");
-  const libdata_angular = await getLibraryData("angular.js");
-  const libdata_jquery = await getLibraryData("jquery");
+  const lib_vue = await getLibraryData("vue");
+  const lib_angular = await getLibraryData("angular.js");
+  const lib_jquery = await getLibraryData("jquery");
 
   return {
     props: {
       data,
       lib_react: libdata_react,
-      lib_vue: libdata_vue,
-      lib_angular: libdata_angular,
-      lib_jquery: libdata_jquery,
+      lib_default: { lib_vue, lib_angular, lib_jquery },
     },
   };
 };
