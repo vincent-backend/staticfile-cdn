@@ -27,6 +27,8 @@ section:
   change: "改变"
   record: "记录"
   display: "展示"
+  most_popular_projects: "最受欢迎的项目"
+  item_name: "项目名"
   
 
 

@@ -9,7 +9,7 @@ section:
   ali: "Ali Cloud"
   tencent: "Tencent Cloud"
   global_data: "Global data"
-  request: "Request"
+  request: "Requests"
   bandwidth: "Bandwidth"
   monthly_increase: "Monthly increase"
   monthly_decrease: "Monthly decrease"
@@ -27,4 +27,6 @@ section:
   change: "Change"
   record: "Records"
   display: "Display"
+  most_popular_projects: "Most popular projects"
+  item_name: "Items"
 

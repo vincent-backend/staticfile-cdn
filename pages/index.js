@@ -33,7 +33,7 @@ const Home = ({ data, lib_react, lib_default }) => {
 
   /// Primary Lib data
   const [libData, setLibData] = useState(lib_react);
-  if (libData == undefined) {
+  if (libData == null) {
     notify("error", "Server Connection failed.");
   }
 
@@ -72,15 +72,12 @@ const Home = ({ data, lib_react, lib_default }) => {
     const currText = e.target.value;
 
     if (currText == "") {
-      console.log("search text cleared");
-      setLibList(null);
       setLibsShow(false);
       setLibData(lib_react);
       setFileList(lib_react.files);
       setVersion(lib_react.version);
       setDefaultMode(true);
     } else {
-      console.log("search text changed.");
       try {
         const rslt = await getLibraryList(currText);
         const list = rslt.results.map((d) => d.name);
@@ -88,7 +85,6 @@ const Home = ({ data, lib_react, lib_default }) => {
           setLibList(list);
           setLibsShow(true);
         } else {
-          setLibList(null);
           setLibsShow(false);
         }
       } catch (error) {

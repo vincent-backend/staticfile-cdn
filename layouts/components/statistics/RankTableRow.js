@@ -2,16 +2,8 @@ import Image from "next/image";
 import clsx from "clsx";
 import { useEffect, useRef } from "react";
 
-const TableRow = ({ row }) => {
+const RankTableRow = ({ row }) => {
   const style_tr = clsx("h-[48px] odd:bg-white even:bg-[#fbfbfd]");
-
-  const style_icon = useRef(
-    "flex w-[28px] h-[28px] bg-[url('" + row.img + "')]",
-  );
-
-  useEffect(() => {
-    style_icon.current = "flex w-[28px] h-[28px] bg-[url('" + row.img + "')]";
-  }, [row]);
 
   return (
     <tr className={style_tr}>
@@ -41,4 +33,4 @@ const TableRow = ({ row }) => {
   );
 };
 
-export default TableRow;
+export default RankTableRow;

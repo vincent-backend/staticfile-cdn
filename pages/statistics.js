@@ -17,6 +17,7 @@ import {
   GlobalDashboard,
 } from "@layouts/components/statistics/GlobalDashboard";
 import RankTable from "@layouts/components/statistics/RankTable";
+import { PopularTable } from "@layouts/components/statistics/PopularTable";
 
 const Statistics = ({ data }) => {
   const { locale, setLocale } = useTranslation();
@@ -97,7 +98,7 @@ const Statistics = ({ data }) => {
                   <div className="flex flex-col">
                     <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0">
                       <div className="flex-col w-full mt-6">
-                        <div className="font-bold text-h5 text-black pb-3">
+                        <div className="sub-caption">
                           {section.request}
                         </div>
                         <GlobalDashboard
@@ -106,7 +107,7 @@ const Statistics = ({ data }) => {
                         />
                       </div>
                       <div className="flex-col w-full mt-6">
-                        <div className="font-bold text-h5 text-black pb-3">
+                        <div className="sub-caption">
                           {section.bandwidth}
                         </div>
                         <GlobalDashboard
@@ -116,7 +117,7 @@ const Statistics = ({ data }) => {
                       </div>
                     </div>
                     <div className="flex flex-col mt-6">
-                      <div className="font-bold text-h5 text-black pb-3">
+                      <div className="sub-caption">
                         {section.cache_hit_rate}
                       </div>
                       <CacheHitRate section={section} />
@@ -133,8 +134,8 @@ const Statistics = ({ data }) => {
                       </div>
                       <ChartArea section={section} />
                     </div>
-                    <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0 md:mx-3">
-                      <div className="col-12 md:col-6 mt-6">
+                    <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0">
+                      <div className="flex-col w-full mt-6">
                         <div className="sub-caption flex-row items-center">
                           <div className="flex">{section.top_platform}</div>
                           <div className="flex ml-4 border-[1px] border-border text-base font-normal text-dark">
@@ -143,7 +144,7 @@ const Statistics = ({ data }) => {
                         </div>
                         <RankTable section={section} fetch_data={staticData.platform_rank}/>
                       </div>
-                      <div className="col-12 md:col-6 min-h-[100px] mt-6">
+                      <div className="flex-col w-full min-h-[100px] mt-6">
                         <div className="sub-caption flex-row items-center">
                           <div className="flex">{section.popular_browsers}</div>
                           <div className="flex ml-4 border-[1px] border-border text-base font-normal text-dark">
@@ -158,7 +159,12 @@ const Statistics = ({ data }) => {
                 {/* 项目统计 */}
                 <div className="inner">
                   <SCaption caption="项目统计" />
-                  <div className="bg-slate-400 min-h-[100px] mt-6"></div>
+                  <div className="flex flex-col min-h-[100px] mt-6">
+                    <div className="sub-caption">
+                      {section.most_popular_projects}
+                    </div>
+                    <PopularTable section={section}/>
+                  </div>
                 </div>
               </div>
             </div>
@@ -171,7 +177,6 @@ const Statistics = ({ data }) => {
 
 export default Statistics;
 
-// for homepage data
 export const getStaticProps = async () => {
   const data = await getDataFromContent("content/statistics");
 

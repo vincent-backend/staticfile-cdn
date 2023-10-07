@@ -5,7 +5,7 @@ import Tabs from "./Tabs";
 const shortcodes = {
   Button,
   Tab,
-  Tabs
+  Tabs,
 };
 
 export default shortcodes;

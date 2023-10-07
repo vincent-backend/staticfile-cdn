@@ -65,7 +65,7 @@ const Header = () => {
                       className={`nav-link flex align-middle items-center justify-center ${
                         asPath === menu.url && "active"
                       }`}
-                      onClick={ () => setShowMenu(false)}
+                      onClick={() => setShowMenu(false)}
                     >
                       <div className="pl-[80px] text-left grow md:pl-0 md:grow-0 md:text-center">
                         {menu.name}

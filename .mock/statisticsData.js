@@ -44,6 +44,19 @@ export const staticData = {
         {"id":1, "name":"Chrome", "market_share": 58.89, "change": 1.1, "img": "/images/statistics/logos/data_platform_logo_chrome.png"},
         {"id":2, "name":"Safari", "market_share": 23.95, "change": -1.0, "img": "/images/statistics/logos/data_platform_logo_safari.png"},
         {"id":3, "name":"Microsoft Edge", "market_share": 3.93, "change": -1, "img": "/images/statistics/logos/data_platform_logo_microsoft.png"},
-        {"id":4, "name":"Firefox", "market_share": 3.2, "change": -2.7, "img": "/images/statistics/logos/data_platform_logo_firefox.png"}    ]
+        {"id":4, "name":"Firefox", "market_share": 3.2, "change": -2.7, "img": "/images/statistics/logos/data_platform_logo_firefox.png"}
+    ],
+    "popular_projects": [
+        {"name": "@amplitude/amplitude-js-gtm", "requests": 755890614, "bandwidth": 120},
+        {"name": "@covet-pics/covet-pics-widget", "requests": 1042409695, "bandwidth": 7.79},
+        {"name": "@fancyapps/ui", "requests": 818753748, "bandwidth": 7.79},
+        {"name": "@findifv/bundle", "requests": 284063125, "bandwidth": 6.03},
+        {"name": "@fingerprintjs/finge", "requests": 306954558, "bandwidth": 4.8},
+        {"name": "@fortawesome/fontawe", "requests": 502057973, "bandwidth": 19.8},
+        {"name": "@hackler/javascript-sdk", "requests": 283441623, "bandwidth": 7.79},
+        {"name": "@ionic/core", "requests": 291776419, "bandwidth": 3.79},
+        {"name": "@mdi/font", "requests": 1553987685, "bandwidth": 4.03},
+        {"name": "@popperjs/core", "requests": 387833111, "bandwidth": 3.8}
+    ]
 
 }

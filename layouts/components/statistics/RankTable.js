@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-import TableRow from "./TableRow";
+import RankTableRow from "./RankTableRow";
 
 import { RecordCounts } from "constant/Types";
 
-import { PaginationNextButton, PaginationPrevButton } from "../buttons/PaginationButton";
+import {
+  PaginationNextButton,
+  PaginationPrevButton,
+} from "../buttons/PaginationButton";
 
 const TopPlatforms = ({ section, fetch_data }) => {
   const [total, setTotal] = useState(fetch_data.length);
   const [currentPage, setCurrentPage] = useState(0);
   const [countPerPage, setCountPerPage] = useState(10);
   const [pageCount, setPageCount] = useState(Math.ceil(total / countPerPage));
-  const [fId, setFId] = useState(currentPage * countPerPage);
-  const [lId, setLId] = useState(Math.min((currentPage + 1) * countPerPage, total));
-  const [data, setData] = useState(fetch_data.slice(fId, lId));
+  const [data, setData] = useState(
+    fetch_data.slice(
+      currentPage * countPerPage,
+      Math.min((currentPage + 1) * countPerPage, total),
+    ),
+  );
 
   const handleRecordSelect = (e) => {
     setCurrentPage(0);
@@ -26,19 +32,22 @@ const TopPlatforms = ({ section, fetch_data }) => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
     }
-  }
+  };
 
   const handleNextPage = () => {
-    if (currentPage < pageCount-1 && pageCount > 1) {
+    if (currentPage < pageCount - 1 && pageCount > 1) {
       setCurrentPage(currentPage + 1);
     }
-  }
+  };
 
   useEffect(() => {
-    setFId(currentPage * countPerPage);
-    setLId(Math.min((currentPage + 1) * countPerPage), total);
-    setData(fetch_data.slice(fId, lId));
-  }, [currentPage, countPerPage, fId, lId, total, fetch_data]);
+    setData(
+      fetch_data.slice(
+        currentPage * countPerPage,
+        Math.min((currentPage + 1) * countPerPage, total),
+      ),
+    );
+  }, [currentPage, countPerPage, total, fetch_data]);
 
   return (
     <div className="border-[2px] border-border flex-col">
@@ -74,14 +83,15 @@ const TopPlatforms = ({ section, fetch_data }) => {
           </thead>
           <tbody className="font-normal">
             {data.map((d) => (
-              <TableRow key={d.id} row={d} />
+              <RankTableRow key={d.id} row={d} />
             ))}
           </tbody>
         </table>
       </div>
       <div className="flex h-[48px] flex-row justify-between mx-2 md:mx-5 items-center">
         <div className="flex grow h-[48px] items-center">
-          {section.record} {fId + 1}-{Math.min(lId, total)} of {total}
+          {section.record} {currentPage * countPerPage + 1}-
+          {Math.min((currentPage + 1) * countPerPage, total)} of {total}
         </div>
         <div className="flex h-[48px] items-center mr-2 md:mr-10">
           <span>{section.display}: </span>
@@ -98,8 +108,14 @@ const TopPlatforms = ({ section, fetch_data }) => {
           </select>
         </div>
         <div className="flex w-[60px] h-[48px] justify-end space-x-[8px] items-center">
-          <PaginationPrevButton isEnabled={ currentPage > 0 } callback={()=>handlePrevPage} />
-          <PaginationNextButton isEnabled={ currentPage < pageCount-1 && pageCount > 1} callback={()=>handleNextPage} />
+          <PaginationPrevButton
+            isEnabled={currentPage > 0}
+            callback={() => handlePrevPage}
+          />
+          <PaginationNextButton
+            isEnabled={currentPage < pageCount - 1 && pageCount > 1}
+            callback={() => handleNextPage}
+          />
         </div>
       </div>
     </div>
