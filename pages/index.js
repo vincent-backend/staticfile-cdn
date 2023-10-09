@@ -14,9 +14,12 @@ import CopyToClipboard from "@hooks/useClipboard";
 
 import { notify } from "@hooks/useNotify";
 
-import { getFileList, getLibraryData, getLibraryList } from "@lib/data-load";
+import { defaultLibs } from "constant";
 
-const Home = ({ data, lib_react, lib_default }) => {
+import { getFileList, getLibraryData, getLibraryList } from "@lib/data-load";
+import LibraryView from "@layouts/components/home/LibraryView";
+
+const Home = ({ data, lib_react, lib_default, isSuccess }) => {
   const { locale, setLocale } = useTranslation();
 
   // static data
@@ -26,6 +29,10 @@ const Home = ({ data, lib_react, lib_default }) => {
   // for init animation
   const [isInit, setInit] = useState(true);
 
+  // data loaded successful?
+  const [isLibdataLoaded, setLibdataLoaded] = useState(isSuccess);
+  console.log
+
   /// Library list
   const [isLibsShow, setLibsShow] = useState(false);
   const [libList, setLibList] = useState(null);
@@ -33,8 +40,8 @@ const Home = ({ data, lib_react, lib_default }) => {
 
   /// Primary Lib data
   const [libData, setLibData] = useState(lib_react);
-  if (libData == null) {
-    notify("error", "Server Connection failed.");
+  if (libData.result == false) {
+    notify("error", "Server Connection error.");
   }
 
   const [fileList, setFileList] = useState(libData.files);
@@ -79,8 +86,8 @@ const Home = ({ data, lib_react, lib_default }) => {
       setDefaultMode(true);
     } else {
       try {
-        const rslt = await getLibraryList(currText);
-        const list = rslt.results.map((d) => d.name);
+        const {result, data} = await getLibraryList(currText);
+        const list = data.results.map((d) => d.name);
         if (list.length > 0) {
           setLibList(list);
           setLibsShow(true);
@@ -99,9 +106,9 @@ const Home = ({ data, lib_react, lib_default }) => {
     setLibsShow(false);
     setDefaultMode(false);
 
-    const ld = await getLibraryData(lib);
+    const {result, ...ld} = await getLibraryData(lib);
 
-    if (ld != null) {
+    if (result == true) {
       setLibData(ld);  
       /// set state
       setFileList(ld.files);
@@ -318,7 +325,7 @@ const Home = ({ data, lib_react, lib_default }) => {
                 <div>
                   <Tabs>
                     <Tab name="HTTPS">
-                      <ul role="list" className="home-tab-ul">
+                      <ul role="list" className="home-tab-ul  overflow-x-auto">
                         {fileList.map((file, index) =>
                           renderListItem("https", file, index),
                         )}
@@ -443,16 +450,19 @@ export default Home;
 export const getStaticProps = async () => {
   const data = await getDataFromContent("content/index");
 
-  const libdata_react = await getLibraryData("react");
+  const lib_react = await getLibraryData("react");
   const lib_vue = await getLibraryData("vue");
   const lib_angular = await getLibraryData("angular.js");
   const lib_jquery = await getLibraryData("jquery");
 
+  const isSuccess = lib_react.result == true && lib_vue.result == true && lib_angular.result == true && lib_jquery.result == true;
+
   return {
     props: {
       data,
-      lib_react: libdata_react,
+      lib_react: lib_react,
       lib_default: { lib_vue, lib_angular, lib_jquery },
+      isSuccess
     },
   };
 };

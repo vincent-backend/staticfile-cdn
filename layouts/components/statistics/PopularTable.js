@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { RecordCounts } from "constant/Types";
+import { RecordCounts } from "constant";
 
 import { staticData } from ".mock/statisticsData";
 import PopularTableRow from "./PopularTableRow";
 
 export const PopularTable = ({ section }) => {
-
   const fetch_data = staticData.popular_projects;
 
   const [total, setTotal] = useState(101);
@@ -33,7 +32,7 @@ export const PopularTable = ({ section }) => {
         <div className="flex h-[48px] items-center mr-2 md:mr-10 text-h6">
           <span>Show: </span>
           <select
-            className="border-none active:border-none bg-body"
+            className="border-none active:border-none bg-body rounded-sm mx-1"
             defaultValue={countPerPage}
             onChange={handleRecordSelect}
           >
@@ -47,7 +46,7 @@ export const PopularTable = ({ section }) => {
         </div>
       </div>
       <div className="flex overflow-x-auto">
-      <table className="min-w-full">
+        <table className="min-w-full">
           <thead className="bg-body h-[48px] text-h5 font-bold">
             <tr>
               <th className="text-left pl-2 md:pl-4">{section.item_name}</th>
@@ -58,8 +57,8 @@ export const PopularTable = ({ section }) => {
             </tr>
           </thead>
           <tbody className="font-normal">
-            {data.map((d) => (
-              <PopularTableRow key={d.id} row={d} />
+            {data.map((d, index) => (
+              <PopularTableRow key={index} row={d} />
             ))}
           </tbody>
         </table>

@@ -26,7 +26,7 @@ section:
   market_share: "Market share"
   change: "Change"
   record: "Records"
-  display: "Display"
+  display: "Showing"
   most_popular_projects: "Most popular projects"
   item_name: "Items"
 

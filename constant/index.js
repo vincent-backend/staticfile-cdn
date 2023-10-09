@@ -10,3 +10,5 @@ export const SiteNames = {
 }
 
 export const RecordCounts = [5, 10, 25, 50];
+
+export const defaultLibs = ["react", "vue", "angular.js", "jquery"];

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 
-import { SiteNames } from "constant/Types";
+import { SiteNames } from "constant";
 
 const ToggleButton = ({ site, checked, callback }) => {
   const style_icon_open =

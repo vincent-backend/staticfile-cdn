@@ -8,7 +8,7 @@ import SCaption from "@layouts/components/statistics/SCaption";
 import { useEffect, useRef, useState } from "react";
 
 import { staticData } from ".mock/statisticsData";
-import { DataTypes } from "constant/Types";
+import { DataTypes } from "constant";
 
 import ChartArea from "@layouts/components/statistics/ChartArea";
 

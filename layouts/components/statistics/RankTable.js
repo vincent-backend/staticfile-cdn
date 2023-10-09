@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import RankTableRow from "./RankTableRow";
 
-import { RecordCounts } from "constant/Types";
+import { RecordCounts } from "constant";
 
 import {
   PaginationNextButton,
@@ -93,7 +93,7 @@ const TopPlatforms = ({ section, fetch_data }) => {
           {section.record} {currentPage * countPerPage + 1}-
           {Math.min((currentPage + 1) * countPerPage, total)} of {total}
         </div>
-        <div className="flex h-[48px] items-center mr-2 md:mr-10">
+        <div className="flex h-[48px] items-center mr-2 md:mr-10 ml-1">
           <span>{section.display}: </span>
           <select
             className="border-none active:border-none"

@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { useEffect, useState } from "react";
 
-import { DataTypes, SiteNames } from "constant/Types";
+import { DataTypes, SiteNames } from "constant";
 
 import { gsap } from "@lib/gsap";
 

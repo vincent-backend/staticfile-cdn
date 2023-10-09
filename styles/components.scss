@@ -126,7 +126,7 @@
 }
 
 .home-tab-ul {
-  @apply text-justify break-all;
+  @apply text-justify break-all overflow-x-auto;
 }
 
 .pagination {
@@ -189,7 +189,7 @@
 }
 
 .list-item {
-  @apply font-primary text-h5 md:text-base text-gray-700 hover:bg-[#e6f8f4] hover:text-primary active:bg-[#e6f8f4] active:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify cursor-pointer;
+  @apply whitespace-nowrap font-primary text-h5 md:text-base text-gray-700 hover:bg-[#e6f8f4] hover:text-primary active:bg-[#e6f8f4] active:text-primary pl-1 pr-1 lg:pl-4 lg:pr-4 text-justify cursor-pointer;
 }
 
 .search-list-item {
