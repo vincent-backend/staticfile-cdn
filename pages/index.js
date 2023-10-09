@@ -5,8 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import useTranslation from "@hooks/useTranslation";
 import Base from "@layouts/Baseof";
-import Tabs from "@layouts/shortcodes/Tabs";
-import Tab from "@layouts/shortcodes/Tab";
 import BannerHome from "@layouts/components/banner/BannerHome";
 import { IoChevronForwardSharp } from "react-icons/io5";
 
@@ -14,9 +12,7 @@ import CopyToClipboard from "@hooks/useClipboard";
 
 import { notify } from "@hooks/useNotify";
 
-import { defaultLibs } from "constant";
-
-import { getFileList, getLibraryData, getLibraryList } from "@lib/data-load";
+import { getLibraryData, getLibraryList } from "@lib/data-load";
 import LibraryView from "@layouts/components/home/LibraryView";
 
 const Home = ({ data, lib_react, lib_default, isSuccess }) => {
@@ -30,8 +26,6 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
   const [isInit, setInit] = useState(true);
 
   // data loaded successful?
-  const [isLibdataLoaded, setLibdataLoaded] = useState(isSuccess);
-  console.log
 
   /// Library list
   const [isLibsShow, setLibsShow] = useState(false);
@@ -40,24 +34,15 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
 
   /// Primary Lib data
   const [libData, setLibData] = useState(lib_react);
-  if (libData.result == false) {
+  if (libData.rslt == false) {
     notify("error", "Server Connection error.");
   }
-
-  const [fileList, setFileList] = useState(libData.files);
-  const [currentVersion, setVersion] = useState(libData.version);
 
   /// Default Lib data
   // Vue, Angular.js, JQuery
   const [isDefaultMode, setDefaultMode] = useState(true);
   const [defaultLibArray, setDefaultLibArray] = useState(
     Object.values(lib_default),
-  );
-  const [defaultVersions, setDefaultVersions] = useState(
-    defaultLibArray.map((lib) => lib.version),
-  );
-  const [defaultFileLists, setDefaultFileLists] = useState(
-    defaultLibArray.map((lib) => lib.files),
   );
 
   let { banner, section } = frontmatter;
@@ -81,12 +66,10 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
     if (currText == "") {
       setLibsShow(false);
       setLibData(lib_react);
-      setFileList(lib_react.files);
-      setVersion(lib_react.version);
       setDefaultMode(true);
     } else {
       try {
-        const {result, data} = await getLibraryList(currText);
+        const { rslt, data } = await getLibraryList(currText);
         const list = data.results.map((d) => d.name);
         if (list.length > 0) {
           setLibList(list);
@@ -106,38 +89,15 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
     setLibsShow(false);
     setDefaultMode(false);
 
-    const {result, ...ld} = await getLibraryData(lib);
+    const ld = await getLibraryData(lib);
 
-    if (result == true) {
-      setLibData(ld);  
+    if (ld.rslt == true) {
+      setLibData(ld);
       /// set state
-      setFileList(ld.files);
-      setVersion(ld.version);
     } else {
       setLibData(lib_react);
       setDefaultMode(true);
       notify("error", "Server connection failed.");
-    }
-  };
-
-  const handleVersionChange = async (libname, version, target = "primary") => {
-    if (target === "primary") {
-      setVersion(version);
-      const res = await getFileList(libname, version);
-      if (res != null) {
-        setFileList(res.files);
-      }
-    } else {
-      const vs = [...defaultVersions];
-      vs[target] = version;
-      setDefaultVersions(vs);
-
-      const res = await getFileList(libname, version);
-      if (res != null) {
-        const fs = [...defaultFileLists];
-        fs[target] = res.files;
-        setDefaultFileLists(fs);
-      }
     }
   };
 
@@ -208,8 +168,6 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-
-
   }, [locale, data, isInit]);
 
   return (
@@ -295,149 +253,12 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
         </div>
 
         {/* Primary Lib data */}
-        {libData != null && (
-          <div className="container flex justify-center pb-[50px]">
-            <div className="col-12 px-1">
-              <div className="section_title">{libData.name.toUpperCase()}</div>
-              <div className="section_description">{libData.description}</div>
-              <div className="flex flex-col relative mt-[10px] sm:mt-[30px]">
-                <div className="flex justify-end mb-[10px] sm:hidden">
-                  <div className="dropdown">
-                    <select
-                      className="dropbtn"
-                      value={currentVersion}
-                      onChange={(e) =>
-                        handleVersionChange(
-                          libData.name,
-                          e.target.value,
-                          "primary",
-                        )
-                      }
-                    >
-                      {libData.versions.map((version) => (
-                        <option key={version} value={version}>
-                          {version}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-                <div>
-                  <Tabs>
-                    <Tab name="HTTPS">
-                      <ul role="list" className="home-tab-ul  overflow-x-auto">
-                        {fileList.map((file, index) =>
-                          renderListItem("https", file, index),
-                        )}
-                      </ul>
-                    </Tab>
-                    <Tab name="HTTP">
-                      <ul role="list" className="home-tab-ul">
-                        {fileList.map((file, index) =>
-                          renderListItem("http", file, index),
-                        )}
-                      </ul>
-                    </Tab>
-                  </Tabs>
-                </div>
-                <div className="absolute top-0 right-0 hidden sm:block">
-                  <div className="dropdown">
-                    <select
-                      className="dropbtn"
-                      value={currentVersion}
-                      onChange={(e) =>
-                        handleVersionChange(
-                          libData.name,
-                          e.target.value,
-                          "primary",
-                        )
-                      }
-                    >
-                      {libData.versions.map((version) => (
-                        <option key={version} value={version}>
-                          {version}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div className="online-store">
-                <a href={libData.homepage}>{section.homepage}</a>
-              </div>
-            </div>
-          </div>
-        )}
+        {libData && <LibraryView section={section} libData={libData} />}
 
         {/* If default show */}
         {isDefaultMode &&
           defaultLibArray.map((lib, index) => (
-            <div
-              className="container flex justify-center pb-[50px]"
-              key={lib.name}
-            >
-              <div className="col-12 px-1">
-                <div className="section_title">{lib.name.toUpperCase()}</div>
-                <div className="section_description">{lib.description}</div>
-                <div className="flex flex-col relative mt-[10px] sm:mt-[30px]">
-                  <div className="flex justify-end mb-[10px] sm:hidden">
-                    <div className="dropdown">
-                      <select
-                        className="dropbtn"
-                        value={defaultVersions[index]}
-                        onChange={(e) =>
-                          handleVersionChange(lib.name, e.target.value, index)
-                        }
-                      >
-                        {lib.versions.map((version) => (
-                          <option key={version} value={version}>
-                            {version}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                  <div>
-                    <Tabs>
-                      <Tab name="HTTPS">
-                        <ul role="list" className="home-tab-ul">
-                          {defaultFileLists[index].map((file, index) =>
-                            renderListItem("https", file, index),
-                          )}
-                        </ul>
-                      </Tab>
-                      <Tab name="HTTP">
-                        <ul role="list" className="home-tab-ul">
-                          {defaultFileLists[index].map((file, index) =>
-                            renderListItem("http", file, index),
-                          )}
-                        </ul>
-                      </Tab>
-                    </Tabs>
-                  </div>
-                  <div className="absolute top-0 right-0 hidden sm:block">
-                    <div className="dropdown">
-                      <select
-                        className="dropbtn"
-                        value={defaultVersions[index]}
-                        onChange={(e) =>
-                          handleVersionChange(lib.name, e.target.value, index)
-                        }
-                      >
-                        {lib.versions.map((version) => (
-                          <option key={version} value={version}>
-                            {version}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div className="online-store">
-                  <a href={lib.homepage}>{section.homepage}</a>
-                </div>
-              </div>
-            </div>
+            <LibraryView section={section} libData={lib} key={lib.name} />
           ))}
       </section>
     </Base>
@@ -455,14 +276,11 @@ export const getStaticProps = async () => {
   const lib_angular = await getLibraryData("angular.js");
   const lib_jquery = await getLibraryData("jquery");
 
-  const isSuccess = lib_react.result == true && lib_vue.result == true && lib_angular.result == true && lib_jquery.result == true;
-
   return {
     props: {
       data,
       lib_react: lib_react,
       lib_default: { lib_vue, lib_angular, lib_jquery },
-      isSuccess
     },
   };
 };

@@ -98,18 +98,14 @@ const Statistics = ({ data }) => {
                   <div className="flex flex-col">
                     <div className="flex flex-col md:flex-row md:space-x-6 justify-center mx-0">
                       <div className="flex-col w-full mt-6">
-                        <div className="sub-caption">
-                          {section.request}
-                        </div>
+                        <div className="sub-caption">{section.request}</div>
                         <GlobalDashboard
                           gType={DataTypes.REQUEST}
                           section={section}
                         />
                       </div>
                       <div className="flex-col w-full mt-6">
-                        <div className="sub-caption">
-                          {section.bandwidth}
-                        </div>
+                        <div className="sub-caption">{section.bandwidth}</div>
                         <GlobalDashboard
                           gType={DataTypes.BANDWIDTH}
                           section={section}
@@ -142,7 +138,10 @@ const Statistics = ({ data }) => {
                             {section.group_platform_version}
                           </div>
                         </div>
-                        <RankTable section={section} fetch_data={staticData.platform_rank}/>
+                        <RankTable
+                          section={section}
+                          fetch_data={staticData.platform_rank}
+                        />
                       </div>
                       <div className="flex-col w-full min-h-[100px] mt-6">
                         <div className="sub-caption flex-row items-center">
@@ -151,7 +150,10 @@ const Statistics = ({ data }) => {
                             {section.group_browser_version}
                           </div>
                         </div>
-                        <RankTable section={section} fetch_data={staticData.popular_browsers}/>
+                        <RankTable
+                          section={section}
+                          fetch_data={staticData.popular_browsers}
+                        />
                       </div>
                     </div>
                   </div>
@@ -163,7 +165,7 @@ const Statistics = ({ data }) => {
                     <div className="sub-caption">
                       {section.most_popular_projects}
                     </div>
-                    <PopularTable section={section}/>
+                    <PopularTable section={section} />
                   </div>
                 </div>
               </div>
