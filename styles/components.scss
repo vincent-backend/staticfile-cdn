@@ -2,7 +2,7 @@
 
 // section style
 .section {
-  @apply bg-[#f3f4fa] font-primary;
+  @apply bg-body font-primary;
 }
 
 .section_title {
@@ -209,6 +209,20 @@
 
     .sub-caption {
       @apply flex font-bold text-h5 text-black pb-3;
+    }
+  }
+
+  .rank-table-row {
+    @apply h-[48px] odd:bg-white even:bg-[#fbfbfd];
+
+    .id {
+      @apply flex w-[24px] h-[24px] justify-center items-center border bg-white border-border mx-1 md:mx-4;
+    }
+    .img {
+      @apply flex flex-row h-[48px] justify-start items-center;
+    }
+    .name {
+      @apply ml-1 inline text-base md:text-h6 text-left whitespace-nowrap;
     }
   }
 }

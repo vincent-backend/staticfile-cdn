@@ -133,9 +133,8 @@ const Apis = ({ data }) => {
                       <div className="title">{c.title}</div>
                       <div
                         className="url"
-                        onClick={() => CopyToClipboard(c.url)}
                       >
-                        <span>{c.url}</span>
+                        <a href={c.url}>{c.url}</a>
                       </div>
                       {markdownify(c.description, "h5", "description")}
                     </div>

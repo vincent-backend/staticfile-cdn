@@ -56,7 +56,8 @@ export const staticData = {
         {"name": "@hackler/javascript-sdk", "requests": 283441623, "bandwidth": 7.79},
         {"name": "@ionic/core", "requests": 291776419, "bandwidth": 3.79},
         {"name": "@mdi/font", "requests": 1553987685, "bandwidth": 4.03},
-        {"name": "@popperjs/core", "requests": 387833111, "bandwidth": 3.8}
+        {"name": "@popperjs/core", "requests": 387833111, "bandwidth": 3.8},
+        {"name": "@zopperjs/core", "requests": 327833111, "bandwidth": 1.8}
     ]
 
 }

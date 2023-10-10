@@ -7,7 +7,7 @@ const PopularTableRow = ({ row }) => {
   return (
     <tr className={style_tr} key={row.name}>
       <td className="text-left whitespace-nowrap pl-2 md:pl-4">{row.name}</td>
-      <td className="text-left whitespace-nowrap pl-2">{row.requests}</td>
+      <td className="text-left whitespace-nowrap px-3 md:px-4">{row.requests}</td>
       <td className="text-right whitespace-nowrap pr-2 md:pr-4">
         {row.bandwidth} TB
       </td>

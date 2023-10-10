@@ -2,13 +2,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import RankTableRow from "./RankTableRow";
+import clsx from "clsx";
 
 import { RecordCounts } from "constant";
-
-import {
-  PaginationNextButton,
-  PaginationPrevButton,
-} from "../buttons/PaginationButton";
 
 const TopPlatforms = ({ section, fetch_data }) => {
   const [total, setTotal] = useState(fetch_data.length);
@@ -58,18 +54,18 @@ const TopPlatforms = ({ section, fetch_data }) => {
           width={16}
           height={16}
         />
-        <span className="text-h6 md:text-base text-text_gray ml-[6px]">
+        <span className="text-h6 md:text-base text-cgray ml-[6px]">
           {section.more_platform_data}
         </span>
       </div>
-      <div className="flex">
+      <div className="flex overflow-x-auto">
         <table className="table-auto w-full">
           <thead className="bg-body h-[48px] text-h5 font-bold">
             <tr>
               <th className="text-center"></th>
-              <th className="text-left">{section.name}</th>
-              <th className="text-right pr-2">{section.market_share}</th>
-              <th className="text-right flex-row items-center pr-2 md:pr-4">
+              <th className="text-left whitespace-nowrap">{section.name}</th>
+              <th className="text-right whitespace-nowrap px-3 md:px-4">{section.market_share}</th>
+              <th className="text-right flex-row items-center pr-2 md:pr-4 whitespace-nowrap">
                 <span className="mr-1">{section.change}</span>
                 <Image
                   alt="instructons_mark"
@@ -108,14 +104,16 @@ const TopPlatforms = ({ section, fetch_data }) => {
           </select>
         </div>
         <div className="flex w-[60px] h-[48px] justify-end space-x-[8px] items-center">
-          <PaginationPrevButton
-            isEnabled={currentPage > 0}
-            callback={() => handlePrevPage}
-          />
-          <PaginationNextButton
-            isEnabled={currentPage < pageCount - 1 && pageCount > 1}
-            callback={() => handleNextPage}
-          />
+          <button disabled={currentPage == 0} className={clsx("w-[24px] h-[24px] rounded-sm", 
+            currentPage > 0 && "bg-[url('/images/statistics/data_ic_arrow_left.svg')]",
+            currentPage == 0 && "bg-[url('/images/statistics/data_ic_arrow_left_dis.svg')]")}
+            onClick={()=>handlePrevPage()}
+            />
+          <button disabled={currentPage == pageCount-1} className={clsx("w-[24px] h-[24px] rounded-sm",
+            currentPage < pageCount - 1 && "bg-[url('/images/statistics/data_ic_arrow_right.svg')]",
+            currentPage == pageCount - 1 && "bg-[url('/images/statistics/data_ic_arrow_right_dis.svg')]")}
+            onClick={()=>handleNextPage()}
+            />
         </div>
       </div>
     </div>
