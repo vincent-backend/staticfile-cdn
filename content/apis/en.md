@@ -2,7 +2,7 @@
 lang: "en"
 banner:
   title: "Staticfile CDN API"
-  content: "Through the following API, you can easily obtain the basic information and file list of all front-end original vehicles accelerated by Staticfile CDN."
+  content: "Through the following API, you can easily obtain the basic information and file list of all front-end original libraries accelerated by Staticfile CDN."
 
 api:
   title: API

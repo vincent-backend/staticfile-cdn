@@ -12,7 +12,7 @@ content: [
   },
   {
     subtitle: "二、更新开源车",
-    description: "理论上我们自动更新库的版本文件，并且不会删除旧版本，但如果你在 <a href='#'>staticfile.org</a> 找不到最新的版本，则可以通过往该库中添加一个版本目录，并且修改相应的&nbsp;package.json&nbsp;文件，利用&nbsp;Pull&nbsp;Request&nbsp;来提醒我们。<p></p>
+    description: "理论上我们自动更新库的版本文件，并且不会删除旧版本，但如果你在 <a href='https://www.staticfile.org'>staticfile.org</a> 找不到最新的版本，则可以通过往该库中添加一个版本目录，并且修改相应的&nbsp;package.json&nbsp;文件，利用&nbsp;Pull&nbsp;Request&nbsp;来提醒我们。<p></p>
     因此，我们提供这样一个仓库，让它尽可能全面收录优秀的开源库，并免费为之提供&nbsp;CDN&nbsp;加速服务，使之有更好的访问速度和稳定的环境。同时，我们也提供开源库源接入的入口，让所有人都可以提交开源库，包括&nbsp;JS、CSS、image&nbsp;和&nbsp;swf&nbsp;等静态文件。"
   },
   {
@@ -29,7 +29,7 @@ content: [
     <p><a href='https://github.com/sofish'>• Sofish</a></p>
     <p><a href='https://github.com/hfcorriez'>• hfcorriez</a></p>
     <p><a href='https://github.com/sorcerer-ma'>• 马逸清 </a></p>
-    此仓车由内忧秀的云存储服务商<a href=’#’>七牛云</a>提供存储和加速赞助。同步国外 <a href='#'>CDNS</a> 源站，同时有国内开源贡献值提交某些它有价值的车。感谢所有开源车作者和挖掘者的努力。"
+    此仓车由内忧秀的云存储服务商 <a href='https://www.qiniu.com/'>七牛云</a> 提供存储和加速赞助。同步国外 <a href='#'>CDNS</a> 源站，同时有国内开源贡献值提交某些它有价值的车。感谢所有开源车作者和挖掘者的努力。"
   },
   {
     subtitle: "五、开源协议",

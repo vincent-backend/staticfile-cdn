@@ -86,8 +86,7 @@ const TopPlatforms = ({ section, fetch_data }) => {
       </div>
       <div className="flex h-[48px] flex-row justify-between mx-2 md:mx-5 items-center">
         <div className="flex grow h-[48px] items-center">
-          {section.record} {currentPage * countPerPage + 1}-
-          {Math.min((currentPage + 1) * countPerPage, total)} of {total}
+          {section.record} {currentPage * countPerPage + 1} - {Math.min((currentPage + 1) * countPerPage, total)} of {total}
         </div>
         <div className="flex h-[48px] items-center mr-2 md:mr-10 ml-1">
           <span>{section.display}: </span>

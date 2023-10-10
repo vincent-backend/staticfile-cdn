@@ -5,9 +5,9 @@ const Paginations = ({pageCount, currentPage, navigate}) => {
     const getPageNumbers = () => {
         if (pageCount <= 4) {
             return [...Array(pageCount + 1).keys()].slice(1);
-        } else if (currentPage + 1 <= 4) {
+        } else if (currentPage < 3) {
             return [1, 2, 3, 4, 5];
-        } else if (currentPage + 1 > pageCount - 4) {
+        } else if (currentPage > pageCount - 4) {
             return [...Array(5).keys()].reverse().map(v=>pageCount-v);
         } else {
             return [currentPage, currentPage + 1, currentPage + 2];
@@ -21,7 +21,7 @@ const Paginations = ({pageCount, currentPage, navigate}) => {
             currentPage == 0 && "bg-[url('/images/statistics/data_ic_arrow_left_dis.svg')]")}
             onClick={()=>navigate(currentPage-1)}
             />
-        { currentPage > 3 && 
+        { pageCount > 5 && currentPage > 2 && 
         <>
             <button className={clsx("w-[24px] h-[24px] rounded-sm bg-body text-cgray")} 
             onClick={()=>navigate(0)}>1</button>
@@ -40,11 +40,11 @@ const Paginations = ({pageCount, currentPage, navigate}) => {
                     </button>
                 )
         }
-        { pageCount > 4 && currentPage  <= (pageCount - 4) && 
+        { pageCount > 5 && currentPage  < (pageCount - 3) && 
             <>
                 <button className="w-[24px] h-[24px] rounded-sm bg-body text-cgray" disabled={true}>
                 ...
-                </button>
+            </button>
                 <button className="w-[24px] h-[24px] rounded-sm bg-body text-cgray" 
                     onClick={()=>navigate(pageCount-1)}>
                         {pageCount}

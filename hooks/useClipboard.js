@@ -30,7 +30,6 @@ const CopyToClipboard = (text, locale) => {
                 notify("success", msg);
               } 
               catch (err) {
-                console.log(error);
                 notify("error", "Clipboard is not avaliable in this web browser.");
             }
         });	

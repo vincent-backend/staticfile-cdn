@@ -227,6 +227,10 @@
   }
 }
 
+.popular-table-row {
+  @apply h-[48px] odd:bg-white even:bg-[#fbfbfd] hover:bg-[#e6f8f4] hover:text-primary;
+}
+
 /// api
 .div-api {
   @apply flex justify-center container px-0;
