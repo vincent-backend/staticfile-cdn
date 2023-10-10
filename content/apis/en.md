@@ -15,7 +15,7 @@ api:
     },
     {
       title: "List of all open source library names",
-      url: "https://api.staticfile.org/libraries?output=human",
+      url: "https://api.staticfile.org/libs.min.json",
       description: "<p>The list is a&nbsp;json&nbsp;array (Array). Each item in the array is an array composed of the name, description, and stars of the open source library. </p>
       <p>Please open the link in your browser to view the example directly.</p>"
     },

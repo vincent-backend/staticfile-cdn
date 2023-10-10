@@ -15,7 +15,7 @@ api:
     },
     {
       title: "所有开源库名称列表",
-      url: "https://api.staticfile.org/libraries?output=human",
+      url: "https://api.staticfile.org/libs.min.json",
       description: "<p>该列表是一个&nbsp;json&nbsp;数组（Array），数组中的每一个条目是由开源库的名称（name）、描述（description）、星标数（stars）组成的数组。</p>请在浏览器中打开链接直接查看实例。"
     },
     {
