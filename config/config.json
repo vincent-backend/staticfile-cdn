@@ -18,7 +18,7 @@
   "params": {
     "tag_manager_id": "",
     "contact_form_action": "#",
-    "copyright": "Copyright 2014-2021 Staticfile.org(https:Staticfile.org) Built upon love"
+    "copyright": "Copyright 2014-2023 Staticfile.org(https://Staticfile.org) Built upon love"
   },
 
   "nav_button": {
@@ -29,8 +29,8 @@
   },
 
   "metadata": {
-    "meta_author": "StaticFile",
-    "meta_image": "/images/logo.png",
+    "meta_author": "Staticfile.org",
+    "meta_image": "images/meta-img.png",
     "meta_description": "StaticFile CDN Website"
   },
 

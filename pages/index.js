@@ -14,6 +14,7 @@ import { notify } from "@hooks/useNotify";
 
 import { getLibraryData, getLibraryList } from "@lib/data-load";
 import LibraryView from "@layouts/components/home/LibraryView";
+import { cdn_url_http, cdn_url_https } from "constant";
 
 const Home = ({ data, lib_react, lib_default, isSuccess }) => {
   const { locale, setLocale } = useTranslation();
@@ -48,7 +49,7 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
   let { banner, section } = frontmatter;
 
   const renderListItem = (http, filename, i) => {
-    const urls = http + "://cdn.staticfile.org/" + filename;
+    const urls = http == "https" ? cdn_url_https + filename : cdn_url_http + filename;
     return (
       <li
         className="list-item"
@@ -78,7 +79,7 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
           setLibsShow(false);
         }
       } catch (error) {
-        console.log(error);
+        console.log("Server Connection failed.");
         setLibsShow(false);
         notify("error", "Server Connection failed.");
       }

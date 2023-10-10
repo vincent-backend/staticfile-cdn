@@ -19,7 +19,6 @@ export const PopularTable = ({ section }) => {
   const handleRecordSelect = (e) => {
     setCurrentPage(0);
     setCountPerPage(e.target.value);
-    console.log(e.target.value);
     setPageCount(Math.ceil(fetch_data.length / e.target.value));
   };
 
@@ -117,7 +116,7 @@ export const PopularTable = ({ section }) => {
         </table>
       </div>
       <div className="flex flex-col md:flex-row justify-between">
-        <div className="flex whitespace-nowrap">
+        <div className="flex whitespace-nowrap my-2">
           Showing {countPerPage * currentPage + 1} to {Math.min((currentPage + 1) * countPerPage, fetch_data.length)} of {fetch_data.length} entries</div>
         <div className="flex w-full md:justify-end">
           <Paginations pageCount={pageCount} currentPage={currentPage} navigate={handleNavigate} />

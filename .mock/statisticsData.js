@@ -56,8 +56,28 @@ export const staticData = {
         {"name": "@hackler/javascript-sdk", "requests": 283441623, "bandwidth": 7.79},
         {"name": "@ionic/core", "requests": 291776419, "bandwidth": 3.79},
         {"name": "@mdi/font", "requests": 1553987685, "bandwidth": 4.03},
+        {"name": "@popperjs/core1", "requests": 387833111, "bandwidth": 3.8},
+        {"name": "@zopperjs/core", "requests": 327833111, "bandwidth": 1.8},
+        {"name": "@amplitude/amplitude-js-gtm1", "requests": 755890614, "bandwidth": 120},
+        {"name": "@covet-pics/covet-pics-widget1", "requests": 1042409695, "bandwidth": 7.79},
+        {"name": "@fancyapps/ui1", "requests": 818753748, "bandwidth": 7.79},
+        {"name": "@findifv/bundle1", "requests": 284063125, "bandwidth": 6.03},
+        {"name": "@fingerprintjs/finge1", "requests": 306954558, "bandwidth": 4.8},
+        {"name": "@fortawesome/fontawe1", "requests": 502057973, "bandwidth": 19.8},
+        {"name": "@hackler/javascript-sdk1", "requests": 283441623, "bandwidth": 7.79},
+        {"name": "@ionic/core1", "requests": 291776419, "bandwidth": 3.79},
+        {"name": "@mdi/font1", "requests": 1553987685, "bandwidth": 4.03},
         {"name": "@popperjs/core", "requests": 387833111, "bandwidth": 3.8},
-        {"name": "@zopperjs/core", "requests": 327833111, "bandwidth": 1.8}
+        {"name": "@zopperjs/core1", "requests": 327833111, "bandwidth": 1.8},
+        {"name": "@fancyapps/ui2", "requests": 818753748, "bandwidth": 7.79},
+        {"name": "@findifv/bundle2", "requests": 284063125, "bandwidth": 6.03},
+        {"name": "@fingerprintjs/finge2", "requests": 306954558, "bandwidth": 4.8},
+        {"name": "@fortawesome/fontawe2", "requests": 502057973, "bandwidth": 19.8},
+        {"name": "@hackler/javascript-sdk2", "requests": 283441623, "bandwidth": 7.79},
+        {"name": "@ionic/core2", "requests": 291776419, "bandwidth": 3.79},
+        {"name": "@mdi/font2", "requests": 1553987685, "bandwidth": 4.03},
+        {"name": "@popperjs/core2", "requests": 387833111, "bandwidth": 3.8},
+        {"name": "@zopperjs/core3", "requests": 327833111, "bandwidth": 1.8}
     ]
 
 }
