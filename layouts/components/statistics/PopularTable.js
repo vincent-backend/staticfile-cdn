@@ -4,14 +4,16 @@ import { RecordCounts } from "constant";
 import { staticData } from ".mock/statisticsData";
 import PopularTableRow from "./PopularTableRow";
 import Paginations from "../Paginations";
-import clsx from "clsx";
 
 export const PopularTable = ({ section }) => {
-
-  const [fetch_data, setData] = useState(staticData.popular_projects.sort((a, b) => a.name - b.name));
+  const [fetch_data, setData] = useState(
+    staticData.popular_projects.sort((a, b) => a.name - b.name)
+  );
   const [currentPage, setCurrentPage] = useState(0);
   const [countPerPage, setCountPerPage] = useState(10);
-  const [pageCount, setPageCount] = useState(Math.ceil(fetch_data.length / countPerPage));
+  const [pageCount, setPageCount] = useState(
+    Math.ceil(fetch_data.length / countPerPage)
+  );
   const [sortF1, setSortF1] = useState(true);
   const [sortF2, setSortF2] = useState(true);
   const [sortF3, setSortF3] = useState(true);
@@ -25,49 +27,51 @@ export const PopularTable = ({ section }) => {
   const handleSortF1 = (newSort) => {
     setSortF1(newSort);
     if (newSort) {
-      setData(fetch_data.sort((a, b) => {return a.name.localeCompare(b.name);}));
+      setData(
+        fetch_data.sort((a, b) => {
+          return a.name.localeCompare(b.name);
+        })
+      );
+    } else {
+      setData(
+        fetch_data.sort((a, b) => {
+          return b.name.localeCompare(a.name);
+        })
+      );
     }
-    else {
-      setData(fetch_data.sort((a, b) => {return b.name.localeCompare(a.name);}));
-    }
-  }
+  };
 
   const handleSortF2 = (newSort) => {
     setSortF2(newSort);
     if (newSort) {
       setData(fetch_data.sort((a, b) => a.requests - b.requests));
-    }
-    else {
+    } else {
       setData(fetch_data.sort((a, b) => b.requests - a.requests));
     }
-  }
+  };
 
   const handleSortF3 = (newSort) => {
     setSortF3(newSort);
     if (newSort) {
       setData(fetch_data.sort((a, b) => a.bandwidth - b.bandwidth));
-    }
-    else {
+    } else {
       setData(fetch_data.sort((a, b) => b.bandwidth - a.bandwidth));
     }
-  }
+  };
 
   const handleNavigate = (page) => {
     setCurrentPage(page);
-  }
+  };
 
-
-  useEffect(() => {
-    
-  },[]);
+  useEffect(() => {}, []);
 
   return (
     <div className="flex-col">
       <div className="flex">
-        <div className="flex h-[48px] items-center mr-2 md:mr-10 text-h6">
+        <div className="mr-2 flex h-[48px] items-center text-h6 md:mr-10">
           <span>Show: </span>
           <select
-            className="border-none active:border-none bg-body rounded-sm mx-1"
+            className="mx-1 rounded-sm border-none bg-body active:border-none"
             defaultValue={countPerPage}
             onChange={handleRecordSelect}
           >
@@ -82,25 +86,32 @@ export const PopularTable = ({ section }) => {
       </div>
       <div className="flex overflow-x-auto">
         <table className="min-w-full">
-          <thead className="bg-body h-[48px] text-h5 font-bold">
+          <thead className="h-[48px] bg-body text-h5 font-bold">
             <tr>
-              <th className="h-[48px] pl-2 md:pl-4 whitespace-nowrap">
+              <th className="h-[48px] w-1/2 whitespace-nowrap pl-2 md:pl-4">
                 <span className="text-left">{section.item_name}</span>
-                <button className="text-base px-2 hover:text-primary active:text-primary"
-                  onClick={()=>handleSortF1(!sortF1)} >
+                <button
+                  className="px-2 text-base hover:text-primary active:text-primary"
+                  onClick={() => handleSortF1(!sortF1)}
+                >
                   {sortF1 ? "▲" : "▼"}
                 </button>
               </th>
-              <th className="px-3 md:px-4 whitespace-nowrap">
+              <th className="w-1/4 whitespace-nowrap px-3 md:px-4">
                 <span className="text-left">{section.request}</span>
-                <button className="text-base px-2 hover:text-primary active:text-primary"
-                  onClick={()=>handleSortF2(!sortF2)} >
+                <button
+                  className="px-2 text-base hover:text-primary active:text-primary"
+                  onClick={() => handleSortF2(!sortF2)}
+                >
                   {sortF2 ? "▲" : "▼"}
                 </button>
               </th>
-              <th className="text-right flex-row items-center pr-2 md:pr-4 whitespace-nowrap">
+              <th className="w-1/4 flex-row items-center whitespace-nowrap pr-2 text-right md:pr-4">
                 <span className="mr-1">{section.bandwidth}</span>
-                <button className="text-base pl-2 hover:text-primary active:text-primary" onClick={()=>handleSortF3(!sortF3)}>
+                <button
+                  className="pl-2 text-base hover:text-primary active:text-primary"
+                  onClick={() => handleSortF3(!sortF3)}
+                >
                   {sortF3 ? "▲" : "▼"}
                 </button>
               </th>
@@ -108,18 +119,28 @@ export const PopularTable = ({ section }) => {
           </thead>
           <tbody className="font-normal">
             {fetch_data
-            .slice(currentPage * countPerPage, (currentPage + 1) * countPerPage)
-            .map((d, index) => (
-              <PopularTableRow key={index} row={d} />
-            ))}
+              .slice(
+                currentPage * countPerPage,
+                (currentPage + 1) * countPerPage
+              )
+              .map((d, index) => (
+                <PopularTableRow key={index} row={d} />
+              ))}
           </tbody>
         </table>
       </div>
-      <div className="flex flex-col md:flex-row justify-between">
-        <div className="flex whitespace-nowrap my-2">
-          Showing {countPerPage * currentPage + 1} to {Math.min((currentPage + 1) * countPerPage, fetch_data.length)} of {fetch_data.length} entries</div>
+      <div className="flex flex-col justify-between md:flex-row">
+        <div className="my-2 flex whitespace-nowrap">
+          Showing {countPerPage * currentPage + 1} to{" "}
+          {Math.min((currentPage + 1) * countPerPage, fetch_data.length)} of{" "}
+          {fetch_data.length} entries
+        </div>
         <div className="flex w-full md:justify-end">
-          <Paginations pageCount={pageCount} currentPage={currentPage} navigate={handleNavigate} />
+          <Paginations
+            pageCount={pageCount}
+            currentPage={currentPage}
+            navigate={handleNavigate}
+          />
         </div>
       </div>
     </div>

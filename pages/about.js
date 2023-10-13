@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from "react";
 const About = ({ data }) => {
   const { locale, setLocale } = useTranslation();
   const [frontmatter, setFrontmatter] = useState(
-    data.filter((dt) => dt.lang === locale)[0],
+    data.filter((dt) => dt.lang === locale)[0]
   );
   const { banner, content, content1, content2 } = frontmatter;
 
@@ -24,7 +24,7 @@ const About = ({ data }) => {
       tl.fromTo(
         ".banner-title",
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, delay: 0.5 },
+        { y: 0, opacity: 1, duration: 0.5, delay: 0.5 }
       );
     });
 
@@ -34,14 +34,14 @@ const About = ({ data }) => {
   return (
     <Base>
       <section className="section">
-        <div className="banner-bg absolute w-full h-[450px] overflow-hidden">
-          <div className="relative flex left-[-350px] sm:left-[-300px] md:left-[-100px] lg:left-0">
+        <div className="banner-bg absolute h-[450px] w-full overflow-hidden">
+          <div className="relative left-[-350px] flex sm:left-[-300px] md:left-[-100px] lg:left-0">
             <BannerAbout />
           </div>
         </div>
-        <div className="flex flex-col justify-center container px-0 z-10">
-          <div className="col-12 mt-12 mb-12">
-            <div className="banner-title text-[#070c13] mx-5 mb-12 opacity-0">
+        <div className="container z-10 flex flex-col justify-center px-0">
+          <div className="col-12 mb-12 mt-12">
+            <div className="banner-title mx-5 mb-12 text-[#070c13] opacity-0">
               {banner.title}
             </div>
             <div className="container-main">

@@ -13,7 +13,7 @@ import { useEffect, useRef, useState } from "react";
 const Apis = ({ data }) => {
   const { locale, setLocale } = useTranslation();
   const [frontmatter, setFrontmatter] = useState(
-    data.filter((dt) => dt.lang === locale)[0],
+    data.filter((dt) => dt.lang === locale)[0]
   );
   const { banner, api, faq } = frontmatter;
 
@@ -27,13 +27,13 @@ const Apis = ({ data }) => {
       tl.fromTo(
         ".banner-title",
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, delay: 0.5 },
+        { y: 0, opacity: 1, duration: 0.5, delay: 0.5 }
       )
         .fromTo(
           ".banner-text",
           { y: 20, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.5 },
-          ">-0.4",
+          ">-0.4"
         )
         .fromTo(
           ".banner-img",
@@ -46,7 +46,7 @@ const Apis = ({ data }) => {
             opacity: 1,
             duration: 0.5,
           },
-          ">-.5",
+          ">-.5"
         );
     });
 
@@ -59,17 +59,17 @@ const Apis = ({ data }) => {
         <div className="container z-10 overflow-hidden">
           <div className="banner-bg md:h-[300px]">
             <div className="row">
-              <div className="col-12 md:col-6 z-10">
+              <div className="col-12 z-10 md:col-6">
                 <div className="pt-20">
                   {markdownify(banner.title, "h3", "banner-title opacity-0")}
                   {markdownify(
                     banner.content,
                     "h5",
-                    "banner-text text-justify opacity-0",
+                    "banner-text text-justify opacity-0"
                   )}
                 </div>
               </div>
-              <div className="banner-img flex col-12 md:col-6 opacity-0 justify-center items-center px-0 lg:right-0 z-0">
+              <div className="banner-img col-12 z-0 flex items-center justify-center px-0 opacity-0 md:col-6 lg:right-0">
                 <div className="md:absolute md:mt-24">
                   <BannerAPI />
                 </div>
@@ -125,15 +125,13 @@ const Apis = ({ data }) => {
                 </div>
                 <span className="api-title">{api.title}</span>
               </div>
-              <div className="flex flex-col relative -mt-10 md:-mt-6">
+              <div className="relative -mt-10 flex flex-col md:-mt-6">
                 <span className="api-description">{api.description}</span>
                 <div className="api-content">
                   {api.content.map((c, i) => (
                     <div className="content-inner" key={i}>
                       <div className="title">{c.title}</div>
-                      <div
-                        className="url"
-                      >
+                      <div className="url">
                         <a href={c.url}>{c.url}</a>
                       </div>
                       {markdownify(c.description, "h5", "description")}
@@ -150,7 +148,7 @@ const Apis = ({ data }) => {
         <div className="div-faq">
           <div className="col-12 mb-12">
             <div className="container-main">
-              <div className="faq-background flex-row z-0">
+              <div className="faq-background z-0 flex-row">
                 <div className="faq-mark">
                   <div className="img1 flex-col">
                     <div className="image-wrapper_2 flex-col">

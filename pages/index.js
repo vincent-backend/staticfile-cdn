@@ -43,13 +43,14 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
   // Vue, Angular.js, JQuery
   const [isDefaultMode, setDefaultMode] = useState(true);
   const [defaultLibArray, setDefaultLibArray] = useState(
-    Object.values(lib_default),
+    Object.values(lib_default)
   );
 
   let { banner, section } = frontmatter;
 
   const renderListItem = (http, filename, i) => {
-    const urls = http == "https" ? cdn_url_https + filename : cdn_url_http + filename;
+    const urls =
+      http == "https" ? cdn_url_https + filename : cdn_url_http + filename;
     return (
       <li
         className="list-item"
@@ -109,13 +110,13 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
       tl.fromTo(
         ".banner-title",
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, delay: 0.5 },
+        { y: 0, opacity: 1, duration: 0.5, delay: 0.5 }
       )
         .fromTo(
           ".banner-text",
           { y: 20, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.5 },
-          ">-0.4",
+          ">-0.4"
         )
         .fromTo(
           ".banner-img",
@@ -128,7 +129,7 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
             opacity: 1,
             duration: 0.5,
           },
-          ">-.5",
+          ">-.5"
         )
         .fromTo(
           ".banner-link",
@@ -141,7 +142,7 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
             opacity: 1,
             duration: 0.5,
           },
-          "<",
+          "<"
         );
     });
 
@@ -174,44 +175,44 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
   return (
     <Base>
       <section className="section">
-        <div className="flex bg-primary overflow-hidden">
+        <div className="flex overflow-hidden bg-primary">
           <div className="container">
             <div className="banner-bg md:min-h-[450px]">
               <div className="row">
-                <div className="relative col-12 md:col-6 z-10 pb-10">
+                <div className="col-12 relative z-10 pb-10 md:col-6">
                   <div className="pt-14 md:pt-[98px]">
                     {markdownify(banner.title, "h3", "banner-title opacity-0")}
                     {markdownify(
                       banner.content,
                       "h5",
-                      "banner-text text-justify opacity-0",
+                      "banner-text text-justify opacity-0"
                     )}
                     <div className={`banner-link`}>
-                      <span className="text-primary font-normal inline tracking-normal">
+                      <span className="inline font-normal tracking-normal text-primary">
                         $ npm install –g sfile
                       </span>
-                      <span className="text-[#292d33] ml-1">
+                      <span className="ml-1 text-[#292d33]">
                         {`// `}
                         {markdownify(
                           banner.installation_tools,
                           "h6",
-                          "opacity-1 text-[#292d33] inline",
+                          "opacity-1 text-[#292d33] inline"
                         )}
                       </span>
-                      <span className="pl-2 text-[#ff941a] break-keep">
+                      <span className="break-keep pl-2 text-[#ff941a]">
                         <Link href="/apis">
                           {markdownify(
                             banner.usage,
                             "h6",
-                            "text-[#ff941a] inline-flex",
+                            "text-[#ff941a] inline-flex"
                           )}
-                          <IoChevronForwardSharp className="inline-flex h4" />
+                          <IoChevronForwardSharp className="h4 inline-flex" />
                         </Link>
                       </span>
                     </div>
                   </div>
                 </div>
-                <div className="banner-img flex col-12 md:col-6 opacity-0 justify-center items-center px-0 lg:right-0 z-0">
+                <div className="banner-img col-12 z-0 flex items-center justify-center px-0 opacity-0 md:col-6 lg:right-0">
                   <div className="md:absolute md:top-0">
                     <BannerHome />
                   </div>
@@ -221,10 +222,10 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
           </div>
         </div>
         {/* Search bar && Library List View */}
-        <div className="row container mb-[92px]">
-          <div className="relative flex justify-center items-center">
-            <div className="absolute container">
-              <div className="bg-[url('/images/home/icon-search.png')] w-[19px] h-[19px] absolute ml-8 mt-[24px]" />
+        <div className="container row mb-[92px]">
+          <div className="relative flex items-center justify-center">
+            <div className="container absolute">
+              <div className="absolute ml-8 mt-[24px] h-[19px] w-[19px] bg-[url('/images/home/icon-search.png')]" />
               <input
                 onChange={handleSearchTextChange}
                 className="search-input"
@@ -234,8 +235,8 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
               />
             </div>
             {isLibsShow && (
-              <div className="absolute container top-[33px] z-30" ref={listRef}>
-                <div className="h-full bg-white border border-border rounded-sm text-h6 max-h-[300px] overflow-y-scroll ">
+              <div className="container absolute top-[33px] z-30" ref={listRef}>
+                <div className="h-full max-h-[300px] overflow-y-scroll rounded-sm border border-border bg-white text-h6 ">
                   <ul>
                     {libList.map((l, i) => (
                       <li

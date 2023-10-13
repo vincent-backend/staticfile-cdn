@@ -14,8 +14,8 @@ const TopPlatforms = ({ section, fetch_data }) => {
   const [data, setData] = useState(
     fetch_data.slice(
       currentPage * countPerPage,
-      Math.min((currentPage + 1) * countPerPage, total),
-    ),
+      Math.min((currentPage + 1) * countPerPage, total)
+    )
   );
 
   const handleRecordSelect = (e) => {
@@ -40,32 +40,36 @@ const TopPlatforms = ({ section, fetch_data }) => {
     setData(
       fetch_data.slice(
         currentPage * countPerPage,
-        Math.min((currentPage + 1) * countPerPage, total),
-      ),
+        Math.min((currentPage + 1) * countPerPage, total)
+      )
     );
   }, [currentPage, countPerPage, total, fetch_data]);
 
   return (
-    <div className="border-[2px] border-border flex-col">
-      <div className="flex flex-row h-[40px] ml-[12px] items-center">
+    <div className="flex-col border-[2px] border-border">
+      <div className="ml-[12px] flex h-[40px] flex-row items-center">
         <Image
           alt="instructons_mark"
           src="/images/statistics/data_ic_Instructions.svg"
           width={16}
           height={16}
         />
-        <span className="text-h6 md:text-base text-cgray ml-[6px]">
+        <span className="text-cgray ml-[6px] text-h6 md:text-base">
           {section.more_platform_data}
         </span>
       </div>
       <div className="flex overflow-x-auto">
-        <table className="table-auto w-full">
-          <thead className="bg-body h-[48px] text-h5 font-bold">
+        <table className="w-full table-auto">
+          <thead className="h-[48px] bg-body text-h5 font-bold">
             <tr>
               <th className="text-center"></th>
-              <th className="text-left whitespace-nowrap">{section.name}</th>
-              <th className="text-right whitespace-nowrap px-3 md:px-4">{section.market_share}</th>
-              <th className="text-right flex-row items-center pr-2 md:pr-4 whitespace-nowrap">
+              <th className="w-1/2 whitespace-nowrap text-left">
+                {section.name}
+              </th>
+              <th className="w-1/4 whitespace-nowrap px-3 text-right md:px-4">
+                {section.market_share}
+              </th>
+              <th className="w-1/4 flex-row items-center whitespace-nowrap pr-2 text-right md:pr-4">
                 <span className="mr-1">{section.change}</span>
                 <Image
                   alt="instructons_mark"
@@ -84,11 +88,12 @@ const TopPlatforms = ({ section, fetch_data }) => {
           </tbody>
         </table>
       </div>
-      <div className="flex h-[48px] flex-row justify-between mx-2 md:mx-5 items-center">
-        <div className="flex grow h-[48px] items-center">
-          {section.record} {currentPage * countPerPage + 1} - {Math.min((currentPage + 1) * countPerPage, total)} of {total}
+      <div className="mx-2 flex h-[48px] flex-row items-center justify-between md:mx-5">
+        <div className="flex h-[48px] grow items-center">
+          {section.record} {currentPage * countPerPage + 1} -{" "}
+          {Math.min((currentPage + 1) * countPerPage, total)} of {total}
         </div>
-        <div className="flex h-[48px] items-center mr-2 md:mr-10 ml-1">
+        <div className="ml-1 mr-2 flex h-[48px] items-center md:mr-10">
           <span>{section.display}: </span>
           <select
             className="border-none active:border-none"
@@ -102,17 +107,29 @@ const TopPlatforms = ({ section, fetch_data }) => {
             ))}
           </select>
         </div>
-        <div className="flex w-[60px] h-[48px] justify-end space-x-[8px] items-center">
-          <button disabled={currentPage == 0} className={clsx("w-[24px] h-[24px] rounded-sm", 
-            currentPage > 0 && "bg-[url('/images/statistics/data_ic_arrow_left.svg')]",
-            currentPage == 0 && "bg-[url('/images/statistics/data_ic_arrow_left_dis.svg')]")}
-            onClick={()=>handlePrevPage()}
-            />
-          <button disabled={currentPage == pageCount-1} className={clsx("w-[24px] h-[24px] rounded-sm",
-            currentPage < pageCount - 1 && "bg-[url('/images/statistics/data_ic_arrow_right.svg')]",
-            currentPage == pageCount - 1 && "bg-[url('/images/statistics/data_ic_arrow_right_dis.svg')]")}
-            onClick={()=>handleNextPage()}
-            />
+        <div className="flex h-[48px] w-[60px] items-center justify-end space-x-[8px]">
+          <button
+            disabled={currentPage == 0}
+            className={clsx(
+              "h-[24px] w-[24px] rounded-sm",
+              currentPage > 0 &&
+                "bg-[url('/images/statistics/data_ic_arrow_left.svg')]",
+              currentPage == 0 &&
+                "bg-[url('/images/statistics/data_ic_arrow_left_dis.svg')]"
+            )}
+            onClick={() => handlePrevPage()}
+          />
+          <button
+            disabled={currentPage == pageCount - 1}
+            className={clsx(
+              "h-[24px] w-[24px] rounded-sm",
+              currentPage < pageCount - 1 &&
+                "bg-[url('/images/statistics/data_ic_arrow_right.svg')]",
+              currentPage == pageCount - 1 &&
+                "bg-[url('/images/statistics/data_ic_arrow_right_dis.svg')]"
+            )}
+            onClick={() => handleNextPage()}
+          />
         </div>
       </div>
     </div>

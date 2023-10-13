@@ -3,9 +3,9 @@ const SCaption = ({ caption }) => {
     <div className="flex flex-row items-end">
       <div className="flex flex-col">
         <div className="caption flex flex-row">{caption}</div>
-        <div className="flex flex-row bg-primary h-1 mt-2"></div>
+        <div className="mt-2 flex h-1 flex-row bg-primary"></div>
       </div>
-      <div className="flex grow bg-slate-200 h-[1px]"></div>
+      <div className="flex h-[1px] grow bg-slate-200"></div>
     </div>
   );
 };
