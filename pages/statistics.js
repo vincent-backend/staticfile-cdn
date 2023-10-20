@@ -1,35 +1,33 @@
-import useTranslation from "@hooks/useTranslation";
-import BannerStatistics from "@layouts/components/banner/BannerStatistics";
-import Base from "@layouts/Baseof";
-import { getDataFromContent } from "@lib/contentParser";
-import { gsap } from "@lib/gsap";
-import { markdownify } from "@lib/utils/textConverter";
-import SCaption from "@layouts/components/statistics/SCaption";
-import { useEffect, useRef, useState } from "react";
-
-import { staticData } from ".mock/statisticsData";
-import { DataTypes } from "constant";
-
-import ChartArea from "@layouts/components/statistics/ChartArea";
-
-import {
-  CacheHitRate,
-  GlobalDashboard,
-} from "@layouts/components/statistics/GlobalDashboard";
-import RankTable from "@layouts/components/statistics/RankTable";
+import { useEffect, useState } from "react"; 
+import { DataTypes } from "constant"; 
+import { gsap } from "@lib/gsap"; 
+import { markdownify } from "@lib/utils/textConverter"; 
+import { staticData } from ".mock/statisticsData"; 
+import { getDataFromContent } from "@lib/contentParser"; 
+import useTranslation from "@hooks/useTranslation"; 
+import Base from "@layouts/Baseof"; 
+import BannerStatistics from "@layouts/components/banner/BannerStatistics"; 
+import SCaption from "@layouts/components/statistics/SCaption"; 
+import ChartArea from "@layouts/components/statistics/ChartArea"; 
+import { CacheHitRate, GlobalDashboard } from "@layouts/components/statistics/Dashboard"; 
+import RankTable from "@layouts/components/statistics/RankTable"; 
 import { PopularTable } from "@layouts/components/statistics/PopularTable";
 
-const Statistics = ({ data }) => {
+import { getNetworkData } from "@lib/data-load";
+
+const Statistics = ({ static_data, network_data }) => {
   const { locale, setLocale } = useTranslation();
   const [frontmatter, setFrontmatter] = useState(
-    data.filter((dt) => dt.lang === locale)[0]
+    static_data.filter((dt) => dt.lang === locale)[0]
   );
   const { banner, section } = frontmatter;
+
+  console.log(network_data);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       //frontmatter
-      setFrontmatter(data.filter((dt) => dt.lang === locale)[0]);
+      setFrontmatter(static_data.filter((dt) => dt.lang === locale)[0]);
 
       const tl = gsap.timeline();
 
@@ -60,7 +58,7 @@ const Statistics = ({ data }) => {
     });
 
     return () => ctx.revert();
-  }, [locale, data]);
+  }, [locale, static_data]);
 
   return (
     <Base>
@@ -99,17 +97,23 @@ const Statistics = ({ data }) => {
                     <div className="mx-0 flex flex-col justify-center md:flex-row md:space-x-6">
                       <div className="mt-6 w-full flex-col">
                         <div className="sub-caption">{section.request}</div>
-                        <GlobalDashboard
+                        {network_data.rslt &&
+                          <GlobalDashboard
                           gType={DataTypes.REQUEST}
                           section={section}
+                          network_data = {network_data.data}
                         />
+                        }
                       </div>
                       <div className="mt-6 w-full flex-col">
                         <div className="sub-caption">{section.bandwidth}</div>
+                        {network_data.rslt &&
                         <GlobalDashboard
                           gType={DataTypes.BANDWIDTH}
                           section={section}
+                          network_data = {network_data.data}
                         />
+                        }
                       </div>
                     </div>
                     <div className="mt-6 flex flex-col">
@@ -180,11 +184,14 @@ const Statistics = ({ data }) => {
 export default Statistics;
 
 export const getStaticProps = async () => {
-  const data = await getDataFromContent("content/statistics");
+  const static_data = await getDataFromContent("content/statistics");
+
+  const network_data = await getNetworkData();
 
   return {
     props: {
-      data,
+      static_data,
+      network_data
     },
   };
 };

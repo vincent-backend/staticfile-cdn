@@ -110,8 +110,8 @@ const ChartArea = ({ section }) => {
 
   return (
     <div className="flex-col">
-      <div className="mb-2 flex justify-start space-x-3">
-        <div className="mr-5 flex flex-row items-center">
+      <div className="mb-2 flex justify-start space-x-5">
+        <div className="flex flex-row items-center">
           <span className="mr-3 text-h6 font-bold">{section.tencent}</span>
           <ToggleButton
             site={SiteNames.Tencent}
@@ -119,7 +119,7 @@ const ChartArea = ({ section }) => {
             callback={() => handleToggleTencent}
           />
         </div>
-        <div className="mr-3 flex flex-row items-center">
+        <div className="flex flex-row items-center">
           <span className="mr-3 text-h6 font-bold">{section.huawei}</span>
           <ToggleButton
             site={SiteNames.Huawei}

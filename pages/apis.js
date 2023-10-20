@@ -6,9 +6,7 @@ import { markdownify } from "@lib/utils/textConverter";
 import BannerAPI from "@layouts/components/banner/BannerAPI";
 import Image from "next/image";
 
-import CopyToClipboard from "@hooks/useClipboard";
-
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Apis = ({ data }) => {
   const { locale, setLocale } = useTranslation();

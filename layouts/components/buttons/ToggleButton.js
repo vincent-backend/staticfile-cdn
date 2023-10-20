@@ -4,23 +4,17 @@ import clsx from "clsx";
 import { SiteNames } from "constant";
 
 const ToggleButton = ({ site, checked, callback }) => {
-  const style_icon_open =
-    site == SiteNames.Tencent
-      ? "bg-[url('/images/statistics/data_Button1_open.svg')]"
-      : "bg-[url('/images/statistics/data_Button2_open.svg')]";
-
-  const style_icon_close =
-    "bg-[url('/images/statistics/data_Button_close.svg')]";
 
   return (
-    <div
-      className={clsx(
-        "w-[42px] h-[22px] cursor-pointer",
-        checked && style_icon_open,
-        !checked && style_icon_close,
-      )}
+    <button
       onClick={callback()}
-    />
+      className={clsx("w-[42px] h-[22px] p-0 m-auto  rounded-full flex transition duration-200 shadow-2xl", 
+      checked && `justify-end bg-green-500`, !checked && "justify-start bg-[#e8eaf1]")}
+    >
+      <span
+        className={`bg-white rounded-full w-[16px] h-[16px] m-[3px] p-0 shadow-xl`}
+      ></span>
+    </button>
   );
 };
 

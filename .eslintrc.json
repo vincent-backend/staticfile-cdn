@@ -1,13 +1,20 @@
 {
-  "extends": "next/core-web-vitals",
-  "rules": {
-    "sort-imports": 
-    [
-      "error", 
-      { 
-        "ignoreCase": true, 
-        "ignoreDeclarationSort": true 
-      }
-    ]
-  }
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "standard",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+    }
 }

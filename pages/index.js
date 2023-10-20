@@ -188,7 +188,7 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
                       "banner-text text-justify opacity-0"
                     )}
                     <div className={`banner-link`}>
-                      <span className="inline font-normal tracking-normal text-primary">
+                      <span className="inline whitespace-nowrap font-normal tracking-normal text-primary">
                         $ npm install –g sfile
                       </span>
                       <span className="ml-1 text-[#292d33]">
@@ -199,7 +199,7 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
                           "opacity-1 text-[#292d33] inline"
                         )}
                       </span>
-                      <span className="break-keep pl-2 text-[#ff941a]">
+                      <span className="whitespace-nowrap pl-2 text-[#ff941a]">
                         <Link href="/apis">
                           {markdownify(
                             banner.usage,

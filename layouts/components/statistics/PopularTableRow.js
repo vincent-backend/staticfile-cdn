@@ -1,7 +1,7 @@
-import clsx from "clsx";
+import clsx from 'clsx'
 
 const PopularTableRow = ({ row }) => {
-  const style_tr = clsx("popular-table-row");
+  const style_tr = clsx('popular-table-row')
 
   return (
     <tr className={style_tr} key={row.name}>
@@ -11,7 +11,7 @@ const PopularTableRow = ({ row }) => {
         {row.bandwidth} TB
       </td>
     </tr>
-  );
-};
+  )
+}
 
-export default PopularTableRow;
+export default PopularTableRow

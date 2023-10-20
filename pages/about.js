@@ -5,7 +5,7 @@ import useTranslation from "@hooks/useTranslation";
 import Base from "@layouts/Baseof";
 import BannerAbout from "@layouts/components/banner/BannerAbout";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const About = ({ data }) => {
   const { locale, setLocale } = useTranslation();
