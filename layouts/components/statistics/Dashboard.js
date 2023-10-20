@@ -162,12 +162,12 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
               <div
                 className={clsx(
                   "flex w-1/2 justify-end text-h6 font-normal",
-                  d.total >= 0 && "text-primary",
-                  d.total < 0 && "text-danger",
+                  (d.total-d.prev.total)*100/d.prev.total >= 0 && "text-primary",
+                  (d.total-d.prev.total)*100/d.prev.total < 0 && "text-danger",
                 )}
               >
-                {d.total > 0 && `+`}
-                {0}%
+                {(d.total-d.prev.total)*100/d.prev.total > 0 && `+`}
+                {((d.total-d.prev.total)*100/d.prev.total).toFixed(1)}%
               </div>
             </div>
           </div>
