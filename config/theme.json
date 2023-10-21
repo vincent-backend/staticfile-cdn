@@ -15,7 +15,8 @@
         "light": "#ceced0",
         "danger": "#ff0014",
         "gray": "#626174"
-      }
+      },
+      "network_color" : ["#ff0014", "#ff941a", "#8d04c8"]
     }
   },
   "fonts": {

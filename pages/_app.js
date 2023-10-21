@@ -1,5 +1,4 @@
 import config from "@config/config.json";
-import theme from "@config/theme.json";
 import { LanguageProvider } from "contexts/LanguageContext";
 
 import Head from "next/head";

@@ -6,7 +6,14 @@ export const DataTypes = {
 export const SiteNames = {
     Tencent: "tencent",
     Ali: "ali",
-    Huawei: "huawei"
+    Huawei: "huawei",
+    Fastly: "Fastly",
+    Cloudflare: "Cloudflare",
+    Quantil: "Quantil",
+    StackPath: "StackPath",
+    GCore: "GCore",
+    Bunny: "Bunny"
+
 }
 
 export const RecordCounts = [5, 10, 25, 50];

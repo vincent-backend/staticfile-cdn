@@ -22,8 +22,6 @@ const Statistics = ({ static_data, network_data }) => {
   );
   const { banner, section } = frontmatter;
 
-  console.log(network_data);
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       //frontmatter
@@ -101,7 +99,7 @@ const Statistics = ({ static_data, network_data }) => {
                           <GlobalDashboard
                           gType={DataTypes.REQUEST}
                           section={section}
-                          network_data = {network_data.data}
+                          network_data = {network_data.data.hits}
                         />
                         }
                       </div>
@@ -111,7 +109,7 @@ const Statistics = ({ static_data, network_data }) => {
                         <GlobalDashboard
                           gType={DataTypes.BANDWIDTH}
                           section={section}
-                          network_data = {network_data.data}
+                          network_data = {network_data.data.bandwidth}
                         />
                         }
                       </div>

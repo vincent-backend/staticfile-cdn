@@ -4,7 +4,13 @@ import { DataTypes, SiteNames } from "constant";
 import { gsap } from "@lib/gsap";
 import { num2DataSize } from "@lib/utils/dataFormat";
 
+import theme from "@config/theme.json";
+
 import { staticData } from ".mock/statisticsData";
+import ProgressBar from "@components/progressbar";
+
+import Image from "next/image";
+import NetworkIcon from "./NetworkIcon";
 
 const style_icon_huawei =
   "w-[26px] h-[26px] bg-[url('/images/statistics/data_ic_huawei.svg')]";
@@ -14,9 +20,7 @@ const style_icon_tencent =
   "w-[26px] h-[26px] bg-[url('/images/statistics/data_ic_tencent.svg')]";
 
 export const GlobalDashboard = ({ gType, section, network_data }) => {
-  const [data, setData] = useState(
-    gType == "request" ? network_data.hits : network_data.bandwidth,
-  );
+  const [data, setData] = useState(network_data);
 
   const [total, setTotal] = useState(parseFloat(data.total));
   const [prev, setPrev] = useState(parseFloat(data.prev.total));
@@ -31,55 +35,7 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
       gType === DataTypes.BANDWIDTH,
   });
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline();
-
-      /*
-      tl.fromTo(
-        `.${gType}-prog-ali`,
-        { width: "0%" },
-        {
-          width: `${
-            (dataArray.find((d) => d.site == SiteNames.Ali).total /
-              data.total) *
-            100
-          }%`,
-          duration: 0.5,
-          delay: 0.5,
-        },
-      )
-        .fromTo(
-          `.${gType}-prog-tencent`,
-          { width: "0%" },
-          {
-            width: `${
-              (dataArray.find((d) => d.site == SiteNames.Tencent).total /
-                data.total) *
-              100
-            }%`,
-            duration: 0.5,
-          },
-          ">-0.5",
-        )
-        .fromTo(
-          `.${gType}-prog-huawei`,
-          { width: "0%" },
-          {
-            width: `${
-              (dataArray.find((d) => d.site == SiteNames.Huawei).total /
-                data.total) *
-              100
-            }%`,
-            duration: 0.5,
-          },
-          ">-0.5",
-        );
-        */
-    });
-
-    return () => ctx.revert();
-  }, [dataArray, gType, data]);
+  const [progColors, setProgColors] = useState(theme.colors.default.network_color);
 
   return (
     <div className="flex-col h-80 md:h-[315px] border-[2px] border-border">
@@ -113,26 +69,19 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
         </div>
       </div>
       <div className="flex-col h-60 md:h-[225px] px-2 md:px-5">
-        {dataArray.map((d) => (
+        {dataArray.map((d, index) => (
           <div
             className="flex flex-row h-1/3 items-center text-dark"
-            key={d.site}
+            key={d.name}
           >
             <div className="flex w-[58%] items-center">
               {/*Icon*/}
-              <div
-                className={clsx(
-                  d.site == SiteNames.Tencent && style_icon_tencent,
-                  d.site == SiteNames.Ali && style_icon_ali,
-                  d.site == SiteNames.Huawei && style_icon_huawei,
-                )}
-              />
+              <NetworkIcon sitename={d.name} />
+
               {/*Caption && Total*/}
               <div className="flex flex-col lg:grow lg:flex-row ml-2 items-start lg:items-center justify-between">
                 <div className="flex lg:w-1/3 text-base font-bold">
-                  {d.site == SiteNames.Ali && section.ali}
-                  {d.site == SiteNames.Tencent && section.tencent}
-                  {d.site == SiteNames.Huawei && section.huawei}
+                  {d.name}
                 </div>
                 <div className="flex grow">
                   <div className="text-left w-full pl-0 lg:pl-[20%] pr-2 text-base tracking-tighter">
@@ -148,16 +97,7 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
             </div>
             <div className="flex w-[42%] items-center">
               <div className="w-1/2 justify-center mr-2">
-                <div className="h-[5px] rounded-[3px] max-w-[110px] mx-auto bg-body">
-                  <div
-                    className={clsx(
-                      `flex h-[5px] rounded-[3px] w-[0%] ${gType}-prog-${d.site}`,
-                      d.site == SiteNames.Ali && "bg-[#ff941a]",
-                      d.site == SiteNames.Huawei && "bg-[#8d04c8]",
-                      d.site == SiteNames.Tencent && "bg-danger",
-                    )}
-                  />
-                </div>
+                <ProgressBar progress={(d.total * 100 / total).toFixed(0)} color={progColors[index]}/>
               </div>
               <div
                 className={clsx(
