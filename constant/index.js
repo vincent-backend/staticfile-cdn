@@ -13,8 +13,9 @@ export const SiteNames = {
     StackPath: "StackPath",
     GCore: "GCore",
     Bunny: "Bunny"
-
 }
+
+export const hit_rates = [99.49, 99.43, 98.93];
 
 export const RecordCounts = [5, 10, 25, 50];
 

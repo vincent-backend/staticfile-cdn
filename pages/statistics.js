@@ -118,7 +118,7 @@ const Statistics = ({ static_data, network_data }) => {
                       <div className="sub-caption">
                         {section.cache_hit_rate}
                       </div>
-                      <CacheHitRate section={section} />
+                      <CacheHitRate section={section} network_data={network_data.data.hits}/>
                     </div>
                   </div>
                 </div>

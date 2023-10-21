@@ -12,6 +12,8 @@ import ProgressBar from "@components/progressbar";
 import Image from "next/image";
 import NetworkIcon from "./NetworkIcon";
 
+import { hit_rates } from "constant";
+
 const style_icon_huawei =
   "w-[26px] h-[26px] bg-[url('/images/statistics/data_ic_huawei.svg')]";
 const style_icon_ali =
@@ -46,7 +48,7 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
           data.total.toLocaleString("en-US").replaceAll(",", " ")
           }
           {gType == DataTypes.BANDWIDTH &&
-          num2DataSize(data.total)
+          num2DataSize(data.total, 0)
           }
         </span>
         {gType == DataTypes.BANDWIDTH && (
@@ -117,36 +119,34 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
   );
 };
 
-export const CacheHitRate = ({ section }) => {
+export const CacheHitRate = ({ section, network_data }) => {
   const { cache_hit_rate } = staticData.global_data;
+  const [data, setData] = useState(network_data);
+
+  const [count, setCount] = useState(data.providers.length);
+  console.log(count);
+
+  const dataArray = data.providers.sort((a, b) => (a.total > b.total ? -1 : 1));
 
   return (
     <div className="flex flex-col md:flex-row h-[270px] md:h-24 justify-between space-x-0 space-y-3 md:space-x-6 md:space-y-0">
-      {cache_hit_rate.map((d) => (
+      {dataArray.map((d, index) => (
         <div
-          className="flex flex-row md:flex-col h-full w-full bg-body justify-between md:justify-center items-center px-2 md:px-5 py-3"
-          key={d.site}
-        >
-          <div className="flex flex-row items-center">
-            {/*Icon*/}
-            <div
-              className={clsx(
-                d.site == SiteNames.Tencent && style_icon_tencent,
-                d.site == SiteNames.Ali && style_icon_ali,
-                d.site == SiteNames.Huawei && style_icon_huawei,
-              )}
-            />
-            {/*Site*/}
-            <span className="flex ml-2 text-base font-bold text-black">
-              {d.site == SiteNames.Ali && section.ali}
-              {d.site == SiteNames.Tencent && section.tencent}
-              {d.site == SiteNames.Huawei && section.huawei}
-            </span>
-          </div>
-          <div className="flex text-h5 font-normal md:font-bold text-center text-black">
-            {d.rate}%
-          </div>
+        className="flex flex-row md:flex-col h-full w-full bg-body justify-between md:justify-center items-center px-2 md:px-5 py-3"
+        key={d.name}
+      >
+        <div className="flex flex-row items-center">
+          {/*Icon*/}
+          <NetworkIcon sitename={d.name} />
+          {/*Site*/}
+          <span className="flex ml-2 text-base font-bold text-black">
+            {d.name}
+          </span>
         </div>
+        <div className="flex text-h5 font-normal md:font-bold text-center text-black">
+          {hit_rates[index]}%
+        </div>
+      </div>
       ))}
     </div>
   );
