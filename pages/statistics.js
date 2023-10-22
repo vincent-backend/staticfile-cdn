@@ -13,9 +13,9 @@ import { CacheHitRate, GlobalDashboard } from "@layouts/components/statistics/Da
 import RankTable from "@layouts/components/statistics/RankTable"; 
 import { PopularTable } from "@layouts/components/statistics/PopularTable";
 
-import { getNetworkData } from "@lib/data-load";
+import { getBrowsersData, getNetworkData, getPlatformData } from "@lib/data-load";
 
-const Statistics = ({ static_data, network_data }) => {
+const Statistics = ({ static_data, network_data, platforms_data, browsers_data }) => {
   const { locale, setLocale } = useTranslation();
   const [frontmatter, setFrontmatter] = useState(
     static_data.filter((dt) => dt.lang === locale)[0]
@@ -130,7 +130,7 @@ const Statistics = ({ static_data, network_data }) => {
                       <div className="sub-caption">
                         {section.requests_over_time}
                       </div>
-                      <ChartArea section={section} />
+                      <ChartArea section={section} hits_data={network_data.data.hits}/>
                     </div>
                     <div className="mx-0 flex flex-col justify-center md:flex-row md:space-x-6">
                       <div className="mt-6 w-full flex-col">
@@ -140,10 +140,10 @@ const Statistics = ({ static_data, network_data }) => {
                             {section.group_platform_version}
                           </div>
                         </div>
-                        <RankTable
-                          section={section}
-                          fetch_data={staticData.platform_rank}
-                        />
+                        { platforms_data.rslt &&
+                          <RankTable section={section} fetch_data={platforms_data.data} />
+                        }
+                        
                       </div>
                       <div className="mt-6 min-h-[100px] w-full flex-col">
                         <div className="sub-caption flex-row items-center">
@@ -152,10 +152,9 @@ const Statistics = ({ static_data, network_data }) => {
                             {section.group_browser_version}
                           </div>
                         </div>
-                        <RankTable
-                          section={section}
-                          fetch_data={staticData.popular_browsers}
-                        />
+                        { browsers_data.rslt &&
+                          <RankTable section={section} fetch_data={browsers_data.data} />
+                        }
                       </div>
                     </div>
                   </div>
@@ -183,13 +182,21 @@ export default Statistics;
 
 export const getStaticProps = async () => {
   const static_data = await getDataFromContent("content/statistics");
-
+  // network
   const network_data = await getNetworkData();
+
+  // platforms
+  const platforms_data = await getPlatformData();
+  
+  // browsers
+  const browsers_data = await getBrowsersData();
 
   return {
     props: {
       static_data,
-      network_data
+      network_data,
+      platforms_data,
+      browsers_data
     },
   };
 };

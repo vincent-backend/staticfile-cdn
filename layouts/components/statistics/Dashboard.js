@@ -1,15 +1,10 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
-import { DataTypes, SiteNames } from "constant";
-import { gsap } from "@lib/gsap";
+import { DataTypes } from "constant";
 import { num2DataSize } from "@lib/utils/dataFormat";
 
 import theme from "@config/theme.json";
-
-import { staticData } from ".mock/statisticsData";
 import ProgressBar from "@components/progressbar";
-
-import Image from "next/image";
 import NetworkIcon from "./NetworkIcon";
 
 import { hit_rates } from "constant";
@@ -40,7 +35,7 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
   const [progColors, setProgColors] = useState(theme.colors.default.network_color);
 
   return (
-    <div className="flex-col h-80 md:h-[315px] border-[2px] border-border">
+    <div className="flex-col border-[2px] border-border">
       <div className="h-20 md:h-[90px] bg-body flex flex-row items-center px-2 md:px-5">
         <div className={style_topIcon} />
         <span className="ml-3 text-h4 md:text-h3 font-bold leading-7 tracking-tighter">
@@ -70,10 +65,10 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
           </div>
         </div>
       </div>
-      <div className="flex-col h-60 md:h-[225px] px-2 md:px-5">
+      <div className="flex-col px-2 md:px-5">
         {dataArray.map((d, index) => (
           <div
-            className="flex flex-row h-1/3 items-center text-dark"
+            className="flex flex-row h-[74px] items-center text-dark"
             key={d.name}
           >
             <div className="flex w-[58%] items-center">
@@ -120,19 +115,15 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
 };
 
 export const CacheHitRate = ({ section, network_data }) => {
-  const { cache_hit_rate } = staticData.global_data;
+
   const [data, setData] = useState(network_data);
-
-  const [count, setCount] = useState(data.providers.length);
-  console.log(count);
-
   const dataArray = data.providers.sort((a, b) => (a.total > b.total ? -1 : 1));
 
   return (
-    <div className="flex flex-col md:flex-row h-[270px] md:h-24 justify-between space-x-0 space-y-3 md:space-x-6 md:space-y-0">
+    <div className="flex flex-col md:flex-row justify-between space-x-0 space-y-3 md:space-x-6 md:space-y-0">
       {dataArray.map((d, index) => (
         <div
-        className="flex flex-row md:flex-col h-full w-full bg-body justify-between md:justify-center items-center px-2 md:px-5 py-3"
+        className="flex flex-row md:flex-col h-[100px] md:h-24 w-full bg-body justify-between md:justify-center items-center px-2 md:px-5 py-3"
         key={d.name}
       >
         <div className="flex flex-row items-center">

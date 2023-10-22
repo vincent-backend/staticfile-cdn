@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { RecordCounts } from "constant";
 
 const TopPlatforms = ({ section, fetch_data }) => {
+  console.log(fetch_data);
   const [total, setTotal] = useState(fetch_data.length);
   const [currentPage, setCurrentPage] = useState(0);
   const [countPerPage, setCountPerPage] = useState(10);
@@ -82,8 +83,8 @@ const TopPlatforms = ({ section, fetch_data }) => {
             </tr>
           </thead>
           <tbody className="font-normal">
-            {data.map((d) => (
-              <RankTableRow key={d.id} row={d} />
+            {data.map((d, index) => (
+              <RankTableRow key={index} row={d} id={index+1} />
             ))}
           </tbody>
         </table>

@@ -1,27 +1,31 @@
 import Image from "next/image";
 import clsx from "clsx";
 import { useEffect, useRef } from "react";
+import ImageFallback from "../ImageFallback";
 
-const RankTableRow = ({ row }) => {
+const RankTableRow = ({ row, id }) => {
+  console.log(row);
+  const change = row.prev.share == 0 ? 0 : ((row.share - row.prev.share) * 100 / row.prev.share).toFixed(1);
   return (
     <tr className="rank-table-row">
       <td>
-        <div className="id">{row.id}</div>
+        <div className="id">{id}</div>
       </td>
       <td className="img">
-        <Image alt={row.name} src={row.img} width={28} height={28} />
+        <ImageFallback alt={row.name.substring(0, 2).toUpperCase()} src={`/images/statistics/platforms/${row.name}.png`} 
+                       fallback = "/images/statistics/platforms/Other.png" width={28} height={28} />
         <span className="name">{row.name}</span>
       </td>
-      <td className="pr-2 text-right">{row.market_share.toFixed(2)}%</td>
+      <td className="pr-2 text-right">{row.share.toFixed(2)}%</td>
       <td
         className={clsx(
           "pr-2 text-right text-base md:pr-4 md:text-h6",
-          row.change < 0 && "text-danger",
-          row.change >= 0 && "text-primary"
+          change < 0 && "text-danger",
+          change >= 0 && "text-primary"
         )}
       >
-        {row.change > 0 && `+`}
-        {row.change.toFixed(1)}%
+        {change > 0 && `+`}
+        {change}%
       </td>
     </tr>
   );
