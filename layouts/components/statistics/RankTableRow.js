@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import ImageFallback from "../ImageFallback";
 
 const RankTableRow = ({ row, id }) => {
-  console.log(row);
+
   const change = row.prev.share == 0 ? 0 : ((row.share - row.prev.share) * 100 / row.prev.share).toFixed(1);
   return (
     <tr className="rank-table-row">

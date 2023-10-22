@@ -5,10 +5,10 @@ import { staticData } from ".mock/statisticsData";
 import PopularTableRow from "./PopularTableRow";
 import Paginations from "../Paginations";
 
-export const PopularTable = ({ section }) => {
-  const [fetch_data, setData] = useState(
-    staticData.popular_projects.sort((a, b) => a.name - b.name)
-  );
+export const PopularTable = ({ section, network_data }) => {
+
+  const [fetch_data, setData] = useState(network_data);
+
   const [currentPage, setCurrentPage] = useState(0);
   const [countPerPage, setCountPerPage] = useState(10);
   const [pageCount, setPageCount] = useState(
@@ -44,9 +44,9 @@ export const PopularTable = ({ section }) => {
   const handleSortF2 = (newSort) => {
     setSortF2(newSort);
     if (newSort) {
-      setData(fetch_data.sort((a, b) => a.requests - b.requests));
+      setData(fetch_data.sort((a, b) => a.hits - b.hits));
     } else {
-      setData(fetch_data.sort((a, b) => b.requests - a.requests));
+      setData(fetch_data.sort((a, b) => b.hits - a.hits));
     }
   };
 

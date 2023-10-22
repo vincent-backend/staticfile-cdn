@@ -9,13 +9,6 @@ import NetworkIcon from "./NetworkIcon";
 
 import { hit_rates } from "constant";
 
-const style_icon_huawei =
-  "w-[26px] h-[26px] bg-[url('/images/statistics/data_ic_huawei.svg')]";
-const style_icon_ali =
-  "w-[26px] h-[26px] bg-[url('/images/statistics/data_ic_ali.svg')]";
-const style_icon_tencent =
-  "w-[26px] h-[26px] bg-[url('/images/statistics/data_ic_tencent.svg')]";
-
 export const GlobalDashboard = ({ gType, section, network_data }) => {
   const [data, setData] = useState(network_data);
 

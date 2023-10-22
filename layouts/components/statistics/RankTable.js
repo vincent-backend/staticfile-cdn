@@ -7,7 +7,6 @@ import clsx from "clsx";
 import { RecordCounts } from "constant";
 
 const TopPlatforms = ({ section, fetch_data }) => {
-  console.log(fetch_data);
   const [total, setTotal] = useState(fetch_data.length);
   const [currentPage, setCurrentPage] = useState(0);
   const [countPerPage, setCountPerPage] = useState(10);

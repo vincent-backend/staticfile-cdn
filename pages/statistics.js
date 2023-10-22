@@ -13,9 +13,9 @@ import { CacheHitRate, GlobalDashboard } from "@layouts/components/statistics/Da
 import RankTable from "@layouts/components/statistics/RankTable"; 
 import { PopularTable } from "@layouts/components/statistics/PopularTable";
 
-import { getBrowsersData, getNetworkData, getPlatformData } from "@lib/data-load";
+import { getBrowsersData, getNetworkData, getPackagesData, getPlatformData } from "@lib/data-load";
 
-const Statistics = ({ static_data, network_data, platforms_data, browsers_data }) => {
+const Statistics = ({ static_data, network_data, platforms_data, browsers_data, packages_data }) => {
   const { locale, setLocale } = useTranslation();
   const [frontmatter, setFrontmatter] = useState(
     static_data.filter((dt) => dt.lang === locale)[0]
@@ -166,7 +166,10 @@ const Statistics = ({ static_data, network_data, platforms_data, browsers_data }
                     <div className="sub-caption">
                       {section.most_popular_projects}
                     </div>
-                    <PopularTable section={section} />
+                    { packages_data.rslt &&
+                      <PopularTable section={section} network_data = {packages_data.data} />
+                    }
+                    
                   </div>
                 </div>
               </div>
@@ -191,12 +194,16 @@ export const getStaticProps = async () => {
   // browsers
   const browsers_data = await getBrowsersData();
 
+  // packages
+  const packages_data = await getPackagesData();
+
   return {
     props: {
       static_data,
       network_data,
       platforms_data,
-      browsers_data
+      browsers_data,
+      packages_data
     },
   };
 };
