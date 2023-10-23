@@ -41,7 +41,7 @@ const Header = () => {
       <header
         className={`header ${sticky && "header-sticky"} ${
           direction === 1 && "unpinned"
-        }`}
+        } shadow-md`}
         ref={headerRef}
       >
         <nav className="navbar container-header">

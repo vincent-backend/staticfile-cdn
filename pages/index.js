@@ -10,8 +10,6 @@ import { IoChevronForwardSharp } from "react-icons/io5";
 
 import CopyToClipboard from "@hooks/useClipboard";
 
-import { notify } from "@hooks/useNotify";
-
 import { getLibraryData, getLibraryList } from "@lib/data-load";
 import LibraryView from "@layouts/components/home/LibraryView";
 import { cdn_url_http, cdn_url_https } from "constant";
@@ -26,8 +24,6 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
   // for init animation
   const [isInit, setInit] = useState(true);
 
-  // data loaded successful?
-
   /// Library list
   const [isLibsShow, setLibsShow] = useState(false);
   const [libList, setLibList] = useState(null);
@@ -35,9 +31,6 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
 
   /// Primary Lib data
   const [libData, setLibData] = useState(lib_react);
-  if (libData.rslt == false) {
-    notify("error", "Server Connection error.");
-  }
 
   /// Default Lib data
   // Vue, Angular.js, JQuery
@@ -82,7 +75,6 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
       } catch (error) {
         console.log("Server Connection failed.");
         setLibsShow(false);
-        notify("error", "Server Connection failed.");
       }
     }
   };
@@ -99,7 +91,6 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
     } else {
       setLibData(lib_react);
       setDefaultMode(true);
-      notify("error", "Server connection failed.");
     }
   };
 

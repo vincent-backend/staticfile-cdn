@@ -36,7 +36,6 @@ const ChartArea = ({ section, hits_data }) => {
   });
 
   const handleToggle = (index) => {
-    console.log("Clicked");
     const tmpArr = [...isChartsHidden];
     const tmpval = tmpArr[index];
     tmpArr[index] = !tmpval;
