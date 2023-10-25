@@ -1,123 +1,172 @@
-export const staticData = {
-    "global_data": {
-        "request": {
-            "total": 224924752858,
-            "rate": 7.4,
-            "status": "每月上升",
-            "data": [
-                {"site": "tencent", "total": 143769727978, "percent": 60, "rate": 44.1},
-                {"site": "ali", "total": 61095993937, "percent": 30, "rate":-35.5},
-                {"site": "huawei", "total": 20059030943, "percent": 10, "rate":34.3}
-            ]
-        },
-        "bandwidth": {
-            "total": 8259,
-            "unit": "TB",
-            "rate": -10.2,
-            "status": "每月下降",
-            "data": [
-                {"site": "tencent", "total": 3439, "percent": 70, "rate": 10.4},
-                {"site": "ali", "total": 4185, "percent": 70, "rate":-23.9},
-                {"site": "huawei", "total": 634, "percent": 10, "rate":9.3}
-            ]
-        },
-        "cache_hit_rate": [
-            {"site": "tencent", "rate": 99.43},
-            {"site": "ali", "rate": 99.49},
-            {"site": "huawei", "rate": 98.93}
-        ]
+export const network_data = {
+    "hits": {
+        "total": 10778098600,
+        "providers": [
+            {
+                "code": "qiniu",
+                "name": "七牛云",
+                "total": 10778098600,
+                "dates": {
+                    "2023-07-01": {
+                        "total": 325000000
+                    },
+                    "2023-07-02": {
+                        "total": 325005000
+                    },
+                    "2023-07-03": {
+                        "total": 330240000
+                    },
+                    "2023-07-04": {
+                        "total": 330200000
+                    },
+                    "2023-07-05": {
+                        "total": 325190000
+                    },
+                    "2023-07-06": {
+                        "total": 326193000
+                    },
+                    "2023-07-07": {
+                        "total": 326200000
+                    },
+                    "2023-07-08": {
+                        "total": 324000000
+                    },
+                    "2023-07-09": {
+                        "total": 324000000
+                    },
+                    "2023-07-10": {
+                        "total": 343000000
+                    },
+                    "2023-07-11": {
+                        "total": 347000000
+                    },
+                    "2023-07-12": {
+                        "total": 350000000
+                    },
+                    "2023-07-13": {
+                        "total": 350000000
+                    },
+                    "2023-07-14": {
+                        "total": 350000000
+                    },
+                    "2023-07-15": {
+                        "total": 341000000
+                    },
+                    "2023-07-16": {
+                        "total": 337000000
+                    },
+                    "2023-07-17": {
+                        "total": 350100000
+                    },
+                    "2023-07-18": {
+                        "total": 348000000
+                    },
+                    "2023-07-19": {
+                        "total": 347000000
+                    },
+                    "2023-07-20": {
+                        "total": 345000000
+                    },
+                    "2023-07-21": {
+                        "total": 340000000
+                    },
+                    "2023-07-22": {
+                        "total": 327000000
+                    },
+                    "2023-07-23": {
+                        "total": 330000000
+                    },
+                    "2023-07-24": {
+                        "total": 360000000
+                    },
+                    "2023-07-25": {
+                        "total": 375000000
+                    },
+                    "2023-07-26": {
+                        "total": 405000000
+                    },
+                    "2023-07-27": {
+                        "total": 384000000
+                    },
+                    "2023-07-28": {
+                        "total": 375000000
+                    },
+                    "2023-07-29": {
+                        "total": 351000000
+                    },
+                    "2023-07-30": {
+                        "total": 352000000
+                    },
+                    "2023-07-31": {
+                        "total": 360000000
+                    },
+                },
+                "prev": {
+                    "total": 10768098600
+                }
+            }
+        ],
+        "prev": {
+            "total": 10768098600
+        }
     },
-    "platform_rank": [
-        {"id":1, "name":"安卓", "market_share": 41.76, "change": 0.8, "img": "/images/statistics/logos/data_platform_logo_android.png"},
-        {"id":2, "name":"IOS", "market_share": 25.4, "change": -0.7, "img": "/images/statistics/logos/data_platform_logo_ios.png"},
-        {"id":3, "name":"Windows", "market_share": 22.74, "change": -0.5, "img": "/images/statistics/logos/data_platform_logo_win.png"},
-        {"id":4, "name":"macOS", "market_share": 5.29, "change": 1.5, "img": "/images/statistics/logos/data_platform_logo_mac.png"},
-        {"id":5, "name":"Linux", "market_share": 2.55, "change": -9.3, "img": "/images/statistics/logos/data_platform_logo_lin.png"},
-        {"id":6, "name":"Other", "market_share": 1.07, "change": 9.2, "img": "/images/statistics/logos/data_platform_logo_other.png"},
-        {"id":7, "name":"Chrome OS", "market_share": 0.95, "change": 8, "img": "/images/statistics/logos/data_platform_logo_chrome.png"},
-        {"id":8, "name":"Tizen", "market_share": 0.16, "change": -5.9, "img": "/images/statistics/logos/data_platform_logo_tizen.png"},
-        {"id":9, "name":"Play Station 4", "market_share": 0.04, "change": -20, "img": "/images/statistics/logos/data_platform_logo_play.png"},
-        {"id":10, "name":"webOS", "market_share": 0.03, "change": 0, "img": "/images/statistics/logos/data_platform_logo_web.png"},
-        {"id":11, "name":"webOS1", "market_share": 0.03, "change": 0, "img": "/images/statistics/logos/data_platform_logo_web.png"},
-    ],
-    "popular_browsers": [
-        {"id":1, "name":"Chrome", "market_share": 58.89, "change": 1.1, "img": "/images/statistics/logos/data_platform_logo_chrome.png"},
-        {"id":2, "name":"Safari", "market_share": 23.95, "change": -1.0, "img": "/images/statistics/logos/data_platform_logo_safari.png"},
-        {"id":3, "name":"Microsoft Edge", "market_share": 3.93, "change": -1, "img": "/images/statistics/logos/data_platform_logo_microsoft.png"},
-        {"id":4, "name":"Firefox", "market_share": 3.2, "change": -2.7, "img": "/images/statistics/logos/data_platform_logo_firefox.png"}
-    ],
-    "popular_projects": [
-        {"name": "@amplitude/amplitude-js-gtm", "requests": 755890614, "bandwidth": 120},
-        {"name": "@covet-pics/covet-pics-widget", "requests": 1042409695, "bandwidth": 7.79},
-        {"name": "@fancyapps/ui", "requests": 818753748, "bandwidth": 7.79},
-        {"name": "@findifv/bundle", "requests": 284063125, "bandwidth": 6.03},
-        {"name": "@fingerprintjs/finge", "requests": 306954558, "bandwidth": 4.8},
-        {"name": "@fortawesome/fontawe", "requests": 502057973, "bandwidth": 19.8},
-        {"name": "@hackler/javascript-sdk", "requests": 283441623, "bandwidth": 7.79},
-        {"name": "@ionic/core", "requests": 291776419, "bandwidth": 3.79},
-        {"name": "@mdi/font", "requests": 1553987685, "bandwidth": 4.03},
-        {"name": "@popperjs/core1", "requests": 387833111, "bandwidth": 3.8},
-        {"name": "@zopperjs/core", "requests": 327833111, "bandwidth": 1.8},
-        {"name": "@amplitude/amplitude-js-gtm1", "requests": 755890614, "bandwidth": 120},
-        {"name": "@covet-pics/covet-pics-widget1", "requests": 1042409695, "bandwidth": 7.79},
-        {"name": "@fancyapps/ui1", "requests": 818753748, "bandwidth": 7.79},
-        {"name": "@findifv/bundle1", "requests": 284063125, "bandwidth": 6.03},
-        {"name": "@fingerprintjs/finge1", "requests": 306954558, "bandwidth": 4.8},
-        {"name": "@fortawesome/fontawe1", "requests": 502057973, "bandwidth": 19.8},
-        {"name": "@hackler/javascript-sdk1", "requests": 283441623, "bandwidth": 7.79},
-        {"name": "@ionic/core1", "requests": 291776419, "bandwidth": 3.79},
-        {"name": "@mdi/font1", "requests": 1553987685, "bandwidth": 4.03},
-        {"name": "@popperjs/core", "requests": 387833111, "bandwidth": 3.8},
-        {"name": "@zopperjs/core1", "requests": 327833111, "bandwidth": 1.8},
-        {"name": "@fancyapps/ui2", "requests": 818753748, "bandwidth": 7.79},
-        {"name": "@findifv/bundle2", "requests": 284063125, "bandwidth": 6.03},
-        {"name": "@fingerprintjs/finge2", "requests": 306954558, "bandwidth": 4.8},
-        {"name": "@fortawesome/fontawe2", "requests": 502057973, "bandwidth": 19.8},
-        {"name": "@hackler/javascript-sdk2", "requests": 283441623, "bandwidth": 7.79},
-        {"name": "@ionic/core2", "requests": 291776419, "bandwidth": 3.79},
-        {"name": "@mdi/font2", "requests": 1553987685, "bandwidth": 4.03},
-        {"name": "@popperjs/core2", "requests": 387833111, "bandwidth": 3.8},
-        {"name": "@zopperjs/core3", "requests": 327833111, "bandwidth": 1.8},
-        {"name": "@hackler/javascript-sdk3", "requests": 283441623, "bandwidth": 7.79},
-        {"name": "@ionic/core3", "requests": 291776419, "bandwidth": 3.79},
-        {"name": "@mdi/font3", "requests": 1553987685, "bandwidth": 4.03},
-        {"name": "@popperjs/core5", "requests": 387833111, "bandwidth": 3.8},
-        {"name": "@zopperjs/core4", "requests": 327833111, "bandwidth": 1.8},
-        {"name": "@covet-pics/covet-pics-widget", "requests": 1042409695, "bandwidth": 7.79},
-        {"name": "@fancyapps/ui", "requests": 818753748, "bandwidth": 7.79},
-        {"name": "@findifv/bundle", "requests": 284063125, "bandwidth": 6.03},
-        {"name": "@fingerprintjs/finge", "requests": 306954558, "bandwidth": 4.8},
-        {"name": "@fortawesome/fontawe", "requests": 502057973, "bandwidth": 19.8},
-        {"name": "@hackler/javascript-sdk", "requests": 283441623, "bandwidth": 7.79},
-        {"name": "@ionic/core", "requests": 291776419, "bandwidth": 3.79},
-        {"name": "@mdi/font", "requests": 1553987685, "bandwidth": 4.03},
-        {"name": "@popperjs/core1", "requests": 387833111, "bandwidth": 3.8},
-        {"name": "@zopperjs/core", "requests": 327833111, "bandwidth": 1.8},
-        {"name": "@amplitude/amplitude-js-gtm1", "requests": 755890614, "bandwidth": 120},
-        {"name": "@covet-pics/covet-pics-widget1", "requests": 1042409695, "bandwidth": 7.79},
-        {"name": "@fancyapps/ui1", "requests": 818753748, "bandwidth": 7.79},
-        {"name": "@findifv/bundle1", "requests": 284063125, "bandwidth": 6.03},
-        {"name": "@fingerprintjs/finge1", "requests": 306954558, "bandwidth": 4.8},
-        {"name": "@fortawesome/fontawe1", "requests": 502057973, "bandwidth": 19.8},
-        {"name": "@hackler/javascript-sdk1", "requests": 283441623, "bandwidth": 7.79},
-        {"name": "@ionic/core1", "requests": 291776419, "bandwidth": 3.79},
-        {"name": "@mdi/font1", "requests": 1553987685, "bandwidth": 4.03},
-        {"name": "@popperjs/core", "requests": 387833111, "bandwidth": 3.8},
-        {"name": "@zopperjs/core1", "requests": 327833111, "bandwidth": 1.8},
-        {"name": "@fancyapps/ui2", "requests": 818753748, "bandwidth": 7.79},
-        {"name": "@findifv/bundle2", "requests": 284063125, "bandwidth": 6.03},
-        {"name": "@fingerprintjs/finge2", "requests": 306954558, "bandwidth": 4.8},
-        {"name": "@fortawesome/fontawe2", "requests": 502057973, "bandwidth": 19.8},
-        {"name": "@hackler/javascript-sdk2", "requests": 283441623, "bandwidth": 7.79},
-        {"name": "@ionic/core2", "requests": 291776419, "bandwidth": 3.79},
-        {"name": "@mdi/font2", "requests": 1553987685, "bandwidth": 4.03},
-        {"name": "@popperjs/core2", "requests": 387833111, "bandwidth": 3.8},
-        {"name": "@zopperjs/core3", "requests": 327833111, "bandwidth": 1.8},
-        {"name": "@hackler/javascript-sdk3", "requests": 283441623, "bandwidth": 7.79},
-        {"name": "@ionic/core3", "requests": 291776419, "bandwidth": 3.79},
-        {"name": "@mdi/font3", "requests": 1553987685, "bandwidth": 4.03},
-        {"name": "@popperjs/core5", "requests": 387833111, "bandwidth": 3.8},
-        {"name": "@zopperjs/core4", "requests": 327833111, "bandwidth": 1.8}
-    ]
+    "bandwidth": {
+        "total": 1679488765,
+        "providers": [
+            {
+                "code": "qiniu",
+                "name": "七牛云",
+                "total": 1679488765,
+                "dates": {
+                    "2023-09-24": {
+                        "total": 1679488765
+                    },
+                    "2023-09-25": {
+                        "total": 1679488765
+                    },
+                    "2023-09-26": {
+                        "total": 1679488765
+                    },
+                },
+                "prev": {
+                    "total": 1679488765
+                }
+            }
+        ],
+        "prev": {
+            "total": 1629488765
+        }
+    }
+};
 
-}
+export const package_data = [
+    {
+        "type": "gh",
+        "name": "prebid/currency-file",
+        "hits": 31295196995,
+        "bandwidth": 39341077002498,
+        "prev": {
+            "hits": 30358028187,
+            "bandwidth": 38342575575150
+        },
+        "links": {
+            "self": "https://data.jsdelivr.com/v1/stats/packages/gh/prebid/currency-file",
+            "versions": "https://data.jsdelivr.com/v1/stats/packages/gh/prebid/currency-file/versions"
+        }
+    },
+];
+
+export const platforms_data = [
+    {
+        "name": "Android",
+        "share": 42.59,
+        "prev": {
+            "share": 43.34
+        },
+        "links": {
+            "browsers": "https://data.jsdelivr.com/v1/stats/platforms/Android/browsers",
+            "countries": "https://data.jsdelivr.com/v1/stats/platforms/Android/countries",
+            "versions": "https://data.jsdelivr.com/v1/stats/platforms/Android/versions"
+        }
+    },
+]

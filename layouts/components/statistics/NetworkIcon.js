@@ -6,22 +6,25 @@ const NetworkIcon = ({sitename}) => {
     return(
         <>
             {sitename == SiteNames.Bunny && 
-            <Image src="images/statistics/network/bunny.svg" width={24} height={24} alt="Bunny" />
+            <Image src="/images/statistics/network/bunny.svg" width={24} height={24} alt="Bunny" />
             }
             {sitename == SiteNames.Cloudflare && 
-            <Image src="images/statistics/network/cloudflare.svg" width={24} height={24} alt="Cloudflare" />
+            <Image src="/images/statistics/network/cloudflare.svg" width={24} height={24} alt="Cloudflare" />
             }
             {sitename == SiteNames.Fastly && 
-            <Image src="images/statistics/network/fastly.svg" width={24} height={24} alt="Fastly" />
+            <Image src="/images/statistics/network/fastly.svg" width={24} height={24} alt="Fastly" />
             }
             {sitename == SiteNames.GCore && 
-            <Image src="images/statistics/network/g-core.svg" width={24} height={24} alt="GCore" />
+            <Image src="/images/statistics/network/g-core.svg" width={24} height={24} alt="GCore" />
             }
             {sitename == SiteNames.Quantil && 
-            <Image src="images/statistics/network/quantil.ico" width={36} height={36} alt="Quantil" />
+            <Image src="/images/statistics/network/quantil.ico" width={36} height={36} alt="Quantil" />
             }
             {sitename == SiteNames.StackPath && 
-            <Image src="images/statistics/network/stackpath.svg" width={24} height={24} alt="StackPath" />
+            <Image src="/images/statistics/network/stackpath.svg" width={24} height={24} alt="StackPath" />
+            }
+            {sitename == SiteNames.Qiniu && 
+            <Image src="/images/statistics/network/qiniu.png" width={41} height={28} alt="Qiniu" />
             }
         </>
     );

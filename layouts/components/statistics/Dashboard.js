@@ -36,7 +36,7 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
           data.total.toLocaleString("en-US").replaceAll(",", " ")
           }
           {gType == DataTypes.BANDWIDTH &&
-          num2DataSize(data.total, 0)
+          num2DataSize(data.total, 2)
           }
         </span>
         {gType == DataTypes.BANDWIDTH && (
@@ -79,7 +79,7 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
                     d.total.toLocaleString("en-US").replaceAll(",", " ")
                     }
                     {gType == DataTypes.BANDWIDTH && 
-                    num2DataSize(d.total)
+                    num2DataSize(d.total, 2)
                     }
                   </div>
                 </div>

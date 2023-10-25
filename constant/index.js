@@ -12,12 +12,13 @@ export const SiteNames = {
     Quantil: "Quantil",
     StackPath: "StackPath",
     GCore: "GCore",
-    Bunny: "Bunny"
+    Bunny: "Bunny",
+    Qiniu: "七牛云"
 }
 
 export const hit_rates = [99.49, 99.43, 98.93];
 
-export const RecordCounts = [5, 10, 25, 50];
+export const RecordCounts = [5, 10, 20];
 
 export const defaultLibs = ["react", "vue", "angular.js", "jquery"];
 
