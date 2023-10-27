@@ -51,7 +51,7 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
                 "text-primary": overallRate >= 0,
               })}
             >
-              {overallRate > 0 && `+`}
+              {overallRate >= 0 && `+`}
               {overallRate}%
             </span>
             <div className="flex text-base text-center">{data.status}</div>
@@ -96,7 +96,7 @@ export const GlobalDashboard = ({ gType, section, network_data }) => {
                   (d.total-d.prev.total)*100/d.prev.total < 0 && "text-danger",
                 )}
               >
-                {(d.total-d.prev.total)*100/d.prev.total > 0 && `+`}
+                {(d.total-d.prev.total)*100/d.prev.total >= 0 && `+`}
                 {((d.total-d.prev.total)*100/d.prev.total).toFixed(1)}%
               </div>
             </div>

@@ -1,13 +1,13 @@
 {
   "site": {
-    "title": "Staticfile CDN",
+    "title": "Staticfile CDN powered by 七牛",
     "base_url": "/",
     "favicon": "/images/favicon.ico",
     "logo": "/images/logo.png",
     "width": "166",
     "height": "38",
     "logo_mobile": "/images/logo-mobile.png",
-    "logo_text": "StaticFile CDN"
+    "logo_text": "Staticfile CDN"
   },
 
   "settings": {
@@ -29,14 +29,14 @@
   },
 
   "metadata": {
-    "meta_author": "Staticfile.org",
+    "meta_author": "www.staticfile.org",
     "meta_image": "images/meta-img.png",
-    "meta_description": "StaticFile CDN Website"
+    "meta_description": "Staticfile CDN powered by 七牛"
   },
 
   "disqus": {
     "enable": true,
-    "shortname": "StaticFile-CDN",
+    "shortname": "Staticfile CDN",
     "settings": {}
   },
 
