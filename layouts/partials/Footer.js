@@ -48,25 +48,29 @@ const Footer = () => {
           <div className="flex items-center justify-center md:items-start md:justify-start md:col-8">
             <div className="flex-col justify-center">
               <div className="flex flex-row items-center justify-center space-x-6">
+                <a href="https://www.qiniu.com/">
+                  <Image
+                    alt="Qiniu"
+                    src="/images/footer/thumb1.png"
+                    width={132}
+                    height={46}
+                    className="w-[132px] h-auto"
+                  />
+                  </a>
                 <Image
-                  alt="f"
-                  src="/images/footer/thumb1.png"
-                  width={132}
-                  height={46}
-                  className="w-[132px] h-auto"
-                />
-                <Image
-                  alt="f"
+                  alt="51.La"
                   src="/images/footer/thumb2.png"
                   width={15}
                   height={15}
                 />
-                <Image
-                  alt="f"
-                  src="/images/footer/thumb3.png"
-                  width={102}
-                  height={33}
-                />
+                <a href="https://www.51.la/?from=staticfile">
+                  <Image
+                    alt="f"
+                    src="/images/footer/51la.png"
+                    width={105}
+                    height={33}
+                  />
+                </a>
               </div>
 
               <p className="text-center font-primary font-bold pt-5">

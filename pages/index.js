@@ -182,20 +182,20 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
                       <span className="inline whitespace-nowrap font-normal tracking-normal text-primary">
                         $ npm install –g sfile
                       </span>
-                      <span className="ml-1 text-[#292d33]">
+                      <span className="ml-1 text-[#292d33] text-base">
                         {`// `}
                         {markdownify(
                           banner.installation_tools,
                           "h6",
-                          "opacity-1 text-[#292d33] inline"
+                          "opacity-1 text-[#292d33] inline text-base"
                         )}
                       </span>
                       <span className="whitespace-nowrap pl-2 text-[#ff941a]">
-                        <Link href="/apis">
+                        <Link href="https://github.com/staticfile/cli#readme">
                           {markdownify(
                             banner.usage,
                             "h6",
-                            "text-[#ff941a] inline-flex"
+                            "text-[#ff941a] inline-flex text-base"
                           )}
                           <IoChevronForwardSharp className="h4 inline-flex" />
                         </Link>
