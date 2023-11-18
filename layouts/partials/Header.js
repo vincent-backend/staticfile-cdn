@@ -72,7 +72,7 @@ const Header = () => {
                         {menu.name}
                       </div>
                       <div className="grow text-right pr-[70px] md:hidden">
-                        <IoChevronForwardSharp className="inline-flex text-[2rem]" />
+                        <IoChevronForwardSharp className="inline-flex text-[20px]" />
                       </div>
                     </Link>
                   </li>
