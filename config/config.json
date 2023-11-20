@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Staticfile CDN powered by 七牛",
+    "title": "Staticfile CDN",
     "base_url": "/",
     "favicon": "/images/favicon.ico",
     "logo": "/images/logo.png",
@@ -31,7 +31,7 @@
   "metadata": {
     "meta_author": "www.staticfile.org",
     "meta_image": "images/meta-img.png",
-    "meta_description": "Staticfile CDN powered by 七牛"
+    "meta_description": "Staticfile CDN - 我们提供一个仓车，让它尽可能全面收录优秀的开源车，并免费为之提供CDN加速服务，使之有更好的访问速度和稳定的环境。同时，我们也提供开源车源接入的入口，让所有人都可以提交开源车，包括JS、CSS、image和swf等静态文件。"
   },
 
   "disqus": {
