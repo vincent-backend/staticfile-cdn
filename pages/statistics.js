@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { DataTypes } from "constant"; 
 import { gsap } from "@lib/gsap"; 
 import { markdownify } from "@lib/utils/textConverter"; 
-import { staticData } from ".mock/statisticsData"; 
 import { getDataFromContent } from "@lib/contentParser"; 
 import useTranslation from "@hooks/useTranslation"; 
 import Base from "@layouts/Baseof"; 

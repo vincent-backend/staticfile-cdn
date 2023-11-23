@@ -10,7 +10,7 @@
     },
     {
       "name": "API",
-      "url": "/apis"
+      "url": "https://api.staticfile.org/"
     },
     {
       "name": "意见反馈",
@@ -32,7 +32,7 @@
     },
     {
       "name": "API",
-      "url": "/apis"
+      "url": "https://api.staticfile.org"
     },
     {
       "name": "Feedback",

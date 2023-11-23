@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { RecordCounts } from "constant";
-import { staticData } from ".mock/statisticsData";
 import PopularTableRow from "./PopularTableRow";
 import Paginations from "../Paginations";
 
