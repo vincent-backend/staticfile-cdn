@@ -13,7 +13,7 @@
   "settings": {
     "pagination": 6,
     "summary_length": 200,
-    "api_root": "https://api.cdnjs.com/",
+    "api_root": "https://2psqk3-3000.csb.app/",
     "api_statistics": "https://data.jsdelivr.com/v1/stats/"
   },
 

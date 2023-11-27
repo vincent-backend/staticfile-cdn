@@ -62,7 +62,8 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
       setLibsShow(false);
       setLibData(lib_react);
       setDefaultMode(true);
-    } else {
+    }
+    else if (currText.length > 2) {
       try {
         const { rslt, data } = await getLibraryList(currText);
         const list = data.results.map((d) => d.name);
@@ -73,7 +74,7 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
           setLibsShow(false);
         }
       } catch (error) {
-        console.log("Server Connection failed.");
+        console.log("API Server error.");
         setLibsShow(false);
       }
     }

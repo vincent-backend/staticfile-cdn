@@ -58,14 +58,14 @@ const Footer = () => {
                   />
                   </a>
                 <Image
-                  alt="51.La"
+                  alt="X"
                   src="/images/footer/thumb2.png"
                   width={15}
                   height={15}
                 />
                 <a href="https://www.51.la/?from=staticfile">
                   <Image
-                    alt="f"
+                    alt="51.LA"
                     src="/images/footer/51la.png"
                     width={105}
                     height={33}
