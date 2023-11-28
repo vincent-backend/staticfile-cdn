@@ -10,14 +10,15 @@ const Logo = ({ src }) => {
     <Link href="/" className="navbar-brand block">
       <div className="flex flex-row items-center h-[60px]">
         <ImageFallback
-          width={width.replace("px", "")}
-          height={height.replace("px", "")}
+          width={166}
+          height={38}
           src={src ? src : logo}
           alt={title}
           priority
           style={{
-            height: height.replace("px", "") + "px",
-            width: width.replace("px", "") + "px",
+            height: "38px",
+            width: "166px",
+            layout: "fixed"
           }}
         />
       </div>
