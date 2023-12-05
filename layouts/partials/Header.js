@@ -47,7 +47,7 @@ const Header = () => {
         
         <nav className="navbar container-header">
           {/* logo */}
-          <div className="order-0 py-0 ml-7 md:ml-4">
+          <div className="order-0 py-0 ml-7 md:ml-4 flex-shrink-0">
             <Logo src={logo} />
           </div>
           <ul
