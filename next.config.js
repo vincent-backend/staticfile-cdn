@@ -7,8 +7,8 @@ const nextConfig = {
     unoptimized: true,
   },
   reactStrictMode: true,
-  //output: 'export',
-  //distDir: 'dist',
+  output: "export",
+  distDir: "dist",
 };
 
 module.exports = nextConfig;
