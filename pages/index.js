@@ -66,9 +66,8 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
     else if (currText.length > 2) {
       try {
         const { rslt, data } = await getLibraryList(currText);
-        const list = data.results.map((d) => d.name);
-        if (list.length > 0) {
-          setLibList(list);
+        if (data.length > 0) {
+          setLibList(data);
           setLibsShow(true);
         } else {
           setLibsShow(false);
