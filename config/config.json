@@ -13,7 +13,7 @@
   "settings": {
     "pagination": 6,
     "summary_length": 200,
-    "api_root": "https://api.staticfile.org/",
+    "api_root": "http://api.staticfile.org/",
     "api_statistics": "https://data.jsdelivr.com/v1/stats/"
   },
 
