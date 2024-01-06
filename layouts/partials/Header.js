@@ -24,6 +24,8 @@ const Header = () => {
   const [main, setMain] = useState(locale === "cn" ? cn : en);
 
   const { asPath } = useRouter();
+  asPath.replace('/about', undefined, { shallow: true });
+  console.log(asPath);
 
   // logo source
   const { logo } = config.site;

@@ -1,5 +1,5 @@
 {
-  "webio": "http://service.weibo.com/share/share.php?title=Staticfile CDN 提供优质的开源库 CDN 加速，技术支持由 @七牛云 提供，技术社区支持来自 @稀土掘金&url=https://www.staticfile.org&pic=https://www.staticfile.org/assets/images/light-logo.png",
-  "twitter": "https://twitter.com/intent/tweet?text=CDN service provided by Qiniu Tech and supported by community Juejin&url=https://www.staticfile.org",
+  "webio": "http://service.weibo.com/share/share.php?title=Staticfile CDN 提供优质的开源库 CDN 加速，技术支持由 @七牛云 提供，技术社区支持来自 @稀土掘金&url=https://www.staticfile.net&pic=https://www.staticfile.net/assets/images/light-logo.png",
+  "twitter": "https://twitter.com/intent/tweet?text=CDN service provided by Qiniu Tech and supported by community Juejin&url=https://www.staticfile.net",
   "github": "https://github.com/staticfile/static"
 }

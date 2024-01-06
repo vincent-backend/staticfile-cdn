@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Staticfile CDN",
-    "base_url": "/",
+    "base_url": "https://www.staticfile.net",
     "favicon": "/images/favicon.ico",
     "logo": "/images/logo.png",
     "width": "166",
@@ -20,18 +20,18 @@
   "params": {
     "tag_manager_id": "",
     "contact_form_action": "#",
-    "copyright": "Copyright 2014-2023 Staticfile.org(https://staticfile.org) Built upon love"
+    "copyright": "Copyright 2014-2023 staticfile.net(https://staticfile.net) Built upon love"
   },
 
   "nav_button": {
     "enable": true,
     "label_en": "English",
     "label_cn": "汉语",
-    "link": "/"
+    "link": "https://www.staticfile.net/"
   },
 
   "metadata": {
-    "meta_author": "www.staticfile.org",
+    "meta_author": "www.staticfile.net",
     "meta_image": "images/meta-img.png",
     "meta_description": "我们的目标是提供这样一个仓车，让它尽可能面收录尤秀的开源车，并免费为之提供CDN 加速服务，时之有更好的访速度和稳定的环境。同时，我们也提供开源车源接入的入口，让所有人都可以提交开源车，包括JavaScript、Css、图片和swt等静态文件。"
   },
