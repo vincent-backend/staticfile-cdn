@@ -1,20 +1,34 @@
-import { useEffect, useState } from "react"; 
-import { DataTypes } from "constant"; 
-import { gsap } from "@lib/gsap"; 
-import { markdownify } from "@lib/utils/textConverter"; 
-import { getDataFromContent } from "@lib/contentParser"; 
-import useTranslation from "@hooks/useTranslation"; 
-import Base from "@layouts/Baseof"; 
-import BannerStatistics from "@layouts/components/banner/BannerStatistics"; 
-import SCaption from "@layouts/components/statistics/SCaption"; 
-import ChartArea from "@layouts/components/statistics/ChartArea"; 
-import { CacheHitRate, GlobalDashboard } from "@layouts/components/statistics/Dashboard"; 
-import RankTable from "@layouts/components/statistics/RankTable"; 
+import { useEffect, useState } from "react";
+import { DataTypes } from "constant";
+import { gsap } from "@lib/gsap";
+import { markdownify } from "@lib/utils/textConverter";
+import { getDataFromContent } from "@lib/contentParser";
+import useTranslation from "@hooks/useTranslation";
+import Base from "@layouts/Baseof";
+import BannerStatistics from "@layouts/components/banner/BannerStatistics";
+import SCaption from "@layouts/components/statistics/SCaption";
+import ChartArea from "@layouts/components/statistics/ChartArea";
+import {
+  CacheHitRate,
+  GlobalDashboard,
+} from "@layouts/components/statistics/Dashboard";
+import RankTable from "@layouts/components/statistics/RankTable";
 import { PopularTable } from "@layouts/components/statistics/PopularTable";
 
-import { getBrowsersData, getNetworkData, getPackagesData, getPlatformData } from "@lib/data-load";
+import {
+  getBrowsersData,
+  getNetworkData,
+  getPackagesData,
+  getPlatformData,
+} from "@lib/data-load";
 
-const Statistics = ({ static_data, network_data, platforms_data, browsers_data, packages_data }) => {
+const Statistics = ({
+  static_data,
+  network_data,
+  platforms_data,
+  browsers_data,
+  packages_data,
+}) => {
   const { locale, setLocale } = useTranslation();
   const [frontmatter, setFrontmatter] = useState(
     static_data.filter((dt) => dt.lang === locale)[0]
@@ -22,6 +36,10 @@ const Statistics = ({ static_data, network_data, platforms_data, browsers_data, 
   const { banner, section } = frontmatter;
 
   useEffect(() => {
+    // platforms
+    const p_data = getPlatformData();
+    console.log(p_data);
+
     const ctx = gsap.context(() => {
       //frontmatter
       setFrontmatter(static_data.filter((dt) => dt.lang === locale)[0]);
@@ -94,30 +112,33 @@ const Statistics = ({ static_data, network_data, platforms_data, browsers_data, 
                     <div className="mx-0 flex flex-col justify-center md:flex-row md:space-x-6">
                       <div className="mt-6 w-full flex-col">
                         <div className="sub-caption">{section.request}</div>
-                        {network_data.rslt &&
+                        {network_data.rslt && (
                           <GlobalDashboard
-                          gType={DataTypes.REQUEST}
-                          section={section}
-                          network_data = {network_data.data.hits}
-                        />
-                        }
+                            gType={DataTypes.REQUEST}
+                            section={section}
+                            network_data={network_data.data.hits}
+                          />
+                        )}
                       </div>
                       <div className="mt-6 w-full flex-col">
                         <div className="sub-caption">{section.bandwidth}</div>
-                        {network_data.rslt &&
-                        <GlobalDashboard
-                          gType={DataTypes.BANDWIDTH}
-                          section={section}
-                          network_data = {network_data.data.bandwidth}
-                        />
-                        }
+                        {network_data.rslt && (
+                          <GlobalDashboard
+                            gType={DataTypes.BANDWIDTH}
+                            section={section}
+                            network_data={network_data.data.bandwidth}
+                          />
+                        )}
                       </div>
                     </div>
                     <div className="mt-6 flex flex-col">
                       <div className="sub-caption">
                         {section.cache_hit_rate}
                       </div>
-                      <CacheHitRate section={section} network_data={network_data.data.hits}/>
+                      <CacheHitRate
+                        section={section}
+                        network_data={network_data.data.hits}
+                      />
                     </div>
                   </div>
                 </div>
@@ -129,7 +150,10 @@ const Statistics = ({ static_data, network_data, platforms_data, browsers_data, 
                       <div className="sub-caption">
                         {section.requests_over_time}
                       </div>
-                      <ChartArea section={section} hits_data={network_data.data.hits}/>
+                      <ChartArea
+                        section={section}
+                        hits_data={network_data.data.hits}
+                      />
                     </div>
                     <div className="mx-0 flex flex-col justify-center md:flex-row md:space-x-6">
                       <div className="mt-6 w-full flex-col">
@@ -139,10 +163,12 @@ const Statistics = ({ static_data, network_data, platforms_data, browsers_data, 
                             {section.group_platform_version}
                           </div>
                         </div>
-                        { platforms_data.rslt &&
-                          <RankTable section={section} fetch_data={platforms_data.data} />
-                        }
-                        
+                        {platforms_data.rslt && (
+                          <RankTable
+                            section={section}
+                            fetch_data={platforms_data.data}
+                          />
+                        )}
                       </div>
                       <div className="mt-6 min-h-[100px] w-full flex-col">
                         <div className="sub-caption flex-row items-center">
@@ -151,9 +177,12 @@ const Statistics = ({ static_data, network_data, platforms_data, browsers_data, 
                             {section.group_browser_version}
                           </div>
                         </div>
-                        { browsers_data.rslt &&
-                          <RankTable section={section} fetch_data={browsers_data.data} />
-                        }
+                        {browsers_data.rslt && (
+                          <RankTable
+                            section={section}
+                            fetch_data={browsers_data.data}
+                          />
+                        )}
                       </div>
                     </div>
                   </div>
@@ -165,10 +194,12 @@ const Statistics = ({ static_data, network_data, platforms_data, browsers_data, 
                     <div className="sub-caption">
                       {section.most_popular_projects}
                     </div>
-                    { packages_data.rslt &&
-                      <PopularTable section={section} network_data = {packages_data.data} />
-                    }
-                    
+                    {packages_data.rslt && (
+                      <PopularTable
+                        section={section}
+                        network_data={packages_data.data}
+                      />
+                    )}
                   </div>
                 </div>
               </div>
@@ -189,7 +220,7 @@ export const getStaticProps = async () => {
 
   // platforms
   const platforms_data = await getPlatformData();
-  
+
   // browsers
   const browsers_data = await getBrowsersData();
 
@@ -202,7 +233,7 @@ export const getStaticProps = async () => {
       network_data,
       platforms_data,
       browsers_data,
-      packages_data
+      packages_data,
     },
   };
 };
