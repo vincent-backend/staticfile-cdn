@@ -27,6 +27,7 @@ const Document = () => {
       <body>
         <Main />
         <NextScript />
+        <script src="https://cdn.staticfile.net/analytics.js/2.9.1/analytics.min.js"></script>
       </body>
     </Html>
   );

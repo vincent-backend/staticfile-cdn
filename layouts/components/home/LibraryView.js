@@ -32,7 +32,7 @@ const LibraryView = ({ libData, section }) => {
   };
 
   const renderListItem = (http, filename, i) => {
-    const urls = http + "://cdn.staticfile.org/" + filename;
+    const urls = http + "://cdn.staticfile.net/" + filename;
     return (
       <li
         className="list-item"

@@ -20,5 +20,5 @@ export const hit_rates = [99.49, 99.43, 98.93];
 
 export const RecordCounts = [5, 10, 20];
 
-export const cdn_url_https = "https://cdn.staticfile.org/";
-export const cdn_url_http = "http://cdn.staticfile.org/";
+export const cdn_url_https = "https://cdn.staticfile.net/";
+export const cdn_url_http = "http://cdn.staticfile.net/";

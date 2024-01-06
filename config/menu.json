@@ -2,15 +2,15 @@
   "cn": [
     {
       "name": "首页",
-      "url": "/"
+      "url": "https://www.staticfile.net"
     },
     {
       "name": "数据统计",
-      "url": "/statistics"
+      "url": "https://www.staticfile.net/statistics"
     },
     {
       "name": "API",
-      "url": "https://api.staticfile.org/"
+      "url": "https://api.staticfile.net/"
     },
     {
       "name": "意见反馈",
@@ -18,21 +18,21 @@
     },
     {
       "name": "简介",
-      "url": "/about"
+      "url": "https://www.staticfile.net/about"
     }
   ],
   "en": [
     {
       "name": "Home",
-      "url": "/"
+      "url": "https://www.staticfile.net"
     },
     {
       "name": "Statistics",
-      "url": "/statistics"
+      "url": "https://www.staticfile.net/statistics"
     },
     {
       "name": "API",
-      "url": "https://api.staticfile.org/"
+      "url": "https://api.staticfile.net/"
     },
     {
       "name": "Feedback",
@@ -40,7 +40,7 @@
     },
     {
       "name": "About",
-      "url": "/about"
+      "url": "https://www.staticfile.net/about"
     }
   ]
 }

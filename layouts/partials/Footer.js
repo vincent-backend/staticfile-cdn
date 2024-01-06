@@ -133,8 +133,8 @@ const Footer = () => {
               © Copyright 2014-{new Date().getFullYear()}{" "}
             </span>
             <span className="text-copyright">
-              <Link href="https://www.staticfile.org" className="footer-link">
-                Staticfile.org.
+              <Link href="https://www.staticfile.net" className="footer-link">
+                staticfile.net.
               </Link>
             </span>
             <span className="text-copyright block md:inline-block">

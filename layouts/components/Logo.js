@@ -7,7 +7,7 @@ const Logo = ({ src }) => {
   const { logo, width, height, logo_text, title } = config.site;
 
   return (
-    <Link href="/" className="navbar-brand block">
+    <Link href="https://www.staticfile.net" className="navbar-brand block">
       <div className="flex flex-row items-center h-[60px]">
         <ImageFallback
           width={166}
