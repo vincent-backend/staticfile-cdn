@@ -36,10 +36,6 @@ const Statistics = ({
   const { banner, section } = frontmatter;
 
   useEffect(() => {
-    // platforms
-    const p_data = getPlatformData();
-    console.log(p_data);
-
     const ctx = gsap.context(() => {
       //frontmatter
       setFrontmatter(static_data.filter((dt) => dt.lang === locale)[0]);
