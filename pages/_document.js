@@ -23,12 +23,11 @@ const Document = () => {
           media="(prefers-color-scheme: dark)"
           content="#000"
         />
-        
+        <script src="https://api.staticfile.net/js/analytic.js"></script>
       </Head>
       <body>
         <Main />
         <NextScript />
-        <script src="https://api.staticfile.net/js/analytic.js"></script>
       </body>
     </Html>
   );
