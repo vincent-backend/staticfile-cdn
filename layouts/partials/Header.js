@@ -25,7 +25,6 @@ const Header = () => {
 
   const router = useRouter();
   const asPath = router.pathname;
-  console.log(router.basePath);
 
   // logo source
   const { logo } = config.site;

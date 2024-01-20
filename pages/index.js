@@ -14,7 +14,7 @@ import { getLibraryData, getLibraryList } from "@lib/data-load";
 import LibraryView from "@layouts/components/home/LibraryView";
 import { cdn_url_http, cdn_url_https } from "constant";
 
-const Home = ({ data, lib_react, lib_default, isSuccess }) => {
+const Home = ({ data }) => {
   const { locale, setLocale } = useTranslation();
 
   // static data
@@ -30,14 +30,12 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
   const listRef = useRef(null);
 
   /// Primary Lib data
-  const [libData, setLibData] = useState(lib_react);
+  const [libData, setLibData] = useState(null);
 
   /// Default Lib data
-  // Vue, Angular.js, JQuery
+  // React, Vue, Angular.js, JQuery
   const [isDefaultMode, setDefaultMode] = useState(true);
-  const [defaultLibArray, setDefaultLibArray] = useState(
-    Object.values(lib_default)
-  );
+  const [defaultLibArray, setDefaultLibArray] = useState(null);
 
   let { banner, section } = frontmatter;
 
@@ -60,7 +58,6 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
 
     if (currText == "") {
       setLibsShow(false);
-      setLibData(lib_react);
       setDefaultMode(true);
     }
     else if (currText.length > 2) {
@@ -89,7 +86,6 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
       setLibData(ld);
       /// set state
     } else {
-      setLibData(lib_react);
       setDefaultMode(true);
     }
   };
@@ -145,8 +141,21 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
     setFrontmatter(data.filter((dt) => dt.lang === locale)[0]);
 
     if (isInit) {
-      animateFunc();
+      animateFunc();  
       setInit(false);
+    }
+
+    if (defaultLibArray == null) {
+      const getDefault = async () => {
+        const t_react = await getLibraryData("react");
+        const t_vue = await getLibraryData("vue");
+        const t_angular = await getLibraryData("angular.js");
+        const t_jquery = await getLibraryData("jquery");
+        const t_default = {t_react, t_vue, t_angular, t_jquery};
+        const t_defaultarr = Object.values(t_default);
+        setDefaultLibArray(t_defaultarr);
+      }
+      getDefault();
     }
 
     // mouse down
@@ -246,13 +255,13 @@ const Home = ({ data, lib_react, lib_default, isSuccess }) => {
         </div>
 
         {/* Primary Lib data */}
-        {libData && <LibraryView section={section} libData={libData} />}
-
-        {/* If default show */}
-        {isDefaultMode &&
+        {isDefaultMode ? (
+          defaultLibArray &&
           defaultLibArray.map((lib, index) => (
-            <LibraryView section={section} libData={lib} key={lib.name} />
-          ))}
+            <LibraryView section={section} libData={lib} key={index} />
+          ))
+        ) : (libData && <LibraryView section={section} libData={libData} />)}
+
       </section>
     </Base>
   );
@@ -264,16 +273,9 @@ export default Home;
 export const getStaticProps = async () => {
   const data = await getDataFromContent("content/index");
 
-  const lib_react = await getLibraryData("react");
-  const lib_vue = await getLibraryData("vue");
-  const lib_angular = await getLibraryData("angular.js");
-  const lib_jquery = await getLibraryData("jquery");
-
   return {
     props: {
-      data,
-      lib_react: lib_react,
-      lib_default: { lib_vue, lib_angular, lib_jquery },
+      data
     },
   };
 };

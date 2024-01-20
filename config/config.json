@@ -13,11 +13,7 @@
   "settings": {
     "pagination": 6,
     "summary_length": 200,
-<<<<<<< HEAD
-    "api_root": "http://api.staticfile.net/",
-=======
-    "api_root": "https://2psqk3-3000.csb.app/",
->>>>>>> 0bdb81acd585d024946aee5de3a4ae9a1301a767
+    "api_root": "http://localhost/",
     "api_statistics": "https://data.jsdelivr.com/v1/stats/"
   },
 
