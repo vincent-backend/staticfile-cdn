@@ -94,7 +94,7 @@
 }
 
 .banner-title {
-  @apply text-[2.3rem] font-bold tracking-wider text-white;
+  @apply text-[2.3rem] block font-bold tracking-wider text-white;
 }
 
 .banner-text {
@@ -408,7 +408,7 @@
 }
 
 .about-content {
-  @apply break-words pt-4 text-justify text-h5 leading-7 text-dark md:text-[14px] md:font-bold;
+  @apply break-words pt-4 text-justify font-normal leading-7 text-dark text-[16px];
   a {
     @apply text-primary;
   }

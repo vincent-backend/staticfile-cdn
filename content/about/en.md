@@ -12,7 +12,7 @@ content: [
   },
   {
     subtitle: "2. Update the open source library",
-    description: "CDNs such as Google Ajax Library, Microsoft ASP.net CDN, SAE, Baidu, Upyun and other CDNs all provide free JS versions. I will automatically update the version file and will not delete the old version, but if you cannot find the latest version from  <a href='https://www.staticfile.net'>static file.org</a>, you can add a version directory to it and modify the corresponding package.json file, using Pull Request to remind us. <p/><p/>
+    description: "CDNs such as Google Ajax Library, Microsoft ASP.net CDN, SAE, Baidu, Upyun and other CDNs all provide free JS versions. I will automatically update the version file and will not delete the old version, but if you cannot find the latest version from  <a href='https://www.staticfile.net'>www.staticfile.net</a>, you can add a version directory to it and modify the corresponding package.json file, using Pull Request to remind us. <p/><p/>
     Therefore, we provide such a warehouse truck to collect as many excellent open source trucks as possible, and provide it with CDN acceleration services for free, so that it can have better access speed and stable environment. At the same time, we also provide an entrance to open source library sources, so that everyone can submit open source libraries, including static files such as JS, CSS, image, and swf."
   },
   {

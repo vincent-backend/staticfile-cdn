@@ -48,7 +48,7 @@ const About = ({ data }) => {
               {content.map((c, i) => (
                 <div className="div-about" key={i}>
                   {markdownify(c.subtitle, "h5", "about-subtitle")}
-                  {markdownify(c.description, "h6", "about-content")}
+                  {markdownify(c.description, "", "about-content")}
                 </div>
               ))}
             </div>
