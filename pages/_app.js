@@ -16,7 +16,7 @@ import localFont from "next/font/local";
 const primaryFont = localFont({
   src: [
     {
-      path: "../font/PingFang-Regular.ttf",
+      path: "../font/PingFang-SC-Regular.ttf",
       style: "normal",
     }
   ],
