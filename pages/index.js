@@ -78,12 +78,11 @@ const Home = ({ data }) => {
 
   const handleLibItemClick = async (lib) => {
     setLibsShow(false);
-    setDefaultMode(false);
-
     const ld = await getLibraryData(lib);
 
     if (ld.rslt == true) {
       setLibData(ld);
+      setDefaultMode(false);
       /// set state
     } else {
       setDefaultMode(true);
