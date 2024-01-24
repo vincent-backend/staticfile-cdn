@@ -1,13 +1,14 @@
 import { gsap } from "@lib/gsap";
 import { markdownify } from "@lib/utils/textConverter";
 import { getDataFromContent } from "@lib/contentParser";
+import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import useTranslation from "@hooks/useTranslation";
 import Base from "@layouts/Baseof";
 import BannerHome from "@layouts/components/banner/BannerHome";
 import { IoChevronForwardSharp } from "react-icons/io5";
-
+import Image from "next/image";
 import CopyToClipboard from "@hooks/useClipboard";
 
 import { getLibraryData, getLibraryList } from "@lib/data-load";
@@ -27,6 +28,8 @@ const Home = ({ data }) => {
   /// Library list
   const [isLibsShow, setLibsShow] = useState(false);
   const [libList, setLibList] = useState(null);
+  const [isListSearching, setListSearching] = useState(false);
+  const [isFilelistFetching, setFilelistFetching] = useState(false);
   const listRef = useRef(null);
 
   /// Primary Lib data
@@ -38,6 +41,9 @@ const Home = ({ data }) => {
   const [defaultLibArray, setDefaultLibArray] = useState(null);
 
   let { banner, section } = frontmatter;
+
+  // alert
+  const [isAlertShow, setAlertShow] = useState(false);
 
   const renderListItem = (http, filename, i) => {
     const urls =
@@ -55,14 +61,16 @@ const Home = ({ data }) => {
 
   const handleSearchTextChange = async (e) => {
     const currText = e.target.value;
+    if (isListSearching) return;
 
     if (currText == "") {
       setLibsShow(false);
       setDefaultMode(true);
-    }
-    else if (currText.length > 2) {
+    } else if (currText.length > 2) {
       try {
+        setListSearching(true);
         const { rslt, data } = await getLibraryList(currText);
+        setListSearching(false);
         if (data.length > 0) {
           setLibList(data);
           setLibsShow(true);
@@ -72,21 +80,24 @@ const Home = ({ data }) => {
       } catch (error) {
         console.log("API Server error.");
         setLibsShow(false);
+        setListSearching(false);
       }
     }
   };
 
   const handleLibItemClick = async (lib) => {
     setLibsShow(false);
+    setDefaultMode(false);
+    setFilelistFetching(true);
     const ld = await getLibraryData(lib);
 
     if (ld.rslt == true) {
       setLibData(ld);
-      setDefaultMode(false);
       /// set state
     } else {
       setDefaultMode(true);
     }
+    setFilelistFetching(false);
   };
 
   const animateFunc = () => {
@@ -140,8 +151,9 @@ const Home = ({ data }) => {
     setFrontmatter(data.filter((dt) => dt.lang === locale)[0]);
 
     if (isInit) {
-      animateFunc();  
+      animateFunc();
       setInit(false);
+      setTimeout(() => setAlertShow(true), 1000);
     }
 
     if (defaultLibArray == null) {
@@ -150,10 +162,10 @@ const Home = ({ data }) => {
         const t_vue = await getLibraryData("vue");
         const t_angular = await getLibraryData("angular.js");
         const t_jquery = await getLibraryData("jquery");
-        const t_default = {t_react, t_vue, t_angular, t_jquery};
+        const t_default = { t_react, t_vue, t_angular, t_jquery };
         const t_defaultarr = Object.values(t_default);
         setDefaultLibArray(t_defaultarr);
-      }
+      };
       getDefault();
     }
 
@@ -173,7 +185,31 @@ const Home = ({ data }) => {
 
   return (
     <Base>
-      <section className="section">
+      <section className="section relative scroll-smooth">
+        <div
+          className={clsx(
+            "fixed left-0 top-[59px] z-20 w-full opacity-0 transition-all duration-300 ease-in",
+            isAlertShow && "opacity-100"
+          )}
+        >
+          <div className="bg-[#FFF3E6] pt-1">
+            <div className="container flex flex-row items-center gap-[14px] py-2">
+              <Image
+                alt="anounce"
+                src="/images/home/ic_announce.svg"
+                width={24}
+                height={24}
+              />
+              <p className="text-base leading-tight text-[#FF941A] md:flex-grow">
+                {banner.anounce}
+              </p>
+              <button
+                onClick={() => setAlertShow(false)}
+                className="min-h-[18px] min-w-[18px] bg-[url('/images/home/del_nor.svg')] hover:bg-[url('/images/home/del_hover.svg')] active:bg-[url('/images/home/del_hover.svg')]"
+              />
+            </div>
+          </div>
+        </div>
         <div className="flex overflow-hidden bg-primary">
           <div className="container">
             <div className="banner-bg md:min-h-[450px]">
@@ -190,7 +226,7 @@ const Home = ({ data }) => {
                       <span className="inline whitespace-nowrap font-normal tracking-normal text-primary">
                         $ npm install –g sfile
                       </span>
-                      <span className="ml-1 text-[#292d33] text-base">
+                      <span className="ml-1 text-base text-[#292d33]">
                         {`// `}
                         {markdownify(
                           banner.installation_tools,
@@ -259,8 +295,22 @@ const Home = ({ data }) => {
           defaultLibArray.map((lib, index) => (
             <LibraryView section={section} libData={lib} key={index} />
           ))
-        ) : (libData && <LibraryView section={section} libData={libData} />)}
-
+        ) : (
+          <div className="w-full">
+            {isFilelistFetching ? (
+              <div className="flex w-full h-[200px] mb-[60px] md:mb-[90px] items-start justify-center">
+                <Image
+                  alt="loading"
+                  src="/images/loading.gif"
+                  width={150}
+                  height={150}
+                />
+              </div>
+            ) : (
+              libData && <LibraryView section={section} libData={libData} />
+            )}
+          </div>
+        )}
       </section>
     </Base>
   );
@@ -274,7 +324,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      data
+      data,
     },
   };
 };

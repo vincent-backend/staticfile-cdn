@@ -6,6 +6,7 @@ import Header from "@partials/Header";
 import Head from "next/head";
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Base = ({
   title,
@@ -149,6 +150,8 @@ const Base = ({
 
         {/* author from config.json */}
         <meta name="author" content={meta_author} />
+
+        <link rel="preload" href="/images/loading.gif" as="image" />
       </Head>
       <Header />
       {/* main site */}

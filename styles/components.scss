@@ -168,7 +168,7 @@
 
 /// index
 .online-store {
-  @apply pt-3 text-h4 font-extrabold text-[#08c39d] md:text-[16px];
+  @apply pt-3 text-h5 font-extrabold text-[#08c39d] md:text-[16px];
 }
 
 // tab
@@ -189,7 +189,7 @@
 }
 
 .search-list-item {
-  @apply h-[36px] cursor-pointer items-center overflow-x-hidden break-keep px-8 hover:bg-[#e6f8f4] hover:text-primary active:bg-[#e6f8f4] active:text-primary md:px-16;
+  @apply h-[36px] leading-[36px] cursor-pointer items-center overflow-x-hidden break-keep px-8 hover:bg-[#e6f8f4] hover:text-primary active:bg-[#e6f8f4] active:text-primary md:px-16;
 }
 
 /// statistics

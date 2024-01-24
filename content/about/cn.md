@@ -28,7 +28,7 @@ content: [
     <p><a href='https://github.com/sofish' target='_blank'>• Sofish</a></p>
     <p><a href='https://github.com/hfcorriez' target='_blank'>• hfcorriez</a></p>
     <p><a href='https://github.com/sorcerer-ma' target='_blank'>• 马逸清 </a></p>
-    此仓库由内忧秀的云存储服务商 <a href='https://www.qiniu.com/' target='_blank'>七牛云</a> 提供存储和加速赞助。同步国外 <a href='https://cdnjs.com' target='_blank'>CDNS</a> 源站，同时由国内开源贡献值提交其它有价值的库。感谢所有开源库作者和挖掘者的努力。"
+    此仓库由内忧秀的云存储服务商 <a href='https://www.qiniu.com/' target='_blank'>七牛云</a> 提供存储和加速赞助。同步国外 <a href='https://cdnjs.com' target='_blank'>CDNJS</a> 源站，同时由国内开源贡献值提交其它有价值的库。感谢所有开源库作者和挖掘者的努力。"
   },
   {
     subtitle: "五、开源协议",

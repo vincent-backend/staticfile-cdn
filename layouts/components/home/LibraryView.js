@@ -59,8 +59,8 @@ const LibraryView = ({ libData, section }) => {
         <div className="section_description">
           {isLoaded && libData.description}
         </div>
-        <div className="flex flex-col relative mt-[10px] sm:mt-[30px]">
-          <div className="flex justify-end mb-[10px] sm:hidden">
+        <div className="relative mt-[10px] flex flex-col sm:mt-[30px]">
+          <div className="mb-[10px] flex justify-end sm:hidden">
             <div className="dropdown">
               <select
                 className="dropbtn"
@@ -77,36 +77,43 @@ const LibraryView = ({ libData, section }) => {
             </div>
           </div>
           <div className="flex-col">
-            <Tabs>
-              <Tab name="HTTPS">
-                <ul role="list" className="home-tab-ul">
-                  {!isFilesLoading && fileList &&
-                    fileList.map((file, index) =>
-                      renderListItem("https", file, index),
-                    )}
-                  {isFilesLoading && 
-                  <div className="flex flex-col items-center justify-center">
-                    <Image src="/images/loading.svg" alt="Loading data" width={200} height={200} />
-                  </div> 
-                  }
-                </ul>
-              </Tab>
-              <Tab name="HTTP">
-                <ul role="list" className="home-tab-ul">
-                {!isFilesLoading && fileList &&
-                    fileList.map((file, index) =>
-                      renderListItem("http", file, index),
-                    )}
-                  {isFilesLoading && 
-                  <div className="flex flex-col h-[200px] items-center justify-center">
-                    <Image src="/images/loading.svg" alt="Loading data" width={200} height={200} />
-                  </div> 
-                  }
-                </ul>
-              </Tab>
-            </Tabs>
+            {isFilesLoading ? (
+              <div className="flex h-[160px] w-full items-center justify-center md:mt-[40px]">
+                <Image
+                  alt="loading"
+                  src="/images/loading.gif"
+                  width={150}
+                  height={150}
+                />
+              </div>
+            ) : (
+              <>
+                <Tabs>
+                  <Tab name="HTTPS">
+                    <ul role="list" className="home-tab-ul">
+                      {fileList &&
+                        fileList.map((file, index) => renderListItem("https", file, index)
+                        )}
+                    </ul>
+                  </Tab>
+                  <Tab name="HTTP">
+                    <ul role="list" className="home-tab-ul">
+                      {fileList &&
+                        fileList.map((file, index) =>
+                          renderListItem("http", file, index)
+                        )}
+                    </ul>
+                  </Tab>
+                </Tabs>
+                <div className="online-store">
+                  <a href={isLoaded ? libData.homepage : "#"}>
+                    {section.homepage}
+                  </a>
+                </div>
+              </>
+            )}
           </div>
-          <div className="absolute top-0 right-0 hidden sm:block">
+          <div className="absolute right-0 top-0 hidden sm:block">
             <div className="dropdown">
               <select
                 className="dropbtn"
@@ -122,9 +129,6 @@ const LibraryView = ({ libData, section }) => {
               </select>
             </div>
           </div>
-        </div>
-        <div className="online-store">
-          <a href={isLoaded ? libData.homepage : "#"}>{section.homepage}</a>
         </div>
       </div>
     </div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>home_ic_announcement@2x</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-361.000000, -69.000000)" fill="#FF941A" fill-rule="nonzero">
+            <g id="通知" transform="translate(0.000000, 60.000000)">
+                <g id="home_ic_announcement" transform="translate(361.000000, 9.000000)">
+                    <path d="M9,17 L4,17 C2.8954305,17 2,16.1045695 2,15 L2,9 C2,7.8954305 2.8954305,7 4,7 L9,7 L9,7 L9,17 Z M4,15 L7,15 L7,9 L4,9 L4,15 Z" id="形状"></path>
+                    <path d="M14.5143571,21.1746428 L7,17 L7,17 L7,7 L14.4452998,2.0364668 C14.9048285,1.73011434 15.5256978,1.85428821 15.8320503,2.3138169 C15.941562,2.47808441 16,2.67109211 16,2.86851709 L16,20.3004855 C16,20.8527703 15.5522847,21.3004855 15,21.3004855 C14.8300558,21.3004855 14.6629151,21.257175 14.5143571,21.1746428 Z" id="形状"></path>
+                    <circle id="椭圆形" opacity="0.3" cx="16" cy="12" r="5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

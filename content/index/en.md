@@ -6,7 +6,8 @@ banner:
   installation_tools: "Installation tools"
   usage: "Usage"
   search_bar_placeholder: "Please enter the name of the open source library..."
-  copied_to_clipboard: "复制成功"
+  copied_to_clipboard: "Copied."
+  anounce: "Affected by the org domain name registration, the main domain name has been updated to www.staticfile.net. The old org domain name is no longer maintained. Please change it to www.staticfile.net as soon as possible."
 
 section:
   homepage: "Homepage"

@@ -7,6 +7,7 @@ banner:
   usage: "使用说明"
   search_bar_placeholder: "请输入开源库名称..."
   copied_to_clipboard: "复制成功"
+  anounce: "受org域名备案影响主域名更新为 staticfile.net , org老域名不再维护请用户尽快更换为net。"
 
 section:
   homepage: "网站"
