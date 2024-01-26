@@ -36,7 +36,7 @@ const Footer = () => {
   useEffect(() => {
     var origin_name = window.location.origin.replace("https://", "").replace("http://", "");
     console.log(origin_name);
-    if (origin_name.indexOf("org") >= 0) {
+    if (origin_name.indexOf(".org") >= 0) {
       setAddr("org");
     }
     else {
