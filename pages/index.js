@@ -78,7 +78,7 @@ const Home = ({ data }) => {
           setLibsShow(false);
         }
       } catch (error) {
-        console.log("API Server error.");
+        console.log("API Server Connection Failed..");
         setLibsShow(false);
         setListSearching(false);
       }

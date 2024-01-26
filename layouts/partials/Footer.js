@@ -16,6 +16,9 @@ const Footer = () => {
     locale === "cn" ? support_cn : support_en,
   );
 
+  const [addr, setAddr] = useState("org");
+
+  // hover
   const [isWHover, setWHover] = useState(false);
 
   const handleWHover = () => {
@@ -31,6 +34,15 @@ const Footer = () => {
   };
 
   useEffect(() => {
+    var origin_name = window.location.origin.replace("https://", "").replace("http://", "");
+    console.log(origin_name);
+    if (origin_name.indexOf("org") >= 0) {
+      setAddr("org");
+    }
+    else {
+      setAddr("net");
+    }
+
     if (locale === "cn") {
       setTitle(title_cn);
     } else {
@@ -126,7 +138,7 @@ const Footer = () => {
         {/* copyright */}
         <div className="py-10 flex-col justify-between text-center">
           <span className="footer-description">
-            备案号 沪ICP备11037377号-26
+            {addr == "org" ? "备案号 沪ICP备11037377号-26" : "豫ICP备20013748号-5"}
           </span>
           <div className="text-center break-words">
             <span className="text-copyright">
