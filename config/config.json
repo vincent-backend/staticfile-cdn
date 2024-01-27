@@ -12,9 +12,7 @@
 
   "settings": {
     "pagination": 6,
-    "summary_length": 200,
-    "api_root": "http://localhost:8080/",
-    "api_statistics": "https://data.jsdelivr.com/v1/stats/"
+    "summary_length": 200
   },
 
   "params": {
