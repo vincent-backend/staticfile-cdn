@@ -35,7 +35,6 @@ const Footer = () => {
 
   useEffect(() => {
     var origin_name = window.location.origin.replace("https://", "").replace("http://", "");
-    console.log(origin_name);
     if (origin_name.indexOf(".org") >= 0) {
       setAddr("org");
     }
@@ -53,11 +52,12 @@ const Footer = () => {
   return (
     <footer className="bg-white font-primary text-base">
       <div className="container">
-        <div className="row pt-[30px] pb-[50px]">
-          <div className="col-12 md:col-4">
+        <div className="flex flex-col md:flex-row pt-[30px] pb-[50px]">
+          <div className="min-w-[166px]">
             <Logo />
           </div>
-          <div className="flex items-center justify-center md:items-start md:justify-start md:col-8">
+          
+          <div className="flex items-center justify-center w-full">
             <div className="flex-col justify-center">
               <div className="flex flex-row items-center justify-center space-x-6">
                 <a href="https://www.qiniu.com/">
@@ -68,7 +68,7 @@ const Footer = () => {
                     height={46}
                     className="w-[132px] h-auto"
                   />
-                  </a>
+                </a>
                 <Image
                   alt="X"
                   src="/images/footer/thumb2.png"
@@ -90,6 +90,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
+          <div className="w-0 md:min-w-[166px]" />
         </div>
         <div className="md:col-12 lg:col-12">
           <div className="flex items-center">
