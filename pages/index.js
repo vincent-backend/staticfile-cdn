@@ -37,6 +37,7 @@ const Home = ({ data }) => {
 
   /// Default Lib data
   // React, Vue, Angular.js, JQuery
+  const [isLoadingDefaultLib, setLoadingDefaultLib] = useState(true);
   const [isDefaultMode, setDefaultMode] = useState(true);
   const [defaultLibArray, setDefaultLibArray] = useState(null);
 
@@ -158,6 +159,7 @@ const Home = ({ data }) => {
 
     if (defaultLibArray == null) {
       const getDefault = async () => {
+        setLoadingDefaultLib(true);
         const t_react = await getLibraryData("react");
         const t_vue = await getLibraryData("vue");
         const t_angular = await getLibraryData("angular.js");
@@ -165,6 +167,7 @@ const Home = ({ data }) => {
         const t_default = { t_react, t_vue, t_angular, t_jquery };
         const t_defaultarr = Object.values(t_default);
         setDefaultLibArray(t_defaultarr);
+        setLoadingDefaultLib(false);
       };
       getDefault();
     }
@@ -291,10 +294,24 @@ const Home = ({ data }) => {
 
         {/* Primary Lib data */}
         {isDefaultMode ? (
-          defaultLibArray &&
-          defaultLibArray.map((lib, index) => (
-            <LibraryView section={section} libData={lib} key={index} />
-          ))
+          <>
+            {isLoadingDefaultLib ? (
+              <div className="flex w-full h-[200px] mb-[60px] md:mb-[90px] items-start justify-center">
+                <Image
+                  alt="loading"
+                  src="/images/loading.gif"
+                  width={150}
+                  height={150}
+                />
+              </div>
+            ) : (
+              defaultLibArray &&
+              defaultLibArray.map((lib, index) => (
+                <LibraryView section={section} libData={lib} key={index} />
+              ))
+            )}
+          </>
+
         ) : (
           <div className="w-full">
             {isFilelistFetching ? (
