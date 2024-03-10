@@ -56,7 +56,7 @@ module.exports = {
         h6: "16px",
       },
       fontFamily: {
-        primary: ['var(--font-pingfang)']
+        primary: ['Sans-serif', 'var(--font-pingfang)']
       },
     },
   },
