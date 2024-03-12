@@ -185,8 +185,28 @@
 }
 
 .list-item {
-  @apply cursor-pointer whitespace-nowrap pl-1 pr-1 text-justify font-primary text-h5 text-gray-700 hover:bg-[#e6f8f4] hover:text-primary active:bg-[#e6f8f4] active:text-primary md:text-base lg:pl-4 lg:pr-4;
+  @apply relative cursor-pointer whitespace-nowrap pl-1 pr-1 text-justify font-primary text-h5 text-gray-700 hover:bg-[#e6f8f4] hover:text-primary active:bg-[#e6f8f4] active:text-primary md:text-base lg:pl-4 lg:pr-4;
 }
+
+.copy-buttons {
+  @apply top-0 h-full flex flex-row gap-2 items-center justify-center;
+
+  .copy-button {
+    @apply flex items-center justify-center border-2 rounded-lg border-light p-1 cursor-pointer;
+
+    &.active {
+      @apply border-primary;
+    }
+  }
+  
+  .copy-button-icon {
+    @apply fill-primary active:fill-[#10b090];
+  }
+
+}
+
+
+
 
 .search-list-item {
   @apply h-[36px] leading-[36px] cursor-pointer items-center overflow-x-hidden break-keep px-8 hover:bg-[#e6f8f4] hover:text-primary active:bg-[#e6f8f4] active:text-primary md:px-16;
