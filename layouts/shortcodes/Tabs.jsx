@@ -1,12 +1,13 @@
 import { useEffect, useRef } from "react";
 
-function Tabs({ children }) {
+function Tabs({ children, onChangeTab }) {
   //select tabItems
   const tabItemsRef = useRef(null);
 
   //change tab item on click
   const handleChangTab = (event, index) => {
     const tabLinks = [...event.currentTarget.parentElement.children];
+    
     const items = [...tabItemsRef.current.children];
     const activeItem = items.find((item) => !item.classList.contains("hidden"));
     const activeTabLink = tabLinks.find((item) =>
@@ -19,6 +20,7 @@ function Tabs({ children }) {
     event.currentTarget.classList.add("active-tab", "z-20", "text-white");
     activeItem.classList.add("hidden");
     items[index].classList.remove("hidden");
+    onChangeTab(event.currentTarget.outerText);
   };
 
   //show first tab-item
