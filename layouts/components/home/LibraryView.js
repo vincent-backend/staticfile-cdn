@@ -106,9 +106,9 @@ const LibraryView = ({ libData, section }) => {
                     <ul role="list" className="home-tab-ul">
                       {fileList &&
                         fileList.map((file, index) => {
-                          var urls = "<script src='" + baseCdnHttpsUrl + file + "'></script>";
+                          var urls = "<script src=\"" + baseCdnHttpsUrl + file + "\"></script>";
                           if (lastMode === "HTTP") {
-                            urls = "<script src='" + baseCdnHttpUrl + file + "'></script>";
+                            urls = "<script src=\"" + baseCdnHttpUrl + file + "\"></script>";
                           }
                           return (<li
                             className="list-item"
